@@ -1,9 +1,50 @@
 {
   "name": "dashboard-iegm",
+<<<<<<< HEAD
   "version": "0.0.1",
+=======
+  "version": "1.0.0",
+  "description": "Dashboard interativo para análise do Índice de Efetividade da Gestão Municipal (IEGM) do TCEMG",
+  "keywords": [
+    "iegm",
+    "dashboard",
+    "municipios",
+    "gestao-publica",
+    "tcemg",
+    "vue",
+    "typescript",
+    "cloudflare",
+    "d1",
+    "drizzle"
+  ],
+  "author": "Fundação Beta(https://github.com/fundacaobeta)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fundacaobeta/dashboard-iegm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fundacaobeta/dashboard-iegm/issues"
+  },
+  "homepage": "https://github.com/fundacaobeta/dashboard-iegm#readme",
+>>>>>>> c0be81229ff5c83c8d5125907d420030c530856d
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "config": {
+    "port": "3000",
+    "apiPort": "3001",
+    "d1Port": "8788",
+    "defaultMunicipio": "BETIM",
+    "defaultAno": "2023",
+    "defaultTribunal": "TCEMG"
+  },
   "scripts": {
+<<<<<<< HEAD
     "# Development": "",
     "dev": "vite --port 3000",
     "dev:d1": "wrangler pages dev",
@@ -12,20 +53,45 @@
     "start": "yarn dev",
     "clean": "rm -rf node_modules/.vite dist",
     "# Database": "",
+=======
+    "# ---Development---": "",
+    "dev": "vite --port $npm_package_config_port",
+    "dev:parallel": "run-p local:server dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "yarn dev",
+    "clean": "rimraf node_modules/.vite dist",
+    "# ---Setup---": "",
+    "setup": "bash scripts/setup.sh",
+    "setup:quick": "run-s db:generate db:migrate data:seed data:migrate",
+    "# ---Database---": "",
+>>>>>>> c0be81229ff5c83c8d5125907d420030c530856d
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "db:push": "drizzle-kit push",
     "db:drop": "drizzle-kit drop",
+<<<<<<< HEAD
     "# Data": "",
     "data:import": "tsx scripts/import-data.ts",
     "data:migrate": "tsx scripts/import-data.ts",
     "data:seed": "tsx scripts/seed-data.ts",
     "data:reset": "rm -f local.db && yarn db:migrate && yarn data:seed && yarn data:import",
     "# Cloudflare": "",
+=======
+    "# ---Data---": "",
+    "data:migrate": "tsx scripts/migrate-local.ts",
+    "data:seed": "tsx scripts/seed-data.ts",
+    "data:reset": "rimraf local.db && run-s db:migrate data:seed data:migrate",
+    "data:convert-utf8": "tsx scripts/convert-to-utf8.ts",
+    "# ---Cloudflare---": "",
+    "cf:dev": "wrangler pages dev",
+    "cf:dev:d1": "tsx scripts/dev-with-d1.ts",
+>>>>>>> c0be81229ff5c83c8d5125907d420030c530856d
     "cf:deploy": "wrangler pages deploy",
     "cf:db:create": "wrangler d1 create iegm-dashboard",
     "cf:db:studio": "wrangler d1 studio iegm-dashboard",
+<<<<<<< HEAD
     "# Migration": "",
     "migrate:local": "tsx scripts/migrate-local.ts",
     "migrate:prod": "tsx scripts/migrate-prod.ts",
@@ -39,6 +105,32 @@
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
     "type-check": "vue-tsc --build"
+=======
+    "cf:db:migrate-data": "tsx scripts/migrate-d1.ts",
+    "# ---Local Development---": "",
+    "local:server": "tsx scripts/local-server.ts --port $npm_package_config_apiPort",
+    "test:api": "tsx scripts/test-api.ts",
+    "# ---Testing---": "",
+    "test": "run-p test:unit test:e2e",
+    "test:unit": "vitest",
+    "test:e2e": "playwright test",
+    "test:unit:watch": "vitest --watch",
+    "test:unit:coverage": "vitest --coverage",
+    "test:e2e:install": "playwright install",
+    "test:e2e:chromium": "playwright test --project=chromium",
+    "test:e2e:debug": "playwright test --debug",
+    "# ---Quality---": "",
+    "quality": "run-s type-check lint:check format:check",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "format": "prettier --write src/",
+    "format:check": "prettier --check src/",
+    "# ---Build--- & Deploy": "",
+    "build:all": "run-s clean build test:unit",
+    "deploy:prep": "run-s quality build:all",
+    "deploy": "run-s deploy:prep cf:deploy"
+>>>>>>> c0be81229ff5c83c8d5125907d420030c530856d
   },
   "dependencies": {
     "@cloudflare/workers-types": "^4.20250709.0",
@@ -85,6 +177,7 @@
     "npm-run-all2": "^8.0.4",
     "postcss": "^8.5.6",
     "prettier": "3.5.3",
+    "rimraf": "^5.0.5",
     "tailwindcss": "^4",
     "tsx": "^4.20.3",
     "typescript": "~5.8.0",
@@ -93,5 +186,20 @@
     "vitest": "^3.2.4",
     "vue-tsc": "^2.2.10"
   },
+<<<<<<< HEAD
   "packageManager": "yarn@4.9.2"
 }
+=======
+  "packageManager": "yarn@4.9.2",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "volta": {
+    "node": "20.11.0",
+    "yarn": "4.9.2"
+  }
+}
+>>>>>>> c0be81229ff5c83c8d5125907d420030c530856d
