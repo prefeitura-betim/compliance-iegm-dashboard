@@ -1,12 +1,14 @@
 import { computed } from 'vue';
 import { useDatabase } from './useDatabase';
 import { createIEGMServices } from '../services/iegm';
+import { IEGMApiService } from '../services/iegm/iegmApiService';
 import type { IEGMServices } from '../services/iegm';
 
 export function useIEGMServices() {
   const { getDatabaseService, isMockData } = useDatabase();
 
-  const services = computed<IEGMServices | null>(() => {
+  // Serviços locais (para desenvolvimento)
+  const localServices = computed<IEGMServices | null>(() => {
     const dbService = getDatabaseService();
     if (!dbService) {
       return null;
@@ -14,14 +16,33 @@ export function useIEGMServices() {
     return createIEGMServices(dbService);
   });
 
-  const municipioService = computed(() => services.value?.municipio || null);
-  const analiseService = computed(() => services.value?.analise || null);
+  // Serviço de API (para produção)
+  const apiService = computed(() => {
+    const baseURL = import.meta.env.VITE_API_BASE_URL || '/';
+    return new IEGMApiService(baseURL);
+  });
+
+  // Determinar qual serviço usar baseado no ambiente
+  const municipioService = computed(() => {
+    if (isMockData.value) {
+      return localServices.value?.municipio || null;
+    }
+    return apiService.value;
+  });
+
+  const analiseService = computed(() => {
+    if (isMockData.value) {
+      return localServices.value?.analise || null;
+    }
+    return apiService.value;
+  });
 
   return {
-    services,
+    services: localServices,
+    apiService,
     municipioService,
     analiseService,
-    isReady: computed(() => services.value !== null)
+    isReady: computed(() => municipioService.value !== null),
+    isApiMode: computed(() => !isMockData.value)
   };
 }
- 

@@ -24,7 +24,7 @@ export class DatabaseService {
       useMockData: false,
       apiBaseUrl: isProduction
         ? `${globalThis.location.origin}/api` // Usar API do Cloudflare Pages em produção
-        : 'http://localhost:3001/api', // Usar API local em desenvolvimento
+        : '/api', // Usar API local em desenvolvimento
       useDirectD1: false
     };
 

@@ -8,13 +8,6 @@
       "when": 1752247579646,
       "tag": "0000_spicy_korvac",
       "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "6",
-      "when": 1752550374633,
-      "tag": "0001_parched_electro",
-      "breakpoints": true
     }
   ]
 }

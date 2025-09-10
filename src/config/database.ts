@@ -183,6 +183,6 @@ export function isValidAno(ano: number): boolean {
   return ano >= ANO_CONFIG.MIN && ano <= ANO_CONFIG.MAX;
 }
 
-export function getAnosDisponiveis(): number[] {
+export function getAnosDisponiveis(): readonly number[] {
   return ANO_CONFIG.DISPONIVEIS;
 }

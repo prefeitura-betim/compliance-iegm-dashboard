@@ -8,7 +8,14 @@ const globalIsMockData = ref(false);
 export const useDatabase = () => {
   const initialize = (d1Database?: D1Database) => {
     try {
-      globalDatabaseService.value = createDatabaseService(d1Database);
+      // Explicitly configure the API base URL to use relative paths
+      const config = {
+        apiBaseUrl: '/api',
+        useMockData: false,
+        useDirectD1: false
+      };
+
+      globalDatabaseService.value = createDatabaseService(d1Database, config);
       globalIsMockData.value = globalDatabaseService.value.isMockData();
 
       console.log('Database initialized:', {

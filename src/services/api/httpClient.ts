@@ -34,7 +34,8 @@ export class HttpClient {
       timeout = 30000
     } = config;
 
-    const url = new URL(`${this.baseUrl}/${endpoint}`);
+    // Fix: Ensure relative paths are resolved against the current origin
+    const url = new URL(`${this.baseUrl}/${endpoint}`, window.location.origin);
 
     // Adicionar parâmetros de query
     if (params) {

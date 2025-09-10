@@ -1,10 +1,24 @@
 name = "dashboard-iegm"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+# Configuração global para D1 (desenvolvimento local)
+[[d1_databases]]
+binding = "DB"
+database_name = "dataset_iegm"
+database_id = "dcb723ba-b7ee-4851-8fb4-6fe106279b01"
 
 # Configuração para Pages
 [env.production]
-d1_databases = [{ binding = "DB", database_name = "dataset-iegm", database_id = "dcb723ba-b7ee-4851-8fb4-6fe106279b01" }]
+d1_databases = [{ binding = "DB", database_name = "dataset_iegm", database_id = "dcb723ba-b7ee-4851-8fb4-6fe106279b01" }]
 
-[env.development]
-d1_databases = [{ binding = "DB", database_name = "dataset-iegm-dev", database_id = "dcb723ba-b7ee-4851-8fb4-6fe106279b01" }]
+[env.preview]
+d1_databases = [{ binding = "DB", database_name = "dataset_iegm", database_id = "dcb723ba-b7ee-4851-8fb4-6fe106279b01" }]
+
+# Configuração para Pages Functions
+[env.production.functions]
+d1_databases = [{ binding = "DB", database_name = "dataset_iegm", database_id = "dcb723ba-b7ee-4851-8fb4-6fe106279b01" }]
+
+[env.preview.functions]
+d1_databases = [{ binding = "DB", database_name = "dataset_iegm", database_id = "dcb723ba-b7ee-4851-8fb4-6fe106279b01" }]

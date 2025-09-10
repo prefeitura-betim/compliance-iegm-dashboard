@@ -50,8 +50,12 @@ export async function onRequest(context: any) {
 
       case 'estatisticas':
         return await handleEstatisticas(request, db, url);
+      case 'stats': // alias
+        return await handleEstatisticas(request, db, url);
 
       case 'faixas-distribuicao':
+        return await handleFaixasDistribuicao(request, db, url);
+      case 'faixas': // alias
         return await handleFaixasDistribuicao(request, db, url);
 
       case 'analise-dimensoes':
@@ -85,13 +89,16 @@ export async function onRequest(context: any) {
 // Handlers para cada endpoint
 async function handleMunicipios(request: Request, db: any, url: URL) {
   const ano = url.searchParams.get('ano');
-  const tribunal = url.searchParams.get('tribunal');
+  let tribunal = url.searchParams.get('tribunal');
   const municipio = url.searchParams.get('municipio');
   const limit = parseInt(url.searchParams.get('limit') || '1000');
   const offset = parseInt(url.searchParams.get('offset') || '0');
 
-  if (!ano || !tribunal) {
-    return new Response(JSON.stringify({ error: 'Missing required parameters: ano, tribunal' }), {
+  // Se tribunal não for informado, usar TCEMG
+  if (!tribunal) tribunal = 'TCEMG';
+
+  if (!ano) {
+    return new Response(JSON.stringify({ error: 'Missing required parameter: ano' }), {
       status: 400,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
@@ -99,7 +106,7 @@ async function handleMunicipios(request: Request, db: any, url: URL) {
 
   const whereConditions = [
     eq(resultadosMunicipios.anoRef, parseInt(ano)),
-    eq(resultadosMunicipios.tribunalId, 1) // TCEMG
+    eq(resultadosMunicipios.tribunalId, 2) // TCEMG
   ];
 
   if (municipio) {
@@ -146,8 +153,11 @@ async function handleMunicipios(request: Request, db: any, url: URL) {
 
 async function handleRanking(request: Request, db: any, url: URL) {
   const ano = url.searchParams.get('ano');
+  let tribunal = url.searchParams.get('tribunal');
   const limit = parseInt(url.searchParams.get('limit') || '1000');
   const offset = parseInt(url.searchParams.get('offset') || '0');
+
+  if (!tribunal) tribunal = 'TCEMG';
 
   if (!ano) {
     return new Response(JSON.stringify({ error: 'Missing required parameter: ano' }), {
@@ -168,7 +178,7 @@ async function handleRanking(request: Request, db: any, url: URL) {
     .where(
       and(
         eq(resultadosMunicipios.anoRef, parseInt(ano)),
-        eq(resultadosMunicipios.tribunalId, 1) // TCEMG
+        eq(resultadosMunicipios.tribunalId, 2) // TCEMG
       )
     )
     .orderBy(desc(resultadosMunicipios.percentualIegmMunicipio))
@@ -189,10 +199,11 @@ async function handleRanking(request: Request, db: any, url: URL) {
 
 async function handleEstatisticas(request: Request, db: any, url: URL) {
   const ano = url.searchParams.get('ano');
-  const tribunal = url.searchParams.get('tribunal');
+  let tribunal = url.searchParams.get('tribunal');
+  if (!tribunal) tribunal = 'TCEMG';
 
-  if (!ano || !tribunal) {
-    return new Response(JSON.stringify({ error: 'Missing required parameters: ano, tribunal' }), {
+  if (!ano) {
+    return new Response(JSON.stringify({ error: 'Missing required parameter: ano' }), {
       status: 400,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
@@ -216,7 +227,7 @@ async function handleEstatisticas(request: Request, db: any, url: URL) {
     .where(
       and(
         eq(resultadosMunicipios.anoRef, parseInt(ano)),
-        eq(resultadosMunicipios.tribunalId, 1) // TCEMG
+        eq(resultadosMunicipios.tribunalId, 2) // TCEMG
       )
     );
 
@@ -244,7 +255,7 @@ async function handleFaixasDistribuicao(request: Request, db: any, url: URL) {
     .where(
       and(
         eq(resultadosMunicipios.anoRef, parseInt(ano)),
-        eq(resultadosMunicipios.tribunalId, 1) // TCEMG
+        eq(resultadosMunicipios.tribunalId, 2) // TCEMG
       )
     )
     .groupBy(resultadosMunicipios.faixaIegmMunicipio)
@@ -303,12 +314,14 @@ async function handleAnaliseDimensoes(request: Request, db: any, url: URL) {
 
 async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
   const ano = url.searchParams.get('ano');
-  const tribunal = url.searchParams.get('tribunal');
+  let tribunal = url.searchParams.get('tribunal');
   const municipio = url.searchParams.get('municipio');
   const indicador = url.searchParams.get('indicador');
 
-  if (!ano || !tribunal) {
-    return new Response(JSON.stringify({ error: 'Missing required parameters: ano, tribunal' }), {
+  if (!tribunal) tribunal = 'TCEMG';
+
+  if (!ano) {
+    return new Response(JSON.stringify({ error: 'Missing required parameter: ano' }), {
       status: 400,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
@@ -316,7 +329,7 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
 
   const whereConditions = [
     eq(questionarioRespostas.anoRef, parseInt(ano)),
-    eq(questionarioRespostas.tribunalId, 1) // TCEMG
+    eq(questionarioRespostas.tribunalId, 2) // TCEMG
   ];
 
   if (municipio) {

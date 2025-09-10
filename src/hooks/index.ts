@@ -8,6 +8,31 @@ export { useMunicipios } from './useMunicipios';
 export { useAnalise } from './useAnalise';
 
 // ============================================================================
+// EXPORTAÇÕES DOS HOOKS DE QUERY
+// ============================================================================
+
+export {
+  useIEGMQueries,
+  useMunicipiosQuery,
+  useMunicipioQuery,
+  useIEGMDataQuery,
+  useAnaliseQuery,
+  useRespostasDetalhadasQuery,
+  useComparativoEstadualQuery,
+  useRankingMunicipiosQuery,
+  useTribunaisQuery,
+  useIndicadoresQuery,
+  useAnosDisponiveisQuery,
+  useRefreshDataMutation
+} from './useIEGMQueries';
+
+// ============================================================================
+// EXPORTAÇÕES DOS HOOKS DE RELATÓRIO
+// ============================================================================
+
+export { useRelatorio } from './useRelatorio';
+
+// ============================================================================
 // EXPORTAÇÕES DOS TIPOS DOS HOOKS
 // ============================================================================
 

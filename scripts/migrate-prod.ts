@@ -739,6 +739,8 @@ async function main() {
     console.log('  1. Verificar dados: yarn cf:db:studio');
     console.log('  2. Fazer deploy: yarn cf:deploy');
     console.log('  3. Testar API: curl https://seu-worker.workers.dev/api/municipios');
+    console.log('');
+    console.log('💡 Para desenvolvimento local, use: yarn migrate:local');
 
   } catch (error) {
     console.error('❌ Erro durante a migração:', error);
