@@ -37,7 +37,7 @@ export interface Municipio {
   percentualIgovTi: number | null;
   percentualIsaude: number | null;
   percentualIplan: number | null;
-  percentualIegmMunicipio: number;
+  percentualIegmMunicipio: number | null;
 
   // Faixas dos indicadores (novos nomes)
   faixaIamb: string | null;
@@ -131,6 +131,12 @@ export interface ComparativoAnoAnterior {
   anoAtual: number;
 }
 
+export interface ComparativoEstadual {
+  mediaEstadual: number;
+  posicaoRanking: number;
+  totalMunicipios: number;
+}
+
 export interface DimensaoAnalise {
   nome: string;
   score: number;
@@ -222,4 +228,56 @@ export interface RespostasQuery {
   tribunal: string;
   municipio?: string;
   indicador?: string;
+}
+export interface RankingMunicipio {
+  codigoIbge: string;
+  municipio: string;
+  percentualIegmMunicipio: number | null;
+  faixaIegmMunicipio: string | null;
+  ranking?: number;
+}
+
+export interface Tribunal {
+  id: number;
+  nome: string;
+  uf: string;
+}
+
+export interface Indicador {
+  id: number;
+  codigo: string;
+  nome: string;
+  cor?: string;
+}
+
+export interface AnaliseData {
+  municipio: string;
+  ano: number;
+  dimensoes: DimensaoAnalise[];
+  melhorias: AnaliseMelhoria[];
+  pontosFortes: PontoForte[];
+  pontosMelhoria: PontoMelhoria[];
+}
+
+export interface IEGMData {
+  id?: number;
+  municipioId?: number;
+  municipio?: string;
+  anoRef: number;
+  percentualIamb: number | null;
+  percentualIcidade: number | null;
+  percentualIeduc: number | null;
+  percentualIfiscal: number | null;
+  percentualIgovTi: number | null;
+  percentualIsaude: number | null;
+  percentualIplan: number | null;
+  percentualIegmMunicipio: number | null;
+  faixaIamb: string | null;
+  faixaIcidade: string | null;
+  faixaIeduc: string | null;
+  faixaIfiscal: string | null;
+  faixaIgovTi: string | null;
+  faixaIsaude: string | null;
+  faixaIplan: string | null;
+  faixaIegmMunicipio: string | null;
 }

@@ -1,6 +1,6 @@
 
 import { IEGMData } from '@/hooks/useIEGMData'
-import { formatPercentual, getChartColor } from '@/lib/iegmUtils'
+import { formatPercentual } from '@/lib/iegmUtils'
 import { TrendingUp, TrendingDown, Target, Trophy } from 'lucide-react'
 
 interface ComparativoEstadualProps {

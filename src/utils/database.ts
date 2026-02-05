@@ -1,4 +1,4 @@
-import { eq, and, desc, asc, sql, count, avg, min, max, like, inArray } from 'drizzle-orm';
+import { eq, and, desc, asc, like, inArray } from 'drizzle-orm';
 import type { SQL } from 'drizzle-orm';
 
 // ============================================================================
@@ -284,7 +284,7 @@ export async function withPerformanceLogging<T>(
     logQuery(operation, params, duration);
     return result;
   } catch (error) {
-    const duration = performance.now() - start;
+    // const duration = performance.now() - start;
     logError(operation, error);
     throw error;
   }

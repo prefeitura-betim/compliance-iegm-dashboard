@@ -1,4 +1,4 @@
-import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, Info, Award, ExternalLink } from 'lucide-react'
+import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, Info, ExternalLink } from 'lucide-react'
 
 const dimensoes = [
     {

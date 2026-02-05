@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, real, index, primaryKey } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, integer, real, index } from 'drizzle-orm/sqlite-core';
 
 // ============================================================================
 // TABELAS DE REFERÊNCIA

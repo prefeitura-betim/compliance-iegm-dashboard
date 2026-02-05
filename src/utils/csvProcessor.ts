@@ -16,10 +16,7 @@ export interface ProcessingStats {
 }
 
 export class CSVProcessor {
-  private config: ImportConfig;
-
-  constructor(config: ImportConfig) {
-    this.config = config;
+  constructor(_config: ImportConfig) {
   }
 
   processFile(filePath: string, filters?: Record<string, any>): { records: CSVRecord[], stats: ProcessingStats } {
@@ -68,8 +65,7 @@ export class CSVProcessor {
             relax_column_count: true,
             skip_records_with_error: true,
             quote: '"',
-            escape: '"',
-            relax: true // Modo mais relaxado
+            escape: '"'
           });
         } catch (secondError) {
           // Terceira tentativa: limpar o conteúdo antes de processar
@@ -228,7 +224,7 @@ export class CSVProcessor {
           relax_quotes: true,
           relax_column_count: true,
           skip_records_with_error: true
-        });
+        }) as CSVRecord[];
 
         const filteredRecords = filters ? this.applyFilters(records, filters) : records;
         const { validRecords } = this.validateRecords(filteredRecords);

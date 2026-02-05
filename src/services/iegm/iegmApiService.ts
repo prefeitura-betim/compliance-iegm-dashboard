@@ -1,4 +1,4 @@
-import { AxiosClient, type AxiosApiResponse } from '../api/axiosClient';
+import { AxiosClient } from '../api/axiosClient';
 import type {
   Municipio,
   IEGMData,
@@ -50,7 +50,7 @@ export class IEGMApiService {
       const response = await this.client.get('/api/municipio/nome', {
         params: { nome, ano }
       });
-      return response.data || null;
+      return (response.data as Municipio) || null;
     } catch (error) {
       console.error('Erro ao buscar município por nome:', error);
       throw new Error('Falha ao carregar dados do município');
@@ -181,7 +181,7 @@ export class IEGMApiService {
       });
 
       // Converter resposta para Blob
-      const blob = new Blob([response.data], {
+      const blob = new Blob([response.data as any], {
         type: formato === 'pdf' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
       });
 
@@ -198,7 +198,7 @@ export class IEGMApiService {
         params: { municipioId, ano, formato }
       });
 
-      return response.data;
+      return response.data as string;
     } catch (error) {
       console.error('Erro ao exportar dados:', error);
       throw new Error('Falha ao exportar dados');
@@ -263,30 +263,29 @@ export class IEGMApiService {
     const evolucao: any = {};
 
     // Calcular evolução dos percentuais
-    if (atual.percentualIegmMunicipio && anterior.percentualIegmMunicipio) {
-      evolucao.iegmGeral = {
-        atual: atual.percentualIegmMunicipio,
-        anterior: anterior.percentualIegmMunicipio,
-        variacao: atual.percentualIegmMunicipio - anterior.percentualIegmMunicipio,
-        percentualVariacao: ((atual.percentualIegmMunicipio - anterior.percentualIegmMunicipio) / anterior.percentualIegmMunicipio) * 100
-      };
-    }
+    const atualVal = atual.percentualIegmMunicipio || 0;
+    const anteriorVal = anterior.percentualIegmMunicipio || 0;
+
+    evolucao.iegmGeral = {
+      atual: atualVal,
+      anterior: anteriorVal,
+      variacao: atualVal - anteriorVal,
+      percentualVariacao: anteriorVal !== 0 ? ((atualVal - anteriorVal) / anteriorVal) * 100 : 0
+    };
 
     // Calcular evolução por indicador
     const indicadores = ['iamb', 'icidade', 'ieduc', 'ifiscal', 'igovTi', 'isaude', 'iplan'];
 
     indicadores.forEach(ind => {
-      const atualVal = atual[`percentual${ind.charAt(0).toUpperCase() + ind.slice(1)}` as keyof IEGMData];
-      const anteriorVal = anterior[`percentual${ind.charAt(0).toUpperCase() + ind.slice(1)}` as keyof IEGMData];
+      const atualVal = (atual[`percentual${ind.charAt(0).toUpperCase() + ind.slice(1)}` as keyof IEGMData] as number) || 0;
+      const anteriorVal = (anterior[`percentual${ind.charAt(0).toUpperCase() + ind.slice(1)}` as keyof IEGMData] as number) || 0;
 
-      if (atualVal && anteriorVal) {
-        evolucao[ind] = {
-          atual: atualVal,
-          anterior: anteriorVal,
-          variacao: atualVal - anteriorVal,
-          percentualVariacao: ((atualVal - anteriorVal) / anteriorVal) * 100
-        };
-      }
+      evolucao[ind] = {
+        atual: atualVal,
+        anterior: anteriorVal,
+        variacao: atualVal - anteriorVal,
+        percentualVariacao: anteriorVal !== 0 ? ((atualVal - anteriorVal) / anteriorVal) * 100 : 0
+      };
     });
 
     return evolucao;

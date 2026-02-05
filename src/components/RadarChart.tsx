@@ -44,7 +44,7 @@ export default function RadarChart({ data }: RadarChartProps) {
         labels: indicadores.map(i => i.nome),
         datasets: [
             {
-                label: data.municipio?.nome || 'Município',
+                label: data.municipio?.municipio || 'Município',
                 data: indicadores.map(i => {
                     const valor = resultados[i.key as keyof typeof resultados] as number | null
                     return valor ? valor * 100 : 0
@@ -144,7 +144,7 @@ export default function RadarChart({ data }: RadarChartProps) {
                 Visão Geral dos Indicadores
             </h2>
             <div className="h-[450px]">
-                <Radar data={chartData} options={options} />
+                <Radar data={chartData} options={options as any} />
             </div>
         </div>
     )

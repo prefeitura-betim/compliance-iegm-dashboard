@@ -1,6 +1,6 @@
-import { drizzle } from 'drizzle-orm/better-sqlite3';
-import Database from 'better-sqlite3';
-import * as schema from '../db/schema';
+// import { drizzle } from 'drizzle-orm/better-sqlite3';
+// import Database from 'better-sqlite3';
+
 import { ImportConfig, getFilePath, shouldImportTable, getTableConfig, validateConfig } from '../config/importConfig';
 import { CSVProcessor } from './csvProcessor';
 import { existsSync } from 'fs';

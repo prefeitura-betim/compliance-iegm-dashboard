@@ -1,8 +1,7 @@
-import { eq, and, desc, asc, sql, count, avg } from 'drizzle-orm';
+import { eq, and, desc, sql, avg } from 'drizzle-orm';
 import { DatabaseService } from '../database/index';
 import { HttpClient } from '../api/httpClient';
 import type {
-  Municipio,
   RespostaDetalhada,
   AnaliseMelhoria,
   PontoForte,
@@ -78,7 +77,7 @@ export class AnaliseService {
         const mediaEstadual = mediasEstaduais[dim.campo] || 0;
         const diferencial = dim.score - mediaEstadual;
         const grade = this.getGrade(dim.score);
-        const ranking = this.calcularRanking(dim.score, mediasEstaduais[`ranking_${dim.campo}`] || []);
+        const ranking = this.calcularRanking(dim.score, (mediasEstaduais[`ranking_${dim.campo}`] as any) || []);
 
         return {
           nome: dim.nome,
@@ -250,15 +249,16 @@ export class AnaliseService {
       return dimensoes
         .filter(dim => dim.valor !== null && dim.valor < 0.6)
         .map(dim => {
-          const impacto = (0.6 - dim.valor) * 100;
-          const specificQuestion = this.generateSpecificQuestions(dim.nome, dim.valor, dim.media);
-          const specificRecommendation = this.generateSpecificRecommendations(dim.nome, dim.valor);
+          const valor = dim.valor || 0;
+          const impacto = (0.6 - valor) * 100;
+          const specificQuestion = this.generateSpecificQuestions(dim.nome, valor, dim.media || 0);
+          const specificRecommendation = this.generateSpecificRecommendations(dim.nome, valor);
 
           return {
             indicador: dim.indicador,
             questao: specificQuestion,
-            respostaAtual: `${(dim.valor * 100).toFixed(1)}%`,
-            pontuacaoAtual: dim.valor * 100,
+            respostaAtual: `${(valor * 100).toFixed(1)}%`,
+            pontuacaoAtual: valor * 100,
             pontuacaoMaxima: 100,
             impacto: Math.round(impacto),
             recomendacao: specificRecommendation
@@ -476,7 +476,7 @@ export class AnaliseService {
     return 'Oportunidade de melhoria identificada';
   }
 
-  private getRecomendacao(indicador: string, questao: string): string {
+  private getRecomendacao(indicador: string, _questao: string): string {
     const recomendacoes: Record<string, string> = {
       'i-Educ': 'Implementar políticas educacionais estruturadas e monitoramento de resultados',
       'i-Saude': 'Melhorar infraestrutura de saúde e gestão de recursos',
