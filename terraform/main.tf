@@ -8,10 +8,7 @@ terraform {
 }
 
 provider "cloudflare" {
-  # Configure com suas credenciais
-  # Recomenda-se usar variáveis de ambiente:
-  # export CLOUDFLARE_API_TOKEN="..."
-  # export CLOUDFLARE_ACCOUNT_ID="..."
+  api_token = var.cloudflare_api_token
 }
 
 # Recursos da Cloudflare (Pages, D1) serão adicionados aqui.
