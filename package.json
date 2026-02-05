@@ -1,6 +1,7 @@
 {
   "name": "dashboard-iegm",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "trigger": "deploy-fix-01",
   "description": "Dashboard interativo para análise do Índice de Efetividade da Gestão Municipal (IEGM) do TCEMG",
   "keywords": [
     "iegm",
