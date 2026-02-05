@@ -1,138 +1,67 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
-    './index.html',
-    './src/**/*.{vue,js,ts,jsx,tsx}'
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        // Cores principais
-        primary: {
-          50: 'hsl(var(--color-primary-50))',
-          100: 'hsl(var(--color-primary-100))',
-          200: 'hsl(var(--color-primary-200))',
-          300: 'hsl(var(--color-primary-300))',
-          400: 'hsl(var(--color-primary-400))',
-          500: 'hsl(var(--color-primary-500))',
-          600: 'hsl(var(--color-primary-600))',
-          700: 'hsl(var(--color-primary-700))',
-          800: 'hsl(var(--color-primary-800))',
-          900: 'hsl(var(--color-primary-900))',
-          950: 'hsl(var(--color-primary-950))',
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        // Design System Oficial
+        betim: {
+          blue: {
+            DEFAULT: '#0072e7',  // Cor principal (Botões, Links)
+            dark: '#023568',     // Azul escuro (Header, Footer detalhes)
+            light: '#04a2e1',    // Azul claro (Hover)
+          },
+          green: {
+            DEFAULT: '#00bd39',  // Sucesso, ícones
+            dark: '#146c35',
+            teal: '#0ebea0',
+          },
+          red: {
+            DEFAULT: '#c52121', // Erro, Alertas
+            dark: '#8b0930',
+          },
+          orange: '#f37b11',     // Destaques secundários
+          yellow: '#ebb40a',     // Faixa B - Efetiva
+          gray: {
+            DEFAULT: '#495156',  // Textos, Cards
+            light: '#F5F7F8',    // Fundos de página
+            50: '#F5F7F8',
+            100: '#e5e7eb',
+            200: '#d1d5db',
+            300: '#9ca3af',
+            400: '#6b7280',
+            500: '#495156',
+            600: '#374151',
+            700: '#1f2937',
+            800: '#111827',
+            900: '#0a0a0a',
+          },
         },
-        gray: {
-          50: 'hsl(var(--color-gray-50))',
-          100: 'hsl(var(--color-gray-100))',
-          200: 'hsl(var(--color-gray-200))',
-          300: 'hsl(var(--color-gray-300))',
-          400: 'hsl(var(--color-gray-400))',
-          500: 'hsl(var(--color-gray-500))',
-          600: 'hsl(var(--color-gray-600))',
-          700: 'hsl(var(--color-gray-700))',
-          800: 'hsl(var(--color-gray-800))',
-          900: 'hsl(var(--color-gray-900))',
-          950: 'hsl(var(--color-gray-950))',
-        },
-        success: {
-          50: 'hsl(var(--color-success-50))',
-          100: 'hsl(var(--color-success-100))',
-          500: 'hsl(var(--color-success-500))',
-          600: 'hsl(var(--color-success-600))',
-          700: 'hsl(var(--color-success-700))',
-        },
-        warning: {
-          50: 'hsl(var(--color-warning-50))',
-          100: 'hsl(var(--color-warning-100))',
-          500: 'hsl(var(--color-warning-500))',
-          600: 'hsl(var(--color-warning-600))',
-          700: 'hsl(var(--color-warning-700))',
-        },
-        error: {
-          50: 'hsl(var(--color-error-50))',
-          100: 'hsl(var(--color-error-100))',
-          500: 'hsl(var(--color-error-500))',
-          600: 'hsl(var(--color-error-600))',
-          700: 'hsl(var(--color-error-700))',
-        },
-      },
-      spacing: {
-        '0.5': 'var(--spacing-0-5)',
-        '1': 'var(--spacing-1)',
-        '1.5': 'var(--spacing-1-5)',
-        '2': 'var(--spacing-2)',
-        '2.5': 'var(--spacing-2-5)',
-        '3': 'var(--spacing-3)',
-        '3.5': 'var(--spacing-3-5)',
-        '4': 'var(--spacing-4)',
-        '5': 'var(--spacing-5)',
-        '6': 'var(--spacing-6)',
-        '7': 'var(--spacing-7)',
-        '8': 'var(--spacing-8)',
-        '9': 'var(--spacing-9)',
-        '10': 'var(--spacing-10)',
-        '11': 'var(--spacing-11)',
-        '12': 'var(--spacing-12)',
-        '14': 'var(--spacing-14)',
-        '16': 'var(--spacing-16)',
-        '20': 'var(--spacing-20)',
-        '24': 'var(--spacing-24)',
-        '28': 'var(--spacing-28)',
-        '32': 'var(--spacing-32)',
-        '36': 'var(--spacing-36)',
-        '40': 'var(--spacing-40)',
-        '44': 'var(--spacing-44)',
-        '48': 'var(--spacing-48)',
-        '52': 'var(--spacing-52)',
-        '56': 'var(--spacing-56)',
-        '60': 'var(--spacing-60)',
-        '64': 'var(--spacing-64)',
-        '72': 'var(--spacing-72)',
-        '80': 'var(--spacing-80)',
-        '96': 'var(--spacing-96)',
-      },
-      borderRadius: {
-        'none': 'var(--radius-none)',
-        'sm': 'var(--radius-sm)',
-        'DEFAULT': 'var(--radius)',
-        'md': 'var(--radius-md)',
-        'lg': 'var(--radius-lg)',
-        'xl': 'var(--radius-xl)',
-        '2xl': 'var(--radius-2xl)',
-        '3xl': 'var(--radius-3xl)',
-        'full': 'var(--radius-full)',
-      },
-      boxShadow: {
-        'sm': 'var(--shadow-sm)',
-        'DEFAULT': 'var(--shadow)',
-        'md': 'var(--shadow-md)',
-        'lg': 'var(--shadow-lg)',
-        'xl': 'var(--shadow-xl)',
-        '2xl': 'var(--shadow-2xl)',
-        'inner': 'var(--shadow-inner)',
-        'none': 'var(--shadow-none)',
-      },
-      fontSize: {
-        'xs': ['var(--text-xs)', { lineHeight: 'var(--leading-xs)' }],
-        'sm': ['var(--text-sm)', { lineHeight: 'var(--leading-sm)' }],
-        'base': ['var(--text-base)', { lineHeight: 'var(--leading-base)' }],
-        'lg': ['var(--text-lg)', { lineHeight: 'var(--leading-lg)' }],
-        'xl': ['var(--text-xl)', { lineHeight: 'var(--leading-xl)' }],
-        '2xl': ['var(--text-2xl)', { lineHeight: 'var(--leading-2xl)' }],
-        '3xl': ['var(--text-3xl)', { lineHeight: 'var(--leading-3xl)' }],
-        '4xl': ['var(--text-4xl)', { lineHeight: 'var(--leading-4xl)' }],
-        '5xl': ['var(--text-5xl)', { lineHeight: 'var(--leading-5xl)' }],
-        '6xl': ['var(--text-6xl)', { lineHeight: 'var(--leading-6xl)' }],
-        '7xl': ['var(--text-7xl)', { lineHeight: 'var(--leading-7xl)' }],
-        '8xl': ['var(--text-8xl)', { lineHeight: 'var(--leading-8xl)' }],
-        '9xl': ['var(--text-9xl)', { lineHeight: 'var(--leading-9xl)' }],
       },
       fontFamily: {
-        'sans': ['var(--font-sans)'],
-        'serif': ['var(--font-serif)'],
-        'mono': ['var(--font-mono)'],
+        sans: ["Karla", "ui-sans-serif", "system-ui", "sans-serif"],
+        heading: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"],
+        karla: ["Karla", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
-    }
+      borderRadius: {
+        'betim': '100px',
+        'betim-sm': '3px',
+        'betim-md': '5px',
+        'betim-lg': '8px',
+      },
+      boxShadow: {
+        'betim': '0 2px 3px rgba(0, 0, 0, 0.2)',
+        'betim-md': '0 4px 6px rgba(0, 0, 0, 0.15)',
+        'betim-lg': '0 8px 12px rgba(0, 0, 0, 0.2)',
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 }

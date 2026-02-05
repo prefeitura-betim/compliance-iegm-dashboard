@@ -1,0 +1,1398 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "id": "47d41a98-855d-4018-b96e-6966f800c29e",
+  "prevId": "0c68a467-56c6-4ade-a399-73379becdc29",
+  "tables": {
+    "indicadores": {
+      "name": "indicadores",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "codigo": {
+          "name": "codigo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "nome": {
+          "name": "nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "descricao": {
+          "name": "descricao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ordem": {
+          "name": "ordem",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "indicadores_codigo_unique": {
+          "name": "indicadores_codigo_unique",
+          "columns": [
+            "codigo"
+          ],
+          "isUnique": true
+        },
+        "indicador_codigo_idx": {
+          "name": "indicador_codigo_idx",
+          "columns": [
+            "codigo"
+          ],
+          "isUnique": false
+        },
+        "indicador_ordem_idx": {
+          "name": "indicador_ordem_idx",
+          "columns": [
+            "ordem"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "migracoes": {
+      "name": "migracoes",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "nome_arquivo": {
+          "name": "nome_arquivo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "data_migracao": {
+          "name": "data_migracao",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "tipo_arquivo": {
+          "name": "tipo_arquivo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ano_ref": {
+          "name": "ano_ref",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "tribunal": {
+          "name": "tribunal",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "migracoes_nome_arquivo_unique": {
+          "name": "migracoes_nome_arquivo_unique",
+          "columns": [
+            "nome_arquivo"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "municipios": {
+      "name": "municipios",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "codigo_ibge": {
+          "name": "codigo_ibge",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "nome": {
+          "name": "nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "uf": {
+          "name": "uf",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "municipios_codigo_ibge_unique": {
+          "name": "municipios_codigo_ibge_unique",
+          "columns": [
+            "codigo_ibge"
+          ],
+          "isUnique": true
+        },
+        "municipio_codigo_ibge_idx": {
+          "name": "municipio_codigo_ibge_idx",
+          "columns": [
+            "codigo_ibge"
+          ],
+          "isUnique": false
+        },
+        "municipio_nome_idx": {
+          "name": "municipio_nome_idx",
+          "columns": [
+            "nome"
+          ],
+          "isUnique": false
+        },
+        "municipio_uf_idx": {
+          "name": "municipio_uf_idx",
+          "columns": [
+            "uf"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "questionario_respostas": {
+      "name": "questionario_respostas",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "tribunal_id": {
+          "name": "tribunal_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "municipio_id": {
+          "name": "municipio_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "questionario_id": {
+          "name": "questionario_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "questionario_resposta_id": {
+          "name": "questionario_resposta_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "data_termino": {
+          "name": "data_termino",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ano_ref": {
+          "name": "ano_ref",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "questionario_resposta_municipio_ano_idx": {
+          "name": "questionario_resposta_municipio_ano_idx",
+          "columns": [
+            "municipio_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "questionario_resposta_questionario_idx": {
+          "name": "questionario_resposta_questionario_idx",
+          "columns": [
+            "questionario_id"
+          ],
+          "isUnique": false
+        },
+        "questionario_resposta_tribunal_ano_idx": {
+          "name": "questionario_resposta_tribunal_ano_idx",
+          "columns": [
+            "tribunal_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "questionario_respostas_tribunal_id_tribunais_id_fk": {
+          "name": "questionario_respostas_tribunal_id_tribunais_id_fk",
+          "tableFrom": "questionario_respostas",
+          "tableTo": "tribunais",
+          "columnsFrom": [
+            "tribunal_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "questionario_respostas_municipio_id_municipios_id_fk": {
+          "name": "questionario_respostas_municipio_id_municipios_id_fk",
+          "tableFrom": "questionario_respostas",
+          "tableTo": "municipios",
+          "columnsFrom": [
+            "municipio_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "questionario_respostas_questionario_id_questionarios_id_fk": {
+          "name": "questionario_respostas_questionario_id_questionarios_id_fk",
+          "tableFrom": "questionario_respostas",
+          "tableTo": "questionarios",
+          "columnsFrom": [
+            "questionario_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "questionarios": {
+      "name": "questionarios",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "tribunal_id": {
+          "name": "tribunal_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "indicador_id": {
+          "name": "indicador_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ano_ref": {
+          "name": "ano_ref",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "nome": {
+          "name": "nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "codigo": {
+          "name": "codigo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "questionario_tribunal_ano_idx": {
+          "name": "questionario_tribunal_ano_idx",
+          "columns": [
+            "tribunal_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "questionario_indicador_ano_idx": {
+          "name": "questionario_indicador_ano_idx",
+          "columns": [
+            "indicador_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "questionario_unique_idx": {
+          "name": "questionario_unique_idx",
+          "columns": [
+            "tribunal_id",
+            "indicador_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "questionarios_tribunal_id_tribunais_id_fk": {
+          "name": "questionarios_tribunal_id_tribunais_id_fk",
+          "tableFrom": "questionarios",
+          "tableTo": "tribunais",
+          "columnsFrom": [
+            "tribunal_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "questionarios_indicador_id_indicadores_id_fk": {
+          "name": "questionarios_indicador_id_indicadores_id_fk",
+          "tableFrom": "questionarios",
+          "tableTo": "indicadores",
+          "columnsFrom": [
+            "indicador_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "questoes": {
+      "name": "questoes",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "questionario_id": {
+          "name": "questionario_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "questao_id": {
+          "name": "questao_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "sequencia_bloco_repeticao": {
+          "name": "sequencia_bloco_repeticao",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "indice_questao": {
+          "name": "indice_questao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "chave_questao": {
+          "name": "chave_questao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "texto": {
+          "name": "texto",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "peso": {
+          "name": "peso",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 1
+        }
+      },
+      "indexes": {
+        "questao_questionario_idx": {
+          "name": "questao_questionario_idx",
+          "columns": [
+            "questionario_id"
+          ],
+          "isUnique": false
+        },
+        "questao_chave_idx": {
+          "name": "questao_chave_idx",
+          "columns": [
+            "chave_questao"
+          ],
+          "isUnique": false
+        },
+        "questao_indice_idx": {
+          "name": "questao_indice_idx",
+          "columns": [
+            "indice_questao"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "questoes_questionario_id_questionarios_id_fk": {
+          "name": "questoes_questionario_id_questionarios_id_fk",
+          "tableFrom": "questoes",
+          "tableTo": "questionarios",
+          "columnsFrom": [
+            "questionario_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "respostas": {
+      "name": "respostas",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "questionario_resposta_id": {
+          "name": "questionario_resposta_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "questao_id": {
+          "name": "questao_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "chave_resposta": {
+          "name": "chave_resposta",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "resposta": {
+          "name": "resposta",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "nota": {
+          "name": "nota",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "resposta_questionario_resposta_idx": {
+          "name": "resposta_questionario_resposta_idx",
+          "columns": [
+            "questionario_resposta_id"
+          ],
+          "isUnique": false
+        },
+        "resposta_questao_idx": {
+          "name": "resposta_questao_idx",
+          "columns": [
+            "questao_id"
+          ],
+          "isUnique": false
+        },
+        "resposta_chave_idx": {
+          "name": "resposta_chave_idx",
+          "columns": [
+            "chave_resposta"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "respostas_questionario_resposta_id_questionario_respostas_id_fk": {
+          "name": "respostas_questionario_resposta_id_questionario_respostas_id_fk",
+          "tableFrom": "respostas",
+          "tableTo": "questionario_respostas",
+          "columnsFrom": [
+            "questionario_resposta_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "respostas_questao_id_questoes_id_fk": {
+          "name": "respostas_questao_id_questoes_id_fk",
+          "tableFrom": "respostas",
+          "tableTo": "questoes",
+          "columnsFrom": [
+            "questao_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "respostas_detalhadas": {
+      "name": "respostas_detalhadas",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "tribunal": {
+          "name": "tribunal",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "codigo_ibge": {
+          "name": "codigo_ibge",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "municipio": {
+          "name": "municipio",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "indicador": {
+          "name": "indicador",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "questao": {
+          "name": "questao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "resposta": {
+          "name": "resposta",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "pontuacao": {
+          "name": "pontuacao",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "peso": {
+          "name": "peso",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 1
+        },
+        "nota": {
+          "name": "nota",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ano_ref": {
+          "name": "ano_ref",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "resposta_detalhada_municipio_ano_idx": {
+          "name": "resposta_detalhada_municipio_ano_idx",
+          "columns": [
+            "municipio",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "resposta_detalhada_indicador_idx": {
+          "name": "resposta_detalhada_indicador_idx",
+          "columns": [
+            "indicador"
+          ],
+          "isUnique": false
+        },
+        "resposta_detalhada_tribunal_idx": {
+          "name": "resposta_detalhada_tribunal_idx",
+          "columns": [
+            "tribunal"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "resultados_estados": {
+      "name": "resultados_estados",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "tribunal_id": {
+          "name": "tribunal_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "uf": {
+          "name": "uf",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ano_ref": {
+          "name": "ano_ref",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "percentual_iamb": {
+          "name": "percentual_iamb",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_icidade": {
+          "name": "percentual_icidade",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_ieduc": {
+          "name": "percentual_ieduc",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_ifiscal": {
+          "name": "percentual_ifiscal",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_igov_ti": {
+          "name": "percentual_igov_ti",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_isaude": {
+          "name": "percentual_isaude",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_iplan": {
+          "name": "percentual_iplan",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_iegm_estado": {
+          "name": "percentual_iegm_estado",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_iamb": {
+          "name": "faixa_iamb",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_icidade": {
+          "name": "faixa_icidade",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_ieduc": {
+          "name": "faixa_ieduc",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_ifiscal": {
+          "name": "faixa_ifiscal",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_igov_ti": {
+          "name": "faixa_igov_ti",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_isaude": {
+          "name": "faixa_isaude",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_iplan": {
+          "name": "faixa_iplan",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_iegm_estado": {
+          "name": "faixa_iegm_estado",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "quantidade_municipios_responderam": {
+          "name": "quantidade_municipios_responderam",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "resultado_estado_uf_ano_idx": {
+          "name": "resultado_estado_uf_ano_idx",
+          "columns": [
+            "uf",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "resultado_estado_tribunal_ano_idx": {
+          "name": "resultado_estado_tribunal_ano_idx",
+          "columns": [
+            "tribunal_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "resultado_estado_unique_idx": {
+          "name": "resultado_estado_unique_idx",
+          "columns": [
+            "tribunal_id",
+            "uf",
+            "ano_ref"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "resultados_estados_tribunal_id_tribunais_id_fk": {
+          "name": "resultados_estados_tribunal_id_tribunais_id_fk",
+          "tableFrom": "resultados_estados",
+          "tableTo": "tribunais",
+          "columnsFrom": [
+            "tribunal_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "resultados_indicadores": {
+      "name": "resultados_indicadores",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "tribunal_id": {
+          "name": "tribunal_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "municipio_id": {
+          "name": "municipio_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "indicador_id": {
+          "name": "indicador_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ano_ref": {
+          "name": "ano_ref",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "quantidade_respostas": {
+          "name": "quantidade_respostas",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "quantidade_respostas_pontuadas": {
+          "name": "quantidade_respostas_pontuadas",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nota_final": {
+          "name": "nota_final",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nota_ajustada_dentro_faixa": {
+          "name": "nota_ajustada_dentro_faixa",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_indice": {
+          "name": "percentual_indice",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa": {
+          "name": "faixa",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "rebaixamentos": {
+          "name": "rebaixamentos",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_indice_apos_rebaixamento": {
+          "name": "percentual_indice_apos_rebaixamento",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_apos_rebaixamento": {
+          "name": "faixa_apos_rebaixamento",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "resultado_municipio_ano_idx": {
+          "name": "resultado_municipio_ano_idx",
+          "columns": [
+            "municipio_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "resultado_indicador_ano_idx": {
+          "name": "resultado_indicador_ano_idx",
+          "columns": [
+            "indicador_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "resultado_tribunal_ano_idx": {
+          "name": "resultado_tribunal_ano_idx",
+          "columns": [
+            "tribunal_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "resultado_unique_idx": {
+          "name": "resultado_unique_idx",
+          "columns": [
+            "tribunal_id",
+            "municipio_id",
+            "indicador_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "resultados_indicadores_tribunal_id_tribunais_id_fk": {
+          "name": "resultados_indicadores_tribunal_id_tribunais_id_fk",
+          "tableFrom": "resultados_indicadores",
+          "tableTo": "tribunais",
+          "columnsFrom": [
+            "tribunal_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "resultados_indicadores_municipio_id_municipios_id_fk": {
+          "name": "resultados_indicadores_municipio_id_municipios_id_fk",
+          "tableFrom": "resultados_indicadores",
+          "tableTo": "municipios",
+          "columnsFrom": [
+            "municipio_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "resultados_indicadores_indicador_id_indicadores_id_fk": {
+          "name": "resultados_indicadores_indicador_id_indicadores_id_fk",
+          "tableFrom": "resultados_indicadores",
+          "tableTo": "indicadores",
+          "columnsFrom": [
+            "indicador_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "resultados_municipios": {
+      "name": "resultados_municipios",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "tribunal_id": {
+          "name": "tribunal_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "municipio_id": {
+          "name": "municipio_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ano_ref": {
+          "name": "ano_ref",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "percentual_iamb": {
+          "name": "percentual_iamb",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_icidade": {
+          "name": "percentual_icidade",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_ieduc": {
+          "name": "percentual_ieduc",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_ifiscal": {
+          "name": "percentual_ifiscal",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_igov_ti": {
+          "name": "percentual_igov_ti",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_isaude": {
+          "name": "percentual_isaude",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_iplan": {
+          "name": "percentual_iplan",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "percentual_iegm_municipio": {
+          "name": "percentual_iegm_municipio",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_iamb": {
+          "name": "faixa_iamb",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_icidade": {
+          "name": "faixa_icidade",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_ieduc": {
+          "name": "faixa_ieduc",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_ifiscal": {
+          "name": "faixa_ifiscal",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_igov_ti": {
+          "name": "faixa_igov_ti",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_isaude": {
+          "name": "faixa_isaude",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_iplan": {
+          "name": "faixa_iplan",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "faixa_iegm_municipio": {
+          "name": "faixa_iegm_municipio",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "resultado_municipio_consolidado_idx": {
+          "name": "resultado_municipio_consolidado_idx",
+          "columns": [
+            "municipio_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "resultado_municipio_tribunal_ano_idx": {
+          "name": "resultado_municipio_tribunal_ano_idx",
+          "columns": [
+            "tribunal_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        },
+        "resultado_municipio_unique_idx": {
+          "name": "resultado_municipio_unique_idx",
+          "columns": [
+            "tribunal_id",
+            "municipio_id",
+            "ano_ref"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "resultados_municipios_tribunal_id_tribunais_id_fk": {
+          "name": "resultados_municipios_tribunal_id_tribunais_id_fk",
+          "tableFrom": "resultados_municipios",
+          "tableTo": "tribunais",
+          "columnsFrom": [
+            "tribunal_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "resultados_municipios_municipio_id_municipios_id_fk": {
+          "name": "resultados_municipios_municipio_id_municipios_id_fk",
+          "tableFrom": "resultados_municipios",
+          "tableTo": "municipios",
+          "columnsFrom": [
+            "municipio_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "tribunais": {
+      "name": "tribunais",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "codigo": {
+          "name": "codigo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "nome": {
+          "name": "nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "uf": {
+          "name": "uf",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "tribunais_codigo_unique": {
+          "name": "tribunais_codigo_unique",
+          "columns": [
+            "codigo"
+          ],
+          "isUnique": true
+        },
+        "tribunal_codigo_idx": {
+          "name": "tribunal_codigo_idx",
+          "columns": [
+            "codigo"
+          ],
+          "isUnique": false
+        },
+        "tribunal_uf_idx": {
+          "name": "tribunal_uf_idx",
+          "columns": [
+            "uf"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    }
+  },
+  "views": {},
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "indexes": {}
+  }
+}

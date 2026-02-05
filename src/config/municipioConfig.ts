@@ -1,5 +1,5 @@
 export const DEFAULT_MUNICIPIO_CONFIG = {
   tribunal: 'TCEMG',
   municipio: 'BETIM',
-  ano: 2023
+  ano: 2024
 };
