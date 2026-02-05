@@ -6,7 +6,7 @@ variable "cloudflare_account_id" {
 variable "project_name" {
   description = "The name of the project."
   type        = string
-  default     = "iegm-dashboard"
+  default     = "compliance-iegm-dashboard"
 }
 
 variable "github_repo" {

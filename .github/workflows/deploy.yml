@@ -45,7 +45,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: iegm-dashboard # Must match the project_name in Terraform
+          projectName: compliance-iegm-dashboard # Must match the project_name in Terraform
           directory: dist
           # The build command will be run by Cloudflare Pages based on the build_config in Terraform
           # We don't need to specify it here again.
