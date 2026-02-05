@@ -49,6 +49,7 @@
     "data:reset": "rimraf local.db && yarn db:migrate && yarn data:seed && yarn data:migrate",
     "cf:dev": "wrangler pages dev",
     "cf:deploy": "wrangler pages deploy",
+    "deploy": "wrangler pages deploy dist",
     "cf:db:create": "wrangler d1 create iegm-dashboard",
     "cf:db:studio": "wrangler d1 studio iegm-dashboard",
     "migrate:local": "tsx scripts/migrate-local.ts",
