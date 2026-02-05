@@ -65,14 +65,9 @@
     "@heroicons/react": "^2.2.0",
     "@tanstack/react-query": "^5.83.0",
     "axios": "^1.10.0",
-    "better-sqlite3": "^12.2.0",
     "chart.js": "^4.5.0",
     "clsx": "^2.1.1",
-    "cors": "^2.8.6",
-    "csv-parse": "^6.0.0",
-    "drizzle-kit": "^0.31.4",
     "drizzle-orm": "^0.44.2",
-    "express": "^5.2.1",
     "html-to-image": "^1.11.13",
     "html2canvas": "^1.4.1",
     "jspdf": "^4.1.0",
@@ -83,7 +78,6 @@
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.0",
     "recharts": "^2.15.0",
-    "xlsx": "^0.18.5",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
@@ -116,7 +110,13 @@
     "typescript": "~5.8.0",
     "typescript-eslint": "^8.32.1",
     "vite": "^7.0.0",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "better-sqlite3": "^12.2.0",
+    "cors": "^2.8.6",
+    "csv-parse": "^6.0.0",
+    "drizzle-kit": "^0.31.4",
+    "express": "^5.2.1",
+    "xlsx": "^0.18.5"
   },
   "packageManager": "yarn@4.9.2"
 }
