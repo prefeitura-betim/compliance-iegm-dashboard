@@ -648,7 +648,7 @@ function generateQuestion(dimensao: string, score: number): string {
 
 async function main() {
   console.log('🚀 Iniciando migração para Cloudflare D1 (local)...');
-  const databaseId = '97473a66-8df3-4a6a-8fd4-147a2e93228b';
+  const databaseId = '5803f64b-c4f9-434d-b279-abb8d8f57e5f';
   console.log(`📊 Database ID: ${databaseId}`);
   console.log(`📍 Município configurado: ${DEFAULT_MUNICIPIO_CONFIG.municipio} (apenas para respostas detalhadas)`);
   console.log(`📅 Ano de referência: ${DEFAULT_MUNICIPIO_CONFIG.ano}`);

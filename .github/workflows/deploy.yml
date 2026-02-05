@@ -43,6 +43,9 @@ jobs:
           TF_VAR_github_repo: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required for GitHub Pages integration
 
+      - name: Build project
+        run: yarn build
+
       - name: Build and Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
