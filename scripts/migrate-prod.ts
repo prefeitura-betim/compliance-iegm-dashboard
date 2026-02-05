@@ -147,7 +147,7 @@ async function createTables() {
   console.log('🏗️  Criando tabelas no Cloudflare D1...');
 
   try {
-    const command = 'wrangler d1 execute DB --file=scripts/create-d1-tables.sql --local=false --remote --env=production';
+    const command = 'wrangler d1 execute DB --file=scripts/create-d1-tables.sql --local=false --remote';
     execSync(command, { stdio: 'inherit' });
     console.log('✅ Tabelas criadas com sucesso!');
     return true;
@@ -180,7 +180,7 @@ async function clearD1Tables(): Promise<void> {
   writeFileSync(sqlFilename, sqlContent, 'utf8');
 
   try {
-    const command = `wrangler d1 execute DB --file=${sqlFilename} --local=false --remote --env=production`;
+    const command = `wrangler d1 execute DB --file=${sqlFilename} --local=false --remote`;
     execSync(command, { stdio: 'inherit' });
     console.log('  ✓ Tabelas limpas com sucesso');
   } catch (error) {
@@ -319,7 +319,7 @@ async function importCSVToD1(filename: string, tableName: string): Promise<numbe
         console.log(`  🔄 Executando lote ${batchIndex + 1}/${batches.length} (${batch.length} registros)...`);
 
         // Usar wrangler para executar o arquivo SQL
-        const command = `wrangler d1 execute DB --file=${sqlFilename} --local=false --remote --env=production`;
+        const command = `wrangler d1 execute DB --file=${sqlFilename} --local=false --remote`;
         execSync(command, { stdio: 'inherit' });
 
         totalImported += batch.length;
@@ -598,7 +598,7 @@ async function migrateRespostasDetalhadas(): Promise<number> {
         try {
           console.log(`  🔄 Executando lote ${batchIndex + 1}/${batches.length} (${batch.length} registros)...`);
 
-          const command = `wrangler d1 execute DB --file=${sqlFilename} --local=false --remote --env=production`;
+          const command = `wrangler d1 execute DB --file=${sqlFilename} --local=false --remote`;
           execSync(command, { stdio: 'inherit' });
 
           totalImported += batch.length;
