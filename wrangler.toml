@@ -5,5 +5,5 @@ compatibility_flags = ["nodejs_compat"]
 
 [[d1_databases]]
 binding = "DB"
-database_name = "iegm-dashboard-db"
+database_name = "compliance-iegm-dashboard-db"
 database_id = "97473a66-8df3-4a6a-8fd4-147a2e93228b"
