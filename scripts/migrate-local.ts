@@ -291,7 +291,7 @@ async function importCSVToD1(filename: string, tableName: string): Promise<numbe
           .replace(/[\u0000-\u001F\u007F]/g, ' ')
           .replace(/^'+|'+$/g, '')
           .replace(/\t/g, ' ')
-        }'`;
+          }'`;
       });
 
       return `INSERT INTO ${tableName} (${d1Headers.join(', ')}) VALUES (${values.join(', ')});`;
@@ -571,7 +571,7 @@ async function migrateRespostasDetalhadas(): Promise<number> {
             .replace(/[\u0000-\u001F\u007F]/g, ' ')
             .replace(/^'+|'+$/g, '')
             .replace(/\t/g, ' ')
-          }'`;
+            }'`;
         });
 
         return `INSERT INTO respostas_detalhadas (${d1Headers.join(', ')}) VALUES (${values.join(', ')});`;
@@ -648,7 +648,8 @@ function generateQuestion(dimensao: string, score: number): string {
 
 async function main() {
   console.log('🚀 Iniciando migração para Cloudflare D1 (local)...');
-  console.log('📊 Database ID: dcb723ba-b7ee-4851-8fb4-6fe106279b01');
+  const databaseId = '97473a66-8df3-4a6a-8fd4-147a2e93228b';
+  console.log(`📊 Database ID: ${databaseId}`);
   console.log(`📍 Município configurado: ${DEFAULT_MUNICIPIO_CONFIG.municipio} (apenas para respostas detalhadas)`);
   console.log(`📅 Ano de referência: ${DEFAULT_MUNICIPIO_CONFIG.ano}`);
   console.log(`⚖️  Tribunal: ${DEFAULT_MUNICIPIO_CONFIG.tribunal}`);
