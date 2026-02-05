@@ -3,7 +3,5 @@ pages_build_output_dir = "dist"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-[[d1_databases]]
-binding = "DB"
-database_name = "compliance-iegm-dashboard-db"
-database_id = "97473a66-8df3-4a6a-8fd4-147a2e93228b"
+# D1 binding will be managed manually in the Cloudflare Pages dashboard
+# to avoid conflicts with the automatic wrangler.toml detection.
