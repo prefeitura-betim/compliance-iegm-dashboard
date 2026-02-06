@@ -117,12 +117,12 @@ export default function DimensionAnalysis({ data }: DimensionAnalysisProps) {
                                             </span>
                                             {faixa && (
                                                 <span className={`text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${faixa.startsWith('A') || faixa === 'B+'
-                                                        ? 'bg-betim-green/10 text-betim-green-dark' :
-                                                        faixa === 'B'
-                                                            ? 'bg-betim-yellow/10 text-betim-yellow' :
-                                                            faixa.startsWith('C+')
-                                                                ? 'bg-betim-orange/10 text-betim-orange' :
-                                                                'bg-betim-red/10 text-betim-red'
+                                                    ? 'bg-betim-green/10 text-betim-green-dark' :
+                                                    faixa === 'B'
+                                                        ? 'bg-betim-yellow/10 text-betim-yellow' :
+                                                        faixa.startsWith('C+')
+                                                            ? 'bg-betim-orange/10 text-betim-orange' :
+                                                            'bg-betim-red/10 text-betim-red'
                                                     }`}>
                                                     Faixa {faixa} - {getFaixaLabel(faixa)}
                                                 </span>
@@ -150,7 +150,7 @@ export default function DimensionAnalysis({ data }: DimensionAnalysisProps) {
                                             'percentualIamb': 'i-Amb',
                                             'percentualIcidade': 'i-Cidade',
                                             'percentualIplan': 'i-Plan',
-                                            'percentualIgovTi': 'i-GovTI',
+                                            'percentualIgovTi': 'i-Gov TI',
                                         }[dim.key] || 'i-Educ'}
                                         cor={dim.cor}
                                     />
