@@ -48,6 +48,12 @@ export async function onRequest(context: any) {
       case 'municipio':
         return await handleMunicipio(request, db, url);
 
+      case 'municipio/nome':
+        return await handleMunicipioByNome(request, db, url);
+
+      case 'municipios-lista':
+        return await handleMunicipiosLista(request, db, url);
+
       case 'ranking':
       case 'ranking-municipios':
         return await handleRanking(request, db, url);
@@ -512,6 +518,70 @@ async function handleAnosDisponiveis(request: Request, db: any, url: URL) {
   const anos = results.map((r: any) => r.ano);
 
   return new Response(JSON.stringify(anos), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+  });
+}
+
+async function handleMunicipioByNome(request: Request, db: any, url: URL) {
+  const nome = url.searchParams.get('nome');
+  const ano = url.searchParams.get('ano');
+
+  if (!nome || !ano) {
+    return new Response(JSON.stringify({ error: 'Missing required parameters: nome, ano' }), {
+      status: 400,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  const results = await db
+    .select({
+      municipio: municipiosTable.nome,
+      anoRef: resultadosMunicipios.anoRef,
+      percentualIegmMunicipio: resultadosMunicipios.percentualIegmMunicipio,
+      faixaIegmMunicipio: resultadosMunicipios.faixaIegmMunicipio,
+      percentualIamb: resultadosMunicipios.percentualIamb,
+      percentualIcidade: resultadosMunicipios.percentualIcidade,
+      percentualIeduc: resultadosMunicipios.percentualIeduc,
+      percentualIfiscal: resultadosMunicipios.percentualIfiscal,
+      percentualIgovTi: resultadosMunicipios.percentualIgovTi,
+      percentualIsaude: resultadosMunicipios.percentualIsaude,
+      percentualIplan: resultadosMunicipios.percentualIplan,
+    })
+    .from(resultadosMunicipios)
+    .innerJoin(municipiosTable, eq(resultadosMunicipios.municipioId, municipiosTable.id))
+    .where(
+      and(
+        eq(municipiosTable.nome, nome.toUpperCase()),
+        eq(resultadosMunicipios.anoRef, parseInt(ano))
+      )
+    )
+    .limit(1);
+
+  return new Response(JSON.stringify(results[0] || null), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+  });
+}
+
+async function handleMunicipiosLista(request: Request, db: any, url: URL) {
+  const ano = url.searchParams.get('ano');
+
+  if (!ano) {
+    return new Response(JSON.stringify({ error: 'Missing required parameter: ano' }), {
+      status: 400,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  const results = await db
+    .select({ nome: municipiosTable.nome })
+    .from(resultadosMunicipios)
+    .innerJoin(municipiosTable, eq(resultadosMunicipios.municipioId, municipiosTable.id))
+    .where(eq(resultadosMunicipios.anoRef, parseInt(ano)))
+    .groupBy(municipiosTable.nome);
+
+  const nomes = results.map((r: any) => r.nome);
+
+  return new Response(JSON.stringify(nomes), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' }
   });
 }
