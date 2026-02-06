@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/d1';
 import * as schema from '../../src/db/schema';
 import { eq, and, desc, asc, sql, count, avg, min, max, like } from 'drizzle-orm';
-import { resultadosMunicipios, municipios as municipiosTable, indicadores, questionarios, questoes, respostas, questionarioRespostas, tribunais } from '../../src/db/schema';
+import { resultadosMunicipios, municipios as municipiosTable, indicadores, questionarios, questoes, respostas, questionarioRespostas, tribunais, respostasDetalhadas } from '../../src/db/schema';
 
 // Interface para o ambiente Cloudflare Pages
 interface Env {
@@ -72,6 +72,7 @@ export async function onRequest(context: any) {
         return await handleAnaliseDimensoes(request, db, url);
 
       case 'respostas-detalhadas':
+      case 'municipio/respostas-detalhadas':
         return await handleRespostasDetalhadas(request, db, url);
 
       case 'comparativo-ano-anterior':
@@ -336,55 +337,32 @@ async function handleAnaliseDimensoes(request: Request, db: any, url: URL) {
 
 async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
   const ano = url.searchParams.get('ano');
-  let tribunal = url.searchParams.get('tribunal');
   const municipio = url.searchParams.get('municipio');
   const indicador = url.searchParams.get('indicador');
 
-  if (!tribunal) tribunal = 'TCEMG';
-
-  if (!ano) {
-    return new Response(JSON.stringify({ error: 'Missing required parameter: ano' }), {
+  if (!ano || !municipio) {
+    return new Response(JSON.stringify({ error: 'Missing required parameters: ano, municipio' }), {
       status: 400,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   }
 
   const whereConditions = [
-    eq(questionarioRespostas.anoRef, parseInt(ano)),
-    // eq(questionarioRespostas.tribunalId, 2) // TCEMG
+    eq(respostasDetalhadas.anoRef, parseInt(ano)),
+    eq(respostasDetalhadas.municipio, municipio.toUpperCase())
   ];
 
-  if (municipio) {
-    whereConditions.push(eq(municipiosTable.nome, municipio));
-  }
-
   if (indicador) {
-    whereConditions.push(eq(indicadores.codigo, indicador));
+    // Normalizar indicador para busca (ex: "i-Educ" ou "iEduc")
+    const searchIndicador = indicador.includes('-') ? indicador : `${indicador.substring(0, 1)}-${indicador.substring(1)}`;
+    whereConditions.push(like(respostasDetalhadas.indicador, `%${indicador}%`));
   }
 
   const results = await db
-    .select({
-      id: respostas.id,
-      tribunalId: questionarioRespostas.tribunalId,
-      tribunal: sql<string>`'TCEMG'`,
-      codigoIbge: municipiosTable.codigoIbge,
-      municipio: municipiosTable.nome,
-      indicador: indicadores.codigo,
-      questao: questoes.texto,
-      resposta: respostas.resposta,
-      pontuacao: respostas.nota,
-      peso: questoes.peso,
-      nota: respostas.nota,
-      anoRef: questionarioRespostas.anoRef,
-    })
-    .from(respostas)
-    .innerJoin(questionarioRespostas, eq(respostas.questionarioRespostaId, questionarioRespostas.id))
-    .innerJoin(municipiosTable, eq(questionarioRespostas.municipioId, municipiosTable.id))
-    .innerJoin(questoes, eq(respostas.questaoId, questoes.id))
-    .innerJoin(questionarios, eq(questoes.questionarioId, questionarios.id))
-    .innerJoin(indicadores, eq(questionarios.indicadorId, indicadores.id))
+    .select()
+    .from(respostasDetalhadas)
     .where(and(...whereConditions))
-    .orderBy(desc(respostas.nota))
+    .orderBy(desc(respostasDetalhadas.nota))
     .limit(1000);
 
   return new Response(JSON.stringify(results), {
