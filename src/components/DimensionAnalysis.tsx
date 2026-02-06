@@ -150,7 +150,7 @@ export default function DimensionAnalysis({ data }: DimensionAnalysisProps) {
                                             'percentualIamb': 'i-Amb',
                                             'percentualIcidade': 'i-Cidade',
                                             'percentualIplan': 'i-Plan',
-                                            'percentualIgovTi': 'i-Gov TI',
+                                            'percentualIgovTi': 'i-GovTI',
                                         }[dim.key] || 'i-Educ'}
                                         cor={dim.cor}
                                     />

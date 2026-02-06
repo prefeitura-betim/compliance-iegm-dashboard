@@ -352,13 +352,13 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
 
   const whereConditions = [
     eq(respostasDetalhadas.anoRef, parseInt(ano)),
-    like(respostasDetalhadas.municipio, `%${searchMunicipio}%`)
+    sql`UPPER(${respostasDetalhadas.municipio}) LIKE ${`%${searchMunicipio}%`}`
   ];
 
   if (indicador) {
-    // Normalizar indicador (ex: i-Educ, iEduc, EDUC)
-    const cleanIndicador = indicador.trim().replace('i-', '').replace('i', '');
-    whereConditions.push(like(respostasDetalhadas.indicador, `%${cleanIndicador}%`));
+    // Normalizar indicador (ex: i-Educ ou EDUC)
+    const cleanIndicador = indicador.trim().replace(/^i-/, '').replace(/^i/, '').toUpperCase();
+    whereConditions.push(sql`UPPER(${respostasDetalhadas.indicador}) LIKE ${`%${cleanIndicador}%`}`);
   }
 
   const results = await db
