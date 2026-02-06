@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/d1';
 import * as schema from '../../src/db/schema';
 import { eq, and, desc, asc, sql, count, avg, min, max, like } from 'drizzle-orm';
-import { resultadosMunicipios, municipios as municipiosTable, indicadores, questionarios, questoes, respostas, questionarioRespostas } from '../../src/db/schema';
+import { resultadosMunicipios, municipios as municipiosTable, indicadores, questionarios, questoes, respostas, questionarioRespostas, tribunais } from '../../src/db/schema';
 
 // Interface para o ambiente Cloudflare Pages
 interface Env {
@@ -45,19 +45,23 @@ export async function onRequest(context: any) {
       case 'municipios':
         return await handleMunicipios(request, db, url);
 
+      case 'municipio':
+        return await handleMunicipio(request, db, url);
+
       case 'ranking':
+      case 'ranking-municipios':
         return await handleRanking(request, db, url);
 
       case 'estatisticas':
-        return await handleEstatisticas(request, db, url);
-      case 'stats': // alias
+      case 'stats':
+      case 'comparativo-estadual':
         return await handleEstatisticas(request, db, url);
 
       case 'faixas-distribuicao':
-        return await handleFaixasDistribuicao(request, db, url);
-      case 'faixas': // alias
+      case 'faixas':
         return await handleFaixasDistribuicao(request, db, url);
 
+      case 'analise':
       case 'analise-dimensoes':
         return await handleAnaliseDimensoes(request, db, url);
 
@@ -66,6 +70,18 @@ export async function onRequest(context: any) {
 
       case 'comparativo-ano-anterior':
         return await handleComparativoAnoAnterior(request, db, url);
+
+      case 'iegm-data':
+        return await handleIEGMData(request, db, url);
+
+      case 'tribunais':
+        return await handleTribunais(request, db, url);
+
+      case 'indicadores':
+        return await handleIndicadores(request, db, url);
+
+      case 'anos-disponiveis':
+        return await handleAnosDisponiveis(request, db, url);
 
       default:
         return new Response(JSON.stringify({ error: 'Endpoint not found' }), {
@@ -423,6 +439,79 @@ async function handleComparativoAnoAnterior(request: Request, db: any, url: URL)
   };
 
   return new Response(JSON.stringify(comparativo), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+  });
+}
+async function handleMunicipio(request: Request, db: any, url: URL) {
+  const id = url.searchParams.get('id');
+  const ano = url.searchParams.get('ano');
+
+  if (!id) {
+    return new Response(JSON.stringify({ error: 'Missing required parameter: id' }), {
+      status: 400,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  const results = await db
+    .select()
+    .from(municipiosTable)
+    .where(eq(municipiosTable.id, parseInt(id)));
+
+  return new Response(JSON.stringify(results[0] || null), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+  });
+}
+
+async function handleIEGMData(request: Request, db: any, url: URL) {
+  const municipioId = url.searchParams.get('municipioId');
+  const ano = url.searchParams.get('ano');
+
+  if (!municipioId || !ano) {
+    return new Response(JSON.stringify({ error: 'Missing required parameters: municipioId, ano' }), {
+      status: 400,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  const results = await db
+    .select()
+    .from(resultadosMunicipios)
+    .where(
+      and(
+        eq(resultadosMunicipios.municipioId, parseInt(municipioId)),
+        eq(resultadosMunicipios.anoRef, parseInt(ano))
+      )
+    );
+
+  return new Response(JSON.stringify(results[0] || null), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+  });
+}
+
+async function handleTribunais(request: Request, db: any, url: URL) {
+  const results = await db.select().from(tribunais);
+  return new Response(JSON.stringify(results), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+  });
+}
+
+async function handleIndicadores(request: Request, db: any, url: URL) {
+  const results = await db.select().from(indicadores);
+  return new Response(JSON.stringify(results), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+  });
+}
+
+async function handleAnosDisponiveis(request: Request, db: any, url: URL) {
+  const results = await db
+    .select({ ano: resultadosMunicipios.anoRef })
+    .from(resultadosMunicipios)
+    .groupBy(resultadosMunicipios.anoRef);
+
+  const anos = results.map((r: any) => r.ano);
+
+  return new Response(JSON.stringify(anos), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' }
   });
 }
