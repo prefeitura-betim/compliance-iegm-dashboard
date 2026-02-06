@@ -347,15 +347,18 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
     });
   }
 
+  // Normalizar município para busca (remover espaços e transformar em maiúsculas)
+  const searchMunicipio = municipio.trim().toUpperCase();
+
   const whereConditions = [
     eq(respostasDetalhadas.anoRef, parseInt(ano)),
-    eq(respostasDetalhadas.municipio, municipio.toUpperCase())
+    like(respostasDetalhadas.municipio, `%${searchMunicipio}%`)
   ];
 
   if (indicador) {
-    // Normalizar indicador para busca (ex: "i-Educ" ou "iEduc")
-    const searchIndicador = indicador.includes('-') ? indicador : `${indicador.substring(0, 1)}-${indicador.substring(1)}`;
-    whereConditions.push(like(respostasDetalhadas.indicador, `%${indicador}%`));
+    // Normalizar indicador (ex: i-Educ, iEduc, EDUC)
+    const cleanIndicador = indicador.trim().replace('i-', '').replace('i', '');
+    whereConditions.push(like(respostasDetalhadas.indicador, `%${cleanIndicador}%`));
   }
 
   const results = await db
