@@ -46,7 +46,7 @@ export class HttpClient {
       });
     }
 
-    console.log(`API Request: ${method} ${url.toString()}`);
+
 
     try {
       const controller = new AbortController();
@@ -67,18 +67,14 @@ export class HttpClient {
 
       const data = await response.json();
 
-      console.log(`API Response for ${endpoint}:`, {
-        success: true,
-        dataLength: Array.isArray(data) ? data.length : 'Not array',
-        dataType: typeof data
-      });
+
 
       return {
         data,
         success: true
       };
     } catch (error) {
-      console.error(`API Error for ${endpoint}:`, error);
+
 
       return {
         data: null as T,
