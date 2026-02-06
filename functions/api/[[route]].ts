@@ -106,7 +106,7 @@ async function handleMunicipios(request: Request, db: any, url: URL) {
 
   const whereConditions = [
     eq(resultadosMunicipios.anoRef, parseInt(ano)),
-    eq(resultadosMunicipios.tribunalId, 2) // TCEMG
+    // eq(resultadosMunicipios.tribunalId, 2) // TCEMG
   ];
 
   if (municipio) {
@@ -178,7 +178,7 @@ async function handleRanking(request: Request, db: any, url: URL) {
     .where(
       and(
         eq(resultadosMunicipios.anoRef, parseInt(ano)),
-        eq(resultadosMunicipios.tribunalId, 2) // TCEMG
+        // eq(resultadosMunicipios.tribunalId, 2) // TCEMG
       )
     )
     .orderBy(desc(resultadosMunicipios.percentualIegmMunicipio))
@@ -227,7 +227,7 @@ async function handleEstatisticas(request: Request, db: any, url: URL) {
     .where(
       and(
         eq(resultadosMunicipios.anoRef, parseInt(ano)),
-        eq(resultadosMunicipios.tribunalId, 2) // TCEMG
+        // eq(resultadosMunicipios.tribunalId, 2) // TCEMG
       )
     );
 
@@ -255,7 +255,7 @@ async function handleFaixasDistribuicao(request: Request, db: any, url: URL) {
     .where(
       and(
         eq(resultadosMunicipios.anoRef, parseInt(ano)),
-        eq(resultadosMunicipios.tribunalId, 2) // TCEMG
+        // eq(resultadosMunicipios.tribunalId, 2) // TCEMG
       )
     )
     .groupBy(resultadosMunicipios.faixaIegmMunicipio)
@@ -329,7 +329,7 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
 
   const whereConditions = [
     eq(questionarioRespostas.anoRef, parseInt(ano)),
-    eq(questionarioRespostas.tribunalId, 2) // TCEMG
+    // eq(questionarioRespostas.tribunalId, 2) // TCEMG
   ];
 
   if (municipio) {
