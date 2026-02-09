@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { defaultIEGMApiService as iegmApiService } from '@/services/iegm/iegmApiService'
-import { Loader2, AlertCircle, ArrowUpRight, ArrowDownRight, Minus, Search, Sparkles, AlertTriangle, Target } from 'lucide-react'
+import { Loader2, AlertCircle, ArrowUpRight, ArrowDownRight, Minus, Search, TrendingUp, AlertTriangle, Target } from 'lucide-react'
 
 interface QuestionHistory {
     questao: string
@@ -57,11 +57,11 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
             if (!start2022 || !end2024) return false
 
             if (analysisMode === 'success') {
-                // Casos de Sucesso: começou em 0% e melhorou
-                return start2022.pontuacao === 0 && end2024.pontuacao > 0
+                // Casos de Sucesso: começou em 0% e melhorou (nota final > 0)
+                return Number(start2022.pontuacao) === 0 && Number(end2024.pontuacao) > 0
             } else {
                 // Pontos de Atenção: começou com pontuação positiva (> 0) e piorou
-                return start2022.pontuacao > 0 && end2024.pontuacao < start2022.pontuacao
+                return Number(start2022.pontuacao) > 0 && Number(end2024.pontuacao) < Number(start2022.pontuacao)
             }
         })
     }, [rawData, analysisMode])
@@ -94,26 +94,48 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
         return 'bg-red-50 border-red-200'
     }
 
+    // Calcula a variação ano-a-ano
+    const getYearChange = (historico: any[], currentYear: number) => {
+        const sorted = [...historico].sort((a, b) => a.ano - b.ano)
+        const currentIdx = sorted.findIndex(h => h.ano === currentYear)
+
+        if (currentIdx <= 0) return null // Primeiro ano ou não encontrado
+
+        const current = Number(sorted[currentIdx].pontuacao)
+        const previous = Number(sorted[currentIdx - 1].pontuacao)
+        const diff = current - previous
+
+        return {
+            diff,
+            text: diff > 0 ? `+${diff.toFixed(0)}pp` : diff < 0 ? `${diff.toFixed(0)}pp` : '0pp',
+            color: diff > 0 ? 'text-emerald-600 bg-emerald-100' : diff < 0 ? 'text-red-600 bg-red-100' : 'text-gray-500 bg-gray-100'
+        }
+    }
+
+    // Calcula a evolução TOTAL (2024 vs 2022)
     const calculateTrend = (history: any[]) => {
-        if (history.length < 2) return { icon: null, text: 'N/A', color: 'text-gray-400' }
+        if (history.length < 2) return { icon: null, text: 'N/A', totalText: '', color: 'text-gray-400' }
         const sorted = [...history].sort((a, b) => a.ano - b.ano)
-        const last = sorted[sorted.length - 1].pontuacao
-        const first = sorted[0].pontuacao
+        const last = Number(sorted[sorted.length - 1].pontuacao)
+        const first = Number(sorted[0].pontuacao)
         const diff = last - first
 
         if (diff > 0) return {
-            icon: <ArrowUpRight className="text-emerald-500" size={18} />,
-            text: `+${diff.toFixed(0)}%`,
+            icon: <ArrowUpRight className="text-emerald-500" size={16} />,
+            text: `+${diff.toFixed(0)}pp`,
+            totalText: `${first.toFixed(0)}% → ${last.toFixed(0)}%`,
             color: 'text-emerald-600 bg-emerald-50'
         }
         if (diff < 0) return {
-            icon: <ArrowDownRight className="text-red-500" size={18} />,
-            text: `${diff.toFixed(0)}%`,
+            icon: <ArrowDownRight className="text-red-500" size={16} />,
+            text: `${diff.toFixed(0)}pp`,
+            totalText: `${first.toFixed(0)}% → ${last.toFixed(0)}%`,
             color: 'text-red-600 bg-red-50'
         }
         return {
-            icon: <Minus className="text-gray-400" size={18} />,
-            text: '0%',
+            icon: <Minus className="text-gray-400" size={16} />,
+            text: '0pp',
+            totalText: `${first.toFixed(0)}% → ${last.toFixed(0)}%`,
             color: 'text-gray-500 bg-gray-50'
         }
     }
@@ -171,7 +193,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                 >
                     <div className="flex items-center gap-3">
                         <div className={`p-2 rounded-xl ${analysisMode === 'success' ? 'bg-white/20' : 'bg-emerald-100'}`}>
-                            <Sparkles className={analysisMode === 'success' ? 'text-white' : 'text-emerald-600'} size={24} />
+                            <TrendingUp className={analysisMode === 'success' ? 'text-white' : 'text-emerald-600'} size={24} />
                         </div>
                         <div className="text-left">
                             <h3 className={`font-bold text-lg ${analysisMode === 'success' ? 'text-white' : 'text-gray-800'}`}>
@@ -223,7 +245,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                 <div className="relative flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
                     <div className="flex items-center gap-3">
                         <div className="bg-white/10 backdrop-blur-sm p-2.5 rounded-xl border border-white/20">
-                            {analysisMode === 'success' ? <Sparkles className="text-emerald-400" size={24} /> : <AlertTriangle className="text-orange-400" size={24} />}
+                            {analysisMode === 'success' ? <TrendingUp className="text-emerald-400" size={24} /> : <AlertTriangle className="text-orange-400" size={24} />}
                         </div>
                         <div>
                             <h2 className="text-xl font-black tracking-tight">
@@ -293,6 +315,9 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                     {trend.icon}
                                                     {trend.text}
                                                 </span>
+                                                <span className="text-[9px] text-gray-400 font-medium">
+                                                    {trend.totalText}
+                                                </span>
                                             </div>
                                             <h3 className="text-gray-800 font-semibold text-sm leading-relaxed group-hover:text-blue-700 transition-colors">
                                                 {item.questao}
@@ -307,25 +332,35 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                         <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-gray-200 via-blue-200 to-gray-200 hidden sm:block"></div>
 
                                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                            {item.historico.sort((a, b) => a.ano - b.ano).map((h, i) => (
-                                                <div key={i} className={`relative rounded-xl p-4 border transition-all duration-300 hover:scale-105 ${getScoreBg(h.pontuacao)}`}>
-                                                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-2 border-blue-300 rounded-full hidden sm:block z-10"></div>
+                                            {item.historico.sort((a, b) => a.ano - b.ano).map((h, i) => {
+                                                const yearChange = getYearChange(item.historico, h.ano)
+                                                return (
+                                                    <div key={i} className={`relative rounded-xl p-4 border transition-all duration-300 hover:scale-105 ${getScoreBg(h.pontuacao)}`}>
+                                                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-2 border-blue-300 rounded-full hidden sm:block z-10"></div>
 
-                                                    <div className="text-center space-y-2">
-                                                        <span className="text-[10px] font-black text-gray-400 tracking-widest">{h.ano}</span>
+                                                        <div className="text-center space-y-2">
+                                                            <div className="flex items-center justify-center gap-1.5">
+                                                                <span className="text-[10px] font-black text-gray-400 tracking-widest">{h.ano}</span>
+                                                                {yearChange && (
+                                                                    <span className={`text-[8px] font-bold px-1.5 py-0.5 rounded ${yearChange.color}`}>
+                                                                        {yearChange.text}
+                                                                    </span>
+                                                                )}
+                                                            </div>
 
-                                                        <div className={`mx-auto w-14 h-14 rounded-xl bg-gradient-to-br ${getScoreGradient(h.pontuacao)} flex items-center justify-center shadow-lg`}>
-                                                            <span className="text-white text-lg font-black">{h.pontuacao.toFixed(0)}%</span>
-                                                        </div>
+                                                            <div className={`mx-auto w-14 h-14 rounded-xl bg-gradient-to-br ${getScoreGradient(h.pontuacao)} flex items-center justify-center shadow-lg`}>
+                                                                <span className="text-white text-lg font-black">{Number(h.pontuacao).toFixed(0)}%</span>
+                                                            </div>
 
-                                                        <div className="pt-2 border-t border-gray-200/50">
-                                                            <p className="text-[9px] text-gray-600 font-medium break-all line-clamp-2 leading-relaxed" title={h.resposta}>
-                                                                {h.resposta || '—'}
-                                                            </p>
+                                                            <div className="pt-2 border-t border-gray-200/50">
+                                                                <p className="text-[9px] text-gray-600 font-medium break-all line-clamp-2 leading-relaxed" title={h.resposta}>
+                                                                    {h.resposta || '—'}
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            ))}
+                                                )
+                                            })}
                                         </div>
                                     </div>
                                 </div>
