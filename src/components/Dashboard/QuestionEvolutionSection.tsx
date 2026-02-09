@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { defaultIEGMApiService as iegmApiService } from '@/services/iegm/iegmApiService'
-import { Loader2, AlertCircle, ArrowUpRight, ArrowDownRight, Minus, Search, Sparkles, Target } from 'lucide-react'
+import { Loader2, AlertCircle, ArrowUpRight, ArrowDownRight, Minus, Search, Sparkles, AlertTriangle, Target } from 'lucide-react'
 
 interface QuestionHistory {
     questao: string
@@ -17,19 +17,22 @@ interface QuestionEvolutionSectionProps {
     municipio: string
 }
 
+type AnalysisMode = 'success' | 'regression'
+
 export default function QuestionEvolutionSection({ municipio }: QuestionEvolutionSectionProps) {
-    const [data, setData] = useState<QuestionHistory[]>([])
+    const [rawData, setRawData] = useState<QuestionHistory[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
     const [searchTerm, setSearchTerm] = useState('')
     const [activeIndicator, setActiveIndicator] = useState<string>('TODOS')
+    const [analysisMode, setAnalysisMode] = useState<AnalysisMode>('success')
 
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true)
             try {
                 const results = await iegmApiService.getEvolucaoQuestoes(municipio)
-                setData(results)
+                setRawData(results)
             } catch (err: any) {
                 setError(err.message || 'Erro ao carregar evolução de questões')
             } finally {
@@ -41,6 +44,27 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
             fetchData()
         }
     }, [municipio])
+
+    // Filtrar dados com base no modo de análise
+    const data = useMemo(() => {
+        return rawData.filter(item => {
+            const sorted = [...item.historico].sort((a, b) => a.ano - b.ano)
+            if (sorted.length < 2) return false
+
+            const start2022 = sorted.find(h => h.ano === 2022)
+            const end2024 = sorted.find(h => h.ano === 2024)
+
+            if (!start2022 || !end2024) return false
+
+            if (analysisMode === 'success') {
+                // Casos de Sucesso: começou em 0% e melhorou
+                return start2022.pontuacao === 0 && end2024.pontuacao > 0
+            } else {
+                // Pontos de Atenção: começou bem (>= 50%) e piorou
+                return start2022.pontuacao >= 50 && end2024.pontuacao < start2022.pontuacao
+            }
+        })
+    }, [rawData, analysisMode])
 
     const indicators = useMemo(() => {
         const set = new Set(data.map(item => item.indicador))
@@ -122,37 +146,105 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
         )
     }
 
+    const successCount = rawData.filter(item => {
+        const s = item.historico.find(h => h.ano === 2022)
+        const e = item.historico.find(h => h.ano === 2024)
+        return s && e && s.pontuacao === 0 && e.pontuacao > 0
+    }).length
+
+    const regressionCount = rawData.filter(item => {
+        const s = item.historico.find(h => h.ano === 2022)
+        const e = item.historico.find(h => h.ano === 2024)
+        return s && e && s.pontuacao >= 50 && e.pontuacao < s.pontuacao
+    }).length
+
     return (
         <div className="space-y-6">
-            {/* Hero Header com Gradiente */}
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-8 text-white shadow-2xl">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-400/20 to-transparent rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-purple-500/20 to-transparent rounded-full blur-3xl"></div>
+            {/* Toggle de Modo de Análise */}
+            <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                    onClick={() => setAnalysisMode('success')}
+                    className={`flex-1 p-5 rounded-2xl border-2 transition-all duration-300 ${analysisMode === 'success'
+                            ? 'bg-gradient-to-br from-emerald-500 to-green-600 border-emerald-400 text-white shadow-lg shadow-emerald-500/30'
+                            : 'bg-white border-gray-200 hover:border-emerald-300 hover:bg-emerald-50'
+                        }`}
+                >
+                    <div className="flex items-center gap-3">
+                        <div className={`p-2 rounded-xl ${analysisMode === 'success' ? 'bg-white/20' : 'bg-emerald-100'}`}>
+                            <Sparkles className={analysisMode === 'success' ? 'text-white' : 'text-emerald-600'} size={24} />
+                        </div>
+                        <div className="text-left">
+                            <h3 className={`font-bold text-lg ${analysisMode === 'success' ? 'text-white' : 'text-gray-800'}`}>
+                                Casos de Sucesso
+                            </h3>
+                            <p className={`text-sm ${analysisMode === 'success' ? 'text-emerald-100' : 'text-gray-500'}`}>
+                                Saíram de 0% e evoluíram
+                            </p>
+                        </div>
+                    </div>
+                    <div className={`mt-3 text-3xl font-black ${analysisMode === 'success' ? 'text-white' : 'text-emerald-600'}`}>
+                        {successCount} <span className="text-sm font-bold opacity-70">itens</span>
+                    </div>
+                </button>
 
-                <div className="relative flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-                    <div className="flex items-center gap-4">
-                        <div className="bg-white/10 backdrop-blur-sm p-3 rounded-2xl border border-white/20">
-                            <Sparkles className="text-yellow-400" size={28} />
+                <button
+                    onClick={() => setAnalysisMode('regression')}
+                    className={`flex-1 p-5 rounded-2xl border-2 transition-all duration-300 ${analysisMode === 'regression'
+                            ? 'bg-gradient-to-br from-orange-500 to-red-600 border-orange-400 text-white shadow-lg shadow-orange-500/30'
+                            : 'bg-white border-gray-200 hover:border-orange-300 hover:bg-orange-50'
+                        }`}
+                >
+                    <div className="flex items-center gap-3">
+                        <div className={`p-2 rounded-xl ${analysisMode === 'regression' ? 'bg-white/20' : 'bg-orange-100'}`}>
+                            <AlertTriangle className={analysisMode === 'regression' ? 'text-white' : 'text-orange-600'} size={24} />
+                        </div>
+                        <div className="text-left">
+                            <h3 className={`font-bold text-lg ${analysisMode === 'regression' ? 'text-white' : 'text-gray-800'}`}>
+                                Pontos de Atenção
+                            </h3>
+                            <p className={`text-sm ${analysisMode === 'regression' ? 'text-orange-100' : 'text-gray-500'}`}>
+                                Começaram bem e decaíram
+                            </p>
+                        </div>
+                    </div>
+                    <div className={`mt-3 text-3xl font-black ${analysisMode === 'regression' ? 'text-white' : 'text-orange-600'}`}>
+                        {regressionCount} <span className="text-sm font-bold opacity-70">itens</span>
+                    </div>
+                </button>
+            </div>
+
+            {/* Header com Filtros */}
+            <div className={`relative overflow-hidden rounded-2xl p-6 text-white shadow-xl ${analysisMode === 'success'
+                    ? 'bg-gradient-to-br from-slate-900 via-emerald-900 to-green-900'
+                    : 'bg-gradient-to-br from-slate-900 via-orange-900 to-red-900'
+                }`}>
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
+
+                <div className="relative flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div className="flex items-center gap-3">
+                        <div className="bg-white/10 backdrop-blur-sm p-2.5 rounded-xl border border-white/20">
+                            {analysisMode === 'success' ? <Sparkles className="text-emerald-400" size={24} /> : <AlertTriangle className="text-orange-400" size={24} />}
                         </div>
                         <div>
-                            <h2 className="text-2xl font-black tracking-tight flex items-center gap-2">
-                                Evolução de Desempenho
-                                <span className="text-xs bg-yellow-400/20 text-yellow-300 px-2 py-1 rounded-full font-bold">2022-2024</span>
+                            <h2 className="text-xl font-black tracking-tight">
+                                {analysisMode === 'success' ? 'Itens que Evoluíram' : 'Itens que Regrediram'}
                             </h2>
-                            <p className="text-blue-200 text-sm mt-1 flex items-center gap-2">
-                                <Target size={14} />
-                                Itens que iniciaram com 0% em 2022
+                            <p className="text-white/60 text-xs mt-0.5 flex items-center gap-1.5">
+                                <Target size={12} />
+                                {analysisMode === 'success'
+                                    ? 'De 0% em 2022 para pontuação positiva em 2024'
+                                    : 'De ≥50% em 2022 para pontuação menor em 2024'
+                                }
                             </p>
                         </div>
                     </div>
 
-                    <div className="relative w-full lg:w-80">
-                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50" size={18} />
+                    <div className="relative w-full lg:w-72">
+                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40" size={16} />
                         <input
                             type="search"
                             placeholder="Buscar pergunta..."
-                            className="w-full pl-11 pr-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus:bg-white/20 focus:border-white/40 outline-none transition-all font-medium text-sm"
+                            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus:bg-white/20 focus:border-white/40 outline-none transition-all font-medium text-sm"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
@@ -160,15 +252,15 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                 </div>
 
                 {/* Tabs de Indicadores */}
-                <div className="relative mt-6 flex flex-wrap gap-2">
+                <div className="relative mt-4 flex flex-wrap gap-1.5">
                     {indicators.map((ind) => (
                         <button
                             key={ind}
                             onClick={() => setActiveIndicator(ind)}
                             className={`
-                                px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300
+                                px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all duration-200
                                 ${activeIndicator === ind
-                                    ? 'bg-white text-slate-900 shadow-lg scale-105'
+                                    ? 'bg-white text-slate-900 shadow-lg'
                                     : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white border border-white/10'
                                 }
                             `}
@@ -176,36 +268,6 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                             {ind}
                         </button>
                     ))}
-                </div>
-
-                {/* Stats */}
-                <div className="relative mt-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                        <p className="text-white/50 text-xs font-semibold uppercase">Total Itens</p>
-                        <p className="text-2xl font-black mt-1">{data.length}</p>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                        <p className="text-white/50 text-xs font-semibold uppercase">Indicadores</p>
-                        <p className="text-2xl font-black mt-1">{indicators.length - 1}</p>
-                    </div>
-                    <div className="bg-emerald-500/20 backdrop-blur-sm rounded-xl p-4 border border-emerald-400/20">
-                        <p className="text-emerald-300 text-xs font-semibold uppercase">Melhoraram</p>
-                        <p className="text-2xl font-black mt-1 text-emerald-400">
-                            {data.filter(item => {
-                                const sorted = [...item.historico].sort((a, b) => a.ano - b.ano)
-                                return sorted.length >= 2 && sorted[sorted.length - 1].pontuacao > sorted[0].pontuacao
-                            }).length}
-                        </p>
-                    </div>
-                    <div className="bg-red-500/20 backdrop-blur-sm rounded-xl p-4 border border-red-400/20">
-                        <p className="text-red-300 text-xs font-semibold uppercase">Estagnados</p>
-                        <p className="text-2xl font-black mt-1 text-red-400">
-                            {data.filter(item => {
-                                const sorted = [...item.historico].sort((a, b) => a.ano - b.ano)
-                                return sorted.length >= 2 && sorted[sorted.length - 1].pontuacao <= sorted[0].pontuacao
-                            }).length}
-                        </p>
-                    </div>
                 </div>
             </div>
 
@@ -217,14 +279,13 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                         return (
                             <div
                                 key={idx}
-                                className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-200 transition-all duration-500"
+                                className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-200 transition-all duration-300"
                             >
-                                {/* Card Header */}
-                                <div className="p-6 pb-4">
-                                    <div className="flex flex-col lg:flex-row justify-between gap-4">
-                                        <div className="flex-1 space-y-3">
+                                <div className="p-5">
+                                    <div className="flex flex-col lg:flex-row justify-between gap-3">
+                                        <div className="flex-1 space-y-2">
                                             <div className="flex items-center gap-2 flex-wrap">
-                                                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 text-[10px] font-bold rounded-full border border-blue-100">
+                                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 text-[9px] font-bold rounded-full border border-blue-100">
                                                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
                                                     {item.indicador}
                                                 </span>
@@ -241,26 +302,24 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                 </div>
 
                                 {/* Timeline de Anos */}
-                                <div className="px-6 pb-6">
+                                <div className="px-5 pb-5">
                                     <div className="relative">
-                                        {/* Linha conectora */}
                                         <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-gray-200 via-blue-200 to-gray-200 hidden sm:block"></div>
 
-                                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                             {item.historico.sort((a, b) => a.ano - b.ano).map((h, i) => (
                                                 <div key={i} className={`relative rounded-xl p-4 border transition-all duration-300 hover:scale-105 ${getScoreBg(h.pontuacao)}`}>
-                                                    {/* Conector */}
-                                                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-2 border-blue-300 rounded-full hidden sm:block z-10"></div>
+                                                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-2 border-blue-300 rounded-full hidden sm:block z-10"></div>
 
-                                                    <div className="text-center space-y-3">
-                                                        <span className="text-xs font-black text-gray-400 tracking-widest">{h.ano}</span>
+                                                    <div className="text-center space-y-2">
+                                                        <span className="text-[10px] font-black text-gray-400 tracking-widest">{h.ano}</span>
 
-                                                        <div className={`mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br ${getScoreGradient(h.pontuacao)} flex items-center justify-center shadow-lg`}>
-                                                            <span className="text-white text-xl font-black">{h.pontuacao.toFixed(0)}%</span>
+                                                        <div className={`mx-auto w-14 h-14 rounded-xl bg-gradient-to-br ${getScoreGradient(h.pontuacao)} flex items-center justify-center shadow-lg`}>
+                                                            <span className="text-white text-lg font-black">{h.pontuacao.toFixed(0)}%</span>
                                                         </div>
 
                                                         <div className="pt-2 border-t border-gray-200/50">
-                                                            <p className="text-[10px] text-gray-600 font-medium break-all line-clamp-2 leading-relaxed" title={h.resposta}>
+                                                            <p className="text-[9px] text-gray-600 font-medium break-all line-clamp-2 leading-relaxed" title={h.resposta}>
                                                                 {h.resposta || '—'}
                                                             </p>
                                                         </div>
@@ -274,12 +333,12 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                         )
                     })
                 ) : (
-                    <div className="bg-gradient-to-br from-gray-50 to-slate-100 rounded-3xl py-16 text-center border border-gray-200">
-                        <div className="bg-white p-6 rounded-full inline-block mb-4 shadow-lg">
-                            <Search className="text-gray-300" size={40} />
+                    <div className="bg-gradient-to-br from-gray-50 to-slate-100 rounded-2xl py-16 text-center border border-gray-200">
+                        <div className="bg-white p-5 rounded-full inline-block mb-4 shadow-lg">
+                            <Search className="text-gray-300" size={32} />
                         </div>
-                        <h4 className="text-gray-500 font-bold text-lg">Nenhum item encontrado</h4>
-                        <p className="text-gray-400 text-sm mt-2">Ajuste os filtros ou busca</p>
+                        <h4 className="text-gray-500 font-bold text-base">Nenhum item encontrado</h4>
+                        <p className="text-gray-400 text-sm mt-1">Ajuste os filtros ou busca</p>
                     </div>
                 )}
             </div>

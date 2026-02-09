@@ -620,8 +620,10 @@ async function handleEvolucaoQuestoes(request: Request, db: any, url: URL) {
     });
   });
 
-  // Converter para array e filtrar apenas as que têm histórico COMPLETO (2022, 2023 e 2024)
-  // E que começaram negativas (pontuacao = 0) em 2022
+  // Filtrar apenas as que:
+  // 1. Têm histórico COMPLETO (2022, 2023 e 2024)
+  // 2. Começaram com 0% em 2022
+  // 3. MELHORARAM até 2024 (nota final > 0)
   const finalResults = Object.values(evolucao).filter(item => {
     const anos = item.historico.map(h => h.ano);
     const hasAllYears = anos.includes(2022) && anos.includes(2023) && anos.includes(2024);
@@ -629,7 +631,10 @@ async function handleEvolucaoQuestoes(request: Request, db: any, url: URL) {
     if (!hasAllYears) return false;
 
     const start2022 = item.historico.find(h => h.ano === 2022);
-    return start2022 && start2022.pontuacao === 0;
+    const end2024 = item.historico.find(h => h.ano === 2024);
+
+    // Começou em 0% E melhorou (nota final > 0)
+    return start2022 && start2022.pontuacao === 0 && end2024 && end2024.pontuacao > 0;
   });
 
   return new Response(JSON.stringify(finalResults), {
