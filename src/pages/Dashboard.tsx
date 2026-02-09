@@ -96,35 +96,48 @@ export default function Dashboard() {
                 setSecondsRemaining(prev => Math.max(0, prev - 1))
             }, 1000)
 
-            // Auto-scroll inteligente: velocidade proporcional ao tempo de cena
-            if (scrollIntervalRef.current) clearInterval(scrollIntervalRef.current)
+            // Auto-scroll suave usando requestAnimationFrame (60fps)
+            if (scrollIntervalRef.current) cancelAnimationFrame(scrollIntervalRef.current as unknown as number)
 
-            const scrollStartTime = 4000 // Iniciar scroll após 4s (mais tempo para ler o início)
-            const msInterval = 100 // Intervalo maior = scroll mais suave
+            const scrollStartDelay = 4000 // Iniciar scroll após 4s
             const sceneStartTime = Date.now()
+            const scrollEndPadding = 5000 // Parar 5s antes do fim
 
-            scrollIntervalRef.current = setInterval(() => {
+            const animateScroll = () => {
                 if (!container) return
 
                 const isScrollable = container.scrollHeight > container.clientHeight
                 const isAtBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 5
-
-                // Só começa a rolar depois do delay inicial
                 const elapsedTime = Date.now() - sceneStartTime
-                if (isScrollable && !isAtBottom && elapsedTime > scrollStartTime) {
-                    // Cálculo da velocidade de scroll:
-                    // Queremos terminar o scroll 5 segundos antes do fim da cena (mais tempo para ler o final)
-                    const timeToScroll = (calculatedDuration - 9) * 1000
-                    if (timeToScroll > 0) {
+
+                if (isScrollable && !isAtBottom && elapsedTime > scrollStartDelay) {
+                    // Tempo disponível para scroll (duração total - delay inicial - padding final)
+                    const totalScrollTime = (calculatedDuration * 1000) - scrollStartDelay - scrollEndPadding
+                    const scrollElapsed = elapsedTime - scrollStartDelay
+
+                    if (totalScrollTime > 0 && scrollElapsed < totalScrollTime) {
                         const totalScrollDistance = container.scrollHeight - container.clientHeight
-                        const pixelsPerInterval = totalScrollDistance / (timeToScroll / msInterval)
-                        // Usar smooth scroll para transição mais suave
-                        container.scrollBy({ top: Math.max(1, pixelsPerInterval), behavior: 'smooth' })
+                        // Posição alvo baseada no progresso do tempo
+                        const targetPosition = (scrollElapsed / totalScrollTime) * totalScrollDistance
+
+                        // Scroll suave: mover apenas 1-2 pixels por frame para evitar tremor
+                        const currentPosition = container.scrollTop
+                        const diff = targetPosition - currentPosition
+
+                        if (Math.abs(diff) > 0.5) {
+                            // Mover suavemente em direção ao alvo (20% da diferença por frame)
+                            container.scrollTop = currentPosition + (diff * 0.15)
+                        }
                     }
                 }
-            }, msInterval)
+
+                // Continuar animação
+                scrollIntervalRef.current = requestAnimationFrame(animateScroll) as unknown as NodeJS.Timeout
+            }
+
+            scrollIntervalRef.current = requestAnimationFrame(animateScroll) as unknown as NodeJS.Timeout
         } else {
-            if (scrollIntervalRef.current) clearInterval(scrollIntervalRef.current)
+            if (scrollIntervalRef.current) cancelAnimationFrame(scrollIntervalRef.current as unknown as number)
         }
 
         // Atalhos de teclado
