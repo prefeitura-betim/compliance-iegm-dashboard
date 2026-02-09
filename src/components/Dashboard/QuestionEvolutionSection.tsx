@@ -98,51 +98,50 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     }
 
     return (
-        <div className="space-y-8 animate-fade-in pb-12">
-            {/* Header com Filtros */}
-            <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-gray-100 space-y-8">
-                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-                    <div className="flex items-center gap-5">
-                        <div className="bg-betim-blue/5 p-4 rounded-2xl border border-betim-blue/10">
-                            <TrendingUp className="text-betim-blue" size={32} />
+        <div className="space-y-4 animate-fade-in pb-12">
+            {/* Header com Filtros - Glassmorphism Sticky */}
+            <div className="sticky top-0 z-30 pt-4 pb-2 -mt-4">
+                <div className="bg-white/80 backdrop-blur-xl p-5 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/20 space-y-4">
+                    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        <div className="flex items-center gap-3">
+                            <div className="bg-betim-blue/10 p-2.5 rounded-xl">
+                                <TrendingUp className="text-betim-blue" size={20} />
+                            </div>
+                            <div>
+                                <h2 className="text-lg font-black text-gray-900 font-heading tracking-tight uppercase">Análise de Evolução</h2>
+                                <p className="text-gray-400 text-[9px] font-black uppercase tracking-[0.1em] mt-0.5">Filtro: Início 0% em 2022 • Histórico Completo</p>
+                            </div>
                         </div>
-                        <div>
-                            <h2 className="text-2xl font-black text-gray-900 font-heading tracking-tighter uppercase">Itens de Melhoria Estrita</h2>
-                            <p className="text-gray-500 font-medium tracking-tight mt-1 flex items-center gap-2">
-                                <span className="w-2 h-2 bg-betim-blue rounded-full animate-pulse"></span>
-                                Comparativo focado em itens que iniciaram com 0% em 2022 e possuem histórico em 2023 e 2024
-                            </p>
+                        <div className="relative w-full lg:w-72 group">
+                            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-betim-blue transition-colors" size={16} />
+                            <input
+                                type="search"
+                                placeholder="Filtrar por pergunta..."
+                                className="w-full pl-10 pr-4 py-2 rounded-xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:ring-4 focus:ring-betim-blue/5 focus:border-betim-blue/30 outline-none transition-all placeholder:text-gray-400 font-bold text-xs"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
                         </div>
                     </div>
-                    <div className="relative w-full lg:w-96 group">
-                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-betim-blue transition-colors" size={20} />
-                        <input
-                            type="search"
-                            placeholder="Buscar pergunta ou indicador..."
-                            className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:ring-4 focus:ring-betim-blue/10 focus:border-betim-blue outline-none transition-all placeholder:text-gray-400 font-bold text-sm"
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                        />
-                    </div>
-                </div>
 
-                {/* Abas de Indicadores */}
-                <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-50">
-                    {indicators.map((ind) => (
-                        <button
-                            key={ind}
-                            onClick={() => setActiveIndicator(ind)}
-                            className={`
-                                px-4 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300
-                                ${activeIndicator === ind
-                                    ? 'bg-betim-blue text-white shadow-lg shadow-betim-blue/20 scale-105'
-                                    : 'bg-gray-50 text-gray-400 hover:bg-gray-100 hover:text-betim-blue'
-                                }
-                            `}
-                        >
-                            {ind}
-                        </button>
-                    ))}
+                    {/* Abas de Indicadores - Minimalistas */}
+                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-gray-50">
+                        {indicators.map((ind) => (
+                            <button
+                                key={ind}
+                                onClick={() => setActiveIndicator(ind)}
+                                className={`
+                                    px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-widest transition-all duration-200
+                                    ${activeIndicator === ind
+                                        ? 'bg-gray-900 text-white shadow-sm scale-105'
+                                        : 'bg-gray-50 text-gray-400 hover:bg-gray-100 hover:text-gray-600'
+                                    }
+                                `}
+                            >
+                                {ind}
+                            </button>
+                        ))}
+                    </div>
                 </div>
             </div>
 
@@ -150,9 +149,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
             <div className="grid grid-cols-1 gap-6">
                 {filteredData.length > 0 ? (
                     filteredData.map((item, idx) => (
-                        <div key={idx} className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-betim-blue/30 transition-all duration-500 group relative overflow-hidden">
-                            {/* Decorativo Lateral */}
-                            <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gray-100 group-hover:bg-betim-blue transition-colors duration-500"></div>
+                        <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-betim-blue/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500 group">
 
                             <div className="flex flex-col lg:row justify-between gap-6 mb-8">
                                 <div className="space-y-3 flex-1">
@@ -161,7 +158,9 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                             {item.indicador}
                                         </span>
                                     </div>
-                                    <h3 className="text-gray-800 font-bold text-lg leading-tight tracking-tight group-hover:text-betim-blue-dark transition-colors">{item.questao}</h3>
+                                    <h3 className="text-gray-800 font-bold text-base leading-snug tracking-tight group-hover:text-betim-blue transition-colors pr-8">
+                                        {item.questao}
+                                    </h3>
                                 </div>
                                 <div className="flex items-center gap-5 self-start lg:self-center shrink-0 bg-gray-50/50 px-6 py-4 rounded-[2rem] border border-gray-100 shadow-inner group-hover:bg-white transition-colors duration-500">
                                     <div className="flex flex-col items-end">
@@ -187,7 +186,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                             </div>
                                         </div>
                                         <div className="h-px w-8 bg-gray-200"></div>
-                                        <span className="text-[11px] text-gray-500 font-bold uppercase text-center px-4 leading-relaxed" title={h.resposta}>
+                                        <span className="text-[10px] text-gray-500 font-medium break-all line-clamp-3 hover:line-clamp-none transition-all cursor-default block px-1" title={h.resposta}>
                                             {h.resposta}
                                         </span>
                                     </div>
