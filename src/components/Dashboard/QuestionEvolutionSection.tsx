@@ -49,19 +49,32 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     const data = useMemo(() => {
         return rawData.filter(item => {
             const sorted = [...item.historico].sort((a, b) => a.ano - b.ano)
-            if (sorted.length < 2) return false
+            if (sorted.length < 3) return false // Precisa ter os 3 anos
 
-            const start2022 = sorted.find(h => h.ano === 2022)
-            const end2024 = sorted.find(h => h.ano === 2024)
+            const y2022 = sorted.find(h => h.ano === 2022)
+            const y2023 = sorted.find(h => h.ano === 2023)
+            const y2024 = sorted.find(h => h.ano === 2024)
 
-            if (!start2022 || !end2024) return false
+            if (!y2022 || !y2023 || !y2024) return false
+
+            const p2022 = Number(y2022.pontuacao)
+            const p2023 = Number(y2023.pontuacao)
+            const p2024 = Number(y2024.pontuacao)
+
+            // Excluir itens que ficaram em 0% o tempo todo ou terminaram em 0%
+            if (p2022 === 0 && p2023 === 0 && p2024 === 0) return false
+            if (p2024 === 0 && p2022 === 0) return false
 
             if (analysisMode === 'success') {
-                // Casos de Sucesso: começou em 0% e melhorou (nota final > 0)
-                return Number(start2022.pontuacao) === 0 && Number(end2024.pontuacao) > 0
+                // Casos de Sucesso: 
+                // - Começou em 0% em 2022
+                // - Melhorou consistentemente (2023 >= 2022 E 2024 >= 2023)
+                // - Terminou com nota positiva
+                return p2022 === 0 && p2023 >= p2022 && p2024 >= p2023 && p2024 > 0
             } else {
-                // Pontos de Atenção: começou com pontuação positiva (> 0) e piorou
-                return Number(start2022.pontuacao) > 0 && Number(end2024.pontuacao) < Number(start2022.pontuacao)
+                // Pontos de Atenção:
+                // - Houve queda de 2023 para 2024 (regressão recente)
+                return p2024 < p2023
             }
         })
     }, [rawData, analysisMode])
@@ -169,15 +182,23 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     }
 
     const successCount = rawData.filter(item => {
-        const s = item.historico.find(h => h.ano === 2022)
-        const e = item.historico.find(h => h.ano === 2024)
-        return s && e && s.pontuacao === 0 && e.pontuacao > 0
+        const y2022 = item.historico.find(h => h.ano === 2022)
+        const y2023 = item.historico.find(h => h.ano === 2023)
+        const y2024 = item.historico.find(h => h.ano === 2024)
+        if (!y2022 || !y2023 || !y2024) return false
+        const p2022 = Number(y2022.pontuacao)
+        const p2023 = Number(y2023.pontuacao)
+        const p2024 = Number(y2024.pontuacao)
+        if (p2022 === 0 && p2023 === 0 && p2024 === 0) return false
+        if (p2024 === 0 && p2022 === 0) return false
+        return p2022 === 0 && p2023 >= p2022 && p2024 >= p2023 && p2024 > 0
     }).length
 
     const regressionCount = rawData.filter(item => {
-        const s = item.historico.find(h => h.ano === 2022)
-        const e = item.historico.find(h => h.ano === 2024)
-        return s && e && s.pontuacao > 0 && e.pontuacao < s.pontuacao
+        const y2023 = item.historico.find(h => h.ano === 2023)
+        const y2024 = item.historico.find(h => h.ano === 2024)
+        if (!y2023 || !y2024) return false
+        return Number(y2024.pontuacao) < Number(y2023.pontuacao)
     }).length
 
     return (
