@@ -35,16 +35,17 @@ export default function FiltersPanel({ ano, tribunal }: FiltersPanelProps) {
     }
 
     return (
-        <div className="bg-white rounded-xl p-5 shadow-betim border border-gray-100 flex flex-col md:flex-row gap-6 md:items-center">
+        <div className="bg-white rounded-lg sm:rounded-xl p-3 sm:p-5 shadow-betim border border-gray-100 flex flex-col md:flex-row gap-4 sm:gap-6 md:items-center">
 
-            <div className="flex items-center gap-2 text-betim-blue font-bold uppercase tracking-wider text-sm min-w-max border-b md:border-b-0 md:border-r border-gray-100 pb-4 md:pb-0 md:pr-6">
-                <Filter size={20} />
+            <div className="flex items-center gap-2 text-betim-blue font-bold uppercase tracking-wider text-xs sm:text-sm min-w-max border-b md:border-b-0 md:border-r border-gray-100 pb-3 sm:pb-4 md:pb-0 md:pr-6">
+                <Filter size={16} className="sm:hidden" />
+                <Filter size={20} className="hidden sm:block" />
                 <span>Filtros</span>
             </div>
 
             <div className="flex flex-wrap items-center gap-4 flex-1">
                 {/* Filtro Município */}
-                <div className="flex-1 min-w-[200px]">
+                <div className="flex-1 min-w-[140px] sm:min-w-[200px]">
                     <label htmlFor="municipio" className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">
                         <div className="flex items-center gap-1">
                             <MapPin size={12} /> Município

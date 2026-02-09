@@ -53,7 +53,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                 const colors = getAccentColors(faixa)
 
                 return (
-                    <div className="relative bg-gradient-to-br from-betim-blue via-betim-blue-dark to-indigo-900 rounded-2xl p-8 text-white shadow-2xl overflow-hidden">
+                    <div className="relative bg-gradient-to-br from-betim-blue via-betim-blue-dark to-indigo-900 rounded-xl sm:rounded-2xl p-4 sm:p-8 text-white shadow-2xl overflow-hidden">
                         {/* Decorative elements with dynamic colors */}
                         <div className={`absolute top-0 right-0 w-96 h-96 ${colors.glow} rounded-full -mr-48 -mt-48 blur-3xl`}></div>
                         <div className={`absolute bottom-0 left-0 w-64 h-64 ${colors.glow} rounded-full -ml-32 -mb-32 blur-2xl`}></div>
@@ -64,9 +64,9 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                 {/* Left: Score */}
                                 <div className="flex items-center gap-6">
                                     <div className="relative">
-                                        <div className={`w-28 h-28 rounded-2xl ${colors.scoreBg} flex items-center justify-center shadow-xl border border-white/20`}>
+                                        <div className={`w-20 h-20 sm:w-28 sm:h-28 rounded-xl sm:rounded-2xl ${colors.scoreBg} flex items-center justify-center shadow-xl border border-white/20`}>
                                             <div className="text-center">
-                                                <span className="text-4xl font-black block text-white">
+                                                <span className="text-2xl sm:text-4xl font-black block text-white">
                                                     {resultados.percentualIegmMunicipio
                                                         ? `${(resultados.percentualIegmMunicipio * 100).toFixed(0)}`
                                                         : 'N/D'}
@@ -78,9 +78,9 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                         <div className={`absolute inset-0 rounded-2xl ${colors.scoreGlow} blur-xl -z-10`}></div>
                                     </div>
                                     <div>
-                                        <p className="text-white/60 text-sm font-medium uppercase tracking-wider">Índice de Efetividade</p>
-                                        <h2 className="text-3xl font-bold mt-1">IEGM Municipal</h2>
-                                        <p className={`text-sm mt-2 ${colors.accent}`}>
+                                        <p className="text-white/60 text-xs font-medium uppercase tracking-wider">Índice de Efetividade</p>
+                                        <h2 className="text-xl sm:text-3xl font-bold mt-1">IEGM Municipal</h2>
+                                        <p className={`text-xs sm:text-sm mt-1 sm:mt-2 ${colors.accent}`}>
                                             {resultados.percentualIegmMunicipio
                                                 ? `${(resultados.percentualIegmMunicipio * 100).toFixed(1)}%`
                                                 : 'N/D'} de efetividade geral
@@ -149,7 +149,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
             })()}
 
             {/* Cards dos Indicadores - Layout Compacto */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2 sm:gap-3">
                 {indicadores.map((ind) => {
                     const valor = resultados[ind.key as keyof typeof resultados] as number | null
                     const faixa = resultados[ind.faixaKey as keyof typeof resultados] as string | null
@@ -160,7 +160,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                     return (
                         <div
                             key={ind.key}
-                            className="group relative bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden"
+                            className="group relative bg-white rounded-lg sm:rounded-xl p-2.5 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 hover:-translate-y-1 overflow-hidden"
                         >
                             {/* Hover gradient overlay */}
                             <div className={`absolute inset-0 bg-gradient-to-br ${faixaGradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
@@ -168,8 +168,9 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                             <div className="relative">
                                 {/* Header: Icon + Faixa */}
                                 <div className="flex items-center justify-between mb-2">
-                                    <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${faixaGradient} flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform`}>
-                                        <Icon size={18} className="text-white" />
+                                    <div className={`w-7 h-7 sm:w-9 sm:h-9 rounded-md sm:rounded-lg bg-gradient-to-br ${faixaGradient} flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform`}>
+                                        <Icon size={14} className="text-white sm:hidden" />
+                                        <Icon size={18} className="text-white hidden sm:block" />
                                     </div>
                                     {faixa && (
                                         <span className={`text-xs font-bold px-2 py-0.5 rounded-md text-white shadow-sm bg-gradient-to-r ${getFaixaStyle(faixa)}`}>
@@ -179,11 +180,11 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                 </div>
 
                                 {/* Label */}
-                                <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{ind.nome}</h3>
+                                <h3 className="text-[9px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide truncate">{ind.nome}</h3>
 
                                 {/* Value + Progress */}
                                 <div className="flex items-baseline gap-1 mt-1">
-                                    <span className="text-xl font-black text-gray-900">
+                                    <span className="text-lg sm:text-xl font-black text-gray-900">
                                         {valor ? Math.round(percentage) : 'N/D'}
                                     </span>
                                     {valor && <span className="text-xs text-gray-400 font-medium">%</span>}

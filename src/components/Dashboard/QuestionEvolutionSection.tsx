@@ -207,60 +207,60 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     return (
         <div className="space-y-6">
             {/* Toggle de Modo de Análise */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <button
                     onClick={() => setAnalysisMode('success')}
-                    className={`flex-1 p-5 rounded-2xl border-2 transition-all duration-300 ${analysisMode === 'success'
+                    className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border-2 transition-all duration-300 ${analysisMode === 'success'
                         ? 'bg-gradient-to-br from-emerald-500 to-green-600 border-emerald-400 text-white shadow-lg shadow-emerald-500/30'
                         : 'bg-white border-gray-200 hover:border-emerald-300 hover:bg-emerald-50'
                         }`}
                 >
-                    <div className="flex items-center gap-3">
-                        <div className={`p-2 rounded-xl ${analysisMode === 'success' ? 'bg-white/20' : 'bg-emerald-100'}`}>
-                            <TrendingUp className={analysisMode === 'success' ? 'text-white' : 'text-emerald-600'} size={24} />
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        <div className={`p-1.5 sm:p-2 rounded-lg sm:rounded-xl ${analysisMode === 'success' ? 'bg-white/20' : 'bg-emerald-100'}`}>
+                            <TrendingUp className={analysisMode === 'success' ? 'text-white' : 'text-emerald-600'} size={18} />
                         </div>
-                        <div className="text-left">
-                            <h3 className={`font-bold text-lg ${analysisMode === 'success' ? 'text-white' : 'text-gray-800'}`}>
+                        <div className="text-left flex-1">
+                            <h3 className={`font-bold text-sm sm:text-lg ${analysisMode === 'success' ? 'text-white' : 'text-gray-800'}`}>
                                 Casos de Sucesso
                             </h3>
-                            <p className={`text-sm ${analysisMode === 'success' ? 'text-emerald-100' : 'text-gray-500'}`}>
+                            <p className={`text-xs sm:text-sm hidden sm:block ${analysisMode === 'success' ? 'text-emerald-100' : 'text-gray-500'}`}>
                                 Saíram de 0% e evoluíram
                             </p>
                         </div>
-                    </div>
-                    <div className={`mt-3 text-3xl font-black ${analysisMode === 'success' ? 'text-white' : 'text-emerald-600'}`}>
-                        {successCount} <span className="text-sm font-bold opacity-70">itens</span>
+                        <div className={`text-xl sm:text-3xl font-black ${analysisMode === 'success' ? 'text-white' : 'text-emerald-600'}`}>
+                            {successCount}
+                        </div>
                     </div>
                 </button>
 
                 <button
                     onClick={() => setAnalysisMode('regression')}
-                    className={`flex-1 p-5 rounded-2xl border-2 transition-all duration-300 ${analysisMode === 'regression'
+                    className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border-2 transition-all duration-300 ${analysisMode === 'regression'
                         ? 'bg-gradient-to-br from-orange-500 to-red-600 border-orange-400 text-white shadow-lg shadow-orange-500/30'
                         : 'bg-white border-gray-200 hover:border-orange-300 hover:bg-orange-50'
                         }`}
                 >
-                    <div className="flex items-center gap-3">
-                        <div className={`p-2 rounded-xl ${analysisMode === 'regression' ? 'bg-white/20' : 'bg-orange-100'}`}>
-                            <AlertTriangle className={analysisMode === 'regression' ? 'text-white' : 'text-orange-600'} size={24} />
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        <div className={`p-1.5 sm:p-2 rounded-lg sm:rounded-xl ${analysisMode === 'regression' ? 'bg-white/20' : 'bg-orange-100'}`}>
+                            <AlertTriangle className={analysisMode === 'regression' ? 'text-white' : 'text-orange-600'} size={18} />
                         </div>
-                        <div className="text-left">
-                            <h3 className={`font-bold text-lg ${analysisMode === 'regression' ? 'text-white' : 'text-gray-800'}`}>
+                        <div className="text-left flex-1">
+                            <h3 className={`font-bold text-sm sm:text-lg ${analysisMode === 'regression' ? 'text-white' : 'text-gray-800'}`}>
                                 Pontos de Atenção
                             </h3>
-                            <p className={`text-sm ${analysisMode === 'regression' ? 'text-orange-100' : 'text-gray-500'}`}>
+                            <p className={`text-xs sm:text-sm hidden sm:block ${analysisMode === 'regression' ? 'text-orange-100' : 'text-gray-500'}`}>
                                 Começaram bem e decaíram
                             </p>
                         </div>
-                    </div>
-                    <div className={`mt-3 text-3xl font-black ${analysisMode === 'regression' ? 'text-white' : 'text-orange-600'}`}>
-                        {regressionCount} <span className="text-sm font-bold opacity-70">itens</span>
+                        <div className={`text-xl sm:text-3xl font-black ${analysisMode === 'regression' ? 'text-white' : 'text-orange-600'}`}>
+                            {regressionCount}
+                        </div>
                     </div>
                 </button>
             </div>
 
             {/* Header com Filtros */}
-            <div className={`relative overflow-hidden rounded-2xl p-6 text-white shadow-xl ${analysisMode === 'success'
+            <div className={`relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white shadow-xl ${analysisMode === 'success'
                 ? 'bg-gradient-to-br from-slate-900 via-emerald-900 to-green-900'
                 : 'bg-gradient-to-br from-slate-900 via-orange-900 to-red-900'
                 }`}>
@@ -272,7 +272,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                             {analysisMode === 'success' ? <TrendingUp className="text-emerald-400" size={24} /> : <AlertTriangle className="text-orange-400" size={24} />}
                         </div>
                         <div>
-                            <h2 className="text-xl font-black tracking-tight">
+                            <h2 className="text-base sm:text-xl font-black tracking-tight">
                                 {analysisMode === 'success' ? 'Itens que Evoluíram' : 'Itens que Regrediram'}
                             </h2>
                             <p className="text-white/60 text-xs mt-0.5 flex items-center gap-1.5">

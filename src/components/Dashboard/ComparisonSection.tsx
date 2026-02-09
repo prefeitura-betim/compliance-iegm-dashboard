@@ -200,36 +200,39 @@ export default function ComparisonSection({ municipio, ano }: ComparisonSectionP
         <div className="space-y-6 animate-fade-in">
             {/* Header com seleção de modo */}
             <div className="bg-gradient-to-br from-white to-blue-50/50 rounded-2xl shadow-xl border border-blue-100/50">
-                <div className="bg-gradient-to-r from-betim-blue to-indigo-600 p-6 text-white rounded-t-2xl">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div className="flex items-center gap-4">
-                            <div className="p-3 bg-white/20 rounded-xl backdrop-blur">
-                                <GitCompare size={24} />
+                <div className="bg-gradient-to-r from-betim-blue to-indigo-600 p-4 sm:p-6 text-white rounded-t-xl sm:rounded-t-2xl">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
+                        <div className="flex items-center gap-3 sm:gap-4">
+                            <div className="p-2 sm:p-3 bg-white/20 rounded-lg sm:rounded-xl backdrop-blur">
+                                <GitCompare size={20} className="sm:hidden" />
+                                <GitCompare size={24} className="hidden sm:block" />
                             </div>
                             <div>
-                                <h2 className="text-xl font-bold">Comparativo Municipal</h2>
-                                <p className="text-white/70 text-sm">Compare {municipio} com outros municípios</p>
+                                <h2 className="text-lg sm:text-xl font-bold">Comparativo Municipal</h2>
+                                <p className="text-white/70 text-xs sm:text-sm">Compare {municipio} com outros municípios</p>
                             </div>
                         </div>
 
                         {/* Botões de Modo */}
-                        <div className="flex gap-2 flex-wrap">
+                        <div className="grid grid-cols-2 sm:flex gap-1.5 sm:gap-2 sm:flex-wrap">
                             {[
-                                { id: 'similar', label: 'Mesmo Porte', icon: Building2 },
-                                { id: 'neighbors', label: 'Vizinhas', icon: Building2 },
-                                { id: 'history', label: 'Histórico', icon: History },
-                                { id: 'custom', label: 'Personalizado', icon: Building2 },
+                                { id: 'similar', label: 'Mesmo Porte', shortLabel: 'Porte', icon: Building2 },
+                                { id: 'neighbors', label: 'Vizinhas', shortLabel: 'Vizinhas', icon: Building2 },
+                                { id: 'history', label: 'Histórico', shortLabel: 'Hist.', icon: History },
+                                { id: 'custom', label: 'Personalizado', shortLabel: 'Custom', icon: Building2 },
                             ].map(m => (
                                 <button
                                     key={m.id}
                                     onClick={() => setMode(m.id as ComparisonMode)}
-                                    className={`px-4 py-2 rounded-xl text-sm font-medium flex items-center gap-2 transition-all ${mode === m.id
+                                    className={`px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-medium flex items-center justify-center gap-1.5 sm:gap-2 transition-all ${mode === m.id
                                         ? 'bg-white text-betim-blue shadow-lg'
                                         : 'bg-white/20 text-white hover:bg-white/30'
                                         }`}
                                 >
-                                    <m.icon size={16} />
-                                    {m.label}
+                                    <m.icon size={14} className="sm:hidden" />
+                                    <m.icon size={16} className="hidden sm:block" />
+                                    <span className="sm:hidden">{m.shortLabel}</span>
+                                    <span className="hidden sm:inline">{m.label}</span>
                                 </button>
                             ))}
                         </div>
@@ -369,9 +372,9 @@ export default function ComparisonSection({ municipio, ano }: ComparisonSectionP
                     {/* Side by side comparison - Cards separados */}
                     {currentComparison && mainData && (
                         <div className="relative z-10 p-6">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
                                 {/* Card Betim (Principal) - Fundo Branco */}
-                                <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100 relative overflow-hidden">
+                                <div className="bg-white rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-lg border border-gray-100 relative overflow-hidden">
                                     <div className="relative z-10">
                                         {/* Header */}
                                         <div className="flex items-center gap-3 mb-4">
@@ -380,7 +383,7 @@ export default function ComparisonSection({ municipio, ano }: ComparisonSectionP
                                             </div>
                                             <div>
                                                 <span className="text-[10px] font-medium text-gray-400 uppercase tracking-wider">Betim</span>
-                                                <h3 className="text-lg font-bold text-gray-900 leading-tight">
+                                                <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight">
                                                     {municipio} {mode === 'history' ? `(${ano})` : ''}
                                                 </h3>
                                             </div>
@@ -396,7 +399,7 @@ export default function ComparisonSection({ municipio, ano }: ComparisonSectionP
                                             <div className="flex items-center justify-between">
                                                 <div>
                                                     <span className="text-xs font-semibold text-white/80">IEGM Geral</span>
-                                                    <div className="text-3xl font-black text-white">
+                                                    <div className="text-2xl sm:text-3xl font-black text-white">
                                                         {(mainData.percentualIegmMunicipio * 100).toFixed(1)}%
                                                     </div>
                                                 </div>
@@ -484,7 +487,7 @@ export default function ComparisonSection({ municipio, ano }: ComparisonSectionP
                                 </div>
 
                                 {/* Card Outra Cidade (Comparação) - Fundo Branco */}
-                                <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100 relative overflow-hidden">
+                                <div className="bg-white rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-lg border border-gray-100 relative overflow-hidden">
                                     <div className="relative z-10">
                                         {/* Header */}
                                         <div className="flex items-center gap-3 mb-4">
@@ -511,7 +514,7 @@ export default function ComparisonSection({ municipio, ano }: ComparisonSectionP
                                             <div className="flex items-center justify-between">
                                                 <div>
                                                     <span className="text-xs font-semibold text-white/80">IEGM Geral</span>
-                                                    <div className="text-3xl font-black text-white">
+                                                    <div className="text-2xl sm:text-3xl font-black text-white">
                                                         {(currentComparison.percentualIegmMunicipio * 100).toFixed(1)}%
                                                     </div>
                                                 </div>
