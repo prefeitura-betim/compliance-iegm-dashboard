@@ -99,8 +99,8 @@ export default function Dashboard() {
             // Auto-scroll inteligente: velocidade proporcional ao tempo de cena
             if (scrollIntervalRef.current) clearInterval(scrollIntervalRef.current)
 
-            const scrollStartTime = 3000 // Iniciar scroll após 3s
-            const msInterval = 30
+            const scrollStartTime = 4000 // Iniciar scroll após 4s (mais tempo para ler o início)
+            const msInterval = 100 // Intervalo maior = scroll mais suave
             const sceneStartTime = Date.now()
 
             scrollIntervalRef.current = setInterval(() => {
@@ -109,15 +109,17 @@ export default function Dashboard() {
                 const isScrollable = container.scrollHeight > container.clientHeight
                 const isAtBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 5
 
-                // Só começa a rolar depois do delay inicial (3 segundos)
+                // Só começa a rolar depois do delay inicial
                 const elapsedTime = Date.now() - sceneStartTime
                 if (isScrollable && !isAtBottom && elapsedTime > scrollStartTime) {
                     // Cálculo da velocidade de scroll:
-                    // Queremos terminar o scroll 3 segundos antes do fim da cena (padding de segurança)
-                    const timeToScroll = (calculatedDuration - 6) * 1000
+                    // Queremos terminar o scroll 5 segundos antes do fim da cena (mais tempo para ler o final)
+                    const timeToScroll = (calculatedDuration - 9) * 1000
                     if (timeToScroll > 0) {
-                        const pixelsPerInterval = (container.scrollHeight - container.clientHeight) / (timeToScroll / msInterval)
-                        container.scrollBy({ top: pixelsPerInterval, behavior: 'auto' })
+                        const totalScrollDistance = container.scrollHeight - container.clientHeight
+                        const pixelsPerInterval = totalScrollDistance / (timeToScroll / msInterval)
+                        // Usar smooth scroll para transição mais suave
+                        container.scrollBy({ top: Math.max(1, pixelsPerInterval), behavior: 'smooth' })
                     }
                 }
             }, msInterval)
