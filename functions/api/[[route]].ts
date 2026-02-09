@@ -620,10 +620,15 @@ async function handleEvolucaoQuestoes(request: Request, db: any, url: URL) {
     });
   });
 
-  // Converter para array e filtrar apenas as que começaram negativas (pontuacao = 0) em 2022
+  // Converter para array e filtrar apenas as que têm histórico COMPLETO (2022, 2023 e 2024)
+  // E que começaram negativas (pontuacao = 0) em 2022
   const finalResults = Object.values(evolucao).filter(item => {
+    const anos = item.historico.map(h => h.ano);
+    const hasAllYears = anos.includes(2022) && anos.includes(2023) && anos.includes(2024);
+
+    if (!hasAllYears) return false;
+
     const start2022 = item.historico.find(h => h.ano === 2022);
-    // Só incluir se tiver dado em 2022 E a pontuação for 0
     return start2022 && start2022.pontuacao === 0;
   });
 

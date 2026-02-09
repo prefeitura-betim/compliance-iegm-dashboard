@@ -426,8 +426,13 @@ app.get('/api/evolucao-questoes', (req, res) => {
             });
         });
 
-        // Converter para array e filtrar as que começaram negativas em 2022
+        // Converter para array e filtrar as que começaram negativas em 2022 E têm todos os anos
         const finalResults = Object.values(evolucao).filter((item: any) => {
+            const anos = item.historico.map((h: any) => h.ano);
+            const hasAllYears = [2022, 2023, 2024].every(ano => anos.includes(ano));
+
+            if (!hasAllYears) return false;
+
             const start2022 = item.historico.find((h: any) => h.ano === 2022);
             return start2022 && start2022.pontuacao === 0;
         });
