@@ -426,7 +426,13 @@ app.get('/api/evolucao-questoes', (req, res) => {
             });
         });
 
-        res.json(Object.values(evolucao));
+        // Converter para array e filtrar as que começaram negativas em 2022
+        const finalResults = Object.values(evolucao).filter((item: any) => {
+            const start2022 = item.historico.find((h: any) => h.ano === 2022);
+            return start2022 && start2022.pontuacao === 0;
+        });
+
+        res.json(finalResults);
     } catch (error) {
         console.error('Erro em /api/evolucao-questoes:', error);
         res.status(500).json({ error: 'Erro ao buscar evolução de questões' });

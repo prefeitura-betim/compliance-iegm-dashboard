@@ -620,8 +620,12 @@ async function handleEvolucaoQuestoes(request: Request, db: any, url: URL) {
     });
   });
 
-  // Converter para array
-  const finalResults = Object.values(evolucao);
+  // Converter para array e filtrar apenas as que começaram negativas (pontuacao = 0) em 2022
+  const finalResults = Object.values(evolucao).filter(item => {
+    const start2022 = item.historico.find(h => h.ano === 2022);
+    // Só incluir se tiver dado em 2022 E a pontuação for 0
+    return start2022 && start2022.pontuacao === 0;
+  });
 
   return new Response(JSON.stringify(finalResults), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' }

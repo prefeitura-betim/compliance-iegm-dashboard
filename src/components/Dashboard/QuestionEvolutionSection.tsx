@@ -95,8 +95,8 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                         <TrendingUp className="text-betim-blue" size={24} />
                     </div>
                     <div>
-                        <h2 className="text-xl font-black text-gray-900 font-heading tracking-tight uppercase">Evolução de Perguntas</h2>
-                        <p className="text-gray-500 text-sm font-medium tracking-wide">Comparativo de itens idênticos entre 2022 e 2024 em {municipio}</p>
+                        <h2 className="text-xl font-black text-gray-900 font-heading tracking-tight uppercase">Foco em Evolução (Início Negativo)</h2>
+                        <p className="text-gray-500 text-sm font-medium tracking-wide">Mostrando apenas itens que iniciaram com nota 0% em 2022 em {municipio}</p>
                     </div>
                 </div>
                 <div className="w-full md:w-80">
