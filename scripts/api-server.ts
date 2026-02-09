@@ -426,22 +426,13 @@ app.get('/api/evolucao-questoes', (req, res) => {
             });
         });
 
-        // Filtrar as que:
-        // 1. Têm histórico completo (2022, 2023, 2024)
-        // 2. Começaram com 0% em 2022
-        // 3. MELHORARAM até 2024 (nota final > 0)
+        // Retornar todas as questões que têm histórico COMPLETO (2022, 2023 e 2024)
+        // O frontend fará a filtragem de sucesso vs regressão
         const finalResults = Object.values(evolucao).filter((item: any) => {
             const anos = item.historico.map((h: any) => h.ano);
-            const hasAllYears = [2022, 2023, 2024].every(ano => anos.includes(ano));
-
-            if (!hasAllYears) return false;
-
-            const start2022 = item.historico.find((h: any) => h.ano === 2022);
-            const end2024 = item.historico.find((h: any) => h.ano === 2024);
-
-            // Começou em 0% E melhorou (nota final > 0)
-            return start2022 && start2022.pontuacao === 0 && end2024 && end2024.pontuacao > 0;
+            return [2022, 2023, 2024].every(ano => anos.includes(ano));
         });
+
 
         res.json(finalResults);
     } catch (error) {

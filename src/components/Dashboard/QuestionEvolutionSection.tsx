@@ -60,8 +60,8 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                 // Casos de Sucesso: começou em 0% e melhorou
                 return start2022.pontuacao === 0 && end2024.pontuacao > 0
             } else {
-                // Pontos de Atenção: começou bem (>= 50%) e piorou
-                return start2022.pontuacao >= 50 && end2024.pontuacao < start2022.pontuacao
+                // Pontos de Atenção: começou com pontuação positiva (> 0) e piorou
+                return start2022.pontuacao > 0 && end2024.pontuacao < start2022.pontuacao
             }
         })
     }, [rawData, analysisMode])
@@ -155,7 +155,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     const regressionCount = rawData.filter(item => {
         const s = item.historico.find(h => h.ano === 2022)
         const e = item.historico.find(h => h.ano === 2024)
-        return s && e && s.pontuacao >= 50 && e.pontuacao < s.pontuacao
+        return s && e && s.pontuacao > 0 && e.pontuacao < s.pontuacao
     }).length
 
     return (
@@ -165,8 +165,8 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                 <button
                     onClick={() => setAnalysisMode('success')}
                     className={`flex-1 p-5 rounded-2xl border-2 transition-all duration-300 ${analysisMode === 'success'
-                            ? 'bg-gradient-to-br from-emerald-500 to-green-600 border-emerald-400 text-white shadow-lg shadow-emerald-500/30'
-                            : 'bg-white border-gray-200 hover:border-emerald-300 hover:bg-emerald-50'
+                        ? 'bg-gradient-to-br from-emerald-500 to-green-600 border-emerald-400 text-white shadow-lg shadow-emerald-500/30'
+                        : 'bg-white border-gray-200 hover:border-emerald-300 hover:bg-emerald-50'
                         }`}
                 >
                     <div className="flex items-center gap-3">
@@ -190,8 +190,8 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                 <button
                     onClick={() => setAnalysisMode('regression')}
                     className={`flex-1 p-5 rounded-2xl border-2 transition-all duration-300 ${analysisMode === 'regression'
-                            ? 'bg-gradient-to-br from-orange-500 to-red-600 border-orange-400 text-white shadow-lg shadow-orange-500/30'
-                            : 'bg-white border-gray-200 hover:border-orange-300 hover:bg-orange-50'
+                        ? 'bg-gradient-to-br from-orange-500 to-red-600 border-orange-400 text-white shadow-lg shadow-orange-500/30'
+                        : 'bg-white border-gray-200 hover:border-orange-300 hover:bg-orange-50'
                         }`}
                 >
                     <div className="flex items-center gap-3">
@@ -215,8 +215,8 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
 
             {/* Header com Filtros */}
             <div className={`relative overflow-hidden rounded-2xl p-6 text-white shadow-xl ${analysisMode === 'success'
-                    ? 'bg-gradient-to-br from-slate-900 via-emerald-900 to-green-900'
-                    : 'bg-gradient-to-br from-slate-900 via-orange-900 to-red-900'
+                ? 'bg-gradient-to-br from-slate-900 via-emerald-900 to-green-900'
+                : 'bg-gradient-to-br from-slate-900 via-orange-900 to-red-900'
                 }`}>
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
 
