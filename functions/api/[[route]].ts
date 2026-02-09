@@ -78,6 +78,9 @@ export async function onRequest(context: any) {
       case 'comparativo-ano-anterior':
         return await handleComparativoAnoAnterior(request, db, url);
 
+      case 'evolucao-questoes':
+        return await handleEvolucaoQuestoes(request, db, url);
+
       case 'iegm-data':
         return await handleIEGMData(request, db, url);
 
@@ -209,7 +212,7 @@ async function handleRanking(request: Request, db: any, url: URL) {
     .offset(offset);
 
   // Calcular ranking
-  const rankingResults = results.map((item, index) => ({
+  const rankingResults = results.map((item: any, index: number) => ({
     ...item,
     ranking: index + 1 + offset,
     totalMunicipios: results.length

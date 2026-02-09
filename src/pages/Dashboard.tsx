@@ -6,6 +6,7 @@ import DashboardTabs, { TabType } from '@/components/Dashboard/DashboardTabs'
 import OverviewSection from '@/components/Dashboard/OverviewSection'
 import ComparisonSection from '@/components/Dashboard/ComparisonSection'
 import DetailsSection from '@/components/Dashboard/DetailsSection'
+import QuestionEvolutionSection from '@/components/Dashboard/QuestionEvolutionSection'
 import HistoryChart from '@/components/HistoryChart'
 import FiltersPanel from '@/components/FiltersPanel'
 import { FileText, FileSpreadsheet, Loader2, AlertCircle, Award, Play, Square, Maximize, Pause, ChevronLeft, ChevronRight } from 'lucide-react'
@@ -286,6 +287,7 @@ export default function Dashboard() {
                     </div>
                 </div>
             )
+            case 'questions': return <QuestionEvolutionSection municipio={municipioNome} />
             case 'details': return <DetailsSection data={data} municipio={municipioNome} />
             default: return null
         }

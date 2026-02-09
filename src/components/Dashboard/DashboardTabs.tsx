@@ -1,6 +1,6 @@
 import { LayoutDashboard, TrendingUp, GitCompare, FileText } from 'lucide-react'
 
-export type TabType = 'overview' | 'comparison' | 'history' | 'details'
+export type TabType = 'overview' | 'comparison' | 'history' | 'questions' | 'details'
 
 interface Tab {
     id: TabType
@@ -12,7 +12,8 @@ interface Tab {
 const tabs: Tab[] = [
     { id: 'overview', label: 'Visão Geral', icon: <LayoutDashboard size={18} />, description: 'Resumo e indicadores' },
     { id: 'comparison', label: 'Comparativo', icon: <GitCompare size={18} />, description: 'Compare com outros municípios' },
-    { id: 'history', label: 'Evolução', icon: <TrendingUp size={18} />, description: 'Histórico 2022-2024' },
+    { id: 'history', label: 'Evolução IEGM', icon: <TrendingUp size={18} />, description: 'Histórico 2022-2024' },
+    { id: 'questions', label: 'Evolução Perguntas', icon: <TrendingUp size={18} />, description: 'Comparativo de perguntas identicas' },
     { id: 'details', label: 'Detalhes', icon: <FileText size={18} />, description: 'Análise por dimensão' },
 ]
 

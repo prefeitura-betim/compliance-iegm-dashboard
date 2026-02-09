@@ -147,7 +147,7 @@ async function createTables() {
   console.log('🏗️  Criando tabelas no Cloudflare D1...');
 
   try {
-    const command = 'wrangler d1 execute DB --file=scripts/create-d1-tables.sql --local=false --remote';
+    const command = 'npx wrangler d1 execute DB -y --file=scripts/create-d1-tables.sql --local=false --remote';
     execSync(command, { stdio: 'inherit' });
     console.log('✅ Tabelas criadas com sucesso!');
     return true;
@@ -180,7 +180,7 @@ async function clearD1Tables(): Promise<void> {
   writeFileSync(sqlFilename, sqlContent, 'utf8');
 
   try {
-    const command = `wrangler d1 execute DB --file=${sqlFilename} --local=false --remote`;
+    const command = `npx wrangler d1 execute DB -y --file=${sqlFilename} --local=false --remote`;
     execSync(command, { stdio: 'inherit' });
     console.log('  ✓ Tabelas limpas com sucesso');
   } catch (error) {
@@ -276,6 +276,12 @@ async function importCSVToD1(filename: string, tableName: string): Promise<numbe
     const insertStatements = records.map(record => {
       const values = csvHeaders.map(header => {
         const value = record[header];
+
+        // CORREÇÃO: Permitir string vazia para coluna 'resposta' (NOT NULL)
+        if (header === 'resposta' && value === '') {
+          return "''";
+        }
+
         // Se o valor está vazio ou é 'null', usar NULL
         if (value === null || value === undefined || value === '' || value === 'null' || value === 'NULL') {
           return 'NULL';
@@ -319,7 +325,7 @@ async function importCSVToD1(filename: string, tableName: string): Promise<numbe
         console.log(`  🔄 Executando lote ${batchIndex + 1}/${batches.length} (${batch.length} registros)...`);
 
         // Usar wrangler para executar o arquivo SQL
-        const command = `wrangler d1 execute DB --file=${sqlFilename} --local=false --remote`;
+        const command = `npx wrangler d1 execute DB -y --file=${sqlFilename} --local=false --remote`;
         execSync(command, { stdio: 'inherit' });
 
         totalImported += batch.length;
@@ -433,218 +439,20 @@ async function migrateResultadosEstados(): Promise<number> {
 }
 
 async function migrateRespostasDetalhadas(): Promise<number> {
-  console.log('Criando respostas detalhadas...');
+  console.log('Migrando respostas detalhadas (Dados REAIS)...');
 
-  // Buscar dados do município configurado
-  const municipio = await localDB.select().from(schema.municipios)
-    .where(eq(schema.municipios.nome, DEFAULT_MUNICIPIO_CONFIG.municipio))
-    .limit(1);
-
-  if (municipio.length === 0) {
-    console.log(`  ⚠️  Município ${DEFAULT_MUNICIPIO_CONFIG.municipio} não encontrado`);
-    return 0;
-  }
-
-  // Buscar resultados do município
-  const resultadosMunicipio = await localDB.select().from(schema.resultadosMunicipios)
-    .where(eq(schema.resultadosMunicipios.municipioId, municipio[0].id));
-
-  if (resultadosMunicipio.length === 0) {
-    console.log(`  ⚠️  Nenhum resultado encontrado para ${DEFAULT_MUNICIPIO_CONFIG.municipio}`);
-    return 0;
-  }
-
-  const respostasDetalhadas = [];
-
-  for (const resultado of resultadosMunicipio) {
-    // Buscar dados do tribunal
-    const tribunalData = await localDB
-      .select()
-      .from(schema.tribunais)
-      .where(eq(schema.tribunais.id, resultado.tribunalId))
-      .limit(1);
-
-    if (tribunalData.length > 0) {
-      const t = tribunalData[0];
-      const m = municipio[0];
-
-      // Criar respostas detalhadas para cada indicador
-      const indicadores = [
-        { codigo: 'i-Educ', percentual: resultado.percentualIeduc, nome: 'Educação' },
-        { codigo: 'i-Saude', percentual: resultado.percentualIsaude, nome: 'Saúde' },
-        { codigo: 'i-Fiscal', percentual: resultado.percentualIfiscal, nome: 'Gestão Fiscal' },
-        { codigo: 'i-Amb', percentual: resultado.percentualIamb, nome: 'Meio Ambiente' },
-        { codigo: 'i-Cidade', percentual: resultado.percentualIcidade, nome: 'Cidades' },
-        { codigo: 'i-Plan', percentual: resultado.percentualIplan, nome: 'Planejamento' },
-        { codigo: 'i-Gov TI', percentual: resultado.percentualIgovTi, nome: 'Governança TI' }
-      ];
-
-      for (const indicador of indicadores) {
-        if (indicador.percentual !== null) {
-          const questao = generateQuestion(indicador.nome, indicador.percentual);
-          const resposta = indicador.percentual >= 0.6 ? 'Adequado' : 'Necessita Melhoria';
-          const pontuacao = Math.round(indicador.percentual * 100);
-          const nota = Math.round(indicador.percentual * 1000);
-
-          respostasDetalhadas.push({
-            tribunal: t.codigo,
-            codigoIbge: m.codigoIbge,
-            municipio: m.nome,
-            indicador: indicador.codigo,
-            questao,
-            resposta,
-            pontuacao,
-            peso: 1,
-            nota,
-            anoRef: resultado.anoRef
-          });
-        }
-      }
-    }
-  }
-
-  // Exportar para CSV
-  if (respostasDetalhadas.length > 0) {
-    const headers = Object.keys(respostasDetalhadas[0]);
-    const csvContent = [
-      headers.join(','),
-      ...respostasDetalhadas.map(row =>
-        headers.map(header => {
-          const value = row[header as keyof typeof row];
-          if (value === null || value === undefined) return '';
-          if (typeof value === 'string' && value.includes(',')) {
-            return `"${value.replace(/"/g, '""')}"`;
-          }
-          return value;
-        }).join(',')
-      )
-    ].join('\n');
-
-    const filename = 'temp_respostas_detalhadas.csv';
-    writeFileSync(filename, csvContent, 'utf8');
-
-    console.log(`  ✓ ${respostasDetalhadas.length} respostas detalhadas criadas`);
-
-    // Importar para D1
-    try {
-      // Ler o arquivo CSV usando parser robusto
-      const csvContent = readFileSync(filename, 'utf8');
-      const records = parse(csvContent, {
-        columns: true, // Usar primeira linha como headers
-        skip_empty_lines: true,
-        trim: true,
-        relax_quotes: true, // Ser mais tolerante com aspas malformadas
-        relax_column_count: true, // Ser mais tolerante com número de colunas
-        quote: '"',
-        escape: '"'
-      });
-
-      if (records.length === 0) {
-        console.log(`  ⚠️  Nenhum dado para importar em respostas_detalhadas`);
-        unlinkSync(filename);
-        return 0;
-      }
-
-      // Obter mapeamento de colunas para respostas_detalhadas
-      const columnMapping = columnMappings['respostas_detalhadas'] || {};
-
-      // Mapear headers do CSV para colunas do schema D1
-      const csvHeaders = Object.keys(records[0]);
-      const d1Headers = csvHeaders.map(header => columnMapping[header] || header);
-
-      // Criar INSERT statements
-      const insertStatements = records.map(record => {
-        const values = csvHeaders.map(header => {
-          const value = record[header];
-          // Se o valor está vazio ou é 'null', usar NULL
-          if (value === null || value === undefined || value === '' || value === 'null' || value === 'NULL') {
-            return 'NULL';
-          }
-          // Se é um número, não usar aspas
-          if (!isNaN(Number(value)) && value !== '') {
-            return value;
-          }
-          // Para strings, escapar aspas, remover quebras de linha, caracteres de controle, aspas no início/fim e tabs
-          return `'${String(value)
-            .replace(/'/g, "''")
-            .replace(/\r?\n/g, ' ')
-            .replace(/[\u0000-\u001F\u007F]/g, ' ')
-            .replace(/^'+|'+$/g, '')
-            .replace(/\t/g, ' ')
-            }'`;
-        });
-
-        return `INSERT INTO respostas_detalhadas (${d1Headers.join(', ')}) VALUES (${values.join(', ')});`;
-      });
-
-      // Dividir em lotes de 500 INSERTs para evitar bug do D1
-      const batchSize = 500;
-      const batches = [];
-      for (let i = 0; i < insertStatements.length; i += batchSize) {
-        batches.push(insertStatements.slice(i, i + batchSize));
-      }
-
-      console.log(`  📦 Dividindo ${insertStatements.length} registros em ${batches.length} lotes de ${batchSize}`);
-
-      let totalImported = 0;
-
-      // Executar cada lote separadamente
-      for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
-        const batch = batches[batchIndex];
-        const sqlContent = batch.join('\n');
-        const sqlFilename = `temp_import_respostas_detalhadas_batch_${batchIndex + 1}.sql`;
-        writeFileSync(sqlFilename, sqlContent, 'utf8');
-
-        try {
-          console.log(`  🔄 Executando lote ${batchIndex + 1}/${batches.length} (${batch.length} registros)...`);
-
-          const command = `wrangler d1 execute DB --file=${sqlFilename} --local=false --remote`;
-          execSync(command, { stdio: 'inherit' });
-
-          totalImported += batch.length;
-          console.log(`  ✅ Lote ${batchIndex + 1} executado com sucesso`);
-
-        } catch (error) {
-          console.error(`  ❌ Erro no lote ${batchIndex + 1}:`, error);
-          // Continuar com o próximo lote mesmo se este falhar
-        } finally {
-          // Limpar arquivo temporário do lote
-          unlinkSync(sqlFilename);
-        }
-
-        // Pequena pausa entre lotes para dar tempo ao D1 processar
-        if (batchIndex < batches.length - 1) {
-          await new Promise(resolve => setTimeout(resolve, 1000));
-        }
-      }
-
-      // Limpar arquivo CSV original
-      unlinkSync(filename);
-
-      console.log(`  ✓ ${totalImported} respostas detalhadas importadas para D1 (de ${records.length} total)`);
-      return totalImported;
-    } catch (error) {
-      console.error(`  ✗ Erro ao importar respostas detalhadas:`, error);
-      return 0;
-    }
-  }
-
-  return 0;
+  // Migrar dados reais da tabela respostas_detalhadas
+  return migrateTable(
+    'respostas_detalhadas',
+    localDB.select().from(schema.respostasDetalhadas)
+  );
 }
 
-function generateQuestion(dimensao: string, score: number): string {
-  const questions = {
-    'Educação': 'Investimento em infraestrutura escolar',
-    'Saúde': 'Investimento em equipamentos médicos',
-    'Gestão Fiscal': 'Gestão da dívida pública (Acima da média estadual)',
-    'Meio Ambiente': 'Preservação de áreas verdes',
-    'Cidades': 'Saneamento básico e infraestrutura',
-    'Planejamento': 'Monitoramento de indicadores estratégicos',
-    'Governança TI': 'Transparência digital e governo eletrônico'
-  };
+// Remove helper function as it is no longer used
+// function generateQuestion... (need to handle this in a separate edit or just leave it unused)
 
-  return questions[dimensao as keyof typeof questions] || 'Questão específica da dimensão';
-}
+
+
 
 async function main() {
   console.log('🚀 Iniciando migração para Cloudflare D1...');

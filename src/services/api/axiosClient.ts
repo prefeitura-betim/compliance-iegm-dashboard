@@ -269,6 +269,10 @@ export class AxiosClient {
   async getAnosDisponiveis(): Promise<AxiosApiResponse> {
     return this.get('/api/anos-disponiveis');
   }
+
+  async getEvolucaoQuestoes(municipio: string): Promise<AxiosApiResponse> {
+    return this.get('/api/evolucao-questoes', { params: { municipio } });
+  }
 }
 
 // ============================================================================

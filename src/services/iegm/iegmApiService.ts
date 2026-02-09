@@ -205,6 +205,16 @@ export class IEGMApiService {
     }
   }
 
+  async getEvolucaoQuestoes(municipio: string): Promise<any[]> {
+    try {
+      const response = await this.client.getEvolucaoQuestoes(municipio);
+      return response.data || [];
+    } catch (error) {
+      console.error('Erro ao buscar evolução de questões:', error);
+      throw new Error('Falha ao carregar evolução de questões');
+    }
+  }
+
   // ============================================================================
   // MÉTODOS DE ANÁLISE AVANÇADA
   // ============================================================================
