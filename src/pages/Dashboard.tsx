@@ -14,9 +14,10 @@ import { toPng } from 'html-to-image'
 import { jsPDF } from 'jspdf'
 
 // Tipos para as cenas cinematográficas
-type PresentationScene = 'intro' | 'dimensions' | 'comparison' | 'evolution' | 'ranking'
+type PresentationScene = 'intro' | 'dimensions' | 'comparison' | 'evolution' | 'questions' | 'ranking'
 
 export default function Dashboard() {
+    // ... rest of state
     const [searchParams] = useSearchParams()
     const [activeTab, setActiveTab] = useState<TabType>('overview')
     const [isGeneratingPDF, setIsGeneratingPDF] = useState(false)
@@ -483,6 +484,15 @@ export default function Dashboard() {
                                     <div className="flex items-center gap-6 mb-16"><div className="h-16 w-3 bg-green-500 rounded-full shadow-[0_0_20px_rgba(34,197,94,0.5)]"></div><h2 className="text-6xl font-black text-white font-heading">Evolução Histórica</h2></div>
                                     <div className="bg-white/95 backdrop-blur-3xl p-12 rounded-[3rem] shadow-2xl">
                                         <HistoryChart municipio={municipioNome} />
+                                    </div>
+                                </div>
+                            )}
+
+                            {presentationScene === 'questions' && (
+                                <div className="animate-cinematic-in space-y-8 max-w-7xl mx-auto">
+                                    <div className="flex items-center gap-6 mb-16"><div className="h-16 w-3 bg-betim-blue rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5)]"></div><h2 className="text-6xl font-black text-white font-heading">Evolução das Perguntas</h2></div>
+                                    <div className="bg-white/95 backdrop-blur-3xl p-10 rounded-[3rem] shadow-2xl max-h-[70vh] overflow-y-auto custom-scrollbar">
+                                        <QuestionEvolutionSection municipio={municipioNome} />
                                     </div>
                                 </div>
                             )}

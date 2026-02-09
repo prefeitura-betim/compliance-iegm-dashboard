@@ -1,3 +1,4 @@
+/// <reference types="@cloudflare/workers-types" />
 import { drizzle } from 'drizzle-orm/d1';
 import * as schema from '../../src/db/schema';
 import { eq, and, desc, asc, sql, count, avg, min, max, like } from 'drizzle-orm';
@@ -566,6 +567,63 @@ async function handleMunicipiosLista(request: Request, db: any, url: URL) {
   const nomes = results.map((r: any) => r.nome);
 
   return new Response(JSON.stringify(nomes), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+  });
+}
+
+async function handleEvolucaoQuestoes(request: Request, db: any, url: URL) {
+  const municipio = url.searchParams.get('municipio');
+
+  if (!municipio) {
+    return new Response(JSON.stringify({ error: 'Missing required parameter: municipio' }), {
+      status: 400,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  // Normalizar município para busca
+  const searchMunicipio = municipio.trim().toUpperCase();
+
+  // Buscar todas as respostas para este município em qualquer ano
+  const results = await db
+    .select()
+    .from(respostasDetalhadas)
+    .where(sql`UPPER(${respostasDetalhadas.municipio}) LIKE ${`%${searchMunicipio}%`}`)
+    .orderBy(asc(respostasDetalhadas.anoRef), asc(respostasDetalhadas.indicador));
+
+  // Agrupar por texto da questão para facilitar o consumo no frontend
+  const evolucao: Record<string, {
+    questao: string;
+    indicador: string;
+    historico: Array<{
+      ano: number;
+      resposta: string;
+      pontuacao: number;
+      nota: number;
+    }>;
+  }> = {};
+
+  results.forEach((row: any) => {
+    const key = `${row.indicador}|${row.questao}`.trim();
+    if (!evolucao[key]) {
+      evolucao[key] = {
+        questao: row.questao,
+        indicador: row.indicador,
+        historico: []
+      };
+    }
+    evolucao[key].historico.push({
+      ano: row.anoRef,
+      resposta: row.resposta,
+      pontuacao: row.pontuacao,
+      nota: row.nota
+    });
+  });
+
+  // Converter para array
+  const finalResults = Object.values(evolucao);
+
+  return new Response(JSON.stringify(finalResults), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' }
   });
 }

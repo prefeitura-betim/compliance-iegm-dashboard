@@ -166,7 +166,7 @@ app.get('/api/ranking-municipios', (req, res) => {
       WHERE ano_ref = ? AND percentual_iegm_municipio IS NOT NULL
     `).get(anoRef) as { total: number }).total;
 
-        const rankingWithPosition = ranking.map((r, index) => ({
+        const rankingWithPosition = ranking.map((r: any, index: number) => ({
             ...r,
             ranking: index + 1,
             totalMunicipios: total
@@ -383,6 +383,53 @@ app.get('/api/analise/melhoria', (req, res) => {
     } catch (error) {
         console.error('Erro em /api/analise/melhoria:', error);
         res.status(500).json({ error: 'Erro ao gerar análise de melhoria' });
+    }
+});
+
+/**
+ * GET /api/evolucao-questoes
+ * Retorna evolução histórica de perguntas para um município
+ */
+app.get('/api/evolucao-questoes', (req, res) => {
+    try {
+        const { municipio } = req.query;
+        if (!municipio) {
+            return res.status(400).json({ error: 'Município é obrigatório' });
+        }
+
+        const searchMunicipio = (municipio as string).toUpperCase();
+
+        const results = db.prepare(`
+            SELECT * 
+            FROM respostas_detalhadas 
+            WHERE upper(municipio) LIKE ?
+            ORDER BY ano_ref ASC, indicador ASC
+        `).all(`%${searchMunicipio}%`);
+
+        // Agrupar por questao
+        const evolucao: Record<string, any> = {};
+
+        results.forEach((row: any) => {
+            const key = `${row.indicador}|${row.questao}`.trim();
+            if (!evolucao[key]) {
+                evolucao[key] = {
+                    questao: row.questao,
+                    indicador: row.indicador,
+                    historico: []
+                };
+            }
+            evolucao[key].historico.push({
+                ano: row.ano_ref,
+                resposta: row.resposta,
+                pontuacao: row.pontuacao,
+                nota: row.nota
+            });
+        });
+
+        res.json(Object.values(evolucao));
+    } catch (error) {
+        console.error('Erro em /api/evolucao-questoes:', error);
+        res.status(500).json({ error: 'Erro ao buscar evolução de questões' });
     }
 });
 
