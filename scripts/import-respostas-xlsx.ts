@@ -20,35 +20,16 @@ const db = new Database(dbPath);
 
 // Mapeamento de arquivos para indicadores
 const FILES = [
-    { file: 'respostas_iegm_i-Amb_2024.xlsx', indicador: 'i-Amb' },
-    { file: 'respostas_iegm_i-Cidade_2024.xlsx', indicador: 'i-Cidade' },
-    { file: 'respostas_iegm_i-Educ_2024.xlsx', indicador: 'i-Educ' },
-    { file: 'respostas_iegm_i-Fiscal_2024.xlsx', indicador: 'i-Fiscal' },
-    { file: 'respostas_iegm_i-GovTi_2024.xlsx', indicador: 'i-GovTI' },
-    { file: 'respostas_iegm_i-Plan_2024.xlsx', indicador: 'i-Plan' },
-    { file: 'respostas_iegm_i-Saude_2024.xlsx', indicador: 'i-Saude' },
+    { filePattern: 'respostas_iegm_i-Amb_{ano}.xlsx', indicador: 'i-Amb' },
+    { filePattern: 'respostas_iegm_i-Cidade_{ano}.xlsx', indicador: 'i-Cidade' },
+    { filePattern: 'respostas_iegm_i-Educ_{ano}.xlsx', indicador: 'i-Educ' },
+    { filePattern: 'respostas_iegm_i-Fiscal_{ano}.xlsx', indicador: 'i-Fiscal' },
+    { filePattern: 'respostas_iegm_i-GovTi_{ano}.xlsx', indicador: 'i-GovTI' },
+    { filePattern: 'respostas_iegm_i-Plan_{ano}.xlsx', indicador: 'i-Plan' },
+    { filePattern: 'respostas_iegm_i-Saude_{ano}.xlsx', indicador: 'i-Saude' },
 ];
 
 console.log('🚀 Importando Respostas Detalhadas de arquivos XLSX...\n');
-
-// Verificar quantos registros existem antes de deletar
-const countResult = db.prepare(`SELECT COUNT(*) as count FROM respostas_detalhadas WHERE ano_ref = 2024 AND tribunal = 'TCEMG'`).get() as { count: number };
-console.log(`   Registros existentes de 2024: ${countResult.count}`);
-
-if (countResult.count > 0) {
-    console.log('🧹 Limpando dados anteriores em lotes...');
-    // Deletar em lotes menores para não travar
-    let deleted = 0;
-    while (deleted < countResult.count) {
-        const result = db.prepare(`DELETE FROM respostas_detalhadas WHERE id IN (SELECT id FROM respostas_detalhadas WHERE ano_ref = 2024 AND tribunal = 'TCEMG' LIMIT 10000)`).run();
-        deleted += result.changes;
-        process.stdout.write(`\r   Deletados: ${deleted} / ${countResult.count}`);
-        if (result.changes === 0) break;
-    }
-    console.log('\n   ✓ Limpeza concluída');
-} else {
-    console.log('   Nenhum dado anterior para limpar.');
-}
 
 // Preparar insert
 const insert = db.prepare(`
@@ -63,59 +44,92 @@ let negativas = 0;
 let neutras = 0;
 let positivas = 0;
 
-for (const { file, indicador } of FILES) {
-    const filePath = join(dataDir, file);
+const ANOS = [2022, 2023, 2024];
 
-    if (!existsSync(filePath)) {
-        console.log(`⚠️  Arquivo não encontrado: ${file}`);
+for (const ano of ANOS) {
+    const yearDir = join(dataDir, `respostas_iegm_${ano}`);
+    if (!existsSync(yearDir)) {
+        console.log(`⚠️  Diretório não encontrado: ${yearDir}`);
         continue;
     }
 
-    console.log(`📊 Processando: ${file} (${indicador})`);
+    // Verificar quantos registros existem antes de deletar
+    const countResult = db.prepare(`SELECT COUNT(*) as count FROM respostas_detalhadas WHERE ano_ref = ? AND tribunal = 'TCEMG'`).get(ano) as { count: number };
+    console.log(`\n📅 Processando ano ${ano}`);
+    console.log(`   Registros existentes: ${countResult.count}`);
 
-    const wb = XLSX.readFile(filePath);
-    const sheet = wb.Sheets[wb.SheetNames[0]];
-    const data = XLSX.utils.sheet_to_json<Record<string, any>>(sheet);
-
-    console.log(`   ${data.length} registros encontrados`);
-
-    const processFile = db.transaction(() => {
-        for (const row of data) {
-            const municipio = String(row['municipio'] || '').toUpperCase().trim();
-            const questao = String(row['questao'] || '').trim();
-            const resposta = String(row['resposta'] || '').trim();
-            const nota = parseFloat(row['nota']) || 0;
-            const anoRef = parseInt(row['ano_ref']) || 2024;
-
-            if (!municipio || !questao) continue;
-
-            // Contagem por tipo
-            if (nota < 0) negativas++;
-            else if (nota === 0) neutras++;
-            else positivas++;
-
-            try {
-                insert.run(
-                    'TCEMG',     // tribunal
-                    '0',        // codigo_ibge (não temos)
-                    municipio,
-                    indicador,
-                    questao,
-                    resposta,
-                    nota,       // pontuacao
-                    null,       // peso
-                    nota,       // nota
-                    anoRef
-                );
-                totalImportado++;
-            } catch (e) {
-                // Ignorar erros de duplicatas
-            }
+    if (countResult.count > 0) {
+        console.log('🧹 Limpando dados anteriores em lotes...');
+        // Deletar em lotes menores para não travar
+        let deleted = 0;
+        while (deleted < countResult.count) {
+            const result = db.prepare(`DELETE FROM respostas_detalhadas WHERE id IN (SELECT id FROM respostas_detalhadas WHERE ano_ref = ? AND tribunal = 'TCEMG' LIMIT 10000)`).run(ano);
+            deleted += result.changes;
+            process.stdout.write(`\r   Deletados: ${deleted} / ${countResult.count}`);
+            if (result.changes === 0) break;
         }
-    });
+        console.log('\n   ✓ Limpeza concluída');
+    } else {
+        console.log('   Nenhum dado anterior para limpar.');
+    }
 
-    processFile();
-    console.log(`   ✓ Concluído\n`);
+    for (const { filePattern, indicador } of FILES) {
+        // Ajustar nome do arquivo para o ano correto
+        const file = filePattern.replace('{ano}', ano.toString());
+        const filePath = join(yearDir, file);
+
+        if (!existsSync(filePath)) {
+            console.log(`⚠️  Arquivo não encontrado: ${file}`);
+            continue;
+        }
+
+        console.log(`📊 Processando: ${file} (${indicador})`);
+
+        const wb = XLSX.readFile(filePath);
+        const sheet = wb.Sheets[wb.SheetNames[0]];
+        const data = XLSX.utils.sheet_to_json<Record<string, any>>(sheet);
+
+        console.log(`   ${data.length} registros encontrados`);
+
+        const processFile = db.transaction(() => {
+            for (const row of data) {
+                const municipio = String(row['municipio'] || '').toUpperCase().trim();
+                const questao = String(row['questao'] || '').trim();
+                const resposta = String(row['resposta'] || '').trim();
+                const nota = parseFloat(row['nota']) || 0;
+                // Forçar o ano correto, ignorando o da planilha se estiver errado ou faltante
+                const anoRef = ano;
+
+                if (!municipio || !questao) continue;
+
+                // Contagem por tipo
+                if (nota < 0) negativas++;
+                else if (nota === 0) neutras++;
+                else positivas++;
+
+                try {
+                    insert.run(
+                        'TCEMG',     // tribunal
+                        '0',        // codigo_ibge (não temos)
+                        municipio,
+                        indicador,
+                        questao,
+                        resposta,
+                        nota,       // pontuacao
+                        null,       // peso
+                        nota,       // nota
+                        anoRef
+                    );
+                    totalImportado++;
+                } catch (e) {
+                    // Ignorar erros de duplicatas
+                }
+            }
+        });
+
+        processFile();
+        console.log(`   ✓ Concluído`);
+    }
 }
 
 console.log('🎉 Importação de respostas concluída!');
