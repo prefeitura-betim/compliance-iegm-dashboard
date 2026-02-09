@@ -42,7 +42,7 @@ export default function Dashboard() {
         let timer: NodeJS.Timeout
         let countdown: NodeJS.Timeout
 
-        const scenes: PresentationScene[] = ['intro', 'dimensions', 'comparison', 'evolution', 'ranking']
+        const scenes: PresentationScene[] = ['intro', 'dimensions', 'comparison', 'evolution', 'questions', 'ranking']
 
         const nextScene = () => {
             setIsTransitioning(true)

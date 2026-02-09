@@ -48,6 +48,9 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     // Filtrar dados com base no modo de análise
     const data = useMemo(() => {
         return rawData.filter(item => {
+            // Excluir perguntas específicas que não devem aparecer
+            if (item.questao.includes('Informe a data da última entrega na escola')) return false
+
             const sorted = [...item.historico].sort((a, b) => a.ano - b.ano)
             if (sorted.length < 3) return false // Precisa ter os 3 anos
 
