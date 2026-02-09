@@ -372,7 +372,7 @@ export default function Dashboard() {
                             <div className="flex items-center gap-1 px-2">
                                 <button
                                     onClick={() => {
-                                        const scenes: PresentationScene[] = ['intro', 'dimensions', 'comparison', 'evolution', 'ranking']
+                                        const scenes: PresentationScene[] = ['intro', 'dimensions', 'comparison', 'evolution', 'questions', 'ranking']
                                         setPresentationScene(current => {
                                             const idx = scenes.indexOf(current)
                                             return scenes[(idx - 1 + scenes.length) % scenes.length]
@@ -395,7 +395,7 @@ export default function Dashboard() {
 
                                 <button
                                     onClick={() => {
-                                        const scenes: PresentationScene[] = ['intro', 'dimensions', 'comparison', 'evolution', 'ranking']
+                                        const scenes: PresentationScene[] = ['intro', 'dimensions', 'comparison', 'evolution', 'questions', 'ranking']
                                         setPresentationScene(current => {
                                             const idx = scenes.indexOf(current)
                                             return scenes[(idx + 1) % scenes.length]
