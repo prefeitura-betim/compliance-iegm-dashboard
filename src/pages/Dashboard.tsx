@@ -82,7 +82,10 @@ export default function Dashboard() {
             // Calcular tempo necessário para esta cena específica
             const container = dashboardRef.current
             const scrollableHeight = container ? container.scrollHeight - container.clientHeight : 0
-            const calculatedDuration = Math.max(15, 12 + Math.ceil(scrollableHeight / 60))
+
+            // Tempo mínimo maior para cenas com mais conteúdo
+            const baseMinDuration = presentationScene === 'questions' ? 45 : 15
+            const calculatedDuration = Math.max(baseMinDuration, 12 + Math.ceil(scrollableHeight / 40)) // 40px/s em vez de 60px/s
 
             setSceneDuration(calculatedDuration)
             setSecondsRemaining(calculatedDuration)
