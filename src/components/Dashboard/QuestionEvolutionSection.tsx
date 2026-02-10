@@ -326,10 +326,10 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                         </div>
                         <div className="text-left flex-1">
                             <h3 className={`font-bold text-sm sm:text-lg ${analysisMode === 'regression' ? 'text-white' : 'text-gray-800'}`}>
-                                Pontos de Atenção
+                                Regressões
                             </h3>
                             <p className={`text-xs sm:text-sm hidden sm:block ${analysisMode === 'regression' ? 'text-orange-100' : 'text-gray-500'}`}>
-                                Começaram bem e decaíram
+                                Perderam pontuação de 2023 para 2024
                             </p>
                         </div>
                     </div>
