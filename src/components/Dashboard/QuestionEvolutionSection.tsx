@@ -149,7 +149,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
             const diff = p2024 - p2023 // sempre negativo neste modo
             return {
                 icon: <ArrowDownRight size={14} />,
-                text: `${diff.toFixed(0)}pp`,
+                text: `${diff.toFixed(0)}`,
                 color: 'text-red-700',
                 bgColor: 'bg-red-50 border-red-200'
             }
@@ -162,19 +162,19 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
 
         if (diff > 0) return {
             icon: <ArrowUpRight size={14} />,
-            text: `+${diff.toFixed(0)}pp`,
+            text: `+${diff.toFixed(0)}`,
             color: 'text-emerald-700',
             bgColor: 'bg-emerald-50 border-emerald-200'
         }
         if (diff < 0) return {
             icon: <ArrowDownRight size={14} />,
-            text: `${diff.toFixed(0)}pp`,
+            text: `${diff.toFixed(0)}`,
             color: 'text-red-700',
             bgColor: 'bg-red-50 border-red-200'
         }
         return {
             icon: <Minus size={14} />,
-            text: '0pp',
+            text: '0',
             color: 'text-gray-500',
             bgColor: 'bg-gray-50 border-gray-200'
         }
@@ -270,34 +270,39 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
         return Number(y2024.pontuacao) < Number(y2023.pontuacao)
     }).length
 
-    // Componente de barra de progresso inline — porcentagem acima da barra para clara associação
-    const ScoreBar = ({ score, yearLabel, delta }: { score: number, yearLabel?: string, delta: ReturnType<typeof getYearDelta> }) => (
-        <div className="min-w-0">
-            {/* Linha com ano + porcentagem + delta — claramente acima da barra */}
-            <div className="flex items-center justify-between mb-1">
-                <div className="flex items-baseline gap-1.5">
-                    {yearLabel && (
-                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">{yearLabel}</span>
+    // Componente de barra de progresso inline — valor absoluto
+    const ScoreBar = ({ score, yearLabel, delta, maxScore = 100 }: { score: number, yearLabel?: string, delta: ReturnType<typeof getYearDelta>, maxScore?: number }) => {
+        // Calcular largura relativa (limitada a 100%)
+        const width = Math.min((score / (maxScore || 100)) * 100, 100)
+
+        return (
+            <div className="min-w-0">
+                {/* Linha com ano + valor + delta */}
+                <div className="flex items-center justify-between mb-1">
+                    <div className="flex items-baseline gap-1.5">
+                        {yearLabel && (
+                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">{yearLabel}</span>
+                        )}
+                        <span className="text-sm font-black text-gray-800 tabular-nums">
+                            {score.toFixed(1).replace('.0', '')}
+                        </span>
+                    </div>
+                    {delta && (
+                        <span className={`text-[10px] font-semibold ${delta.color} tabular-nums`}>
+                            {delta.text}
+                        </span>
                     )}
-                    <span className="text-sm font-black text-gray-800 tabular-nums">
-                        {score.toFixed(0)}%
-                    </span>
                 </div>
-                {delta && (
-                    <span className={`text-[10px] font-semibold ${delta.color} tabular-nums`}>
-                        {delta.text}pp
-                    </span>
-                )}
+                {/* Barra de progresso */}
+                <div className={`w-full h-2 rounded-full ${getBarBg(score)} overflow-hidden`}>
+                    <div
+                        className={`h-full rounded-full ${getBarColor(score)} transition-all duration-500`}
+                        style={{ width: `${Math.max(width, 2)}%` }}
+                    />
+                </div>
             </div>
-            {/* Barra de progresso */}
-            <div className={`w-full h-2 rounded-full ${getBarBg(score)} overflow-hidden`}>
-                <div
-                    className={`h-full rounded-full ${getBarColor(score)} transition-all duration-500`}
-                    style={{ width: `${Math.max(score, 2)}%` }}
-                />
-            </div>
-        </div>
-    )
+        )
+    }
 
     return (
         <div className="space-y-5">
@@ -414,6 +419,12 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                 <div className="space-y-3">
                     {groupedData.map(([indicador, items]) => {
                         const isCollapsed = collapsedGroups.has(indicador)
+
+                        // Calcular pontuação máxima neste grupo para normalizar as barras
+                        const maxGroupScore = Math.max(
+                            ...items.flatMap(item => item.historico.map(h => Number(h.pontuacao)))
+                        ) || 100
+
                         return (
                             <div key={indicador} className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
                                 {/* Cabeçalho do grupo (indicador) */}
@@ -469,6 +480,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                             <ScoreBar
                                                                 score={Number(y2022?.pontuacao || 0)}
                                                                 delta={null}
+                                                                maxScore={maxGroupScore}
                                                             />
                                                         </div>
 
@@ -477,6 +489,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                             <ScoreBar
                                                                 score={Number(y2023?.pontuacao || 0)}
                                                                 delta={getYearDelta(item.historico, 2023)}
+                                                                maxScore={maxGroupScore}
                                                             />
                                                         </div>
 
@@ -485,6 +498,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                             <ScoreBar
                                                                 score={Number(y2024?.pontuacao || 0)}
                                                                 delta={getYearDelta(item.historico, 2024)}
+                                                                maxScore={maxGroupScore}
                                                             />
                                                         </div>
 
@@ -520,6 +534,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                                         <ScoreBar
                                                                             score={Number(yearData?.pontuacao || 0)}
                                                                             delta={year > 2022 ? getYearDelta(item.historico, year) : null}
+                                                                            maxScore={maxGroupScore}
                                                                         />
                                                                     </div>
                                                                 </div>

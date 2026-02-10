@@ -9,9 +9,10 @@ import DetailsSection from '@/components/Dashboard/DetailsSection'
 import QuestionEvolutionSection from '@/components/Dashboard/QuestionEvolutionSection'
 import HistoryChart from '@/components/HistoryChart'
 import FiltersPanel from '@/components/FiltersPanel'
-import { FileText, FileSpreadsheet, Loader2, AlertCircle, Award, Play, Square, Maximize, Pause, ChevronLeft, ChevronRight } from 'lucide-react'
+import { FileText, FileSpreadsheet, Loader2, AlertCircle, Award, Play, Square, Maximize, Pause, ChevronLeft, ChevronRight, Info } from 'lucide-react'
 import { toPng } from 'html-to-image'
 import { jsPDF } from 'jspdf'
+import MethodologyModal from '@/components/MethodologyModal'
 
 // Tipos para as cenas cinematográficas
 type PresentationScene = 'intro' | 'dimensions' | 'comparison' | 'evolution' | 'questions' | 'ranking'
@@ -28,6 +29,7 @@ export default function Dashboard() {
     const [showControls, setShowControls] = useState(true)
     const [sceneDuration, setSceneDuration] = useState(20)
     const [secondsRemaining, setSecondsRemaining] = useState(20)
+    const [isMethodologyOpen, setIsMethodologyOpen] = useState(false)
     const dashboardRef = useRef<HTMLDivElement>(null)
     const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -341,6 +343,13 @@ export default function Dashboard() {
                         <button onClick={toggleFullscreen} className="bg-white/10 hover:bg-white/30 backdrop-blur text-white p-2 rounded-lg transition-all border border-white/20">
                             <Maximize size={18} />
                         </button>
+                        <button
+                            onClick={() => setIsMethodologyOpen(true)}
+                            className="bg-white/10 hover:bg-white/30 backdrop-blur text-white p-2 rounded-lg transition-all border border-white/20"
+                            title="Metodologia e Pesos"
+                        >
+                            <Info size={18} />
+                        </button>
                         <div className="w-px h-8 bg-white/20 mx-1 hidden md:block" />
                         <button onClick={handleDownloadPDF} disabled={isGeneratingPDF} className="bg-white/20 hover:bg-white/30 backdrop-blur text-white px-4 py-2 rounded-lg transition-all flex items-center gap-2 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed">
                             {isGeneratingPDF ? <Loader2 size={18} className="animate-spin" /> : <FileText size={18} />} {isGeneratingPDF ? 'Gerando...' : 'PDF'}
@@ -527,6 +536,8 @@ export default function Dashboard() {
                     )}
                 </div>
             )}
+            {/* Modal de Metodologia */}
+            <MethodologyModal isOpen={isMethodologyOpen} onClose={() => setIsMethodologyOpen(false)} />
         </div>
     )
 }

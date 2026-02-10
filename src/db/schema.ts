@@ -222,10 +222,22 @@ export const respostasDetalhadas = sqliteTable('respostas_detalhadas', {
   peso: real('peso').default(1.0),
   nota: real('nota'), // pontuação na escala 0-1000
   anoRef: integer('ano_ref').notNull(),
+
+  // Novos campos (importação completa)
+  questaoId: text('questao_id'),
+  indiceQuestao: text('indice_questao'),
+  chaveQuestao: text('chave_questao'),
+  nomeQuestionario: text('nome_questionario'),
+  questionarioId: text('questionario_id'),
+  dataTermino: text('data_termino'),
+  sequenciaBlocoRepeticao: integer('sequencia_bloco_repeticao'),
+  rotulo: text('rotulo'),
 }, (table) => ({
   municipioAnoIdx: index('resposta_detalhada_municipio_ano_idx').on(table.municipio, table.anoRef),
   indicadorIdx: index('resposta_detalhada_indicador_idx').on(table.indicador),
   tribunalIdx: index('resposta_detalhada_tribunal_idx').on(table.tribunal),
+  questaoIdIdx: index('resposta_detalhada_questao_id_idx').on(table.questaoId),
+  chaveQuestaoIdx: index('resposta_detalhada_chave_questao_idx').on(table.chaveQuestao),
 }));
 
 // ============================================================================
