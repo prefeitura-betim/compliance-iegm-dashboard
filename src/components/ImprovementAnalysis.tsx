@@ -48,15 +48,42 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
         if (!respostas) return { atencao: [], padrao: [], conformidade: [] }
 
         const searchLower = search.toLowerCase()
+
+        // 1. Filtrar busca textual
         const items = respostas.filter(r =>
             r.questao.toLowerCase().includes(searchLower) ||
             r.resposta.toLowerCase().includes(searchLower)
         )
 
-        // Separar por nota: negativa, zero, positiva
-        const atencao = items.filter(r => (r.nota ?? 0) < 0)
-        const padrao = items.filter(r => (r.nota ?? 0) === 0)
-        const conformidade = items.filter(r => (r.nota ?? 0) > 0)
+        // 2. Identificar questões informacionais (dados orçamentários/PPA em massa)
+        //    Questões que aparecem muitas vezes com mesmo texto são dados bulk (ex: Código da Ação, Dotação Final)
+        const questionCount = new Map<string, number>()
+        items.forEach(r => {
+            const q = r.questao.trim()
+            questionCount.set(q, (questionCount.get(q) || 0) + 1)
+        })
+
+        // Questões com 3+ entradas duplicadas são dados informativos em massa
+        const isBulkData = (r: RespostaDetalhada) => (questionCount.get(r.questao.trim()) || 0) >= 3
+
+        // 3. Classificar considerando pontuacao + nota
+        //    - Atenção: nota negativa OU (pontuacao=0 com nota=0, questão de compliance real)
+        //    - Neutro: dados informativos em massa (budget/PPA entries)
+        //    - Conformidade: pontuacao > 0 ou nota > 0
+        const atencao = items.filter(r => {
+            if (isBulkData(r)) return false
+            if ((r.nota ?? 0) < 0) return true
+            // pontuacao=0 e nota=0: questão que não pontuou (ponto de atenção real)
+            return (r.pontuacao ?? 0) === 0 && (r.nota ?? 0) === 0
+        })
+        const conformidade = items.filter(r => {
+            if (isBulkData(r)) return false
+            return (r.nota ?? 0) > 0 || (r.pontuacao ?? 0) > 0
+        })
+        const padrao = items.filter(r => {
+            // Dados informativos em massa ficam como neutro
+            return isBulkData(r)
+        })
 
         return { atencao, padrao, conformidade }
     }, [respostas, search])
