@@ -1,5 +1,5 @@
 
-import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, Info, Target, FileText, CheckCircle2, TrendingUp, Award, ExternalLink } from 'lucide-react'
+import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, Info, Target, Award, ExternalLink } from 'lucide-react'
 
 const dimensoes = [
     {
@@ -70,264 +70,171 @@ const faixas = [
 
 export default function About() {
     return (
-        <div className="min-h-screen bg-slate-50 space-y-12 animate-fade-in pb-20 relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#64748b 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
+        <div className="min-h-screen bg-[#FDFDFD] pb-24 font-sans selection:bg-betim-blue selection:text-white">
+            <div className="max-w-[1400px] mx-auto px-6 pt-12 md:pt-20">
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10 pt-8">
+                {/* 1. Minimal Header */}
+                <header className="mb-20 max-w-4xl">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">
+                        <Info size={12} />
+                        <span>Sobre o Projeto</span>
+                    </div>
+                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.1]">
+                        Mensurando a <span className="text-betim-blue relative inline-block">
+                            Efetividade
+                            <svg className="absolute w-full h-3 -bottom-1 left-0 text-blue-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" /></svg>
+                        </span> da Gestão Pública.
+                    </h1>
+                    <p className="text-xl md:text-2xl text-slate-500 font-light leading-relaxed max-w-2xl">
+                        O IEGM é a bússola que orienta os gestores rumo à excelência, avaliando não apenas a legalidade, mas a qualidade e o impacto das políticas públicas.
+                    </p>
+                </header>
 
-                {/* Hero Section - Mais Impactante */}
-                {/* Hero Section - Mais Impactante */}
-                <div className="bg-gradient-to-br from-betim-blue via-indigo-600 to-indigo-900 rounded-[2.5rem] shadow-2xl overflow-hidden relative text-white mb-20 group">
-                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 group-hover:bg-white/10 transition-colors duration-700" />
-                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 animate-pulse-slow" />
+                {/* 2. Bento Grid Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-20">
 
-                    <div className="p-8 md:p-16 relative z-10">
-                        <div className="flex flex-col lg:flex-row gap-12 items-center">
-                            <div className="flex-1 space-y-8">
-                                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">
-                                    <Info size={14} />
-                                    <span>Conhecimento & Transparência</span>
+                    {/* Card Principal: Objetivo */}
+                    <div className="md:col-span-2 lg:col-span-2 bg-slate-900 rounded-[2.5rem] p-10 md:p-12 relative overflow-hidden group shadow-2xl shadow-slate-200">
+                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-betim-blue/30 to-purple-500/30 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 group-hover:scale-110 transition-transform duration-1000"></div>
+                        <div className="relative z-10 h-full flex flex-col justify-between">
+                            <div>
+                                <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 border border-white/10">
+                                    <Target className="text-sky-400" size={32} />
                                 </div>
-
-                                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight max-w-4xl drop-shadow-sm">
-                                    Índice de Efetividade da <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-blue-200">Gestão Municipal</span>
-                                </h1>
-
-                                <p className="text-xl md:text-2xl text-blue-100 leading-relaxed font-light max-w-2xl border-l-4 border-sky-400 pl-6">
-                                    Uma visão detalhada sobre como o IEGM avalia, classifica e impulsiona a qualidade dos serviços públicos em todo o Brasil.
+                                <h3 className="text-3xl font-bold text-white mb-4">Foco em Resultados</h3>
+                                <p className="text-slate-300 text-lg leading-relaxed max-w-md">
+                                    Superamos a visão burocrática. O objetivo é responder: a ação governamental mudou a vida do cidadão para melhor?
                                 </p>
                             </div>
-
-                            {/* Card Destacado Lateral - Estilo Glassmorphism (Classic) */}
-                            <div className="w-full lg:w-[28rem] bg-white/10 backdrop-blur-xl rounded-3xl p-10 border border-white/20 shadow-2xl relative overflow-hidden group/card transition-all hover:bg-white/15 hover:border-white/30 hover:scale-[1.02] duration-500 hover:shadow-sky-900/20">
-                                <div className="absolute -right-10 -top-10 w-40 h-40 bg-sky-500/30 rounded-full blur-3xl group-hover/card:bg-sky-400/40 transition-all duration-500"></div>
-
-                                <h3 className="font-bold text-white text-2xl mb-6 flex items-center gap-3 relative z-10">
-                                    <div className="p-2 bg-white/10 rounded-xl">
-                                        <Target className="text-sky-300" size={28} />
-                                    </div>
-                                    Objetivo Central
-                                </h3>
-                                <p className="text-white/90 text-lg leading-relaxed relative z-10 mb-8 font-medium">
-                                    O foco está no <strong>resultado prático</strong> para o cidadão (efetividade), superando a análise puramente burocrática da legalidade das contas.
-                                </p>
-
-                                <div className="flex items-center gap-4 relative z-10">
-                                    <div className="flex-1 bg-white/5 rounded-2xl p-4 text-center border border-white/10 hover:bg-white/20 transition-all duration-300 cursor-default">
-                                        <TrendingUp className="mx-auto text-sky-300 mb-2 drop-shadow" size={28} />
-                                        <span className="text-[10px] font-bold text-white uppercase tracking-widest">Eficiência</span>
-                                    </div>
-                                    <div className="flex-1 bg-white/5 rounded-2xl p-4 text-center border border-white/10 hover:bg-white/20 transition-all duration-300 cursor-default">
-                                        <CheckCircle2 className="mx-auto text-emerald-300 mb-2 drop-shadow" size={28} />
-                                        <span className="text-[10px] font-bold text-white uppercase tracking-widest">Qualidade</span>
-                                    </div>
-                                </div>
+                            <div className="flex gap-4 mt-12">
+                                <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-medium text-white/80">Eficiência</div>
+                                <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-medium text-white/80">Eficácia</div>
+                                <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-medium text-white/80">Efetividade</div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Grid de Detalhes - Cards Flutuantes */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 -mt-24 px-4 relative z-20 mb-16">
-                    <div className="bg-white rounded-[2rem] p-10 shadow-xl border border-gray-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-purple-50 rounded-bl-[100px] opacity-50 group-hover:bg-purple-100 transition-colors"></div>
-                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-200 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 relative z-10">
-                            <Target size={32} />
+                    {/* Stat Card: Dimensões */}
+                    <div className="md:col-span-1 lg:col-span-1 bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-xl shadow-slate-100/50 flex flex-col items-center justify-center text-center group hover:border-blue-100 transition-colors">
+                        <div className="w-20 h-20 bg-blue-50 text-betim-blue rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform bg-[url('/grid.svg')]">
+                            <BookOpen size={32} />
                         </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 relative z-10">Finalidade</h3>
-                        <p className="text-gray-600 leading-relaxed text-lg relative z-10">
-                            Subsidiar fiscalizações dos Tribunais de Contas, orientar gestores e fornecer informações aos cidadãos, visando melhorias na qualidade dos serviços.
-                        </p>
+                        <span className="text-6xl font-black text-slate-900 mb-2 tracking-tighter">7</span>
+                        <span className="text-sm font-bold uppercase tracking-widest text-slate-400">Áreas Temáticas</span>
                     </div>
 
-                    <div className="bg-white rounded-[2rem] p-10 shadow-xl border border-gray-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-bl-[100px] opacity-50 group-hover:bg-amber-100 transition-colors"></div>
-                        <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-amber-200 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300 relative z-10">
-                            <ClipboardList size={32} />
+                    {/* Stat Card: Municípios (Exemplo) */}
+                    <div className="md:col-span-1 lg:col-span-1 bg-betim-blue rounded-[2.5rem] p-10 shadow-xl shadow-blue-200 flex flex-col justify-between overflow-hidden relative group">
+                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+                        <div className="relative z-10">
+                            <Award className="text-white/80 mb-6" size={40} />
+                            <h3 className="text-white font-bold text-2xl leading-tight">Classificação por Faixas</h3>
                         </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 relative z-10">Funcionamento</h3>
-                        <p className="text-gray-600 leading-relaxed text-lg relative z-10">
-                            Municípios preenchem questionários obrigatórios baseados em dados do exercício anterior. O não cumprimento pode gerar sanções e multas ao gestor.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0">
-                    <div className="bg-gradient-to-br from-white to-blue-50/50 rounded-2xl p-8 shadow-betim border border-blue-100/50 flex flex-col md:flex-row gap-6 items-start">
-                        <div className="w-14 h-14 bg-blue-100 text-betim-blue rounded-full flex items-center justify-center shrink-0">
-                            <FileText size={24} />
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">Importância Estratégica</h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                Atua como instrumento de transparência pública e serve de base para o cálculo de repasses estaduais (como o ICMS) em alguns estados, incentivando a melhoria contínua.
-                            </p>
+                        <div className="relative z-10 mt-4">
+                            <div className="flex -space-x-2">
+                                {['A', 'B', 'C'].map((l, i) => (
+                                    <div key={l} className="w-10 h-10 rounded-full bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center text-white font-bold text-xs" style={{ zIndex: 3 - i }}>
+                                        {l}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-white to-green-50/50 rounded-2xl p-8 shadow-betim border border-green-100/50 flex flex-col md:flex-row gap-6 items-start">
-                        <div className="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center shrink-0">
-                            <Award size={24} />
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">Classificação por Resultados</h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                O índice classifica as prefeituras em 5 faixas de desempenho, permitindo comparações justas entre municípios e destacando boas práticas.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Como funciona - Método */}
-                <div className="bg-white rounded-3xl shadow-betim border border-gray-100 overflow-hidden p-8 md:p-12 mb-8">
-                    <div className="text-center mb-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-betim-blue rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                            <Award size={14} />
-                            Metodologia
-                        </div>
-                        <h2 className="text-3xl font-black text-gray-900 mb-4">
-                            Como funciona a Pontuação?
-                        </h2>
-                        <p className="text-gray-500 max-w-2xl mx-auto">
-                            Entenda a lógica de cálculo, desde a pontuação por questão até o peso de cada dimensão.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                            <h4 className="font-bold text-betim-blue text-xl mb-3 flex items-center gap-3">
-                                <span className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-sm">01</span>
-                                Por Questão
-                            </h4>
-                            <p className="text-gray-600 leading-relaxed">
-                                Cada questão recebe <strong>pontos absolutos</strong> (não percentuais). A pontuação máxima (Pmáx) varia conforme a complexidade da pergunta (ex: 2, 5, 10 pts).
-                            </p>
-                        </div>
-                        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                            <h4 className="font-bold text-betim-blue text-xl mb-3 flex items-center gap-3">
-                                <span className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-sm">02</span>
-                                Por Indicador
-                            </h4>
-                            <p className="text-gray-600 leading-relaxed">
-                                A soma dos pontos obtidos gera a nota bruta, que é convertida em percentual (0-100%) para definir a classificação na faixa correspondente.
-                            </p>
+                    {/* Wide Card: Metodologia */}
+                    <div className="md:col-span-3 lg:col-span-4 bg-slate-50 rounded-[2.5rem] p-10 md:p-14 border border-slate-100">
+                        <div className="flex flex-col md:flex-row gap-12 items-start">
+                            <div className="md:w-1/3">
+                                <h3 className="text-3xl font-bold text-slate-900 mb-4">Metodologia de Pontuação</h3>
+                                <p className="text-slate-500 mb-8">
+                                    O cálculo é rigoroso e transparente, dividindo-se em duas etapas fundamentais.
+                                </p>
+                                <a
+                                    href="https://iegm.irbcontas.org.br"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-betim-blue font-bold hover:gap-3 transition-all"
+                                >
+                                    Ler manual completo <ExternalLink size={16} />
+                                </a>
+                            </div>
+                            <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                                <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block">Etapa 01</span>
+                                    <h4 className="text-xl font-bold text-slate-900 mb-3">Pontuação Absoluta</h4>
+                                    <p className="text-slate-600 text-sm">Cada questão tem um valor fixo em pontos (ex: 2, 5, 10). Não há subjetividade.</p>
+                                </div>
+                                <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block">Etapa 02</span>
+                                    <h4 className="text-xl font-bold text-slate-900 mb-3">Conversão Percentual</h4>
+                                    <p className="text-slate-600 text-sm">A soma bruta é convertida em 0-100% para definir a faixa final (A, B, C...).</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Faixas de Classificação - Agora Lado a Lado (Grid) */}
-                <div className="bg-white rounded-3xl shadow-betim border border-gray-100 overflow-hidden p-8 md:p-12">
-                    <div className="text-center mb-12">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 text-gray-500 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                            <Award size={14} />
-                            Sistema de Notas
-                        </div>
-                        <h2 className="text-3xl font-black text-gray-900 mb-4">
-                            Faixas de Classificação
-                        </h2>
-                        <p className="text-gray-500 max-w-2xl mx-auto">
-                            Entenda o que cada nota representa no resultado final da avaliação de efetividade.
-                        </p>
-                    </div>
+                {/* 3. Section Title */}
+                <div className="flex items-end justify-between mb-12 border-b border-slate-100 pb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Dimensões Avaliadas</h2>
+                    <span className="hidden md:block text-slate-400 font-mono text-sm">INDEX: 01-07</span>
+                </div>
+
+                {/* 4. Grid de Dimensões (Clean Cards) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+                    {dimensoes.map((dim, idx) => {
+                        const Icon = dim.icone
+                        return (
+                            <div key={dim.nome} className="group bg-white rounded-3xl p-8 border border-slate-100 hover:border-slate-300 hover:shadow-xl transition-all duration-300 relative">
+                                <div className="absolute top-8 right-8 text-slate-200 font-black text-4xl opacity-50 group-hover:opacity-20 transition-opacity">
+                                    0{idx + 1}
+                                </div>
+                                <div className={`w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-900 mb-6 group-hover:bg-betim-blue group-hover:text-white transition-colors duration-300`}>
+                                    <Icon size={28} />
+                                </div>
+                                <div className="flex items-center gap-3 mb-3">
+                                    <span className="text-xs font-bold uppercase tracking-widest text-slate-400 bg-slate-50 px-2 py-1 rounded">
+                                        {dim.nome}
+                                    </span>
+                                    <span className="text-[10px] font-bold text-betim-blue bg-blue-50 px-2 py-1 rounded-full">
+                                        Peso {dim.peso}
+                                    </span>
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-2">{dim.titulo}</h3>
+                                <p className="text-slate-500 text-sm leading-relaxed">
+                                    {dim.descricao}
+                                </p>
+                            </div>
+                        )
+                    })}
+                </div>
+
+                {/* 5. Faixas Table (Minimalist) */}
+                <div className="bg-slate-900 text-white rounded-[2.5rem] p-10 md:p-20 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Classificação de Resultados</h2>
+                    <p className="text-slate-400 mb-12 max-w-2xl mx-auto">Entenda o que cada faixa representa no contexto da gestão municipal eficiente.</p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                         {faixas.map((f) => (
-                            <div
-                                key={f.faixa}
-                                className="group relative flex flex-col items-center p-6 rounded-2xl border border-gray-100 bg-white hover:border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-                            >
-                                {/* Background decoration on hover */}
-                                <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl ${f.cor.replace('text-white', '')}`}></div>
-
-                                <div className={`${f.cor} w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-black text-white shadow-lg mb-4 transform group-hover:scale-110 transition-transform duration-300`}>
+                            <div key={f.faixa} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group cursor-default">
+                                <div className={`w-12 h-12 rounded-xl ${f.cor} flex items-center justify-center text-xl font-black mb-4 mx-auto shadow-lg group-hover:scale-110 transition-transform`}>
                                     {f.faixa}
                                 </div>
-
-                                <h4 className="font-bold text-gray-900 text-center mb-2">{f.label}</h4>
-                                <p className="text-xs text-gray-400 text-center mb-3 font-mono">{f.criterio}</p>
-                                <div className={`h-1 w-8 rounded-full ${f.cor.replace('text-white', '').replace('bg-gradient-to-r', 'bg')}`}></div>
+                                <h4 className="font-bold text-white mb-2">{f.label}</h4>
+                                <p className="text-xs text-slate-400 font-mono">{f.criterio}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Dimensões */}
-                <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-200/50">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-                        <div>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-3">
-                                <span className="p-2 bg-betim-blue rounded-lg text-white">
-                                    <BookOpen size={20} />
-                                </span>
-                                7 Dimensões Avaliadas
-                            </h2>
-                            <p className="text-gray-500">
-                                Índices setoriais que compõem a nota final
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {dimensoes.map((dim) => {
-                            const Icon = dim.icone
-                            return (
-                                <div
-                                    key={dim.nome}
-                                    className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
-                                >
-                                    <div className="flex items-start justify-between mb-4">
-                                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${dim.cor} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}>
-                                            <Icon size={24} className="text-white" />
-                                        </div>
-                                        <div className="flex flex-col items-end gap-1">
-                                            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-gray-50 px-2 py-1 rounded-md border border-gray-100">
-                                                {dim.nome}
-                                            </span>
-                                            <span className="text-[10px] font-black text-betim-blue bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100" title="Peso na Nota Geral">
-                                                {dim.peso}
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <h4 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-betim-blue transition-colors">
-                                        {dim.titulo}
-                                    </h4>
-                                    <p className="text-sm text-gray-600 leading-relaxed">
-                                        {dim.descricao}
-                                    </p>
-                                </div>
-                            )
-                        })}
-                    </div>
+                {/* Footer Credits */}
+                <div className="mt-24 pt-8 border-t border-slate-100 flex justify-between items-center text-slate-400 text-sm">
+                    <p>© 2024 Compliance IEGM</p>
+                    <p className="flex items-center gap-2">
+                        Dados oficiais <span className="font-bold text-slate-600">TCEMG</span>
+                    </p>
                 </div>
-
-                <div className="flex items-center justify-between pt-12 mt-12 border-t border-gray-200">
-                    <div className="flex items-center gap-2">
-                        <span className="w-8 h-px bg-gray-300"></span>
-                        <span className="text-xs text-gray-500 font-medium uppercase tracking-wider">
-                            Fonte Oficial
-                        </span>
-                    </div>
-
-                    <div className="flex items-center gap-6">
-                        <a href="https://tce.mg.gov.br/" target="_blank" rel="noreferrer" className="text-sm text-gray-500 hover:text-betim-blue transition-colors hover:underline">
-                            TCEMG
-                        </a>
-                        <span className="text-gray-300">|</span>
-                        <a
-                            href="https://iegm.irbcontas.org.br"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm text-white bg-betim-blue hover:bg-betim-blue-dark px-4 py-2 rounded-lg font-medium transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
-                        >
-                            Portal IEGM
-                            <ExternalLink size={14} />
-                        </a>
-                    </div>
-                </div>
-
-            </div> {/* Container End */}
+            </div>
         </div>
     )
 }
