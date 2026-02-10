@@ -66,7 +66,6 @@ const faixas = [
     { faixa: 'B', label: 'Efetiva', criterio: '60,00% a 74,99%', cor: 'bg-gradient-to-r from-yellow-400 to-amber-500', text: 'text-white' },
     { faixa: 'C+', label: 'Em Fase de Adequação', criterio: '50,00% a 59,99%', cor: 'bg-gradient-to-r from-orange-400 to-orange-500', text: 'text-white' },
     { faixa: 'C', label: 'Baixo Nível de Adequação', criterio: '< 49,99%', cor: 'bg-gradient-to-r from-red-400 to-red-500', text: 'text-white' },
-    { faixa: 'D', label: 'Inflectiva', criterio: 'Não Atendeu Requisitos', cor: 'bg-gradient-to-r from-slate-500 to-slate-600', text: 'text-white' },
 ]
 
 export default function About() {
@@ -128,23 +127,21 @@ export default function About() {
                     </div>
 
                     {/* Stat Card: Classificação (Dark Blue) */}
-                    <div className="md:col-span-1 lg:col-span-1 bg-slate-900 rounded-[2.5rem] p-10 shadow-xl shadow-slate-300 flex flex-col justify-between overflow-hidden relative group">
+                    <div className="md:col-span-1 lg:col-span-1 bg-slate-900 rounded-[2.5rem] p-8 shadow-xl shadow-slate-300 flex flex-col justify-between overflow-hidden relative group">
                         <div className="absolute inset-0 bg-gradient-to-t from-betim-blue/20 to-transparent opacity-50"></div>
                         <div className="relative z-10">
-                            <Award className="text-yellow-400 mb-6 drop-shadow-lg" size={40} />
-                            <h3 className="text-white font-bold text-2xl leading-tight">Faixas de Resultado</h3>
+                            <Award className="text-yellow-400 mb-4 drop-shadow-lg" size={32} />
+                            <h3 className="text-white font-bold text-lg leading-tight mb-1">Faixas de Resultado</h3>
                         </div>
-                        <div className="relative z-10 mt-8">
-                            <div className="flex -space-x-3 items-center">
-                                {['A', 'B', 'C'].map((l, i) => (
-                                    <div key={l} className={`w-12 h-12 rounded-full border-2 border-slate-800 flex items-center justify-center text-white font-bold text-sm shadow-lg ${l === 'A' ? 'bg-green-500' : l === 'B' ? 'bg-yellow-500' : 'bg-red-500'}`} style={{ zIndex: 3 - i }}>
-                                        {l}
+                        <div className="relative z-10 mt-4 space-y-2">
+                            {faixas.map((f) => (
+                                <div key={f.faixa} className="flex items-center gap-2">
+                                    <div className={`w-8 h-8 rounded-lg ${f.cor} flex items-center justify-center text-xs font-black text-white shadow shrink-0`}>
+                                        {f.faixa}
                                     </div>
-                                ))}
-                                <div className="w-12 h-12 rounded-full border-2 border-slate-800 bg-slate-700 flex items-center justify-center text-white text-xs font-medium z-0 pl-1">
-                                    +3
+                                    <span className="text-slate-300 text-xs font-medium truncate">{f.label}</span>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
 
@@ -194,25 +191,25 @@ export default function About() {
                     {dimensoes.map((dim) => {
                         const Icon = dim.icone
                         return (
-                            <div key={dim.nome} className="group bg-white rounded-[2rem] p-8 border border-slate-100 hover:border-blue-100 hover:shadow-2xl hover:shadow-blue-100/50 transition-all duration-300 relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-slate-50 to-slate-100 rounded-bl-full -mr-8 -mt-8 transition-colors group-hover:from-blue-50 group-hover:to-blue-100"></div>
+                            <div key={dim.nome} className="group bg-white rounded-[2rem] p-8 border border-slate-100 hover:shadow-2xl hover:shadow-blue-100/50 transition-all duration-300 relative overflow-hidden">
+                                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${dim.cor} opacity-10 rounded-bl-full -mr-8 -mt-8 transition-opacity group-hover:opacity-20`}></div>
 
                                 <div className="relative z-10">
-                                    <div className={`w-14 h-14 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-slate-700 mb-6 shadow-sm group-hover:bg-betim-blue group-hover:text-white group-hover:border-betim-blue transition-all duration-300`}>
+                                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${dim.cor} flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-all duration-300`}>
                                         <Icon size={28} />
                                     </div>
 
                                     <div className="flex items-center gap-2 mb-4">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-betim-blue transition-colors">
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">
                                             {dim.nome}
                                         </span>
                                         <span className="h-px bg-slate-200 flex-1"></span>
-                                        <span className="text-[10px] font-bold text-white bg-slate-400 px-2 py-0.5 rounded-full group-hover:bg-betim-blue transition-colors">
+                                        <span className={`text-[10px] font-bold text-white bg-gradient-to-r ${dim.cor} px-2 py-0.5 rounded-full`}>
                                             {dim.peso}
                                         </span>
                                     </div>
 
-                                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-betim-blue transition-colors">{dim.titulo}</h3>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{dim.titulo}</h3>
                                     <p className="text-slate-500 text-sm leading-relaxed mb-4">
                                         {dim.descricao}
                                     </p>
@@ -231,7 +228,7 @@ export default function About() {
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-6">Níveis de Classificação</h2>
                         <p className="text-slate-400 mb-16 max-w-2xl mx-auto text-lg">Entenda o padrão de excelência exigido pelo Tribunal de Contas.</p>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                             {faixas.map((f) => (
                                 <div key={f.faixa} className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 group cursor-default backdrop-blur-sm min-h-[220px] flex flex-col justify-center">
                                     <div className={`w-14 h-14 rounded-2xl ${f.cor} flex items-center justify-center text-xl font-black mb-6 mx-auto shadow-lg group-hover:scale-110 transition-transform bg-opacity-90`}>
