@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { defaultIEGMApiService as iegmApiService } from '@/services/iegm/iegmApiService'
-import { Loader2, AlertCircle, ArrowUpRight, ArrowDownRight, Minus, Search, TrendingUp, AlertTriangle, Target } from 'lucide-react'
+import { Loader2, AlertCircle, ArrowUpRight, ArrowDownRight, Minus, Search, TrendingUp, AlertTriangle, Target, ChevronDown, ChevronRight } from 'lucide-react'
 
 interface QuestionHistory {
     questao: string
@@ -26,6 +26,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     const [searchTerm, setSearchTerm] = useState('')
     const [activeIndicator, setActiveIndicator] = useState<string>('TODOS')
     const [analysisMode, setAnalysisMode] = useState<AnalysisMode>('success')
+    const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set())
 
     useEffect(() => {
         const fetchData = async () => {
@@ -69,14 +70,8 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
             if (p2024 === 0 && p2022 === 0) return false
 
             if (analysisMode === 'success') {
-                // Casos de Sucesso: 
-                // - Começou em 0% em 2022
-                // - Melhorou consistentemente (2023 >= 2022 E 2024 >= 2023)
-                // - Terminou com nota positiva
                 return p2022 === 0 && p2023 >= p2022 && p2024 >= p2023 && p2024 > 0
             } else {
-                // Pontos de Atenção:
-                // - Houve queda de 2023 para 2024 (regressão recente)
                 return p2024 < p2023
             }
         })
@@ -96,64 +91,105 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
         })
     }, [data, searchTerm, activeIndicator])
 
-    const getScoreGradient = (score: number) => {
-        if (score >= 80) return 'from-emerald-500 to-green-600'
-        if (score >= 60) return 'from-amber-400 to-yellow-500'
-        if (score >= 40) return 'from-orange-400 to-amber-500'
-        return 'from-red-500 to-rose-600'
+    // Agrupar dados filtrados por indicador
+    const groupedData = useMemo(() => {
+        const groups: Record<string, QuestionHistory[]> = {}
+        filteredData.forEach(item => {
+            if (!groups[item.indicador]) {
+                groups[item.indicador] = []
+            }
+            groups[item.indicador].push(item)
+        })
+        // Ordenar grupos por nome do indicador
+        return Object.entries(groups).sort(([a], [b]) => a.localeCompare(b))
+    }, [filteredData])
+
+    const toggleGroup = (indicador: string) => {
+        setCollapsedGroups(prev => {
+            const next = new Set(prev)
+            if (next.has(indicador)) {
+                next.delete(indicador)
+            } else {
+                next.add(indicador)
+            }
+            return next
+        })
     }
 
-    const getScoreBg = (score: number) => {
-        if (score >= 80) return 'bg-emerald-50 border-emerald-200'
-        if (score >= 60) return 'bg-amber-50 border-amber-200'
-        if (score >= 40) return 'bg-orange-50 border-orange-200'
-        return 'bg-red-50 border-red-200'
+    // Cor da barra de progresso baseada na pontuação
+    const getBarColor = (score: number) => {
+        if (score >= 80) return 'bg-emerald-500'
+        if (score >= 60) return 'bg-amber-400'
+        if (score >= 40) return 'bg-orange-400'
+        if (score > 0) return 'bg-red-400'
+        return 'bg-gray-200'
     }
 
-    // Calcula a variação ano-a-ano
-    const getYearChange = (historico: any[], currentYear: number) => {
-        const sorted = [...historico].sort((a, b) => a.ano - b.ano)
-        const currentIdx = sorted.findIndex(h => h.ano === currentYear)
-
-        if (currentIdx <= 0) return null // Primeiro ano ou não encontrado
-
-        const current = Number(sorted[currentIdx].pontuacao)
-        const previous = Number(sorted[currentIdx - 1].pontuacao)
-        const diff = current - previous
-
-        return {
-            diff,
-            text: diff > 0 ? `+${diff.toFixed(0)}pp` : diff < 0 ? `${diff.toFixed(0)}pp` : '0pp',
-            color: diff > 0 ? 'text-emerald-600 bg-emerald-100' : diff < 0 ? 'text-red-600 bg-red-100' : 'text-gray-500 bg-gray-100'
-        }
+    const getBarBg = (score: number) => {
+        if (score >= 80) return 'bg-emerald-100'
+        if (score >= 60) return 'bg-amber-100'
+        if (score >= 40) return 'bg-orange-100'
+        if (score > 0) return 'bg-red-100'
+        return 'bg-gray-100'
     }
 
     // Calcula a evolução TOTAL (2024 vs 2022)
     const calculateTrend = (history: any[]) => {
-        if (history.length < 2) return { icon: null, text: 'N/A', totalText: '', color: 'text-gray-400' }
+        if (history.length < 2) return { icon: null, text: 'N/A', color: 'text-gray-400', bgColor: 'bg-gray-50' }
         const sorted = [...history].sort((a, b) => a.ano - b.ano)
         const last = Number(sorted[sorted.length - 1].pontuacao)
         const first = Number(sorted[0].pontuacao)
         const diff = last - first
 
         if (diff > 0) return {
-            icon: <ArrowUpRight className="text-emerald-500" size={16} />,
+            icon: <ArrowUpRight size={14} />,
             text: `+${diff.toFixed(0)}pp`,
-            totalText: `${first.toFixed(0)}% → ${last.toFixed(0)}%`,
-            color: 'text-emerald-600 bg-emerald-50'
+            color: 'text-emerald-700',
+            bgColor: 'bg-emerald-50 border-emerald-200'
         }
         if (diff < 0) return {
-            icon: <ArrowDownRight className="text-red-500" size={16} />,
+            icon: <ArrowDownRight size={14} />,
             text: `${diff.toFixed(0)}pp`,
-            totalText: `${first.toFixed(0)}% → ${last.toFixed(0)}%`,
-            color: 'text-red-600 bg-red-50'
+            color: 'text-red-700',
+            bgColor: 'bg-red-50 border-red-200'
         }
         return {
-            icon: <Minus className="text-gray-400" size={16} />,
+            icon: <Minus size={14} />,
             text: '0pp',
-            totalText: `${first.toFixed(0)}% → ${last.toFixed(0)}%`,
-            color: 'text-gray-500 bg-gray-50'
+            color: 'text-gray-500',
+            bgColor: 'bg-gray-50 border-gray-200'
         }
+    }
+
+    // Variação ano-a-ano (seta pequena)
+    const getYearDelta = (historico: any[], year: number) => {
+        const sorted = [...historico].sort((a, b) => a.ano - b.ano)
+        const idx = sorted.findIndex(h => h.ano === year)
+        if (idx <= 0) return null
+        const current = Number(sorted[idx].pontuacao)
+        const previous = Number(sorted[idx - 1].pontuacao)
+        const diff = current - previous
+        if (diff === 0) return null
+        return {
+            diff,
+            text: diff > 0 ? `+${diff.toFixed(0)}` : `${diff.toFixed(0)}`,
+            color: diff > 0 ? 'text-emerald-600' : 'text-red-500'
+        }
+    }
+
+    // Cor do badge de indicador
+    const getIndicatorColor = (ind: string) => {
+        const colors: Record<string, string> = {
+            'i-Educ': 'bg-blue-100 text-blue-800 border-blue-200',
+            'i-Saude': 'bg-rose-100 text-rose-800 border-rose-200',
+            'i-Fiscal': 'bg-violet-100 text-violet-800 border-violet-200',
+            'i-Amb': 'bg-green-100 text-green-800 border-green-200',
+            'i-Cidade': 'bg-orange-100 text-orange-800 border-orange-200',
+            'i-Plan': 'bg-cyan-100 text-cyan-800 border-cyan-200',
+            'i-GovTI': 'bg-slate-100 text-slate-800 border-slate-200',
+            'i-Gov TI': 'bg-slate-100 text-slate-800 border-slate-200',
+        }
+        return colors[ind] || 'bg-gray-100 text-gray-800 border-gray-200'
     }
 
     if (isLoading) {
@@ -204,8 +240,32 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
         return Number(y2024.pontuacao) < Number(y2023.pontuacao)
     }).length
 
+    // Componente de barra de progresso inline
+    const ScoreBar = ({ score, delta }: { score: number, year?: number, delta: ReturnType<typeof getYearDelta> }) => (
+        <div className="flex items-center gap-2 min-w-0">
+            <div className="flex-1 min-w-0">
+                <div className={`w-full h-2.5 rounded-full ${getBarBg(score)} overflow-hidden`}>
+                    <div
+                        className={`h-full rounded-full ${getBarColor(score)} transition-all duration-500`}
+                        style={{ width: `${Math.max(score, 2)}%` }}
+                    />
+                </div>
+            </div>
+            <div className="flex items-center gap-1 shrink-0">
+                <span className="text-sm font-bold text-gray-800 tabular-nums w-10 text-right">
+                    {score.toFixed(0)}%
+                </span>
+                {delta && (
+                    <span className={`text-[10px] font-semibold ${delta.color} tabular-nums`}>
+                        {delta.text}
+                    </span>
+                )}
+            </div>
+        </div>
+    )
+
     return (
-        <div className="space-y-6">
+        <div className="space-y-5">
             {/* Toggle de Modo de Análise */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <button
@@ -260,37 +320,34 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
             </div>
 
             {/* Header com Filtros */}
-            <div className={`relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white shadow-xl ${analysisMode === 'success'
+            <div className={`relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-5 text-white shadow-xl ${analysisMode === 'success'
                 ? 'bg-gradient-to-br from-slate-900 via-emerald-900 to-green-900'
                 : 'bg-gradient-to-br from-slate-900 via-orange-900 to-red-900'
                 }`}>
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
 
-                <div className="relative flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                <div className="relative flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
                     <div className="flex items-center gap-3">
-                        <div className="bg-white/10 backdrop-blur-sm p-2.5 rounded-xl border border-white/20">
-                            {analysisMode === 'success' ? <TrendingUp className="text-emerald-400" size={24} /> : <AlertTriangle className="text-orange-400" size={24} />}
+                        <div className="bg-white/10 backdrop-blur-sm p-2 rounded-xl border border-white/20">
+                            {analysisMode === 'success' ? <TrendingUp className="text-emerald-400" size={20} /> : <AlertTriangle className="text-orange-400" size={20} />}
                         </div>
                         <div>
-                            <h2 className="text-base sm:text-xl font-black tracking-tight">
+                            <h2 className="text-base sm:text-lg font-black tracking-tight">
                                 {analysisMode === 'success' ? 'Itens que Evoluíram' : 'Itens que Regrediram'}
                             </h2>
                             <p className="text-white/60 text-xs mt-0.5 flex items-center gap-1.5">
-                                <Target size={12} />
-                                {analysisMode === 'success'
-                                    ? 'De 0% em 2022 para pontuação positiva em 2024'
-                                    : 'De ≥50% em 2022 para pontuação menor em 2024'
-                                }
+                                <Target size={11} />
+                                {filteredData.length} {filteredData.length === 1 ? 'pergunta' : 'perguntas'} encontradas
                             </p>
                         </div>
                     </div>
 
-                    <div className="relative w-full lg:w-72">
-                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40" size={16} />
+                    <div className="relative w-full lg:w-64">
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" size={15} />
                         <input
                             type="search"
                             placeholder="Buscar pergunta..."
-                            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus:bg-white/20 focus:border-white/40 outline-none transition-all font-medium text-sm"
+                            className="w-full pl-9 pr-4 py-2 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus:bg-white/20 focus:border-white/40 outline-none transition-all font-medium text-sm"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
@@ -298,7 +355,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                 </div>
 
                 {/* Tabs de Indicadores */}
-                <div className="relative mt-4 flex flex-wrap gap-1.5">
+                <div className="relative mt-3 flex flex-wrap gap-1.5">
                     {indicators.map((ind) => (
                         <button
                             key={ind}
@@ -317,90 +374,145 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                 </div>
             </div>
 
-            {/* Lista de Cards */}
-            <div className="space-y-4">
-                {filteredData.length > 0 ? (
-                    filteredData.map((item, idx) => {
-                        const trend = calculateTrend(item.historico)
+            {/* Tabela agrupada por indicador */}
+            {groupedData.length > 0 ? (
+                <div className="space-y-3">
+                    {groupedData.map(([indicador, items]) => {
+                        const isCollapsed = collapsedGroups.has(indicador)
                         return (
-                            <div
-                                key={idx}
-                                className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-200 transition-all duration-300"
-                            >
-                                <div className="p-5">
-                                    <div className="flex flex-col lg:flex-row justify-between gap-3">
-                                        <div className="flex-1 space-y-2">
-                                            <div className="flex items-center gap-2 flex-wrap">
-                                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 text-[9px] font-bold rounded-full border border-blue-100">
-                                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                                                    {item.indicador}
-                                                </span>
-                                                <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold rounded-full ${trend.color}`}>
-                                                    {trend.icon}
-                                                    {trend.text}
-                                                </span>
-                                                <span className="text-[9px] text-gray-400 font-medium">
-                                                    {trend.totalText}
-                                                </span>
-                                            </div>
-                                            <h3 className="text-gray-800 font-semibold text-sm leading-relaxed group-hover:text-blue-700 transition-colors">
-                                                {item.questao}
-                                            </h3>
-                                        </div>
+                            <div key={indicador} className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                                {/* Cabeçalho do grupo (indicador) */}
+                                <button
+                                    onClick={() => toggleGroup(indicador)}
+                                    className="w-full flex items-center gap-3 px-4 py-3 bg-gray-50/80 hover:bg-gray-100/80 transition-colors border-b border-gray-100"
+                                >
+                                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold rounded-lg border ${getIndicatorColor(indicador)}`}>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-current opacity-60"></div>
+                                        {indicador}
+                                    </span>
+                                    <span className="text-xs text-gray-500 font-medium">
+                                        {items.length} {items.length === 1 ? 'pergunta' : 'perguntas'}
+                                    </span>
+                                    <div className="ml-auto text-gray-400">
+                                        {isCollapsed ? <ChevronRight size={16} /> : <ChevronDown size={16} />}
                                     </div>
-                                </div>
+                                </button>
 
-                                {/* Timeline de Anos */}
-                                <div className="px-5 pb-5">
-                                    <div className="relative">
-                                        <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-gray-200 via-blue-200 to-gray-200 hidden sm:block"></div>
+                                {/* Conteúdo do grupo */}
+                                {!isCollapsed && (
+                                    <div>
+                                        {/* Cabeçalho da tabela - desktop */}
+                                        <div className="hidden lg:grid lg:grid-cols-[1fr_140px_140px_140px_90px] gap-3 px-4 py-2 border-b border-gray-100 bg-gray-50/40">
+                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Pergunta</span>
+                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">2022</span>
+                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">2023</span>
+                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">2024</span>
+                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-right">Evolução</span>
+                                        </div>
 
-                                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                            {item.historico.sort((a, b) => a.ano - b.ano).map((h, i) => {
-                                                const yearChange = getYearChange(item.historico, h.ano)
-                                                return (
-                                                    <div key={i} className={`relative rounded-xl p-4 border transition-all duration-300 hover:scale-105 ${getScoreBg(h.pontuacao)}`}>
-                                                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-2 border-blue-300 rounded-full hidden sm:block z-10"></div>
+                                        {/* Linhas da tabela */}
+                                        {items.map((item, idx) => {
+                                            const sorted = [...item.historico].sort((a, b) => a.ano - b.ano)
+                                            const y2022 = sorted.find(h => h.ano === 2022)
+                                            const y2023 = sorted.find(h => h.ano === 2023)
+                                            const y2024 = sorted.find(h => h.ano === 2024)
+                                            const trend = calculateTrend(item.historico)
 
-                                                        <div className="text-center space-y-2">
-                                                            <div className="flex items-center justify-center gap-1.5">
-                                                                <span className="text-[10px] font-black text-gray-400 tracking-widest">{h.ano}</span>
-                                                                {yearChange && (
-                                                                    <span className={`text-[8px] font-bold px-1.5 py-0.5 rounded ${yearChange.color}`}>
-                                                                        {yearChange.text}
-                                                                    </span>
-                                                                )}
-                                                            </div>
+                                            return (
+                                                <div
+                                                    key={idx}
+                                                    className={`group px-4 py-3 border-b border-gray-50 last:border-b-0 hover:bg-blue-50/30 transition-colors ${idx % 2 === 1 ? 'bg-gray-50/30' : ''}`}
+                                                >
+                                                    {/* Layout Desktop: linha única */}
+                                                    <div className="hidden lg:grid lg:grid-cols-[1fr_140px_140px_140px_90px] gap-3 items-center">
+                                                        <p className="text-[13px] text-gray-700 font-medium leading-snug pr-4 group-hover:text-blue-800 transition-colors">
+                                                            {item.questao}
+                                                        </p>
 
-                                                            <div className={`mx-auto w-14 h-14 rounded-xl bg-gradient-to-br ${getScoreGradient(h.pontuacao)} flex items-center justify-center shadow-lg`}>
-                                                                <span className="text-white text-lg font-black">{Number(h.pontuacao).toFixed(0)}%</span>
-                                                            </div>
+                                                        {/* 2022 */}
+                                                        <div>
+                                                            <ScoreBar
+                                                                score={Number(y2022?.pontuacao || 0)}
+                                                                year={2022}
+                                                                delta={null}
+                                                            />
+                                                        </div>
 
-                                                            <div className="pt-2 border-t border-gray-200/50">
-                                                                <p className="text-[9px] text-gray-600 font-medium break-all line-clamp-2 leading-relaxed" title={h.resposta}>
-                                                                    {h.resposta || '—'}
-                                                                </p>
-                                                            </div>
+                                                        {/* 2023 */}
+                                                        <div>
+                                                            <ScoreBar
+                                                                score={Number(y2023?.pontuacao || 0)}
+                                                                year={2023}
+                                                                delta={getYearDelta(item.historico, 2023)}
+                                                            />
+                                                        </div>
+
+                                                        {/* 2024 */}
+                                                        <div>
+                                                            <ScoreBar
+                                                                score={Number(y2024?.pontuacao || 0)}
+                                                                year={2024}
+                                                                delta={getYearDelta(item.historico, 2024)}
+                                                            />
+                                                        </div>
+
+                                                        {/* Evolução total */}
+                                                        <div className="flex justify-end">
+                                                            <span className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-bold rounded-lg border ${trend.bgColor} ${trend.color}`}>
+                                                                {trend.icon}
+                                                                {trend.text}
+                                                            </span>
                                                         </div>
                                                     </div>
-                                                )
-                                            })}
-                                        </div>
+
+                                                    {/* Layout Mobile: empilhado */}
+                                                    <div className="lg:hidden space-y-3">
+                                                        <div className="flex items-start justify-between gap-2">
+                                                            <p className="text-[13px] text-gray-700 font-medium leading-snug flex-1">
+                                                                {item.questao}
+                                                            </p>
+                                                            <span className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-bold rounded-lg border shrink-0 ${trend.bgColor} ${trend.color}`}>
+                                                                {trend.icon}
+                                                                {trend.text}
+                                                            </span>
+                                                        </div>
+                                                        <div className="space-y-2">
+                                                            {[
+                                                                { year: 2022, data: y2022 },
+                                                                { year: 2023, data: y2023 },
+                                                                { year: 2024, data: y2024 },
+                                                            ].map(({ year, data: yearData }) => (
+                                                                <div key={year} className="flex items-center gap-3">
+                                                                    <span className="text-[11px] font-bold text-gray-400 w-8 shrink-0 tabular-nums">{year}</span>
+                                                                    <div className="flex-1">
+                                                                        <ScoreBar
+                                                                            score={Number(yearData?.pontuacao || 0)}
+                                                                            year={year}
+                                                                            delta={year > 2022 ? getYearDelta(item.historico, year) : null}
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
                                     </div>
-                                </div>
+                                )}
                             </div>
                         )
-                    })
-                ) : (
-                    <div className="bg-gradient-to-br from-gray-50 to-slate-100 rounded-2xl py-16 text-center border border-gray-200">
-                        <div className="bg-white p-5 rounded-full inline-block mb-4 shadow-lg">
-                            <Search className="text-gray-300" size={32} />
-                        </div>
-                        <h4 className="text-gray-500 font-bold text-base">Nenhum item encontrado</h4>
-                        <p className="text-gray-400 text-sm mt-1">Ajuste os filtros ou busca</p>
+                    })}
+                </div>
+            ) : (
+                <div className="bg-gradient-to-br from-gray-50 to-slate-100 rounded-2xl py-16 text-center border border-gray-200">
+                    <div className="bg-white p-5 rounded-full inline-block mb-4 shadow-lg">
+                        <Search className="text-gray-300" size={32} />
                     </div>
-                )}
-            </div>
+                    <h4 className="text-gray-500 font-bold text-base">Nenhum item encontrado</h4>
+                    <p className="text-gray-400 text-sm mt-1">Ajuste os filtros ou busca</p>
+                </div>
+            )}
         </div>
     )
 }
