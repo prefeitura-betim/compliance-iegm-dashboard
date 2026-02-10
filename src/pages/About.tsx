@@ -243,6 +243,77 @@ export default function About() {
                     </div>
                 </div>
 
+                {/* 6. Como Interpretar o Diagnóstico */}
+                <div className="mt-24 mb-24">
+                    <div className="text-center mb-16">
+                        <span className="text-betim-blue font-bold tracking-widest uppercase text-sm mb-2 block">Metodologia</span>
+                        <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">Como Interpretar o Diagnóstico</h2>
+                        <div className="w-24 h-1.5 bg-gradient-to-r from-betim-blue to-indigo-500 mx-auto rounded-full"></div>
+                        <p className="text-slate-500 mt-6 max-w-3xl mx-auto text-lg">
+                            Cada dimensão do IEGM é composta por questões respondidas pelo município. As respostas são classificadas em três categorias conforme a metodologia do Tribunal de Contas.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        {/* Conformidade */}
+                        <div className="bg-white rounded-[2rem] p-8 border border-green-100 hover:shadow-xl hover:shadow-green-100/50 transition-all duration-300 relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-400 to-emerald-500 opacity-10 rounded-bl-full -mr-8 -mt-8 group-hover:opacity-20 transition-opacity"></div>
+                            <div className="relative z-10">
+                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white mb-6 shadow-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">Conformidade</h3>
+                                <p className="text-slate-500 text-sm leading-relaxed mb-4">
+                                    Questões onde o município <strong className="text-green-700">obteve pontuação positiva</strong>. Representam práticas, ações e políticas que estão sendo executadas adequadamente.
+                                </p>
+                                <div className="bg-green-50 border border-green-100 rounded-xl p-4">
+                                    <p className="text-xs text-green-700 font-medium">
+                                        <strong>Critério:</strong> pontuação &gt; 0 — o município atendeu ao quesito avaliado e recebeu pontos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Pontos de Atenção */}
+                        <div className="bg-white rounded-[2rem] p-8 border border-red-100 hover:shadow-xl hover:shadow-red-100/50 transition-all duration-300 relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-400 to-rose-500 opacity-10 rounded-bl-full -mr-8 -mt-8 group-hover:opacity-20 transition-opacity"></div>
+                            <div className="relative z-10">
+                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center text-white mb-6 shadow-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><line x1="12" x2="12" y1="9" y2="13" /><line x1="12" x2="12.01" y1="17" y2="17" /></svg>
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">Pontos de Atenção</h3>
+                                <p className="text-slate-500 text-sm leading-relaxed mb-4">
+                                    Questões onde o município recebeu <strong className="text-red-700">nota negativa (penalidade)</strong>. Indicam não-conformidades que impactam diretamente na nota da dimensão.
+                                </p>
+                                <div className="bg-red-50 border border-red-100 rounded-xl p-4">
+                                    <p className="text-xs text-red-700 font-medium">
+                                        <strong>Critério:</strong> nota &lt; 0 — penalidade aplicada pelo descumprimento de requisitos obrigatórios.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Informativo */}
+                        <div className="bg-white rounded-[2rem] p-8 border border-slate-100 hover:shadow-xl hover:shadow-slate-100/50 transition-all duration-300 relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-slate-300 to-gray-400 opacity-10 rounded-bl-full -mr-8 -mt-8 group-hover:opacity-20 transition-opacity"></div>
+                            <div className="relative z-10">
+                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-500 to-gray-600 flex items-center justify-center text-white mb-6 shadow-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" x2="12" y1="16" y2="12" /><line x1="12" x2="12.01" y1="8" y2="8" /></svg>
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">Informativo</h3>
+                                <p className="text-slate-500 text-sm leading-relaxed mb-4">
+                                    Quesitos de caráter <strong className="text-slate-700">exclusivamente informativo</strong>. Não recebem pontuação, mas alimentam o banco de dados para pesquisas e ações de controle externo.
+                                </p>
+                                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                                    <p className="text-xs text-slate-600 font-medium">
+                                        <strong>Critério:</strong> pontuação = 0 — dados contextuais como valores orçamentários, estrutura organizacional, etc.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Footer Credits */}
                 <div className="mt-24 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm gap-4">
                     <p>© 2024 Compliance IEGM - Prefeitura de Betim</p>

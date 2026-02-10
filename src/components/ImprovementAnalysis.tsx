@@ -34,7 +34,7 @@ async function fetchRespostasDetalhadas(municipio: string, ano: number, indicado
 type TabType = 'atencao' | 'padrao' | 'conformidade';
 
 export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: ImprovementAnalysisProps) {
-    const [activeTab, setActiveTab] = useState<TabType>('atencao')
+    const [activeTab, setActiveTab] = useState<TabType>('conformidade')
     const [search, setSearch] = useState('')
     const [isExpanded, setIsExpanded] = useState(false)
 
@@ -48,42 +48,18 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
         if (!respostas) return { atencao: [], padrao: [], conformidade: [] }
 
         const searchLower = search.toLowerCase()
-
-        // 1. Filtrar busca textual
         const items = respostas.filter(r =>
             r.questao.toLowerCase().includes(searchLower) ||
             r.resposta.toLowerCase().includes(searchLower)
         )
 
-        // 2. Identificar questões informacionais (dados orçamentários/PPA em massa)
-        //    Questões que aparecem muitas vezes com mesmo texto são dados bulk (ex: Código da Ação, Dotação Final)
-        const questionCount = new Map<string, number>()
-        items.forEach(r => {
-            const q = r.questao.trim()
-            questionCount.set(q, (questionCount.get(q) || 0) + 1)
-        })
-
-        // Questões com 3+ entradas duplicadas são dados informativos em massa
-        const isBulkData = (r: RespostaDetalhada) => (questionCount.get(r.questao.trim()) || 0) >= 3
-
-        // 3. Classificar considerando pontuacao + nota
-        //    - Atenção: nota negativa OU (pontuacao=0 com nota=0, questão de compliance real)
-        //    - Neutro: dados informativos em massa (budget/PPA entries)
-        //    - Conformidade: pontuacao > 0 ou nota > 0
-        const atencao = items.filter(r => {
-            if (isBulkData(r)) return false
-            if ((r.nota ?? 0) < 0) return true
-            // pontuacao=0 e nota=0: questão que não pontuou (ponto de atenção real)
-            return (r.pontuacao ?? 0) === 0 && (r.nota ?? 0) === 0
-        })
-        const conformidade = items.filter(r => {
-            if (isBulkData(r)) return false
-            return (r.nota ?? 0) > 0 || (r.pontuacao ?? 0) > 0
-        })
-        const padrao = items.filter(r => {
-            // Dados informativos em massa ficam como neutro
-            return isBulkData(r)
-        })
+        // Classificação conforme metodologia IEGM:
+        // - Pontos de Atenção: nota negativa (penalidades aplicadas ao município)
+        // - Conformidade: pontuacao > 0 (questões onde o município pontuou)
+        // - Informativo: pontuacao = 0 e nota >= 0 (quesitos informativos que não recebem pontos)
+        const atencao = items.filter(r => (r.nota ?? 0) < 0)
+        const conformidade = items.filter(r => (r.nota ?? 0) >= 0 && (r.pontuacao ?? 0) > 0)
+        const padrao = items.filter(r => (r.nota ?? 0) >= 0 && (r.pontuacao ?? 0) === 0)
 
         return { atencao, padrao, conformidade }
     }, [respostas, search])
@@ -105,9 +81,9 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
     const renderItems = (items: RespostaDetalhada[], type: TabType) => {
         if (items.length === 0) {
             const emptyStates = {
-                atencao: { icon: <CheckCircle2 size={48} className="mx-auto text-green-400 mb-2" />, text: 'Nenhum ponto de atenção encontrado!' },
-                padrao: { icon: <MinusCircle size={48} className="mx-auto text-gray-400 mb-2" />, text: 'Nenhum item com nota padrão encontrado.' },
-                conformidade: { icon: <AlertTriangle size={48} className="mx-auto text-yellow-400 mb-2" />, text: 'Nenhum item em conformidade encontrado.' }
+                atencao: { icon: <CheckCircle2 size={48} className="mx-auto text-green-400 mb-2" />, text: 'Nenhuma penalidade encontrada!' },
+                padrao: { icon: <MinusCircle size={48} className="mx-auto text-gray-400 mb-2" />, text: 'Nenhum quesito informativo encontrado.' },
+                conformidade: { icon: <AlertTriangle size={48} className="mx-auto text-yellow-400 mb-2" />, text: 'Nenhum item pontuado encontrado.' }
             }
             const state = emptyStates[type]
             return (
@@ -156,7 +132,7 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
 
     const tabs = [
         { key: 'atencao' as TabType, label: 'Pontos de Atenção', icon: AlertTriangle, color: 'red', count: filteredData.atencao.length },
-        { key: 'padrao' as TabType, label: 'Neutro', icon: MinusCircle, color: 'gray', count: filteredData.padrao.length },
+        { key: 'padrao' as TabType, label: 'Informativo', icon: MinusCircle, color: 'gray', count: filteredData.padrao.length },
         { key: 'conformidade' as TabType, label: 'Conformidade', icon: CheckCircle2, color: 'green', count: filteredData.conformidade.length },
     ]
 
