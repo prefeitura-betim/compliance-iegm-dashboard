@@ -516,7 +516,7 @@ export default function Dashboard() {
 
                             {presentationScene === 'questions' && (
                                 <div className="animate-cinematic-in space-y-8 max-w-7xl mx-auto">
-                                    <div className="flex items-center gap-6 mb-16"><div className="h-16 w-3 bg-betim-blue rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5)]"></div><h2 className="text-6xl font-black text-white font-heading">Evolução das Perguntas</h2></div>
+                                    <div className="flex items-center gap-6 mb-16"><div className="h-16 w-3 bg-betim-blue rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5)]"></div><h2 className="text-6xl font-black text-white font-heading">Análise Comparativa</h2></div>
                                     <div className="bg-white/95 backdrop-blur-3xl p-10 rounded-[3rem] shadow-2xl">
                                         <QuestionEvolutionSection municipio={municipioNome} />
                                     </div>

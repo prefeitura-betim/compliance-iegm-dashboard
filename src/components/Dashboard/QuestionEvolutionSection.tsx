@@ -250,25 +250,8 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
         )
     }
 
-    const successCount = rawData.filter(item => {
-        const y2022 = item.historico.find(h => h.ano === 2022)
-        const y2023 = item.historico.find(h => h.ano === 2023)
-        const y2024 = item.historico.find(h => h.ano === 2024)
-        if (!y2022 || !y2023 || !y2024) return false
-        const p2022 = Number(y2022.pontuacao)
-        const p2023 = Number(y2023.pontuacao)
-        const p2024 = Number(y2024.pontuacao)
-        if (p2022 === 0 && p2023 === 0 && p2024 === 0) return false
-        if (p2024 === 0 && p2022 === 0) return false
-        return p2022 === 0 && p2023 >= p2022 && p2024 >= p2023 && p2024 > 0
-    }).length
 
-    const regressionCount = rawData.filter(item => {
-        const y2023 = item.historico.find(h => h.ano === 2023)
-        const y2024 = item.historico.find(h => h.ano === 2024)
-        if (!y2023 || !y2024) return false
-        return Number(y2024.pontuacao) < Number(y2023.pontuacao)
-    }).length
+
 
     // Componente de barra de progresso inline — valor absoluto
     const ScoreBar = ({ score, yearLabel, delta, maxScore = 100 }: { score: number, yearLabel?: string, delta: ReturnType<typeof getYearDelta>, maxScore?: number }) => {
@@ -327,9 +310,6 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                 Saíram de 0% e evoluíram
                             </p>
                         </div>
-                        <div className={`text-xl sm:text-3xl font-black ${analysisMode === 'success' ? 'text-white' : 'text-emerald-600'}`}>
-                            {successCount}
-                        </div>
                     </div>
                 </button>
 
@@ -351,9 +331,6 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                             <p className={`text-xs sm:text-sm hidden sm:block ${analysisMode === 'regression' ? 'text-orange-100' : 'text-gray-500'}`}>
                                 Começaram bem e decaíram
                             </p>
-                        </div>
-                        <div className={`text-xl sm:text-3xl font-black ${analysisMode === 'regression' ? 'text-white' : 'text-orange-600'}`}>
-                            {regressionCount}
                         </div>
                     </div>
                 </button>
