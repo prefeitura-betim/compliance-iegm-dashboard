@@ -1,5 +1,5 @@
 
-import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, Info, Target, FileText, CheckCircle2, TrendingUp, Award } from 'lucide-react'
+import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, Info, Target, FileText, CheckCircle2, TrendingUp, Award, ExternalLink } from 'lucide-react'
 
 const dimensoes = [
     {
@@ -7,58 +7,65 @@ const dimensoes = [
         nome: 'i-Educ',
         titulo: 'Educação',
         descricao: 'Infraestrutura escolar, formação docente e resultados educacionais',
-        cor: 'from-blue-500 to-blue-600'
+        cor: 'from-blue-500 to-blue-600',
+        peso: '20%'
     },
     {
         icone: HeartPulse,
         nome: 'i-Saúde',
         titulo: 'Saúde',
         descricao: 'Atenção básica, vigilância sanitária e recursos de saúde',
-        cor: 'from-red-500 to-rose-600'
+        cor: 'from-red-500 to-rose-600',
+        peso: '20%'
     },
     {
         icone: Coins,
         nome: 'i-Fiscal',
         titulo: 'Gestão Fiscal',
         descricao: 'Transparência, controle interno e gestão orçamentária',
-        cor: 'from-amber-500 to-orange-600'
+        cor: 'from-amber-500 to-orange-600',
+        peso: '20%'
     },
     {
         icone: TreePine,
         nome: 'i-Amb',
         titulo: 'Meio Ambiente',
         descricao: 'Políticas ambientais, gestão de resíduos e saneamento',
-        cor: 'from-green-500 to-emerald-600'
+        cor: 'from-green-500 to-emerald-600',
+        peso: '10%'
     },
     {
         icone: Building2,
         nome: 'i-Cidade',
         titulo: 'Cidades',
         descricao: 'Mobilidade urbana, habitação e planejamento urbanístico',
-        cor: 'from-purple-500 to-violet-600'
+        cor: 'from-purple-500 to-violet-600',
+        peso: '5%'
     },
     {
         icone: ClipboardList,
         nome: 'i-Plan',
         titulo: 'Planejamento',
         descricao: 'Planos municipais, definição de metas e indicadores',
-        cor: 'from-cyan-500 to-teal-600'
+        cor: 'from-cyan-500 to-teal-600',
+        peso: '20%'
     },
     {
         icone: Laptop,
         nome: 'i-GovTI',
         titulo: 'Governança TI',
         descricao: 'Sistemas de informação, segurança e governo eletrônico',
-        cor: 'from-indigo-500 to-blue-600'
+        cor: 'from-indigo-500 to-blue-600',
+        peso: '5%'
     },
 ]
 
 const faixas = [
-    { faixa: 'A', label: 'Altamente Efetiva', cor: 'bg-gradient-to-r from-blue-500 to-blue-600', text: 'text-white' },
-    { faixa: 'B+', label: 'Muito Efetiva', cor: 'bg-gradient-to-r from-green-500 to-emerald-500', text: 'text-white' },
-    { faixa: 'B', label: 'Efetiva', cor: 'bg-gradient-to-r from-yellow-400 to-amber-500', text: 'text-white' },
-    { faixa: 'C+', label: 'Em Fase de Adequação', cor: 'bg-gradient-to-r from-orange-400 to-orange-500', text: 'text-white' },
-    { faixa: 'C', label: 'Baixo Nível de Adequação', cor: 'bg-gradient-to-r from-red-400 to-red-500', text: 'text-white' },
+    { faixa: 'A', label: 'Altamente Efetiva', criterio: '≥ 90% (e 5 notas A)', cor: 'bg-gradient-to-r from-blue-500 to-blue-600', text: 'text-white' },
+    { faixa: 'B+', label: 'Muito Efetiva', criterio: '75,00% a 89,99%', cor: 'bg-gradient-to-r from-green-500 to-emerald-500', text: 'text-white' },
+    { faixa: 'B', label: 'Efetiva', criterio: '60,00% a 74,99%', cor: 'bg-gradient-to-r from-yellow-400 to-amber-500', text: 'text-white' },
+    { faixa: 'C+', label: 'Em Fase de Adequação', criterio: '50,00% a 59,99%', cor: 'bg-gradient-to-r from-orange-400 to-orange-500', text: 'text-white' },
+    { faixa: 'C', label: 'Baixo Nível de Adequação', criterio: '< 49,99%', cor: 'bg-gradient-to-r from-red-400 to-red-500', text: 'text-white' },
 ]
 
 export default function About() {
@@ -163,6 +170,43 @@ export default function About() {
                 </div>
             </div>
 
+            {/* Como funciona - Método */}
+            <div className="bg-white rounded-3xl shadow-betim border border-gray-100 overflow-hidden p-8 md:p-12 mb-8">
+                <div className="text-center mb-10">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-betim-blue rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                        <Award size={14} />
+                        Metodologia
+                    </div>
+                    <h2 className="text-3xl font-black text-gray-900 mb-4">
+                        Como funciona a Pontuação?
+                    </h2>
+                    <p className="text-gray-500 max-w-2xl mx-auto">
+                        Entenda a lógica de cálculo, desde a pontuação por questão até o peso de cada dimensão.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                        <h4 className="font-bold text-betim-blue text-xl mb-3 flex items-center gap-3">
+                            <span className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-sm">01</span>
+                            Por Questão
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed">
+                            Cada questão recebe <strong>pontos absolutos</strong> (não percentuais). A pontuação máxima (Pmáx) varia conforme a complexidade da pergunta (ex: 2, 5, 10 pts).
+                        </p>
+                    </div>
+                    <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                        <h4 className="font-bold text-betim-blue text-xl mb-3 flex items-center gap-3">
+                            <span className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-sm">02</span>
+                            Por Indicador
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed">
+                            A soma dos pontos obtidos gera a nota bruta, que é convertida em percentual (0-100%) para definir a classificação na faixa correspondente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             {/* Faixas de Classificação - Agora Lado a Lado (Grid) */}
             <div className="bg-white rounded-3xl shadow-betim border border-gray-100 overflow-hidden p-8 md:p-12">
                 <div className="text-center mb-12">
@@ -192,6 +236,7 @@ export default function About() {
                             </div>
 
                             <h4 className="font-bold text-gray-900 text-center mb-2">{f.label}</h4>
+                            <p className="text-xs text-gray-400 text-center mb-3 font-mono">{f.criterio}</p>
                             <div className={`h-1 w-8 rounded-full ${f.cor.replace('text-white', '').replace('bg-gradient-to-r', 'bg')}`}></div>
                         </div>
                     ))}
@@ -226,9 +271,14 @@ export default function About() {
                                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${dim.cor} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}>
                                         <Icon size={24} className="text-white" />
                                     </div>
-                                    <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-gray-50 px-2 py-1 rounded-md border border-gray-100">
-                                        {dim.nome}
-                                    </span>
+                                    <div className="flex flex-col items-end gap-1">
+                                        <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-gray-50 px-2 py-1 rounded-md border border-gray-100">
+                                            {dim.nome}
+                                        </span>
+                                        <span className="text-[10px] font-black text-betim-blue bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100" title="Peso na Nota Geral">
+                                            {dim.peso}
+                                        </span>
+                                    </div>
                                 </div>
 
                                 <h4 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-betim-blue transition-colors">
@@ -241,6 +291,21 @@ export default function About() {
                         )
                     })}
                 </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-8 border-t border-gray-100">
+                <span className="text-xs text-gray-500">
+                    Fonte: <a href="https://tce.mg.gov.br/" target="_blank" rel="noreferrer" className="hover:underline">TCEMG</a> / Instituto Rui Barbosa
+                </span>
+                <a
+                    href="https://iegm.irbcontas.org.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-betim-blue hover:text-betim-blue-dark font-medium transition-colors"
+                >
+                    Acessar Portal IEGM
+                    <ExternalLink size={14} />
+                </a>
             </div>
 
         </div>

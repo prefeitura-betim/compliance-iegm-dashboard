@@ -9,13 +9,13 @@ import DetailsSection from '@/components/Dashboard/DetailsSection'
 import QuestionEvolutionSection from '@/components/Dashboard/QuestionEvolutionSection'
 import HistoryChart from '@/components/HistoryChart'
 import FiltersPanel from '@/components/FiltersPanel'
-import { FileText, FileSpreadsheet, Loader2, AlertCircle, Award, Play, Square, Maximize, Pause, ChevronLeft, ChevronRight, Info } from 'lucide-react'
+import { FileText, FileSpreadsheet, Loader2, AlertCircle, Award, Play, Square, Maximize, Pause, ChevronLeft, ChevronRight } from 'lucide-react'
 import { toPng } from 'html-to-image'
 import { jsPDF } from 'jspdf'
-import MethodologyModal from '@/components/MethodologyModal'
+import About from './About'
 
 // Tipos para as cenas cinematográficas
-type PresentationScene = 'intro' | 'dimensions' | 'comparison' | 'evolution' | 'questions' | 'ranking'
+type PresentationScene = 'about' | 'intro' | 'dimensions' | 'comparison' | 'evolution' | 'questions' | 'ranking'
 
 export default function Dashboard() {
     // ... rest of state
@@ -23,13 +23,12 @@ export default function Dashboard() {
     const [activeTab, setActiveTab] = useState<TabType>('overview')
     const [isGeneratingPDF, setIsGeneratingPDF] = useState(false)
     const [isPresentationMode, setIsPresentationMode] = useState(false)
-    const [presentationScene, setPresentationScene] = useState<PresentationScene>('intro')
+    const [presentationScene, setPresentationScene] = useState<PresentationScene>('about')
     const [isTransitioning, setIsTransitioning] = useState(false)
     const [isPaused, setIsPaused] = useState(false)
     const [showControls, setShowControls] = useState(true)
     const [sceneDuration, setSceneDuration] = useState(20)
     const [secondsRemaining, setSecondsRemaining] = useState(20)
-    const [isMethodologyOpen, setIsMethodologyOpen] = useState(false)
     const dashboardRef = useRef<HTMLDivElement>(null)
     const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -44,7 +43,7 @@ export default function Dashboard() {
         let timer: NodeJS.Timeout
         let countdown: NodeJS.Timeout
 
-        const scenes: PresentationScene[] = ['intro', 'dimensions', 'comparison', 'evolution', 'questions', 'ranking']
+        const scenes: PresentationScene[] = ['about', 'intro', 'dimensions', 'comparison', 'evolution', 'questions', 'ranking']
 
         const nextScene = () => {
             setIsTransitioning(true)
@@ -343,13 +342,6 @@ export default function Dashboard() {
                         <button onClick={toggleFullscreen} className="bg-white/10 hover:bg-white/30 backdrop-blur text-white p-2 rounded-lg transition-all border border-white/20">
                             <Maximize size={18} />
                         </button>
-                        <button
-                            onClick={() => setIsMethodologyOpen(true)}
-                            className="bg-white/10 hover:bg-white/30 backdrop-blur text-white p-2 rounded-lg transition-all border border-white/20"
-                            title="Metodologia e Pesos"
-                        >
-                            <Info size={18} />
-                        </button>
                         <div className="w-px h-8 bg-white/20 mx-1 hidden md:block" />
                         <button onClick={handleDownloadPDF} disabled={isGeneratingPDF} className="bg-white/20 hover:bg-white/30 backdrop-blur text-white px-4 py-2 rounded-lg transition-all flex items-center gap-2 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed">
                             {isGeneratingPDF ? <Loader2 size={18} className="animate-spin" /> : <FileText size={18} />} {isGeneratingPDF ? 'Gerando...' : 'PDF'}
@@ -389,17 +381,18 @@ export default function Dashboard() {
                             <div className="px-4 border-r border-white/10">
                                 <span className="text-white/60 text-[10px] uppercase font-bold block">Cena Atual</span>
                                 <span className="text-white font-bold text-sm">
-                                    {presentationScene === 'intro' ? 'Abertura' :
-                                        presentationScene === 'dimensions' ? 'Dimensões' :
-                                            presentationScene === 'comparison' ? 'Regional' :
-                                                presentationScene === 'evolution' ? 'Evolução' : 'Ranking'}
+                                    {presentationScene === 'about' ? 'Sobre o Projeto' :
+                                        presentationScene === 'intro' ? 'Abertura' :
+                                            presentationScene === 'dimensions' ? 'Dimensões' :
+                                                presentationScene === 'comparison' ? 'Regional' :
+                                                    presentationScene === 'evolution' ? 'Evolução' : 'Ranking'}
                                 </span>
                             </div>
 
                             <div className="flex items-center gap-1 px-2">
                                 <button
                                     onClick={() => {
-                                        const scenes: PresentationScene[] = ['intro', 'dimensions', 'comparison', 'evolution', 'questions', 'ranking']
+                                        const scenes: PresentationScene[] = ['about', 'intro', 'dimensions', 'comparison', 'evolution', 'questions', 'ranking']
                                         setPresentationScene(current => {
                                             const idx = scenes.indexOf(current)
                                             return scenes[(idx - 1 + scenes.length) % scenes.length]
@@ -422,7 +415,7 @@ export default function Dashboard() {
 
                                 <button
                                     onClick={() => {
-                                        const scenes: PresentationScene[] = ['intro', 'dimensions', 'comparison', 'evolution', 'questions', 'ranking']
+                                        const scenes: PresentationScene[] = ['about', 'intro', 'dimensions', 'comparison', 'evolution', 'questions', 'ranking']
                                         setPresentationScene(current => {
                                             const idx = scenes.indexOf(current)
                                             return scenes[(idx + 1) % scenes.length]
@@ -469,6 +462,12 @@ export default function Dashboard() {
 
                     {isPresentationMode && (
                         <div className={`transition-all duration-1000 ease-in-out py-8 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+                            {presentationScene === 'about' && (
+                                <div className="animate-cinematic-in">
+                                    <About />
+                                </div>
+                            )}
+
                             {presentationScene === 'intro' && (
                                 <div className="flex flex-col items-center justify-center min-h-[85vh] text-center animate-cinematic-in p-12 overflow-hidden relative group">
                                     <div className="relative z-10">
@@ -536,8 +535,7 @@ export default function Dashboard() {
                     )}
                 </div>
             )}
-            {/* Modal de Metodologia */}
-            <MethodologyModal isOpen={isMethodologyOpen} onClose={() => setIsMethodologyOpen(false)} />
+            {/* <MethodologyModal isOpen={isMethodologyOpen} onClose={() => setIsMethodologyOpen(false)} /> */}
         </div>
     )
 }
