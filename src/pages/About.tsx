@@ -1,5 +1,5 @@
 
-import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, Target, Award, ExternalLink } from 'lucide-react'
+import { BookOpen, HeartPulse, Coins, TreePine, ShieldAlert, ClipboardList, Laptop, Target, Award, ExternalLink } from 'lucide-react'
 
 const dimensoes = [
     {
@@ -35,10 +35,10 @@ const dimensoes = [
         peso: '10%'
     },
     {
-        icone: Building2,
+        icone: ShieldAlert,
         nome: 'i-Cidade',
-        titulo: 'Cidades',
-        descricao: 'Mobilidade urbana, habitação e planejamento urbanístico',
+        titulo: 'Defesa Civil',
+        descricao: 'Prevenção de desastres, plano de contingência e recursos de defesa civil',
         cor: 'from-purple-500 to-violet-600',
         peso: '5%'
     },
@@ -66,6 +66,7 @@ const faixas = [
     { faixa: 'B', label: 'Efetiva', criterio: '60,00% a 74,99%', cor: 'bg-gradient-to-r from-yellow-400 to-amber-500', text: 'text-white' },
     { faixa: 'C+', label: 'Em Fase de Adequação', criterio: '50,00% a 59,99%', cor: 'bg-gradient-to-r from-orange-400 to-orange-500', text: 'text-white' },
     { faixa: 'C', label: 'Baixo Nível de Adequação', criterio: '< 49,99%', cor: 'bg-gradient-to-r from-red-400 to-red-500', text: 'text-white' },
+    { faixa: 'D', label: 'Inflectiva', criterio: 'Não Atendeu Requisitos', cor: 'bg-gradient-to-r from-slate-500 to-slate-600', text: 'text-white' },
 ]
 
 export default function About() {
@@ -85,13 +86,13 @@ export default function About() {
                         <span>Excelência em Gestão</span>
                     </div>
                     <h1 className="text-5xl md:text-7xl font-black tracking-tight text-slate-900 mb-8 leading-tight">
-                        Transformando dados em <br />
+                        Índice de Efetividade da <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-betim-blue to-indigo-600 relative">
-                            Resultados Reais.
+                            Gestão Municipal (IEGM)
                         </span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-3xl mx-auto">
-                        O IEGM não é apenas um índice. É o compromisso de Betim com a transparência, a eficiência e a qualidade de vida de cada cidadão.
+                    <p className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-4xl mx-auto">
+                        Ferramenta do Tribunal de Contas (TCESP/TCEMG) para medir a qualidade e eficiência das administrações, promovendo fiscalização, transparência e melhoria contínua.
                     </p>
                 </header>
 
@@ -106,9 +107,9 @@ export default function About() {
                                 <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 border border-white/20 shadow-inner">
                                     <Target className="text-white" size={32} />
                                 </div>
-                                <h3 className="text-3xl md:text-4xl font-bold mb-6">Qualidade do Gasto Público</h3>
+                                <h3 className="text-3xl md:text-4xl font-bold mb-6">Principais Características</h3>
                                 <p className="text-blue-50 text-lg leading-relaxed max-w-md font-medium">
-                                    Avaliamos a eficácia das políticas públicas, garantindo que cada centavo investido retorne em benefícios tangíveis para a sociedade.
+                                    O índice reflete o esforço da administração em transformar recursos públicos em serviços de qualidade para o cidadão.
                                 </p>
                             </div>
                         </div>
@@ -122,7 +123,7 @@ export default function About() {
                                 <BookOpen size={32} />
                             </div>
                             <span className="text-7xl font-black text-slate-900 mb-2 tracking-tighter block group-hover:text-betim-blue transition-colors">7</span>
-                            <span className="text-sm font-bold uppercase tracking-widest text-slate-400 group-hover:text-slate-600">Áreas Temáticas</span>
+                            <span className="text-sm font-bold uppercase tracking-widest text-slate-400 group-hover:text-slate-600">Setores Avaliados</span>
                         </div>
                     </div>
 
@@ -131,7 +132,7 @@ export default function About() {
                         <div className="absolute inset-0 bg-gradient-to-t from-betim-blue/20 to-transparent opacity-50"></div>
                         <div className="relative z-10">
                             <Award className="text-yellow-400 mb-6 drop-shadow-lg" size={40} />
-                            <h3 className="text-white font-bold text-2xl leading-tight">Ranking de Excelência</h3>
+                            <h3 className="text-white font-bold text-2xl leading-tight">Faixas de Resultado</h3>
                         </div>
                         <div className="relative z-10 mt-8">
                             <div className="flex -space-x-3 items-center">
@@ -141,23 +142,23 @@ export default function About() {
                                     </div>
                                 ))}
                                 <div className="w-12 h-12 rounded-full border-2 border-slate-800 bg-slate-700 flex items-center justify-center text-white text-xs font-medium z-0 pl-1">
-                                    +2
+                                    +3
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Wide Card: Metodologia (Glassy White) */}
+                    {/* Wide Card: Finalidade e Obrigatoriedade (Glassy White) */}
                     <div className="md:col-span-3 lg:col-span-4 bg-white rounded-[2.5rem] p-10 md:p-14 border border-blue-50 shadow-lg shadow-blue-50 relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-2 h-full bg-betim-blue"></div>
+                        {/* REMOVED LEFT BORDER as requested: <div className="absolute top-0 left-0 w-2 h-full bg-betim-blue"></div> */}
                         <div className="flex flex-col md:flex-row gap-12 items-center">
                             <div className="md:w-1/3 relative z-10">
-                                <h3 className="text-3xl font-bold text-slate-900 mb-4">Metodologia Rigorosa</h3>
+                                <h3 className="text-3xl font-bold text-slate-900 mb-4">Finalidade e Obrigatoriedade</h3>
                                 <p className="text-slate-500 mb-8 text-lg">
-                                    Um processo auditável e transparente, dividido em etapas claras de validação e cálculo.
+                                    Funciona como um indicador de desempenho para fiscalização e correção de falhas na gestão.
                                 </p>
                                 <a
-                                    href="https://iegm.irbcontas.org.br"
+                                    href="/manual-iegm-2025.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 text-white bg-betim-blue hover:bg-blue-700 px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
@@ -168,13 +169,13 @@ export default function About() {
                             <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full relative z-10">
                                 <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-blue-200 transition-colors group">
                                     <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-betim-blue font-bold shadow-sm mb-4 border border-slate-100 group-hover:scale-110 transition-transform">1</div>
-                                    <h4 className="text-xl font-bold text-slate-900 mb-2">Pontuação Absoluta</h4>
-                                    <p className="text-slate-600 text-sm">Cada questão possui um peso específico baseado na sua complexidade e impacto.</p>
+                                    <h4 className="text-xl font-bold text-slate-900 mb-2">Fiscalização</h4>
+                                    <p className="text-slate-600 text-sm">Ajuda tribunais de contas a fiscalizar e prefeitos a corrigir falhas e melhorar a gestão.</p>
                                 </div>
                                 <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-blue-200 transition-colors group">
                                     <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-betim-blue font-bold shadow-sm mb-4 border border-slate-100 group-hover:scale-110 transition-transform">2</div>
-                                    <h4 className="text-xl font-bold text-slate-900 mb-2">Índice Percentual</h4>
-                                    <p className="text-slate-600 text-sm">A nota final é convertida em uma escala de 0 a 100% comparável nacionalmente.</p>
+                                    <h4 className="text-xl font-bold text-slate-900 mb-2">Obrigatoriedade</h4>
+                                    <p className="text-slate-600 text-sm">O preenchimento é obrigatório e a omissão pode gerar sanções ao gestor municipal (TCEMG).</p>
                                 </div>
                             </div>
                         </div>
@@ -230,13 +231,13 @@ export default function About() {
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-6">Níveis de Classificação</h2>
                         <p className="text-slate-400 mb-16 max-w-2xl mx-auto text-lg">Entenda o padrão de excelência exigido pelo Tribunal de Contas.</p>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
                             {faixas.map((f) => (
-                                <div key={f.faixa} className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 group cursor-default backdrop-blur-sm">
+                                <div key={f.faixa} className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 group cursor-default backdrop-blur-sm min-h-[220px] flex flex-col justify-center">
                                     <div className={`w-14 h-14 rounded-2xl ${f.cor} flex items-center justify-center text-xl font-black mb-6 mx-auto shadow-lg group-hover:scale-110 transition-transform bg-opacity-90`}>
                                         {f.faixa}
                                     </div>
-                                    <h4 className="font-bold text-white mb-3 text-lg">{f.label}</h4>
+                                    <h4 className="font-bold text-white mb-3 text-lg leading-tight">{f.label}</h4>
                                     <div className="w-8 h-1 bg-white/20 mx-auto rounded-full mb-3"></div>
                                     <p className="text-xs text-slate-300 font-mono tracking-wide">{f.criterio}</p>
                                 </div>
