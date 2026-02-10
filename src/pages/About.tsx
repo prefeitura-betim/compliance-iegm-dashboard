@@ -158,7 +158,7 @@ export default function About() {
                                     Funciona como um indicador de desempenho para fiscalização e correção de falhas na gestão.
                                 </p>
                                 <a
-                                    href="/manual-iegm-2025.pdf"
+                                    href="https://www.iegm.irbcontas.org.br/manual/I%CC%81NDICE%20DE%20EFETIVIDADE%20DA%20GESTA%CC%83O%20MUNICIPAL%20-%20IEGM%202025%20-%20ANO%20BASE%202024.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 text-white bg-betim-blue hover:bg-blue-700 px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
