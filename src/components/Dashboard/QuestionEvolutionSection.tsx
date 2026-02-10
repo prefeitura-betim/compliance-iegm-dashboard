@@ -134,9 +134,28 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     }
 
     // Calcula a evolução TOTAL (2024 vs 2022)
+    // No modo regressão, mostramos a queda de 2023→2024 como foco principal
     const calculateTrend = (history: any[]) => {
         if (history.length < 2) return { icon: null, text: 'N/A', color: 'text-gray-400', bgColor: 'bg-gray-50' }
         const sorted = [...history].sort((a, b) => a.ano - b.ano)
+
+        if (analysisMode === 'regression') {
+            // No modo regressão, mostrar a queda 2023→2024
+            const y2023 = sorted.find(h => h.ano === 2023)
+            const y2024 = sorted.find(h => h.ano === 2024)
+            if (!y2023 || !y2024) return { icon: null, text: 'N/A', color: 'text-gray-400', bgColor: 'bg-gray-50' }
+            const p2023 = Number(y2023.pontuacao)
+            const p2024 = Number(y2024.pontuacao)
+            const diff = p2024 - p2023 // sempre negativo neste modo
+            return {
+                icon: <ArrowDownRight size={14} />,
+                text: `${diff.toFixed(0)}pp`,
+                color: 'text-red-700',
+                bgColor: 'bg-red-50 border-red-200'
+            }
+        }
+
+        // Modo sucesso: evolução total 2022→2024
         const last = Number(sorted[sorted.length - 1].pontuacao)
         const first = Number(sorted[0].pontuacao)
         const diff = last - first
@@ -162,6 +181,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     }
 
     // Variação ano-a-ano (seta pequena)
+    // No modo regressão, cores invertidas: queda = vermelho (ruim), subida = cinza neutro
     const getYearDelta = (historico: any[], year: number) => {
         const sorted = [...historico].sort((a, b) => a.ano - b.ano)
         const idx = sorted.findIndex(h => h.ano === year)
@@ -170,6 +190,16 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
         const previous = Number(sorted[idx - 1].pontuacao)
         const diff = current - previous
         if (diff === 0) return null
+
+        if (analysisMode === 'regression') {
+            // No modo regressão: queda é vermelho, subida é cinza (não verde)
+            return {
+                diff,
+                text: diff > 0 ? `+${diff.toFixed(0)}` : `${diff.toFixed(0)}`,
+                color: diff < 0 ? 'text-red-600 font-bold' : 'text-gray-400'
+            }
+        }
+
         return {
             diff,
             text: diff > 0 ? `+${diff.toFixed(0)}` : `${diff.toFixed(0)}`,
@@ -240,26 +270,31 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
         return Number(y2024.pontuacao) < Number(y2023.pontuacao)
     }).length
 
-    // Componente de barra de progresso inline
-    const ScoreBar = ({ score, delta }: { score: number, year?: number, delta: ReturnType<typeof getYearDelta> }) => (
-        <div className="flex items-center gap-2 min-w-0">
-            <div className="flex-1 min-w-0">
-                <div className={`w-full h-2.5 rounded-full ${getBarBg(score)} overflow-hidden`}>
-                    <div
-                        className={`h-full rounded-full ${getBarColor(score)} transition-all duration-500`}
-                        style={{ width: `${Math.max(score, 2)}%` }}
-                    />
+    // Componente de barra de progresso inline — porcentagem acima da barra para clara associação
+    const ScoreBar = ({ score, yearLabel, delta }: { score: number, yearLabel?: string, delta: ReturnType<typeof getYearDelta> }) => (
+        <div className="min-w-0">
+            {/* Linha com ano + porcentagem + delta — claramente acima da barra */}
+            <div className="flex items-center justify-between mb-1">
+                <div className="flex items-baseline gap-1.5">
+                    {yearLabel && (
+                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">{yearLabel}</span>
+                    )}
+                    <span className="text-sm font-black text-gray-800 tabular-nums">
+                        {score.toFixed(0)}%
+                    </span>
                 </div>
-            </div>
-            <div className="flex items-center gap-1 shrink-0">
-                <span className="text-sm font-bold text-gray-800 tabular-nums w-10 text-right">
-                    {score.toFixed(0)}%
-                </span>
                 {delta && (
                     <span className={`text-[10px] font-semibold ${delta.color} tabular-nums`}>
-                        {delta.text}
+                        {delta.text}pp
                     </span>
                 )}
+            </div>
+            {/* Barra de progresso */}
+            <div className={`w-full h-2 rounded-full ${getBarBg(score)} overflow-hidden`}>
+                <div
+                    className={`h-full rounded-full ${getBarColor(score)} transition-all duration-500`}
+                    style={{ width: `${Math.max(score, 2)}%` }}
+                />
             </div>
         </div>
     )
@@ -433,7 +468,6 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                         <div>
                                                             <ScoreBar
                                                                 score={Number(y2022?.pontuacao || 0)}
-                                                                year={2022}
                                                                 delta={null}
                                                             />
                                                         </div>
@@ -442,7 +476,6 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                         <div>
                                                             <ScoreBar
                                                                 score={Number(y2023?.pontuacao || 0)}
-                                                                year={2023}
                                                                 delta={getYearDelta(item.historico, 2023)}
                                                             />
                                                         </div>
@@ -451,7 +484,6 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                         <div>
                                                             <ScoreBar
                                                                 score={Number(y2024?.pontuacao || 0)}
-                                                                year={2024}
                                                                 delta={getYearDelta(item.historico, 2024)}
                                                             />
                                                         </div>
@@ -487,7 +519,6 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                                     <div className="flex-1">
                                                                         <ScoreBar
                                                                             score={Number(yearData?.pontuacao || 0)}
-                                                                            year={year}
                                                                             delta={year > 2022 ? getYearDelta(item.historico, year) : null}
                                                                         />
                                                                     </div>
