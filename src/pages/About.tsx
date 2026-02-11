@@ -283,11 +283,11 @@ export default function About() {
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-3">Pontos de Atenção</h3>
                                 <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                                    Questões onde o município recebeu <strong className="text-red-700">nota negativa (penalidade)</strong>. Indicam não-conformidades que impactam diretamente na nota da dimensão.
+                                    Questões onde o município recebeu <strong className="text-red-700">nota negativa (penalidade)</strong> ou <strong className="text-orange-600">deixou de pontuar</strong> em requisitos obrigatórios.
                                 </p>
                                 <div className="bg-red-50 border border-red-100 rounded-xl p-4">
                                     <p className="text-xs text-red-700 font-medium">
-                                        <strong>Critério:</strong> nota &lt; 0 — penalidade aplicada pelo descumprimento de requisitos obrigatórios.
+                                        <strong>Critério:</strong> nota &lt; 0 (penalidade) OU nota = 0 em quesito pontuável.
                                     </p>
                                 </div>
                             </div>
@@ -302,11 +302,11 @@ export default function About() {
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-3">Informativo</h3>
                                 <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                                    Quesitos de caráter <strong className="text-slate-700">exclusivamente informativo</strong>. Não recebem pontuação, mas alimentam o banco de dados para pesquisas e ações de controle externo.
+                                    Quesitos de caráter <strong className="text-slate-700">exclusivamente informativo</strong>. Não recebem pontuação, servindo apenas para coleta de dados.
                                 </p>
                                 <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
                                     <p className="text-xs text-slate-600 font-medium">
-                                        <strong>Critério:</strong> pontuação = 0 — dados contextuais como valores orçamentários, estrutura organizacional, etc.
+                                        <strong>Critério:</strong> Pontuação Máxima = 0.
                                     </p>
                                 </div>
                             </div>

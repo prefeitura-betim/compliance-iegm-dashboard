@@ -10,6 +10,10 @@ interface ImprovementAnalysisProps {
     cor: string // ex: betim-blue
 }
 
+import { QUESTION_METADATA } from '../data/question_metadata'
+
+// ... existing imports
+
 interface RespostaDetalhada {
     id: number
     tribunal: string
@@ -23,6 +27,8 @@ interface RespostaDetalhada {
     nota: number | null
     anoRef: number
     rotulo?: string
+    chave_questao?: string // Campo vindo do banco (snake_case)
+    chaveQuestao?: string // Possivel variação (camelCase)
 }
 
 async function fetchRespostasDetalhadas(municipio: string, ano: number, indicador: string): Promise<RespostaDetalhada[]> {
@@ -53,13 +59,41 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
             r.resposta.toLowerCase().includes(searchLower)
         )
 
-        // Classificação conforme metodologia IEGM:
-        // - Pontos de Atenção: nota negativa (penalidades aplicadas ao município)
-        // - Conformidade: pontuacao > 0 (questões onde o município pontuou)
-        // - Informativo: pontuacao = 0 e nota >= 0 (quesitos informativos que não recebem pontos)
-        const atencao = items.filter(r => (r.nota ?? 0) < 0)
-        const conformidade = items.filter(r => (r.nota ?? 0) >= 0 && (r.pontuacao ?? 0) > 0)
-        const padrao = items.filter(r => (r.nota ?? 0) >= 0 && (r.pontuacao ?? 0) === 0)
+        // Classificação OTIMIZADA com base no Manual IEGM
+        // - Pontos de Atenção: 
+        //   1. Nota negativa (Penalidade)
+        //   2. Nota 0 e Pmax > 0 (Perdeu a pontuação que poderia ter ganho)
+        // - Conformidade: Nota > 0 (Ganhou ponto)
+        // - Informativo: Nota 0 e Pmax = 0 (Não vale ponto)
+
+        const atencao = items.filter(r => {
+            const chave = r.chave_questao || r.chaveQuestao || r.rotulo || '';
+            // Tenta buscar pelo ID exato ou fallback se necessário
+            const pmax = QUESTION_METADATA[chave];
+
+            // Se Pmax não for encontrada, assumimos comportamento padrão antigo ou conservador?
+            // Se não achou Pmax, e nota é 0, fica em Informativo para não alarmar falso positivo, 
+            // a menos que seja explicitamente penalidade.
+            const maxScore = pmax !== undefined ? pmax : 0;
+            const nota = r.nota ?? 0;
+
+            return nota < 0 || (nota === 0 && maxScore > 0);
+        })
+
+        const conformidade = items.filter(r => (r.nota ?? 0) > 0)
+
+        // Informativos puros (score 0 e max score 0)
+        const padrao = items.filter(r => {
+            const chave = r.chave_questao || r.chaveQuestao || r.rotulo || '';
+            const pmax = QUESTION_METADATA[chave];
+
+            const maxScore = pmax !== undefined ? pmax : 0;
+            const nota = r.nota ?? 0;
+
+            // Se nota é 0 e não caiu no filtro de atenção (maxScore > 0), então é informativo.
+            // Mas vamos ser explícitos:
+            return nota === 0 && maxScore === 0;
+        })
 
         return { atencao, padrao, conformidade }
     }, [respostas, search])
