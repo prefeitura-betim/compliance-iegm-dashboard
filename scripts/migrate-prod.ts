@@ -126,6 +126,7 @@ const columnMappings: Record<string, Record<string, string>> = {
     quantidadeMunicipiosResponderam: 'quantidade_municipios_responderam'
   },
   respostas_detalhadas: {
+    id: 'id',
     tribunal: 'tribunal',
     codigoIbge: 'codigo_ibge',
     municipio: 'municipio',
@@ -135,7 +136,15 @@ const columnMappings: Record<string, Record<string, string>> = {
     pontuacao: 'pontuacao',
     peso: 'peso',
     nota: 'nota',
-    anoRef: 'ano_ref'
+    anoRef: 'ano_ref',
+    chaveQuestao: 'chave_questao',
+    rotulo: 'rotulo',
+    questaoId: 'questao_id',
+    indiceQuestao: 'indice_questao',
+    nomeQuestionario: 'nome_questionario',
+    questionarioId: 'questionario_id',
+    dataTermino: 'data_termino',
+    sequenciaBlocoRepeticao: 'sequencia_bloco_repeticao'
   }
 };
 

@@ -119,12 +119,22 @@ CREATE TABLE `respostas_detalhadas` (
 	`pontuacao` real,
 	`peso` real DEFAULT 1,
 	`nota` real,
-	`ano_ref` integer NOT NULL
+	`ano_ref` integer NOT NULL,
+	`chave_questao` text,
+	`rotulo` text,
+	`questao_id` text,
+	`indice_questao` text,
+	`nome_questionario` text,
+	`questionario_id` text,
+	`data_termino` text,
+	`sequencia_bloco_repeticao` integer
 );
 
 CREATE INDEX `resposta_detalhada_municipio_ano_idx` ON `respostas_detalhadas` (`municipio`,`ano_ref`);
 CREATE INDEX `resposta_detalhada_indicador_idx` ON `respostas_detalhadas` (`indicador`);
 CREATE INDEX `resposta_detalhada_tribunal_idx` ON `respostas_detalhadas` (`tribunal`);
+CREATE INDEX `resposta_detalhada_questao_id_idx` ON `respostas_detalhadas` (`questao_id`);
+CREATE INDEX `resposta_detalhada_chave_questao_idx` ON `respostas_detalhadas` (`chave_questao`);
 
 CREATE TABLE `resultados_estados` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
