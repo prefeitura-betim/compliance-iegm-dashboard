@@ -36,7 +36,7 @@ async function fetchRespostasDetalhadas(municipio: string, ano: number, indicado
 type TabType = 'atencao' | 'padrao' | 'conformidade';
 
 export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: ImprovementAnalysisProps) {
-    const [activeTab, setActiveTab] = useState<TabType>('conformidade')
+    const [activeTab, setActiveTab] = useState<TabType>('atencao')
     const [search, setSearch] = useState('')
     const [isExpanded, setIsExpanded] = useState(false)
 
