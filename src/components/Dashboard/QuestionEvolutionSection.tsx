@@ -25,7 +25,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     const [error, setError] = useState<string | null>(null)
     const [searchTerm, setSearchTerm] = useState('')
     const [activeIndicator, setActiveIndicator] = useState<string>('TODOS')
-    const [analysisMode, setAnalysisMode] = useState<AnalysisMode>('success')
+    const [analysisMode, setAnalysisMode] = useState<AnalysisMode>('regression')
     const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set())
 
     useEffect(() => {
