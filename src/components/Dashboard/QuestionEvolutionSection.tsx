@@ -449,7 +449,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                     {/* Layout Desktop: linha única */}
                                                     <div className="hidden lg:grid lg:grid-cols-[1fr_140px_140px_140px_90px] gap-3 items-center">
                                                         <p className="text-[13px] text-gray-700 font-medium leading-snug pr-4 group-hover:text-blue-800 transition-colors">
-                                                            {item.questao}
+                                                            {item.questao.replace(/^\d+\.\s*/, '')}
                                                         </p>
 
                                                         {/* 2022 */}
@@ -492,7 +492,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                     <div className="lg:hidden space-y-3">
                                                         <div className="flex items-start justify-between gap-2">
                                                             <p className="text-[13px] text-gray-700 font-medium leading-snug flex-1">
-                                                                {item.questao}
+                                                                {item.questao.replace(/^\d+\.\s*/, '')}
                                                             </p>
                                                             <span className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-bold rounded-lg border shrink-0 ${trend.bgColor} ${trend.color}`}>
                                                                 {trend.icon}

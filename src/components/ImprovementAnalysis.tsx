@@ -10,10 +10,6 @@ interface ImprovementAnalysisProps {
     cor: string // ex: betim-blue
 }
 
-import { QUESTION_METADATA } from '../data/question_metadata'
-
-// ... existing imports
-
 interface RespostaDetalhada {
     id: number
     tribunal: string
@@ -27,8 +23,8 @@ interface RespostaDetalhada {
     nota: number | null
     anoRef: number
     rotulo?: string
-    chave_questao?: string // Campo vindo do banco (snake_case)
-    chaveQuestao?: string // Possivel variação (camelCase)
+    chave_questao?: string
+    chaveQuestao?: string
 }
 
 async function fetchRespostasDetalhadas(municipio: string, ano: number, indicador: string): Promise<RespostaDetalhada[]> {
@@ -50,6 +46,8 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
         enabled: isExpanded,
     })
 
+    const cleanQuestion = (q: string) => q.replace(/^\d+\.\s*/, '');
+
     const filteredData = useMemo(() => {
         if (!respostas) return { atencao: [], padrao: [], conformidade: [] }
 
@@ -59,40 +57,18 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
             r.resposta.toLowerCase().includes(searchLower)
         )
 
-        // Classificação OTIMIZADA com base no Manual IEGM
-        // - Pontos de Atenção: 
-        //   1. Nota negativa (Penalidade)
-        //   2. Nota 0 e Pmax > 0 (Perdeu a pontuação que poderia ter ganho)
-        // - Conformidade: Nota > 0 (Ganhou ponto)
-        // - Informativo: Nota 0 e Pmax = 0 (Não vale ponto)
-
         const atencao = items.filter(r => {
-            const chave = r.chave_questao || r.chaveQuestao || r.rotulo || '';
-            // Tenta buscar pelo ID exato ou fallback se necessário
-            const pmax = QUESTION_METADATA[chave];
-
-            // Se Pmax não for encontrada, assumimos comportamento padrão antigo ou conservador?
-            // Se não achou Pmax, e nota é 0, fica em Informativo para não alarmar falso positivo, 
-            // a menos que seja explicitamente penalidade.
-            const maxScore = pmax !== undefined ? pmax : 0;
             const nota = r.nota ?? 0;
-
-            return nota < 0 || (nota === 0 && maxScore > 0);
+            const resp = (r.resposta || '').toUpperCase().trim();
+            return nota < 0 || (nota === 0 && resp === 'NÃO');
         })
 
         const conformidade = items.filter(r => (r.nota ?? 0) > 0)
 
-        // Informativos puros (score 0 e max score 0)
         const padrao = items.filter(r => {
-            const chave = r.chave_questao || r.chaveQuestao || r.rotulo || '';
-            const pmax = QUESTION_METADATA[chave];
-
-            const maxScore = pmax !== undefined ? pmax : 0;
             const nota = r.nota ?? 0;
-
-            // Se nota é 0 e não caiu no filtro de atenção (maxScore > 0), então é informativo.
-            // Mas vamos ser explícitos:
-            return nota === 0 && maxScore === 0;
+            const resp = (r.resposta || '').toUpperCase().trim();
+            return nota === 0 && resp !== 'NÃO';
         })
 
         return { atencao, padrao, conformidade }
@@ -141,14 +117,7 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
                 <div className="flex items-start gap-3">
                     <Icon className={`${style.iconColor} mt-0.5 shrink-0`} size={18} />
                     <div className="flex-1">
-                        <div className="flex items-start gap-2 mb-1">
-                            {item.rotulo && (
-                                <span className="text-xs font-mono font-medium text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded border border-gray-200 shrink-0 mt-0.5">
-                                    {item.rotulo}
-                                </span>
-                            )}
-                            <p className="text-gray-800 font-medium text-sm leading-tight">{item.questao}</p>
-                        </div>
+                        <p className="text-gray-800 font-medium text-sm leading-tight mb-2">{cleanQuestion(item.questao)}</p>
                         <div className="flex items-center gap-2 flex-wrap">
                             <span className={`text-xs font-bold ${style.badgeText} ${style.badgeBg} px-2 py-0.5 rounded border ${style.badgeBorder}`}>
                                 Resposta: {item.resposta}
@@ -172,7 +141,6 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
 
     return (
         <div className="mt-4 bg-gray-50 rounded-xl border border-gray-200 overflow-hidden animate-fade-in">
-            {/* Header com Busca e Fechar */}
             <div className="p-4 border-b border-gray-200 bg-white flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
                     <h3 className="font-bold text-gray-800">Diagnóstico: {indicador}</h3>
@@ -201,7 +169,6 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
                 </div>
             </div>
 
-            {/* Abas */}
             <div className="flex border-b border-gray-200 bg-white">
                 {tabs.map(tab => (
                     <button
@@ -221,7 +188,6 @@ export default function ImprovementAnalysis({ municipio, ano, indicador, cor }: 
                 ))}
             </div>
 
-            {/* Conteúdo */}
             <div className="p-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
                 {isLoading ? (
                     <div className="flex justify-center p-8">
