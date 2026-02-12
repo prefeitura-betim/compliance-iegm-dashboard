@@ -130,30 +130,85 @@ export default function RankingMunicipios({ data, municipio }: RankingMunicipios
                     })}
                 </div>
 
-                {/* Current Municipality Card (if not in top 10) */}
+                {/* Neighborhood View (Contexto do Município) */}
                 {municipioIndex >= 10 && currentMunicipioData && (
-                    <div className="mt-6 p-5 bg-white border border-gray-200 rounded-xl shadow-lg">
-                        <p className="text-gray-500 text-sm mb-2 font-medium">Posição de Betim no ranking:</p>
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-4">
-                                <div className={`w-14 h-14 rounded-xl flex items-center justify-center shadow-md ${getFaixaColor(currentMunicipioData.faixa).bg
-                                    }`}>
-                                    <span className="text-2xl font-black text-white">{municipioIndex + 1}°</span>
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-lg text-gray-900">{municipio}</h3>
-                                    <p className="text-gray-500 text-sm">de {data.ranking.length} municípios</p>
-                                </div>
+                    <div className="mt-8 pt-6 border-t border-gray-100">
+                        <div className="flex items-center justify-between mb-6">
+                            <div className="flex items-center gap-2">
+                                <MapPin className="text-betim-blue" size={18} />
+                                <h3 className="text-gray-500 font-bold text-sm uppercase tracking-wider">
+                                    Contexto no Ranking
+                                </h3>
                             </div>
-                            <div className="text-right">
-                                <div className={`text-3xl font-black ${getFaixaColor(currentMunicipioData.faixa).text}`}>
-                                    {(currentMunicipioData.percentual * 100).toFixed(1)}%
-                                </div>
-                                <span className={`inline-block px-3 py-1 rounded-lg text-sm font-bold text-white shadow-sm ${getFaixaColor(currentMunicipioData.faixa).bg
-                                    }`}>
-                                    Faixa {currentMunicipioData.faixa}
-                                </span>
-                            </div>
+                            <span className="text-xs text-gray-400">Vizinhos de posição</span>
+                        </div>
+
+                        <div className="flex flex-col gap-1 relative">
+                            {/* Linha conectora vertical sutil */}
+                            <div className="absolute left-6 top-4 bottom-4 w-0.5 bg-gray-100 -z-10"></div>
+
+                            {(() => {
+                                // Pega 2 acima e 2 abaixo, respeitando os limites do array
+                                const start = Math.max(0, municipioIndex - 2)
+                                const end = Math.min(data.ranking.length - 1, municipioIndex + 2)
+                                const neighbors = data.ranking.slice(start, end + 1)
+
+                                return neighbors.map((item, idx) => {
+                                    const realRank = start + idx + 1 // Ranking é 1-based
+                                    const isCurrent = item.municipio.toUpperCase() === municipio.toUpperCase()
+
+                                    return (
+                                        <div
+                                            key={item.municipio}
+                                            className={`
+                                                flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300
+                                                ${isCurrent
+                                                    ? 'bg-white border-2 border-betim-blue shadow-xl shadow-blue-900/10 scale-105 z-10 my-2'
+                                                    : 'bg-white/50 border border-transparent hover:bg-white hover:border-gray-100 hover:shadow-sm grayscale opacity-70 hover:grayscale-0 hover:opacity-100'
+                                                }
+                                            `}
+                                        >
+                                            {/* Posição */}
+                                            <div className={`
+                                                w-8 h-8 flex items-center justify-center rounded-lg font-bold text-sm
+                                                ${isCurrent ? 'bg-betim-blue text-white' : 'bg-gray-100 text-gray-500'}
+                                            `}>
+                                                {realRank}°
+                                            </div>
+
+                                            {/* Nome e Barra */}
+                                            <div className="flex-1 min-w-0">
+                                                <div className="flex items-center justify-between mb-1">
+                                                    <span className={`font-bold truncate ${isCurrent ? 'text-gray-900 text-base' : 'text-gray-500 text-sm'}`}>
+                                                        {item.municipio}
+                                                    </span>
+                                                    <span className={`font-bold ${isCurrent ? 'text-betim-blue text-base' : 'text-gray-400 text-sm'}`}>
+                                                        {(item.percentual * 100).toFixed(1)}%
+                                                    </span>
+                                                </div>
+
+                                                {/* Barra de progresso */}
+                                                <div className={`h-1.5 rounded-full overflow-hidden ${isCurrent ? 'bg-gray-100' : 'bg-gray-50'}`}>
+                                                    <div
+                                                        className={`h-full rounded-full ${isCurrent ? 'bg-betim-blue' : 'bg-gray-300'}`}
+                                                        style={{ width: `${item.percentual * 100}%` }}
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            {/* Tag de Faixa (apenas no atual para limpar o visual ou se quiser em todos, descomentar) */}
+                                            {isCurrent && (
+                                                <div className={`
+                                                    hidden sm:flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider
+                                                    ${getFaixaColor(item.faixa).bg} text-white
+                                                `}>
+                                                    {item.faixa}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )
+                                })
+                            })()}
                         </div>
                     </div>
                 )}
