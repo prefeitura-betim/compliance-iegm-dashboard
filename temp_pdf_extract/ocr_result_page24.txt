@@ -1,0 +1,48 @@
+| (& tada eptdass da gueto auaáar!
+iegm
+— “=P BRASIL
+QUESTIONÁRIO E PONTUAÇÃO DO i-EDUCAÇÃO
+Nº É
+QUESITO QUESITOS PONTUAÇÕES
+1.0 A Prefeitura municipal oferece Creche?
+Algum estabelecimento que oferece Creche possui
+11 é ses :
+Informe quantos estabelecimentos que oferecem
+Creche possuem:
+| Fórmula de cálculo:
+i 1.1.1 BPI = nº de creches com brinquedos no pátio | Brinquedos no Pátio Infantil:
+infantil / nº de creches no município
+N =BPI x Pmáx
+Pontuação máxima (Pmáx) = 02 pontos
+Informe: Quantas nºcreches realizam manutenção / troca
+dos brinquedos no Pátio Infantil SOMENTE por
+Fórmula de cálculo: solicitação (SOLIC):
+P1 = NMANU / (CRON + NCRON + SOLIC +
+NMAN U) x Pmáxl Quantas nºcreches possuem e NÃO CUMPRIRAM
+P2 = NCRON / (CRON + NCRON + SOLIC + O cronograma de manutenção preventiva / troca
+112 NMANU) x Pmáx2 dos brinquedos no Pátio infantil (NCRON):
+P3 = CRON / (CRON + NCRON + SOLIC +
+1.1.3 ,
+NMANU) x Pmáx3 z " "
+1.1.4 Quantas nºcreches NÃO realizam manutenção /
+1.1.5 p=P1+P2+P3 troca dos brinquedos no Pátio Infantil (NMANU):
+Pmáx1 = -02 pontos (perde 2 pontos)
+Pmáx2 = 01 ponto Quantasnº creches possuem e CUMPRIRAM o
+Pmáx3 = 03 pontos cronograma de manutenção preventiva / troca dos
+brinquedos no Pátio infantil (CRON):
+Pontuação máxima (Pmáx) = 03 pontos
+A Prefeitura disponibiliza brinquedos / materiais
+1.2 pedagógicos para as crianças em todos os [| —
+estabelecimentos de Creche do município?
+121 Realiza higienização dos brinquedos / materiais
+Qual a frequência de higienização? A cada 2 dias - 04
+1211 | Frequência de higienização aplicada na maior Acada 3 dias - OS
+O parte dos estabelecimentos que oferecem creche. | semanal - 02
+Pontuação máxima (Pmáx) = O5 pontos Mensal - O1
+> 3O dias - OO
+Possui cronograma para compra de brinquedos / | .
+materiais pedagógicos? Sim - O5
+1.2.2 Planejamento de compra de brinquedos / materiais
+pedagógicos para cada estabelecimento de ensino.
+Não - OO
+Pontuação máxima (Pmáx) = O5 pontos F

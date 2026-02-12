@@ -149,7 +149,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
             const diff = p2024 - p2023 // sempre negativo neste modo
             return {
                 icon: <ArrowDownRight size={14} />,
-                text: `${diff.toFixed(0)}`,
+                text: `${Math.round(diff) === 0 ? '0' : Math.round(diff)}`,
                 color: 'text-red-700',
                 bgColor: 'bg-red-50 border-red-200'
             }
@@ -162,13 +162,13 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
 
         if (diff > 0) return {
             icon: <ArrowUpRight size={14} />,
-            text: `+${diff.toFixed(0)}`,
+            text: `+${Math.round(diff) === 0 ? '0' : Math.round(diff)}`,
             color: 'text-emerald-700',
             bgColor: 'bg-emerald-50 border-emerald-200'
         }
         if (diff < 0) return {
             icon: <ArrowDownRight size={14} />,
-            text: `${diff.toFixed(0)}`,
+            text: `${Math.round(diff) === 0 ? '0' : Math.round(diff)}`,
             color: 'text-red-700',
             bgColor: 'bg-red-50 border-red-200'
         }
@@ -195,14 +195,14 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
             // No modo regressão: queda é vermelho, subida é cinza (não verde)
             return {
                 diff,
-                text: diff > 0 ? `+${diff.toFixed(0)}` : `${diff.toFixed(0)}`,
+                text: diff > 0 ? `+${Math.round(diff) === 0 ? '0' : Math.round(diff)}` : `${Math.round(diff) === 0 ? '0' : Math.round(diff)}`,
                 color: diff < 0 ? 'text-red-600 font-bold' : 'text-gray-400'
             }
         }
 
         return {
             diff,
-            text: diff > 0 ? `+${diff.toFixed(0)}` : `${diff.toFixed(0)}`,
+            text: diff > 0 ? `+${Math.round(diff) === 0 ? '0' : Math.round(diff)}` : `${Math.round(diff) === 0 ? '0' : Math.round(diff)}`,
             color: diff > 0 ? 'text-emerald-600' : 'text-red-500'
         }
     }
@@ -430,7 +430,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">2022</span>
                                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">2023</span>
                                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">2024</span>
-                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-right">Evolução</span>
+                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-right">Variação</span>
                                         </div>
 
                                         {/* Linhas da tabela */}
