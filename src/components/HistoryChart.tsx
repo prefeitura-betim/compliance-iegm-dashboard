@@ -97,28 +97,132 @@ export default function HistoryChart({ municipio }: HistoryChartProps) {
     const chartData = {
         labels: history.map(h => h.ano.toString()),
         datasets: [
+            // 1. Faixa C (0% - 50%)
+            {
+                label: 'Faixa C',
+                data: history.map(() => 50),
+                backgroundColor: 'rgba(220, 38, 38, 0.6)', // Red-600
+                borderColor: 'transparent',
+                borderWidth: 0,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                fill: 'origin',
+                order: 10
+            },
+            // ANCHOR 50%
+            {
+                label: 'Anchor 50',
+                data: history.map(() => 50),
+                backgroundColor: 'transparent',
+                borderColor: 'transparent',
+                borderWidth: 0,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                fill: false,
+                order: 9
+            },
+            // 2. Faixa C+ (50% - 60%)
+            {
+                label: 'Faixa C+',
+                data: history.map(() => 60),
+                backgroundColor: 'rgba(249, 115, 22, 0.6)', // Orange-500
+                borderColor: 'transparent',
+                borderWidth: 0,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                fill: 1, // Anchor 50
+                order: 8
+            },
+            // ANCHOR 60%
+            {
+                label: 'Anchor 60',
+                data: history.map(() => 60),
+                backgroundColor: 'transparent',
+                borderColor: 'transparent',
+                borderWidth: 0,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                fill: false,
+                order: 7
+            },
+            // 3. Faixa B (60% - 75%)
+            {
+                label: 'Faixa B',
+                data: history.map(() => 75),
+                backgroundColor: 'rgba(245, 158, 11, 0.6)', // Amber-500
+                borderColor: 'transparent',
+                borderWidth: 0,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                fill: 3, // Anchor 60
+                order: 6
+            },
+            // ANCHOR 75%
+            {
+                label: 'Anchor 75',
+                data: history.map(() => 75),
+                backgroundColor: 'transparent',
+                borderColor: 'transparent',
+                borderWidth: 0,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                fill: false,
+                order: 5
+            },
+            // 4. Faixa B+ (75% - 90%)
+            {
+                label: 'Faixa B+',
+                data: history.map(() => 90),
+                backgroundColor: 'rgba(16, 185, 129, 0.6)', // Emerald-500
+                borderColor: 'transparent',
+                borderWidth: 0,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                fill: 5, // Anchor 75
+                order: 4
+            },
+            // ANCHOR 90%
+            {
+                label: 'Anchor 90',
+                data: history.map(() => 90),
+                backgroundColor: 'transparent',
+                borderColor: 'transparent',
+                borderWidth: 0,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                fill: false,
+                order: 3
+            },
+            // 5. Faixa A (90% - 100%)
+            {
+                label: 'Faixa A',
+                data: history.map(() => 100),
+                backgroundColor: 'rgba(37, 99, 235, 0.6)', // Blue-600
+                borderColor: 'transparent',
+                borderWidth: 0,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                fill: 7, // Anchor 90
+                order: 2
+            },
+            // Dados do Município
             {
                 label: 'IEGM',
                 data: history.map(h => h.iegm * 100),
-                borderColor: '#0072e7',
-                backgroundColor: (context: any) => {
-                    const ctx = context.chart.ctx
-                    const gradient = ctx.createLinearGradient(0, 0, 0, 300)
-                    gradient.addColorStop(0, 'rgba(0, 114, 231, 0.3)')
-                    gradient.addColorStop(1, 'rgba(0, 114, 231, 0)')
-                    return gradient
-                },
-                fill: true,
+                borderColor: '#1f2937', // Dark Gray
+                backgroundColor: 'transparent',
+                fill: false,
                 tension: 0.4,
-                pointRadius: 8,
-                pointBackgroundColor: '#0072e7',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 3,
-                pointHoverRadius: 12,
-                pointHoverBackgroundColor: '#0072e7',
-                pointHoverBorderColor: '#fff',
-                pointHoverBorderWidth: 4,
-                borderWidth: 4,
+                pointRadius: 6,
+                pointBackgroundColor: '#1f2937',
+                pointBorderColor: 'transparent',
+                pointBorderWidth: 0,
+                pointHoverRadius: 8,
+                pointHoverBackgroundColor: '#1f2937',
+                pointHoverBorderColor: 'transparent',
+                pointHoverBorderWidth: 0,
+                borderWidth: 3,
+                order: 1
             },
         ],
     }
@@ -132,7 +236,18 @@ export default function HistoryChart({ municipio }: HistoryChartProps) {
         },
         plugins: {
             legend: {
-                display: false,
+                display: true,
+                position: 'bottom' as const,
+                labels: {
+                    usePointStyle: true,
+                    boxWidth: 8,
+                    padding: 20,
+                    font: {
+                        family: 'Karla',
+                        size: 11
+                    },
+                    filter: (item: any) => !item.text.includes('Anchor')
+                }
             },
             tooltip: {
                 backgroundColor: 'rgba(0, 0, 0, 0.85)',
@@ -143,6 +258,7 @@ export default function HistoryChart({ municipio }: HistoryChartProps) {
                 titleFont: { size: 14, weight: 'bold' as const },
                 bodyFont: { size: 15 },
                 displayColors: false,
+                filter: (e: any) => e.dataset.label === 'IEGM',
                 callbacks: {
                     title: (ctx: any) => `Ano ${ctx[0].label}`,
                     label: (ctx: any) => {
