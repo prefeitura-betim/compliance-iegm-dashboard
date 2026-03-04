@@ -1,6 +1,7 @@
 import { IEGMData } from '@/hooks/useIEGMData'
 import { getFaixaLabel, formatPercentual } from '@/lib/iegmUtils'
-import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop } from 'lucide-react'
+import { getNextFaixa, getGapToFaixaB } from '@/lib/faixaThresholds'
+import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, ArrowUp } from 'lucide-react'
 import ImprovementAnalysis from './ImprovementAnalysis'
 
 interface DimensionAnalysisProps {
@@ -138,6 +139,29 @@ export default function DimensionAnalysis({ data }: DimensionAnalysisProps) {
                                             style={{ width: `${percentual}%` }}
                                         />
                                     </div>
+
+                                    {/* Faixa proximity indicator */}
+                                    {(() => {
+                                        const gapB = getGapToFaixaB(valor)
+                                        const nextInfo = getNextFaixa(valor)
+                                        if (gapB) {
+                                            return (
+                                                <div className="flex items-center gap-1.5 text-xs text-amber-600 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-lg w-fit">
+                                                    <ArrowUp size={12} />
+                                                    <span className="font-semibold">Faltam {gapB.gapPercent.toFixed(1)} pts para Faixa B</span>
+                                                </div>
+                                            )
+                                        }
+                                        if (nextInfo) {
+                                            return (
+                                                <div className="flex items-center gap-1.5 text-xs text-emerald-600 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg w-fit">
+                                                    <ArrowUp size={12} />
+                                                    <span className="font-semibold">Faltam {nextInfo.gapPercent.toFixed(1)} pts para Faixa {nextInfo.faixa}</span>
+                                                </div>
+                                            )
+                                        }
+                                        return null
+                                    })()}
 
                                     {/* Análise Qualitativa */}
                                     <ImprovementAnalysis

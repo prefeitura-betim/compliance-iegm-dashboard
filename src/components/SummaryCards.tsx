@@ -1,6 +1,7 @@
 import { IEGMData } from '@/hooks/useIEGMData'
 import { getFaixaLabel, getFaixaGradient } from '@/lib/iegmUtils'
-import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, TrendingUp, Target, BarChart3 } from 'lucide-react'
+import { getNextFaixa, getGapToFaixaB } from '@/lib/faixaThresholds'
+import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, TrendingUp, Target, BarChart3, ArrowUp } from 'lucide-react'
 
 interface SummaryCardsProps {
     data: IEGMData
@@ -99,6 +100,27 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                     <span className={`text-sm ${colors.accent} bg-white/10 px-3 py-1 rounded-lg backdrop-blur`}>
                                         {getFaixaLabel(resultados.faixaIegmMunicipio)}
                                     </span>
+                                    {(() => {
+                                        const nextInfo = getNextFaixa(resultados.percentualIegmMunicipio)
+                                        const gapB = getGapToFaixaB(resultados.percentualIegmMunicipio)
+                                        if (gapB) {
+                                            return (
+                                                <span className="flex items-center gap-1 text-xs text-amber-300 bg-amber-400/10 px-3 py-1 rounded-lg backdrop-blur border border-amber-400/20 mt-1">
+                                                    <ArrowUp size={12} />
+                                                    Faltam {gapB.gapPercent.toFixed(1)} pts para Faixa B
+                                                </span>
+                                            )
+                                        }
+                                        if (nextInfo) {
+                                            return (
+                                                <span className="flex items-center gap-1 text-xs text-emerald-300 bg-emerald-400/10 px-3 py-1 rounded-lg backdrop-blur border border-emerald-400/20 mt-1">
+                                                    <ArrowUp size={12} />
+                                                    Faltam {nextInfo.gapPercent.toFixed(1)} pts para Faixa {nextInfo.faixa}
+                                                </span>
+                                            )
+                                        }
+                                        return null
+                                    })()}
                                 </div>
                             </div>
 
@@ -189,6 +211,17 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                     </span>
                                     {valor && <span className="text-xs text-gray-400 font-medium">%</span>}
                                 </div>
+
+                                {/* Gap to next faixa */}
+                                {(() => {
+                                    const nextInfo = getNextFaixa(valor)
+                                    if (!nextInfo) return null
+                                    return (
+                                        <p className="text-[8px] sm:text-[9px] text-gray-400 mt-0.5 leading-tight truncate" title={`Faltam ${nextInfo.gapPercent.toFixed(1)}% para Faixa ${nextInfo.faixa}`}>
+                                            <span className="text-gray-500 font-semibold">-{nextInfo.gapPercent.toFixed(1)}</span> p/ {nextInfo.faixa}
+                                        </p>
+                                    )
+                                })()}
 
                                 {/* Mini progress bar */}
                                 <div className="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">

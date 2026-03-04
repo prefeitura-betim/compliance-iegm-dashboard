@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { defaultIEGMApiService as iegmApiService } from '@/services/iegm/iegmApiService'
-import { Loader2, AlertCircle, ArrowUpRight, ArrowDownRight, Minus, Search, TrendingUp, AlertTriangle, Target, ChevronDown, ChevronRight } from 'lucide-react'
+import { Loader2, AlertCircle, ArrowUpRight, ArrowDownRight, Minus, Search, TrendingUp, AlertTriangle, Target, ChevronDown, ChevronRight, MessageSquare } from 'lucide-react'
 
 interface QuestionHistory {
     questao: string
@@ -27,6 +27,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
     const [activeIndicator, setActiveIndicator] = useState<string>('TODOS')
     const [analysisMode, setAnalysisMode] = useState<AnalysisMode>('regression')
     const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set())
+    const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set())
 
     useEffect(() => {
         const fetchData = async () => {
@@ -488,6 +489,25 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                         </div>
                                                     </div>
 
+                                                    {/* Click to show answers - Desktop */}
+                                                    <div className="hidden lg:flex justify-end mt-1">
+                                                        <button
+                                                            onClick={() => {
+                                                                const rowKey = `${indicador}-${idx}`
+                                                                setExpandedRows(prev => {
+                                                                    const next = new Set(prev)
+                                                                    if (next.has(rowKey)) next.delete(rowKey)
+                                                                    else next.add(rowKey)
+                                                                    return next
+                                                                })
+                                                            }}
+                                                            className="flex items-center gap-1 text-[10px] font-semibold text-blue-500 hover:text-blue-700 transition-colors cursor-pointer"
+                                                        >
+                                                            <MessageSquare size={11} />
+                                                            {expandedRows.has(`${indicador}-${idx}`) ? 'Ocultar respostas' : 'Ver respostas'}
+                                                        </button>
+                                                    </div>
+
                                                     {/* Layout Mobile: empilhado */}
                                                     <div className="lg:hidden space-y-3">
                                                         <div className="flex items-start justify-between gap-2">
@@ -517,7 +537,56 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                                                                 </div>
                                                             ))}
                                                         </div>
+                                                        {/* Toggle respostas button - Mobile */}
+                                                        <button
+                                                            onClick={() => {
+                                                                const rowKey = `${indicador}-${idx}`
+                                                                setExpandedRows(prev => {
+                                                                    const next = new Set(prev)
+                                                                    if (next.has(rowKey)) next.delete(rowKey)
+                                                                    else next.add(rowKey)
+                                                                    return next
+                                                                })
+                                                            }}
+                                                            className="flex items-center gap-1.5 text-[11px] font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+                                                        >
+                                                            <MessageSquare size={12} />
+                                                            {expandedRows.has(`${indicador}-${idx}`) ? 'Ocultar respostas' : 'Ver respostas'}
+                                                        </button>
                                                     </div>
+
+                                                    {/* Expanded: Respostas por ano */}
+                                                    {expandedRows.has(`${indicador}-${idx}`) && (
+                                                        <div className="mt-2 mx-4 mb-3 p-3 bg-blue-50/50 border border-blue-100 rounded-lg animate-fade-in">
+                                                            <div className="flex items-center gap-1.5 text-[10px] font-bold text-blue-500 uppercase tracking-wider mb-2">
+                                                                <MessageSquare size={11} />
+                                                                Respostas por ano
+                                                            </div>
+                                                            <div className="flex flex-wrap gap-2">
+                                                                {[
+                                                                    { year: 2022, data: y2022 },
+                                                                    { year: 2023, data: y2023 },
+                                                                    { year: 2024, data: y2024 },
+                                                                ].map(({ year, data: yearData }) => {
+                                                                    const resposta = yearData?.resposta || 'N/D'
+                                                                    const isPositive = resposta.toUpperCase().trim() === 'SIM'
+                                                                    const isNegative = resposta.toUpperCase().trim() === 'NÃO'
+                                                                    return (
+                                                                        <div
+                                                                            key={year}
+                                                                            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-medium
+                                                                                ${isPositive ? 'bg-green-50 border-green-200 text-green-700' :
+                                                                                    isNegative ? 'bg-red-50 border-red-200 text-red-700' :
+                                                                                        'bg-gray-50 border-gray-200 text-gray-700'}`}
+                                                                        >
+                                                                            <span className="font-bold text-gray-500">{year}:</span>
+                                                                            <span className="font-bold">{resposta}</span>
+                                                                        </div>
+                                                                    )
+                                                                })}
+                                                            </div>
+                                                        </div>
+                                                    )}
                                                 </div>
                                             )
                                         })}
