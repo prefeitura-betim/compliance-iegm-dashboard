@@ -218,7 +218,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                     if (!nextInfo) return null
                                     return (
                                         <p className="text-[8px] sm:text-[9px] text-gray-400 mt-0.5 leading-tight truncate" title={`Faltam ${nextInfo.gapPercent.toFixed(1)}% para Faixa ${nextInfo.faixa}`}>
-                                            <span className="text-gray-500 font-semibold">-{nextInfo.gapPercent.toFixed(1)}</span> p/ {nextInfo.faixa}
+                                            <span className="text-gray-500 font-semibold">{nextInfo.gapPercent.toFixed(1)}</span> p/ {nextInfo.faixa}
                                         </p>
                                     )
                                 })()}
