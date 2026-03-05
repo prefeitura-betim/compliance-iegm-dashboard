@@ -268,7 +268,7 @@ export default function QuestionEvolutionSection({ municipio }: QuestionEvolutio
                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">{yearLabel}</span>
                         )}
                         <span className="text-sm font-black text-gray-800 tabular-nums">
-                            {(score || 0).toFixed(1).replace('.0', '')}
+                            {score.toFixed(1).replace('.0', '').replace('-0', '0')}
                         </span>
                     </div>
                     {delta && (
