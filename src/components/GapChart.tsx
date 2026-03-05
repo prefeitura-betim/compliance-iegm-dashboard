@@ -64,7 +64,6 @@ export default function GapChart({ data }: GapChartProps) {
     })
 
     const totalAchieved = sorted.filter(g => g.achieved).length
-    const maxGap = Math.max(...sorted.map(g => g.gap), 1)
 
     return (
         <div className="bg-white rounded-xl p-6 shadow-betim border border-gray-100">
@@ -134,7 +133,7 @@ export default function GapChart({ data }: GapChartProps) {
                                         <div className={`flex-1 h-6 rounded-md ${getBarBg(false)} overflow-hidden relative`}>
                                             <div
                                                 className={`h-full rounded-md ${getBarColor(item.gap, false)} transition-all duration-700`}
-                                                style={{ width: `${Math.max((item.gap / maxGap) * 100, 8)}%` }}
+                                                style={{ width: `${Math.max(item.gap, 2)}%` }}
                                             />
                                         </div>
                                         <span className="text-xs font-bold text-gray-700 w-20 text-right whitespace-nowrap">
