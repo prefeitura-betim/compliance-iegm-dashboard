@@ -69,10 +69,9 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                             <div className="text-center">
                                                 <span className="text-2xl sm:text-4xl font-black block text-white">
                                                     {resultados.percentualIegmMunicipio
-                                                        ? `${(resultados.percentualIegmMunicipio * 100).toFixed(0)}`
+                                                        ? `${(resultados.percentualIegmMunicipio * 100).toFixed(1)}%`
                                                         : 'N/D'}
                                                 </span>
-                                                <span className="text-white/90 text-xs font-medium">pontos</span>
                                             </div>
                                         </div>
                                         {/* Glow effect with dynamic color */}
@@ -232,7 +231,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                     if (!nextInfo) return null
                                     return (
                                         <p className="text-[8px] sm:text-[9px] text-gray-400 mt-0.5 leading-tight truncate" title={`Faltam ${nextInfo.gapPercent.toFixed(1)}% para Faixa ${nextInfo.faixa}`}>
-                                            <span className="text-gray-500 font-semibold">{nextInfo.gapPercent.toFixed(1)}</span> p/ {nextInfo.faixa}
+                                            Faltam <span className="text-gray-500 font-semibold">{nextInfo.gapPercent.toFixed(1)}%</span> p/ {nextInfo.faixa}
                                         </p>
                                     )
                                 })()}

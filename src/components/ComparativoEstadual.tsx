@@ -93,7 +93,7 @@ export default function ComparativoEstadual({ data, municipio }: ComparativoEsta
                             </div>
                         </div>
                         <div className={`px-4 py-1.5 font-bold rounded-full text-xs text-white border-0 transition-colors ${theme.solidBg}`}>
-                            Top {Math.ceil((posicaoRanking / totalMunicipios) * 100)}% de {totalMunicipios}
+                            de {totalMunicipios} municípios
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,7 @@ export default function ComparativoEstadual({ data, municipio }: ComparativoEsta
                         </div>
                         <div className="px-4 py-1.5 bg-amber-50 text-amber-700 font-bold rounded-full text-xs border border-amber-100 group-hover:bg-amber-100 transition-colors">
                             {nextFaixaInfo
-                                ? `Para Faixa ${nextFaixaInfo.faixa} (${(nextFaixaInfo.threshold * 100).toFixed(0)}%)`
+                                ? `Faltam ${nextFaixaInfo.gapPercent.toFixed(1)}% p/ Faixa ${nextFaixaInfo.faixa}`
                                 : 'Nível Máximo Atingido'}
                         </div>
                     </div>
