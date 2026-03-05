@@ -148,7 +148,7 @@ export default function DimensionAnalysis({ data }: DimensionAnalysisProps) {
                                             return (
                                                 <div className="flex items-center gap-1.5 text-xs text-amber-600 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-lg w-fit">
                                                     <ArrowUp size={12} />
-                                                    <span className="font-semibold">Faltam {gapB.gapPercent.toFixed(1)} pts para Faixa B</span>
+                                                    <span className="font-semibold">Faltam {gapB.gapPercent.toFixed(1)}% para Faixa B</span>
                                                 </div>
                                             )
                                         }
@@ -156,7 +156,7 @@ export default function DimensionAnalysis({ data }: DimensionAnalysisProps) {
                                             return (
                                                 <div className="flex items-center gap-1.5 text-xs text-emerald-600 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg w-fit">
                                                     <ArrowUp size={12} />
-                                                    <span className="font-semibold">Faltam {nextInfo.gapPercent.toFixed(1)} pts para Faixa {nextInfo.faixa}</span>
+                                                    <span className="font-semibold">Faltam {nextInfo.gapPercent.toFixed(1)}% para Faixa {nextInfo.faixa}</span>
                                                 </div>
                                             )
                                         }

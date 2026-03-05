@@ -1,7 +1,7 @@
 import { IEGMData } from '@/hooks/useIEGMData'
 import { getFaixaLabel, getFaixaGradient } from '@/lib/iegmUtils'
 import { getNextFaixa, getGapToFaixaB } from '@/lib/faixaThresholds'
-import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, TrendingUp, Target, BarChart3, ArrowUp } from 'lucide-react'
+import { BookOpen, HeartPulse, Coins, TreePine, Building2, ClipboardList, Laptop, TrendingUp, BarChart3, ArrowUp } from 'lucide-react'
 
 interface SummaryCardsProps {
     data: IEGMData
@@ -107,7 +107,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                             return (
                                                 <span className="flex items-center gap-1 text-xs text-amber-300 bg-amber-400/10 px-3 py-1 rounded-lg backdrop-blur border border-amber-400/20 mt-1">
                                                     <ArrowUp size={12} />
-                                                    Faltam {gapB.gapPercent.toFixed(1)} pts para Faixa B
+                                                    Faltam {gapB.gapPercent.toFixed(1)}% para Faixa B
                                                 </span>
                                             )
                                         }
@@ -115,7 +115,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                             return (
                                                 <span className="flex items-center gap-1 text-xs text-emerald-300 bg-emerald-400/10 px-3 py-1 rounded-lg backdrop-blur border border-emerald-400/20 mt-1">
                                                     <ArrowUp size={12} />
-                                                    Faltam {nextInfo.gapPercent.toFixed(1)} pts para Faixa {nextInfo.faixa}
+                                                    Faltam {nextInfo.gapPercent.toFixed(1)}% para Faixa {nextInfo.faixa}
                                                 </span>
                                             )
                                         }
@@ -126,7 +126,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
 
                             {/* Stats Bar */}
                             {data.comparativoEstadual && (
-                                <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-3">
+                                <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
                                     <div className={`bg-white/10 backdrop-blur-lg rounded-xl p-4 ${colors.border} border`}>
                                         <div className="flex items-center gap-3">
                                             <BarChart3 className={colors.accent} size={20} />
@@ -154,7 +154,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                                         {nextInfo ? (
                                                             <>
                                                                 <p className="text-xl font-bold text-amber-300">
-                                                                    {nextInfo.gapPercent.toFixed(1)} <span className="text-sm font-normal text-white/50">pts</span>
+                                                                    {nextInfo.gapPercent.toFixed(1)}<span className="text-sm font-normal text-white/50">%</span>
                                                                 </p>
                                                                 <p className="text-white/40 text-[10px]">
                                                                     Para Faixa {nextInfo.faixa} ({(nextInfo.threshold * 100).toFixed(0)}%)
@@ -174,33 +174,6 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                             <div>
                                                 <p className="text-white/60 text-xs font-medium">Posição no Ranking</p>
                                                 <p className="text-xl font-bold">{data.comparativoEstadual.posicaoRanking}° <span className="text-white/50 text-sm font-normal">de {data.comparativoEstadual.totalMunicipios}</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className={`bg-white/10 backdrop-blur-lg rounded-xl p-4 ${colors.border} border`}>
-                                        <div className="flex items-center gap-3">
-                                            <BarChart3 className="text-emerald-400" size={20} />
-                                            <div>
-                                                <p className="text-white/60 text-xs font-medium">Média Estadual</p>
-                                                <p className="text-xl font-bold">{(data.comparativoEstadual.mediaEstadual * 100).toFixed(1)}%</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className={`bg-white/10 backdrop-blur-lg rounded-xl p-4 ${colors.border} border`}>
-                                        <div className="flex items-center gap-3">
-                                            <Target className={colors.accent} size={20} />
-                                            <div>
-                                                <p className="text-white/60 text-xs font-medium">Diferença da Média</p>
-                                                <p className={`text-xl font-bold ${resultados.percentualIegmMunicipio && resultados.percentualIegmMunicipio > data.comparativoEstadual.mediaEstadual ? 'text-green-400' : 'text-orange-400'}`}>
-                                                    {resultados.percentualIegmMunicipio
-                                                        ? `${resultados.percentualIegmMunicipio > data.comparativoEstadual.mediaEstadual ? '+' : ''}${((resultados.percentualIegmMunicipio - data.comparativoEstadual.mediaEstadual) * 100).toFixed(1)} pts`
-                                                        : 'N/D'}
-                                                </p>
-                                                <p className="text-white/40 text-[10px]">
-                                                    {resultados.percentualIegmMunicipio && resultados.percentualIegmMunicipio > data.comparativoEstadual.mediaEstadual
-                                                        ? 'Acima da média'
-                                                        : 'Abaixo da média'}
-                                                </p>
                                             </div>
                                         </div>
                                     </div>

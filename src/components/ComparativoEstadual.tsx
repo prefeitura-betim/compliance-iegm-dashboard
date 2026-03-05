@@ -2,7 +2,7 @@
 import { IEGMData } from '@/hooks/useIEGMData'
 import { formatPercentual } from '@/lib/iegmUtils'
 import { getNextFaixa } from '@/lib/faixaThresholds'
-import { TrendingUp, TrendingDown, Target, Trophy } from 'lucide-react'
+import { Trophy, ArrowUp, BarChart3 } from 'lucide-react'
 
 interface ComparativoEstadualProps {
     data: IEGMData
@@ -26,6 +26,7 @@ export default function ComparativoEstadual({ data, municipio }: ComparativoEsta
     const isTop50 = percentil >= 50
 
     const faixa = data.resultados.faixaIegmMunicipio || 'N/D'
+    const nextFaixaInfo = getNextFaixa(percentualMunicipio)
 
     // Helper para cores baseado na faixa (Mesma lógica do IEGM Municipal)
     const getColorTheme = (faixa: string) => {
@@ -73,7 +74,7 @@ export default function ComparativoEstadual({ data, municipio }: ComparativoEsta
                 </p>
             </div>
 
-            {/* Cards Reinventados - Visual Limpo e Premium */}
+            {/* Cards - Ranking, Pontuação Atual, Próxima Faixa */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 mt-6">
                 {/* Visual Ranking - Colorido por Faixa */}
                 <div className={`relative overflow-hidden bg-white rounded-2xl shadow-sm border transition-all duration-300 group hover:shadow-xl ${theme.border}`}>
@@ -97,58 +98,54 @@ export default function ComparativoEstadual({ data, municipio }: ComparativoEsta
                     </div>
                 </div>
 
-                {/* Diferença da Média */}
-                <div className="relative overflow-hidden bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-gray-200 transition-all duration-300 group">
-                    <div className={`absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-10 transition-opacity ${isAboveAverage ? 'text-green-600' : 'text-red-600'}`}>
-                        {isAboveAverage
-                            ? <TrendingUp size={120} />
-                            : <TrendingDown size={120} />
-                        }
+                {/* Pontuação Atual */}
+                <div className={`relative overflow-hidden bg-white rounded-2xl shadow-sm border transition-all duration-300 group hover:shadow-xl ${theme.border}`}>
+                    <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-10 transition-opacity">
+                        <BarChart3 size={120} className={theme.text} />
                     </div>
 
                     <div className="p-8 relative z-10 flex flex-col items-center">
-                        <div className={`p-4 rounded-2xl mb-5 group-hover:scale-110 transition-all duration-300 shadow-sm ring-1 ${isAboveAverage
-                            ? 'bg-green-50/80 text-green-600 ring-green-100 group-hover:bg-green-600 group-hover:text-white'
-                            : 'bg-red-50/80 text-red-600 ring-red-100 group-hover:bg-red-600 group-hover:text-white'
-                            }`}>
-                            {isAboveAverage
-                                ? <TrendingUp size={32} strokeWidth={2} />
-                                : <TrendingDown size={32} strokeWidth={2} />
-                            }
+                        <div className={`p-4 rounded-2xl mb-5 group-hover:scale-110 transition-all duration-300 shadow-sm ring-1 text-white ${theme.solidBg} ${theme.groupHover} ring-black/5`}>
+                            <BarChart3 size={32} strokeWidth={2} />
                         </div>
                         <div className="flex flex-col items-center mb-4">
-                            <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-1">Diferença da Média</span>
-                            <div className={`text-5xl font-bold tracking-tight ${isAboveAverage ? 'text-green-600' : 'text-red-600'}`}>
-                                {isAboveAverage ? '+' : ''}{(diferencaMedia * 100).toFixed(1)}<span className="text-2xl">%</span>
+                            <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-1">Pontuação Atual</span>
+                            <div className={`text-5xl font-bold tracking-tight ${theme.text}`}>
+                                {(percentualMunicipio * 100).toFixed(1)}<span className="text-2xl">%</span>
                             </div>
                         </div>
-                        <div className={`px-4 py-1.5 font-bold rounded-full text-xs border transition-colors ${isAboveAverage
-                            ? 'text-green-700 bg-green-50 border-green-100 group-hover:bg-green-100'
-                            : 'text-red-700 bg-red-50 border-red-100 group-hover:bg-red-100'
-                            }`}>
-                            {isAboveAverage ? 'Acima da Média' : 'Abaixo da Média'}
+                        <div className={`px-4 py-1.5 font-bold rounded-full text-xs text-white border-0 transition-colors ${theme.solidBg}`}>
+                            Faixa {faixa}
                         </div>
                     </div>
                 </div>
 
-                {/* Média Estadual */}
-                <div className="relative overflow-hidden bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-gray-200 transition-all duration-300 group">
+                {/* Próxima Faixa */}
+                <div className="relative overflow-hidden bg-white rounded-2xl shadow-sm border border-amber-100 hover:shadow-xl hover:border-amber-200 transition-all duration-300 group">
                     <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-10 transition-opacity">
-                        <Target size={120} className="text-gray-600" />
+                        <ArrowUp size={120} className="text-amber-600" />
                     </div>
 
                     <div className="p-8 relative z-10 flex flex-col items-center">
-                        <div className="p-4 bg-gray-50/80 rounded-2xl text-gray-600 mb-5 group-hover:scale-110 group-hover:bg-gray-600 group-hover:text-white transition-all duration-300 shadow-sm ring-1 ring-gray-100">
-                            <Target size={32} strokeWidth={2} />
+                        <div className="p-4 rounded-2xl mb-5 group-hover:scale-110 transition-all duration-300 shadow-sm ring-1 bg-amber-500 text-white group-hover:bg-amber-600 ring-black/5">
+                            <ArrowUp size={32} strokeWidth={2} />
                         </div>
                         <div className="flex flex-col items-center mb-4">
-                            <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-1">Média Minas Gerais</span>
-                            <div className="text-5xl font-bold text-gray-900 tracking-tight">
-                                {formatPercentual(mediaEstadual)}
-                            </div>
+                            <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-1">Próxima Faixa</span>
+                            {nextFaixaInfo ? (
+                                <div className="text-5xl font-bold tracking-tight text-amber-600">
+                                    {nextFaixaInfo.gapPercent.toFixed(1)}<span className="text-2xl">%</span>
+                                </div>
+                            ) : (
+                                <div className="text-4xl font-bold tracking-tight text-green-600">
+                                    Faixa A ✓
+                                </div>
+                            )}
                         </div>
-                        <div className="px-4 py-1.5 bg-gray-100 text-gray-600 font-bold rounded-full text-xs border border-gray-200 group-hover:bg-gray-200 transition-colors">
-                            Pontuação de Referência
+                        <div className="px-4 py-1.5 bg-amber-50 text-amber-700 font-bold rounded-full text-xs border border-amber-100 group-hover:bg-amber-100 transition-colors">
+                            {nextFaixaInfo
+                                ? `Para Faixa ${nextFaixaInfo.faixa} (${(nextFaixaInfo.threshold * 100).toFixed(0)}%)`
+                                : 'Nível Máximo Atingido'}
                         </div>
                     </div>
                 </div>
