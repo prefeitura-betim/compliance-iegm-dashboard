@@ -40,8 +40,12 @@ async function fetchIEGMData(
     tribunal: string
 ): Promise<IEGMData> {
     try {
-        // Buscar dados dos municípios
-        const municipios = await iegmApiService.getMunicipios(ano, tribunal)
+        // Buscar dados do município e ranking em paralelo
+        const [municipios, rankingData] = await Promise.all([
+            iegmApiService.getMunicipios(ano, tribunal, municipioNome),
+            iegmApiService.getRankingMunicipios(ano, tribunal, 1000),
+        ])
+
         const municipio = municipios.find(
             m => m.municipio?.toUpperCase() === municipioNome.toUpperCase()
         ) || null
@@ -76,8 +80,6 @@ async function fetchIEGMData(
             faixaIegmMunicipio: municipio.faixaIegmMunicipio,
         }
 
-        // Buscar ranking
-        const rankingData = await iegmApiService.getRankingMunicipios(ano, tribunal, 100)
         const ranking = rankingData.map(r => ({
             municipio: r.municipio,
             percentual: r.percentualIegmMunicipio || 0,

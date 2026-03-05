@@ -40,23 +40,25 @@ async function fetchHistory(municipio: string): Promise<HistoryData[]> {
     if (!anosRes.ok) throw new Error('Erro ao buscar anos')
     const anos: number[] = await anosRes.json()
 
-    const results: HistoryData[] = []
-
-    for (const ano of anos.sort((a, b) => a - b)) {
-        const res = await fetch(`/api/municipio/nome?nome=${encodeURIComponent(municipio)}&ano=${ano}`)
-        if (res.ok) {
-            const data = await res.json()
-            if (data.percentualIegmMunicipio) {
-                results.push({
-                    ano,
-                    iegm: data.percentualIegmMunicipio,
-                    faixa: data.faixaIegmMunicipio || 'N/D'
-                })
+    // Buscar todos os anos em paralelo
+    const responses = await Promise.all(
+        anos.sort((a, b) => a - b).map(async (ano) => {
+            const res = await fetch(`/api/municipio/nome?nome=${encodeURIComponent(municipio)}&ano=${ano}`)
+            if (res.ok) {
+                const data = await res.json()
+                if (data.percentualIegmMunicipio) {
+                    return {
+                        ano,
+                        iegm: data.percentualIegmMunicipio,
+                        faixa: data.faixaIegmMunicipio || 'N/D'
+                    } as HistoryData
+                }
             }
-        }
-    }
+            return null
+        })
+    )
 
-    return results
+    return responses.filter((r): r is HistoryData => r !== null)
 }
 
 

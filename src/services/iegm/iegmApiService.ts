@@ -25,9 +25,9 @@ export class IEGMApiService {
   // MÉTODOS DE MUNICÍPIOS
   // ============================================================================
 
-  async getMunicipios(ano?: number, tribunal?: string): Promise<Municipio[]> {
+  async getMunicipios(ano?: number, tribunal?: string, municipio?: string): Promise<Municipio[]> {
     try {
-      const response = await this.client.getMunicipios(ano, tribunal);
+      const response = await this.client.getMunicipios(ano, tribunal, municipio);
       return response.data || [];
     } catch (error) {
       console.error('Erro ao buscar municípios:', error);

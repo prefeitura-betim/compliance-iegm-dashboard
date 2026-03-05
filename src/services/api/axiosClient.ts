@@ -205,10 +205,11 @@ export class AxiosClient {
   // MÉTODOS ESPECÍFICOS PARA IEGM
   // ============================================================================
 
-  async getMunicipios(ano?: number, tribunal?: string): Promise<AxiosApiResponse> {
+  async getMunicipios(ano?: number, tribunal?: string, municipio?: string): Promise<AxiosApiResponse> {
     const params: Record<string, any> = {};
     if (ano) params.ano = ano;
     if (tribunal) params.tribunal = tribunal;
+    if (municipio) params.municipio = municipio;
 
     return this.get('/api/municipios', { params });
   }
