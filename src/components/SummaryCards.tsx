@@ -126,7 +126,48 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
 
                             {/* Stats Bar */}
                             {data.comparativoEstadual && (
-                                <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-3">
+                                    <div className={`bg-white/10 backdrop-blur-lg rounded-xl p-4 ${colors.border} border`}>
+                                        <div className="flex items-center gap-3">
+                                            <BarChart3 className={colors.accent} size={20} />
+                                            <div>
+                                                <p className="text-white/60 text-xs font-medium">Pontuação Atual</p>
+                                                <p className="text-xl font-bold">
+                                                    {resultados.percentualIegmMunicipio
+                                                        ? `${(resultados.percentualIegmMunicipio * 100).toFixed(1)}%`
+                                                        : 'N/D'}
+                                                </p>
+                                                <p className="text-white/40 text-[10px]">
+                                                    Faixa {resultados.faixaIegmMunicipio || 'N/D'}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {(() => {
+                                        const nextInfo = getNextFaixa(resultados.percentualIegmMunicipio)
+                                        return (
+                                            <div className={`bg-white/10 backdrop-blur-lg rounded-xl p-4 ${colors.border} border`}>
+                                                <div className="flex items-center gap-3">
+                                                    <ArrowUp className={nextInfo ? 'text-amber-400' : 'text-green-400'} size={20} />
+                                                    <div>
+                                                        <p className="text-white/60 text-xs font-medium">Próxima Faixa</p>
+                                                        {nextInfo ? (
+                                                            <>
+                                                                <p className="text-xl font-bold text-amber-300">
+                                                                    {nextInfo.gapPercent.toFixed(1)} <span className="text-sm font-normal text-white/50">pts</span>
+                                                                </p>
+                                                                <p className="text-white/40 text-[10px]">
+                                                                    Para Faixa {nextInfo.faixa} ({(nextInfo.threshold * 100).toFixed(0)}%)
+                                                                </p>
+                                                            </>
+                                                        ) : (
+                                                            <p className="text-xl font-bold text-green-400">Faixa A ✓</p>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )
+                                    })()}
                                     <div className={`bg-white/10 backdrop-blur-lg rounded-xl p-4 ${colors.border} border`}>
                                         <div className="flex items-center gap-3">
                                             <TrendingUp className={colors.accent} size={20} />
@@ -149,7 +190,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                                         <div className="flex items-center gap-3">
                                             <Target className={colors.accent} size={20} />
                                             <div>
-                                                <p className="text-white/60 text-xs font-medium">Diferença da Média Estadual</p>
+                                                <p className="text-white/60 text-xs font-medium">Diferença da Média</p>
                                                 <p className={`text-xl font-bold ${resultados.percentualIegmMunicipio && resultados.percentualIegmMunicipio > data.comparativoEstadual.mediaEstadual ? 'text-green-400' : 'text-orange-400'}`}>
                                                     {resultados.percentualIegmMunicipio
                                                         ? `${resultados.percentualIegmMunicipio > data.comparativoEstadual.mediaEstadual ? '+' : ''}${((resultados.percentualIegmMunicipio - data.comparativoEstadual.mediaEstadual) * 100).toFixed(1)} pts`
