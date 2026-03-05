@@ -133,7 +133,7 @@ export default function GapChart({ data }: GapChartProps) {
                                         <div className={`flex-1 h-6 rounded-md ${getBarBg(false)} overflow-hidden relative`}>
                                             <div
                                                 className={`h-full rounded-md ${getBarColor(item.gap, false)} transition-all duration-700`}
-                                                style={{ width: `${Math.max(item.gap, 2)}%` }}
+                                                style={{ width: `${Math.min((item.valor / (targetThreshold.min * 100)) * 100, 100)}%` }}
                                             />
                                         </div>
                                         <span className="text-xs font-bold text-gray-700 w-20 text-right whitespace-nowrap">
