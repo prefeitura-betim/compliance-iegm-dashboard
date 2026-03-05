@@ -1,6 +1,7 @@
 
 import { IEGMData } from '@/hooks/useIEGMData'
 import { formatPercentual } from '@/lib/iegmUtils'
+import { getNextFaixa } from '@/lib/faixaThresholds'
 import { TrendingUp, TrendingDown, Target, Trophy } from 'lucide-react'
 
 interface ComparativoEstadualProps {
@@ -154,7 +155,7 @@ export default function ComparativoEstadual({ data, municipio }: ComparativoEsta
             </div>
 
             {/* Barra Visual com Gradiente Ajustado e Legendas Precisas */}
-            <div className="relative pt-10 pb-4 px-2 bg-gray-50/50 rounded-xl border border-gray-100 mt-6">
+            <div className="relative pt-10 pb-10 px-2 bg-gray-50/50 rounded-xl border border-gray-100 mt-6">
 
                 {/* Legendas com Posicionamento Absoluto (Centradas em suas faixas) */}
                 <div className="absolute top-2 left-0 w-full h-8 text-[10px] sm:text-xs font-bold text-gray-400 tracking-wider">
@@ -200,8 +201,29 @@ export default function ComparativoEstadual({ data, municipio }: ComparativoEsta
                         className="absolute -top-7 text-[10px] font-bold text-gray-600 transform -translate-x-1/2 bg-white/80 px-1 rounded backdrop-blur-sm"
                         style={{ left: `${mediaEstadual * 100}%` }}
                     >
-                        Média
+                        Média Estadual
                     </div>
+
+                    {/* Marcador Próxima Faixa */}
+                    {(() => {
+                        const nextFaixa = getNextFaixa(percentualMunicipio)
+                        if (!nextFaixa) return null
+                        const nextPos = nextFaixa.threshold * 100
+                        return (
+                            <>
+                                <div
+                                    className="absolute -top-3 -bottom-3 z-10 border-l-2 border-dashed border-amber-500/70"
+                                    style={{ left: `${nextPos}%` }}
+                                />
+                                <div
+                                    className="absolute -bottom-8 text-[9px] font-bold text-amber-600 transform -translate-x-1/2 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 whitespace-nowrap z-30"
+                                    style={{ left: `${nextPos}%` }}
+                                >
+                                    Faixa {nextFaixa.faixa} ({nextPos}%)
+                                </div>
+                            </>
+                        )
+                    })()}
 
                     {/* Marcador do Município */}
                     <div
@@ -213,7 +235,7 @@ export default function ComparativoEstadual({ data, municipio }: ComparativoEsta
 
                     {/* Label Flutuante do Município */}
                     <div
-                        className="absolute -bottom-9 font-bold text-xs bg-white border border-gray-200 shadow-sm px-2 py-1 rounded text-gray-800 transform -translate-x-1/2 whitespace-nowrap z-30 flex flex-col items-center"
+                        className="absolute -bottom-14 font-bold text-xs bg-white border border-gray-200 shadow-sm px-2 py-1 rounded text-gray-800 transform -translate-x-1/2 whitespace-nowrap z-30 flex flex-col items-center"
                         style={{ left: `${percentualMunicipio * 100}%` }}
                     >
                         <div className="absolute -top-1 w-2 h-2 bg-white border-t border-l border-gray-200 transform rotate-45"></div>
