@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { IEGMData } from '@/hooks/useIEGMData'
 import { FAIXA_THRESHOLDS } from '@/lib/faixaThresholds'
-import { ArrowUp, Target, CheckCircle } from 'lucide-react'
+import { Target, CheckCircle } from 'lucide-react'
 
 interface GapChartProps {
     data: IEGMData
@@ -75,19 +75,19 @@ export default function GapChart({ data }: GapChartProps) {
                         <p className="text-xs text-gray-500">Quanto falta em cada indicador</p>
                     </div>
                 </div>
-                <div className="flex items-center gap-2">
-                    <span className="text-xs text-gray-500 font-medium">Meta:</span>
-                    <select
-                        value={selectedFaixa}
-                        onChange={(e) => setSelectedFaixa(e.target.value)}
-                        className="text-sm font-bold border border-gray-200 rounded-lg px-3 py-1.5 bg-white hover:border-betim-blue focus:border-betim-blue focus:ring-1 focus:ring-betim-blue/20 outline-none transition-colors cursor-pointer"
-                    >
-                        {faixaOptions.map(f => (
-                            <option key={f.faixa} value={f.faixa}>
-                                Faixa {f.faixa} ({(f.min * 100).toFixed(0)}%)
-                            </option>
-                        ))}
-                    </select>
+                <div className="flex items-center bg-gray-100 rounded-lg p-0.5">
+                    {faixaOptions.map(f => (
+                        <button
+                            key={f.faixa}
+                            onClick={() => setSelectedFaixa(f.faixa)}
+                            className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all duration-200 ${selectedFaixa === f.faixa
+                                    ? 'bg-betim-blue text-white shadow-sm'
+                                    : 'text-gray-500 hover:text-gray-700'
+                                }`}
+                        >
+                            {f.faixa}
+                        </button>
+                    ))}
                 </div>
             </div>
 
@@ -147,13 +147,6 @@ export default function GapChart({ data }: GapChartProps) {
                 ))}
             </div>
 
-            {/* Footer hint */}
-            <div className="mt-4 pt-3 border-t border-gray-100">
-                <p className="text-[10px] text-gray-400 text-center">
-                    <ArrowUp size={10} className="inline mr-1" />
-                    Indicadores ordenados por prioridade — maiores gaps primeiro
-                </p>
-            </div>
         </div>
     )
 }
