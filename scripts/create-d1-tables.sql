@@ -69,6 +69,9 @@ CREATE TABLE `questoes` (
 	`chave_questao` text NOT NULL,
 	`texto` text NOT NULL,
 	`peso` real DEFAULT 1,
+	`resposta_ref` text,
+	`nota_ref` real,
+	`tipo` text,
 	FOREIGN KEY (`questionario_id`) REFERENCES `questionarios`(`id`) ON UPDATE no action ON DELETE no action
 );
 
@@ -218,4 +221,21 @@ CREATE INDEX `resultado_municipio_ano_idx` ON `resultados_indicadores` (`municip
 CREATE INDEX `resultado_indicador_ano_idx` ON `resultados_indicadores` (`indicador_id`,`ano_ref`);
 CREATE INDEX `resultado_tribunal_ano_idx` ON `resultados_indicadores` (`tribunal_id`,`ano_ref`);
 CREATE INDEX `resultado_unique_idx` ON `resultados_indicadores` (`tribunal_id`,`municipio_id`,`indicador_id`,`ano_ref`);
+
+CREATE TABLE `simulado_respostas` (
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`nome` text NOT NULL,
+	`funcao` text NOT NULL,
+	`setor` text NOT NULL,
+	`indicador_codigo` text NOT NULL,
+	`questao_id` integer NOT NULL,
+	`chave_questao` text NOT NULL,
+	`texto_questao` text NOT NULL,
+	`resposta` text NOT NULL,
+	`criado_em` text NOT NULL
+);
+
+CREATE INDEX `simulado_nome_idx` ON `simulado_respostas` (`nome`);
+CREATE INDEX `simulado_indicador_idx` ON `simulado_respostas` (`indicador_codigo`);
+CREATE INDEX `simulado_criado_em_idx` ON `simulado_respostas` (`criado_em`);
 

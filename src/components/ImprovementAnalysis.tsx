@@ -25,6 +25,8 @@ interface RespostaDetalhada {
     rotulo?: string
     chave_questao?: string
     chaveQuestao?: string
+    nome_questionario?: string
+    nomeQuestionario?: string
 }
 
 async function fetchRespostasDetalhadas(municipio: string, ano: number, indicador: string): Promise<RespostaDetalhada[]> {

@@ -4,6 +4,7 @@ import type { Municipio } from '@/services/iegm/types'
 
 export interface IEGMData {
     municipio: Municipio | null
+    anoRef?: number
     resultados: {
         percentualIamb: number | null
         percentualIcidade: number | null
@@ -98,6 +99,7 @@ async function fetchIEGMData(
 
         return {
             municipio,
+            anoRef: municipio.anoRef,
             resultados,
             comparativoEstadual: {
                 mediaEstadual,

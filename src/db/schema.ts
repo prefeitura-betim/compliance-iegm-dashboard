@@ -67,6 +67,9 @@ export const questoes = sqliteTable('questoes', {
   chaveQuestao: text('chave_questao').notNull(), // ex: "M05Q00900"
   texto: text('texto').notNull(), // texto da questão
   peso: real('peso').default(1.0),
+  respostaRef: text('resposta_ref'),
+  notaRef: real('nota_ref'),
+  tipo: text('tipo'), // 'boolean' ou 'text'
 }, (table) => ({
   questionarioIdx: index('questao_questionario_idx').on(table.questionarioId),
   chaveQuestaoIdx: index('questao_chave_idx').on(table.chaveQuestao),
@@ -254,6 +257,27 @@ export const migracoes = sqliteTable('migracoes', {
 });
 
 // ============================================================================
+// TABELA DE SIMULADO
+// ============================================================================
+
+export const simuladoRespostas = sqliteTable('simulado_respostas', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  nome: text('nome').notNull(),
+  funcao: text('funcao').notNull(),
+  setor: text('setor').notNull(),
+  indicadorCodigo: text('indicador_codigo').notNull(),
+  questaoId: integer('questao_id').notNull(),
+  chaveQuestao: text('chave_questao').notNull(),
+  textoQuestao: text('texto_questao').notNull(),
+  resposta: text('resposta').notNull(),
+  criadoEm: text('criado_em').notNull(),
+}, (table) => ({
+  nomeIdx: index('simulado_nome_idx').on(table.nome),
+  indicadorIdx: index('simulado_indicador_idx').on(table.indicadorCodigo),
+  criadoEmIdx: index('simulado_criado_em_idx').on(table.criadoEm),
+}));
+
+// ============================================================================
 // TIPOS TYPESCRIPT
 // ============================================================================
 
@@ -292,3 +316,6 @@ export type NewRespostaDetalhada = typeof respostasDetalhadas.$inferInsert;
 
 export type Migracao = typeof migracoes.$inferSelect;
 export type NewMigracao = typeof migracoes.$inferInsert;
+
+export type SimuladoResposta = typeof simuladoRespostas.$inferSelect;
+export type NewSimuladoResposta = typeof simuladoRespostas.$inferInsert;

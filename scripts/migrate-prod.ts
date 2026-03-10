@@ -45,7 +45,10 @@ const columnMappings: Record<string, Record<string, string>> = {
     indiceQuestao: 'indice_questao',
     chaveQuestao: 'chave_questao',
     texto: 'texto',
-    peso: 'peso'
+    peso: 'peso',
+    respostaRef: 'resposta_ref',
+    notaRef: 'nota_ref',
+    tipo: 'tipo'
   },
   questionario_respostas: {
     id: 'id',
@@ -180,7 +183,8 @@ async function clearD1Tables(): Promise<void> {
     'questionarios',
     'indicadores',
     'municipios',
-    'tribunais'
+    'tribunais',
+    'simulado_respostas'
   ];
 
   const clearStatements = tables.map(table => `DELETE FROM ${table};`);
@@ -229,7 +233,7 @@ async function exportTableToCSV(tableName: string, query: any): Promise<string> 
     const headers = Object.keys(data[0]);
     const csvContent = [
       headers.join(','),
-      ...data.map(row =>
+      ...data.map((row: any) =>
         headers.map(header => {
           const value = row[header];
           if (value === null || value === undefined) return '';
@@ -278,11 +282,11 @@ async function importCSVToD1(filename: string, tableName: string): Promise<numbe
     const columnMapping = columnMappings[tableName] || {};
 
     // Mapear headers do CSV para colunas do schema D1
-    const csvHeaders = Object.keys(records[0]);
+    const csvHeaders = Object.keys(records[0] as object);
     const d1Headers = csvHeaders.map(header => columnMapping[header] || header);
 
     // Criar INSERT statements
-    const insertStatements = records.map(record => {
+    const insertStatements = records.map((record: any) => {
       const values = csvHeaders.map(header => {
         const value = record[header];
 

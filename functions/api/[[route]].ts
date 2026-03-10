@@ -2,11 +2,12 @@
 import { drizzle } from 'drizzle-orm/d1';
 import * as schema from '../../src/db/schema';
 import { eq, and, desc, asc, sql, count, avg, min, max, like } from 'drizzle-orm';
-import { resultadosMunicipios, municipios as municipiosTable, indicadores, questionarios, questoes, respostas, questionarioRespostas, tribunais, respostasDetalhadas } from '../../src/db/schema';
+import { resultadosMunicipios, municipios as municipiosTable, indicadores, questionarios, questoes, respostas, questionarioRespostas, tribunais, respostasDetalhadas, simuladoRespostas } from '../../src/db/schema';
 
 // Interface para o ambiente Cloudflare Pages
 interface Env {
   DB: D1Database;
+  KV_SIMULADOS: KVNamespace;
 }
 
 // Função para criar conexão D1 com Drizzle
@@ -93,6 +94,15 @@ export async function onRequest(context: any) {
 
       case 'anos-disponiveis':
         return await handleAnosDisponiveis(request, db, url);
+
+      case 'simulado/enviar':
+        return await handleSimuladoEnviar(request, db, url);
+
+      case 'kv/put':
+        return await handleKVPut(request, env);
+
+      case 'kv/get':
+        return await handleKVGet(request, env);
 
       default:
         return new Response(JSON.stringify({ error: 'Endpoint not found' }), {
@@ -631,4 +641,144 @@ async function handleEvolucaoQuestoes(request: Request, db: any, url: URL) {
   return new Response(JSON.stringify(finalResults), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' }
   });
+}
+
+async function handleSimuladoQuestoes(request: Request, db: any, url: URL) {
+  const indicador = url.searchParams.get('indicador');
+  const ano = 2024; // Fixo para o simulado conforme solicitado
+
+  if (!indicador) {
+    return new Response(JSON.stringify({ error: 'Missing parameter: indicador' }), {
+      status: 400,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  // Busca o ID do indicador (case-insensitive)
+  const indicadorData = await db
+    .select()
+    .from(indicadores)
+    .where(sql`UPPER(${indicadores.codigo}) = UPPER(${indicador})`)
+    .limit(1);
+
+  if (!indicadorData[0]) {
+    return new Response(JSON.stringify({ error: 'Indicador not found' }), {
+      status: 404,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  // Busca as questões de 2024 vinculadas ao indicador
+  // Joins: questoes -> questionarios -> indicadores
+  const results = await db
+    .select({
+      id: questoes.id,
+      chaveQuestao: questoes.chaveQuestao,
+      texto: questoes.texto,
+      indiceQuestao: questoes.indiceQuestao,
+      respostaRef: questoes.respostaRef,
+      notaRef: questoes.notaRef,
+      tipo: questoes.tipo,
+    })
+    .from(questoes)
+    .innerJoin(questionarios, eq(questoes.questionarioId, questionarios.id))
+    .where(
+      and(
+        eq(questionarios.indicadorId, indicadorData[0].id),
+        eq(questionarios.anoRef, ano)
+      )
+    )
+    .orderBy(asc(questoes.id));
+
+  return new Response(JSON.stringify(results), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+  });
+}
+
+async function handleSimuladoEnviar(request: Request, db: any, url: URL) {
+  if (request.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  try {
+    const body: any = await request.json();
+    const { nome, funcao, setor, indicadorCodigo, respostas: respostasList } = body;
+
+    if (!nome || !indicadorCodigo || !respostasList || !Array.isArray(respostasList)) {
+      return new Response(JSON.stringify({ error: 'Invalid body' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    const criadoEm = new Date().toISOString();
+    
+    // Inserir respostas em lote
+    const dataToInsert = respostasList.map((r: any) => ({
+      nome,
+      funcao,
+      setor,
+      indicadorCodigo,
+      questaoId: r.questaoId,
+      chaveQuestao: r.chaveQuestao,
+      textoQuestao: r.textoQuestao,
+      resposta: r.resposta,
+      criadoEm,
+    }));
+
+    await db.insert(simuladoRespostas).values(dataToInsert);
+
+    return new Response(JSON.stringify({ success: true, count: dataToInsert.length }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: 'Failed to save answers', message: error }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+}
+async function handleKVPut(request: Request, env: Env) {
+  if (request.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405 });
+  }
+
+  try {
+    const { key, value, ttl } = await request.json() as any;
+    if (!key || !value) {
+      return new Response(JSON.stringify({ error: 'Key and value required' }), { status: 400 });
+    }
+
+    // Usar o namespace KV vinculado
+    await env.KV_SIMULADOS.put(key, value, {
+      expirationTtl: ttl || 2592000 // default 30 dias
+    });
+
+    return new Response(JSON.stringify({ success: true }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: 'KV write failed', details: err }), { status: 500 });
+  }
+}
+
+async function handleKVGet(request: Request, env: Env) {
+  const url = new URL(request.url);
+  const key = url.searchParams.get('key');
+  
+  if (!key) {
+    return new Response(JSON.stringify({ error: 'Key required' }), { status: 400 });
+  }
+
+  try {
+    const value = await env.KV_SIMULADOS.get(key);
+    return new Response(JSON.stringify({ value }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: 'KV read failed', details: err }), { status: 500 });
+  }
 }

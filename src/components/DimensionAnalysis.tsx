@@ -166,7 +166,7 @@ export default function DimensionAnalysis({ data }: DimensionAnalysisProps) {
                                     {/* Análise Qualitativa */}
                                     <ImprovementAnalysis
                                         municipio={data.municipio?.municipio || 'BETIM'} // Fallback seguro
-                                        ano={data.municipio?.anoRef || 2024}
+                                        ano={data.anoRef || 2024}
                                         indicador={{
                                             'percentualIeduc': 'i-Educ',
                                             'percentualIsaude': 'i-Saude',

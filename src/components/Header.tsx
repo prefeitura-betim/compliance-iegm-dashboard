@@ -79,6 +79,7 @@ export default function Header() {
                     {/* Desktop Nav */}
                     <nav className="hidden lg:flex gap-6 font-medium">
                         <Link to="/" className={`transition-colors ${highContrast ? 'text-yellow-400 hover:text-white' : 'text-gray-700 hover:text-betim-blue'}`}>Início</Link>
+                        <Link to="/simulado" className={`transition-colors ${highContrast ? 'text-yellow-400 hover:text-white' : 'text-gray-700 hover:text-betim-blue'}`}>Simulado</Link>
                         <a href="https://iegm.irbcontas.org.br" target="_blank" rel="noreferrer" className={`transition-colors ${highContrast ? 'text-yellow-400 hover:text-white' : 'text-gray-700 hover:text-betim-blue'}`}>Portal IEGM</a>
                         <Link to="/sobre" className={`transition-colors ${highContrast ? 'text-yellow-400 hover:text-white' : 'text-gray-700 hover:text-betim-blue'}`}>Sobre</Link>
                     </nav>
@@ -93,6 +94,7 @@ export default function Header() {
                 {mobileMenuOpen && (
                     <nav className={`lg:hidden border-t p-4 flex flex-col gap-2 ${highContrast ? 'bg-black border-white' : 'bg-white'}`}>
                         <Link to="/" className={`p-2 rounded ${highContrast ? 'text-yellow-400 hover:bg-white/10' : 'text-gray-700 hover:bg-gray-100'}`}>Início</Link>
+                        <Link to="/simulado" className={`p-2 rounded ${highContrast ? 'text-yellow-400 hover:bg-white/10' : 'text-gray-700 hover:bg-gray-100'}`}>Simulado</Link>
                         <a href="https://iegm.irbcontas.org.br" target="_blank" rel="noreferrer" className={`p-2 rounded ${highContrast ? 'text-yellow-400 hover:bg-white/10' : 'text-gray-700 hover:bg-gray-100'}`}>Portal IEGM</a>
                         <Link to="/sobre" className={`p-2 rounded ${highContrast ? 'text-yellow-400 hover:bg-white/10' : 'text-gray-700 hover:bg-gray-100'}`}>Sobre</Link>
                     </nav>

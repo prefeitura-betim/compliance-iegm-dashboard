@@ -21,6 +21,18 @@ if (!existsSync(DB_PATH)) {
 const db = new Database(DB_PATH);
 const app = express();
 
+// Criar tabela de KV simulado (para rascunhos com TTL)
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS kv_temp (
+    key TEXT PRIMARY KEY,
+    value TEXT,
+    expires_at INTEGER
+  )
+`).run();
+
+// Limpeza automática de rascunhos expirados a cada reinicialização
+db.prepare('DELETE FROM kv_temp WHERE expires_at < ?').run(Math.floor(Date.now() / 1000));
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -29,6 +41,46 @@ app.use(express.json());
 app.use((req, res, next) => {
     console.log(`📥 ${req.method} ${req.url}`);
     next();
+});
+
+/**
+ * Cloudflare KV Emulation Endpoints
+ */
+
+// Salvar rascunho (PUT simulado)
+app.post('/api/kv/put', (req, res) => {
+    try {
+        const { key, value, ttl } = req.body;
+        if (!key || !value) return res.status(400).json({ error: 'Key e Value são obrigatórios' });
+
+        const expiresAt = ttl ? Math.floor(Date.now() / 1000) + ttl : null;
+        
+        db.prepare('INSERT OR REPLACE INTO kv_temp (key, value, expires_at) VALUES (?, ?, ?)')
+          .run(key, value, expiresAt);
+
+        res.json({ success: true, key, expiresAt });
+    } catch (error) {
+        console.error('Erro em /api/kv/put:', error);
+        res.status(500).json({ error: 'Erro ao salvar no KV' });
+    }
+});
+
+// Recuperar rascunho (GET simulado)
+app.get('/api/kv/get', (req, res) => {
+    try {
+        const { key } = req.query;
+        if (!key) return res.status(400).json({ error: 'Key é obrigatória' });
+
+        const now = Math.floor(Date.now() / 1000);
+        const record = db.prepare('SELECT value FROM kv_temp WHERE key = ? AND (expires_at IS NULL OR expires_at > ?)')
+                        .get(key, now) as any;
+
+        if (!record) return res.json({ value: null });
+        res.json({ value: record.value });
+    } catch (error) {
+        console.error('Erro em /api/kv/get:', error);
+        res.status(500).json({ error: 'Erro ao buscar no KV' });
+    }
 });
 
 // ============================================================================
@@ -318,6 +370,17 @@ app.get('/api/municipio/respostas-detalhadas', (req, res) => {
             params.push(indicador as string);
         }
 
+        // Filtro para remover excesso de dados granulares (Ações, Programas, etc.) que poluem o i-Plan
+        query += ` 
+            AND questao NOT IN (
+                'Ações', 'Código da Ação', 'Código do Programa', 'Descrição do Programa', 
+                'Valor Estimado do Indicador', 'Valor Alcançado do Indicador', 
+                'Meta Física Estimada', 'Meta Física Alcançada', 'VALOR LIQUIDADO', 
+                'Dotação Final', 'Descrição', 'Quantidade de Programas:',
+                'Código da Atividade/Projeto/Operação Especial', 'Dotação Inicial'
+            )
+        `;
+
         query += ` ORDER BY indicador, questao`;
 
         const respostas = db.prepare(query).all(...params);
@@ -402,9 +465,9 @@ app.get('/api/evolucao-questoes', (req, res) => {
         const results = db.prepare(`
             SELECT * 
             FROM respostas_detalhadas 
-            WHERE upper(municipio) LIKE ?
+            WHERE upper(municipio) = ?
             ORDER BY ano_ref ASC, indicador ASC
-        `).all(`%${searchMunicipio}%`);
+        `).all(searchMunicipio);
 
         // Agrupar por questao
         const evolucao: Record<string, any> = {};
@@ -442,6 +505,112 @@ app.get('/api/evolucao-questoes', (req, res) => {
 });
 
 // ============================================================================
+// ROTAS DE SIMULADO
+// ============================================================================
+
+/**
+ * GET /api/simulado/questoes
+ * Retorna as questões do simulado para um indicador específico (fixo no ano 2024)
+ */
+app.get('/api/simulado/questoes', (req, res) => {
+    try {
+        const { indicador } = req.query;
+
+        if (!indicador) {
+            return res.status(400).json({ error: 'Indicador é obrigatório' });
+        }
+
+        const indicadorData = db.prepare('SELECT id FROM indicadores WHERE UPPER(codigo) = UPPER(?)').get(indicador as string) as { id: number } | undefined;
+
+        if (!indicadorData) {
+            return res.status(404).json({ error: 'Indicador não encontrado' });
+        }
+
+        const filters = [
+            'Ações', 'Código da Ação', 'Código do Programa', 'Descrição do Programa', 
+            'Valor Estimado do Indicador', 'Valor Alcançado do Indicador', 
+            'Meta Física Estimada', 'Meta Física Alcançada', 'VALOR LIQUIDADO', 
+            'Dotação Final', 'Descrição', 'Quantidade de Programas:',
+            'Código da Atividade/Projeto/Operação Especial', 'Dotação Inicial'
+        ];
+        const placeholders = filters.map(() => '?').join(',');
+
+        // Buscar questões e cruzar com a resposta de referência de Betim 2024
+        const questoes = db.prepare(`
+            SELECT 
+                q.id,
+                q.chave_questao as "chaveQuestao",
+                q.texto,
+                q.indice_questao as "indiceQuestao",
+                r.resposta as "respostaRef",
+                r.nota as "notaRef",
+                CASE 
+                    WHEN r.resposta IN ('Sim', 'Não', 'S', 'N') THEN 'boolean'
+                    ELSE 'text'
+                END as tipo
+            FROM questoes q
+            JOIN questionarios quest ON q.questionario_id = quest.id
+            LEFT JOIN respostas_detalhadas r ON q.chave_questao = r.chave_questao 
+                AND r.municipio = 'BETIM' 
+                AND r.ano_ref = 2024
+            WHERE quest.indicador_id = ? 
+            AND quest.ano_ref = 2024
+            AND q.texto NOT IN (${placeholders})
+            ORDER BY q.id ASC
+        `).all(indicadorData.id, ...filters);
+
+        res.json(questoes);
+    } catch (error) {
+        console.error('Erro em /api/simulado/questoes:', error);
+        res.status(500).json({ error: 'Erro ao buscar questões do simulado' });
+    }
+});
+
+/**
+ * POST /api/simulado/enviar
+ * Salva as respostas do simulado
+ */
+app.post('/api/simulado/enviar', (req, res) => {
+    try {
+        const { nome, funcao, setor, indicadorCodigo, respostas } = req.body;
+
+        if (!nome || !indicadorCodigo || !respostas || !Array.isArray(respostas)) {
+            return res.status(400).json({ error: 'Corpo da requisição inválido' });
+        }
+
+        const criadoEm = new Date().toISOString();
+
+        // Inserir respostas em lote usando transação
+        const inTransaction = db.transaction((respostasList) => {
+            const stmt = db.prepare(`
+                INSERT INTO simulado_respostas 
+                (nome, funcao, setor, indicador_codigo, questao_id, chave_questao, texto_questao, resposta, criado_em)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            `);
+
+            for (const r of respostasList) {
+                stmt.run(
+                    nome,
+                    funcao,
+                    setor,
+                    indicadorCodigo,
+                    r.questaoId,
+                    r.chaveQuestao,
+                    r.textoQuestao,
+                    r.resposta,
+                    criadoEm
+                );
+            }
+        });
+
+        inTransaction(respostas);
+
+        res.json({ success: true, count: respostas.length });
+    } catch (error) {
+        console.error('Erro em /api/simulado/enviar:', error);
+        res.status(500).json({ error: 'Erro ao salvar respostas do simulado' });
+    }
+});
 // INICIAR SERVIDOR
 // ============================================================================
 

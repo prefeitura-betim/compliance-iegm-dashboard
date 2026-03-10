@@ -15,6 +15,27 @@
       "when": 1770051395463,
       "tag": "0001_clean_amazoness",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1773147845497,
+      "tag": "0002_peaceful_madrox",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1773162631680,
+      "tag": "0003_powerful_ultragirl",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1773162753906,
+      "tag": "0004_living_santa_claus",
+      "breakpoints": true
     }
   ]
 }
