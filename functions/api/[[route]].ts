@@ -1,7 +1,7 @@
 /// <reference types="@cloudflare/workers-types" />
 import { drizzle } from 'drizzle-orm/d1';
 import * as schema from '../../src/db/schema';
-import { eq, and, desc, asc, sql, count, avg, min, max, like } from 'drizzle-orm';
+import { eq, and, desc, asc, sql, count, avg, min, max, like, notLike } from 'drizzle-orm';
 import { resultadosMunicipios, municipios as municipiosTable, indicadores, questionarios, questoes, respostas, questionarioRespostas, tribunais, respostasDetalhadas, simuladoRespostas } from '../../src/db/schema';
 
 // Interface para o ambiente Cloudflare Pages
@@ -94,6 +94,9 @@ export async function onRequest(context: any) {
 
       case 'anos-disponiveis':
         return await handleAnosDisponiveis(request, db, url);
+
+      case 'simulado/questoes':
+        return await handleSimuladoQuestoes(request, db, url);
 
       case 'simulado/enviar':
         return await handleSimuladoEnviar(request, db, url);
@@ -374,6 +377,17 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
     const cleanIndicador = indicador.trim().replace(/^i-/, '').replace(/^i/, '').toUpperCase();
     whereConditions.push(sql`UPPER(${respostasDetalhadas.indicador}) LIKE ${`%${cleanIndicador}%`}`);
   }
+
+  // Filtros de ruído para limpar a seção de detalhes
+  const excludePatterns = [
+    'Ação:', 'Programa:', 'Código da Ação', 'Código do Programa', 
+    'Descrição do Programa', 'Metas Físicas', 'VALOR LIQUIDADO', 
+    'Dotação Final', 'Dotação Inicial', 'Meta Física', 'Quantidade de Programas'
+  ];
+
+  excludePatterns.forEach(pattern => {
+    whereConditions.push(notLike(respostasDetalhadas.questao, `%${pattern}%`));
+  });
 
   const results = await db
     .select()
