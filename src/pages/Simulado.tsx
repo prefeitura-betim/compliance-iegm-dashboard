@@ -204,11 +204,16 @@ export default function Simulado() {
         body: JSON.stringify(payload)
       });
 
-      if (!response.ok) throw new Error('Falha ao enviar respostas');
-
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || errorData.error || 'Falha ao enviar respostas');
+      }
       setEtapa('sucesso');
-    } catch (err) {
-      setMensagem({ tipo: 'erro', texto: 'Erro ao enviar dados. Tente novamente.' });
+    } catch (err: any) {
+      setMensagem({ 
+        tipo: 'erro', 
+        texto: `Erro ao enviar dados: ${err.message || 'Tente novamente.'}` 
+      });
     } finally {
       setSending(false);
     }
