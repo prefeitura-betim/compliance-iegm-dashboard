@@ -7,6 +7,7 @@ compatibility_flags = ["nodejs_compat"]
 binding = "DB"
 database_name = "compliance-iegm-dashboard-db"
 database_id = "5803f64b-c4f9-434d-b279-abb8d8f57e5f"
+migrations_dir = "src/db/migrations"
 
 # D1 binding will be managed by Terraform/Wrangler
 [[kv_namespaces]]
