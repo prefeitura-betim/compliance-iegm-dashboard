@@ -378,32 +378,25 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
     sql`UPPER(${respostasDetalhadas.municipio}) LIKE ${`%${searchMunicipio}%`}`
   ];
 
-  if (indicador) {
-    // Normalizar indicador (ex: i-Educ ou EDUC)
-    const cleanIndicador = indicador.trim().replace(/^i-/, '').replace(/^i/, '').toUpperCase();
-    whereConditions.push(sql`UPPER(${respostasDetalhadas.indicador}) LIKE ${`%${cleanIndicador}%`}`);
-  }
-
-  // Filtros de ruído para limpar a seção de detalhes - Versões com e sem acento para bypassar limitação do SQLite
-  const excludePatterns = [
-    'Ação', 'Acao', 'AÇÃO', 'ACAO', 'Ações', 'Acoes',
-    'Programa', 'PROGRAMA', 'Código', 'Codigo', 'CODIGO',
-    'Descrição', 'Descricao', 'DESCRICAO', 'Metas Físicas', 'Metas Fisicas',
-    'VALOR LIQUIDADO', 'Dotação Final', 'Dotacao Final', 'Dotação Inicial', 'Dotacao Inicial',
-    'Meta Física', 'Meta Fisica', 'Quantidade de Programas', 'Valor Estimado', 'Valor Alcançado',
-    'Valor Alcancado', 'Indicador'
-  ];
-
-  excludePatterns.forEach(pattern => {
-    whereConditions.push(sql`UPPER(${respostasDetalhadas.questao}) NOT LIKE UPPER(${`%${pattern}%`})`);
-  });
-
-  const results = await db
+  const rawResults = await db
     .select()
     .from(respostasDetalhadas)
     .where(and(...whereConditions))
     .orderBy(desc(respostasDetalhadas.nota))
     .limit(1000);
+
+  // Filtragem robusta em Javascript para contornar limitações de acentuação do SQLite
+  const excludePatterns = [
+    'AÇÃO', 'ACAO', 'AÇÕES', 'ACOES', 'PROGRAMA', 'CÓDIGO', 'CODIGO',
+    'DESCRIÇÃO', 'DESCRICAO', 'METAS FÍSICAS', 'METAS FISICAS',
+    'VALOR LIQUIDADO', 'DOTAÇÃO', 'DOTACAO', 'META FÍSICA', 'META FISICA',
+    'VALOR ESTIMADO', 'VALOR ALCANÇADO', 'VALOR ALCANCADO', 'INDICADOR'
+  ];
+
+  const results = rawResults.filter((r: any) => {
+    const q = (r.questao || '').toUpperCase();
+    return !excludePatterns.some(p => q.includes(p));
+  });
 
   return new Response(JSON.stringify(results), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' }
