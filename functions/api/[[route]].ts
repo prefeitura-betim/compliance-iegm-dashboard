@@ -395,7 +395,7 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
   ];
 
   excludePatterns.forEach(pattern => {
-    whereConditions.push(notLike(respostasDetalhadas.questao, `%${pattern}%`));
+    whereConditions.push(sql`UPPER(${respostasDetalhadas.questao}) NOT LIKE UPPER(${`%${pattern}%`})`);
   });
 
   const results = await db
