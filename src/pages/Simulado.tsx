@@ -28,7 +28,7 @@ const INDICADORES = [
 
 interface Questao {
   id: number;
-  chaveQuestao: string;
+  chaveQuestao: string | null;
   texto: string;
   indiceQuestao: string | null;
   respostaRef: string | null;
@@ -38,7 +38,7 @@ interface Questao {
 
 interface RespostaSimulado {
   questaoId: number;
-  chaveQuestao: string;
+  chaveQuestao: string | null;
   textoQuestao: string;
   resposta: string;
 }
@@ -500,10 +500,10 @@ export default function Simulado() {
                 </div>
             ) : filteredQuestoes.map((q) => {
               // Buscar índice original
-              const originalIdx = questoes.findIndex(item => item.chaveQuestao === q.chaveQuestao);
+              const originalIdx = questoes.findIndex(item => item.id === q.id);
               
               return (
-              <div key={q.chaveQuestao} className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-md transition-all p-6 border border-gray-100 dark:border-gray-700">
+              <div key={q.id} className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-md transition-all p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex justify-between items-start mb-4">
                   <span className="text-xs font-bold text-betim-blue bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded">Questão {originalIdx + 1}</span>
                   {respostas[q.id] && (

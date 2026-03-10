@@ -768,8 +768,13 @@ async function handleSimuladoEnviar(request: Request, db: any, url: URL) {
       criadoEm,
     }));
 
-    await db.insert(simuladoRespostas).values(dataToInsert);
-
+    // Inserir respostas em lotes (evitar limite de parâmetros do SQLite/D1)
+    const chunkSize = 50;
+    for (let i = 0; i < dataToInsert.length; i += chunkSize) {
+      const chunk = dataToInsert.slice(i, i + chunkSize);
+      await db.insert(simuladoRespostas).values(chunk);
+    }
+    
     return new Response(JSON.stringify({ success: true, count: dataToInsert.length }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
