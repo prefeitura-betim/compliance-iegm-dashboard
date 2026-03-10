@@ -384,16 +384,18 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
     whereConditions.push(sql`UPPER(${respostasDetalhadas.indicador}) LIKE ${`%${cleanIndicador}%`}`);
   }
 
-  // Filtros de ruído para limpar a seção de detalhes - Mais agressivos e abrangentes
+  // Filtros de ruído para limpar a seção de detalhes - Versões com e sem acento para bypassar limitação do SQLite
   const excludePatterns = [
-    'Ação', 'Ações', 'Programa', 'Programas', 'Código da Ação', 'Código do Programa', 
-    'Descrição do Programa', 'Metas Físicas', 'VALOR LIQUIDADO', 
-    'Dotação Final', 'Dotação Inicial', 'Meta Física', 'Quantidade de Programas',
-    'Descrição', 'Valor Estimado', 'Valor Alcançado', 'Indicador'
+    'Ação', 'Acao', 'AÇÃO', 'ACAO', 'Ações', 'Acoes',
+    'Programa', 'PROGRAMA', 'Código', 'Codigo', 'CODIGO',
+    'Descrição', 'Descricao', 'DESCRICAO', 'Metas Físicas', 'Metas Fisicas',
+    'VALOR LIQUIDADO', 'Dotação Final', 'Dotacao Final', 'Dotação Inicial', 'Dotacao Inicial',
+    'Meta Física', 'Meta Fisica', 'Quantidade de Programas', 'Valor Estimado', 'Valor Alcançado',
+    'Valor Alcancado', 'Indicador'
   ];
 
   excludePatterns.forEach(pattern => {
-    whereConditions.push(sql`UPPER(${respostasDetalhadas.questao}) NOT LIKE ${`%${pattern.toUpperCase()}%`}`);
+    whereConditions.push(notLike(respostasDetalhadas.questao, `%${pattern}%`));
   });
 
   const results = await db
@@ -666,7 +668,7 @@ async function handleEvolucaoQuestoes(request: Request, db: any, url: URL) {
 
 async function handleSimuladoQuestoes(request: Request, db: any, url: URL) {
   const indicador = url.searchParams.get('indicador');
-  const ano = 2024; // Fixo para o simulado conforme solicitado
+  const ano = 2024;
 
   if (!indicador) {
     return new Response(JSON.stringify({ error: 'Missing parameter: indicador' }), {
@@ -675,45 +677,60 @@ async function handleSimuladoQuestoes(request: Request, db: any, url: URL) {
     });
   }
 
-  // Busca o ID do indicador (case-insensitive)
-  const indicadorData = await db
-    .select()
-    .from(indicadores)
-    .where(sql`UPPER(${indicadores.codigo}) = UPPER(${indicador})`)
-    .limit(1);
+  try {
+    // Busca o ID do indicador (case-insensitive)
+    const indicadorData = await db
+      .select()
+      .from(indicadores)
+      .where(sql`UPPER(${indicadores.codigo}) = UPPER(${indicador})`)
+      .limit(1);
 
-  if (!indicadorData[0]) {
-    return new Response(JSON.stringify({ error: 'Indicador not found' }), {
-      status: 404,
+    if (!indicadorData[0]) {
+      return new Response(JSON.stringify({ 
+        error: 'Indicador not found', 
+        indicador,
+        message: 'Verifique se os indicadores de 2024 foram carregados no banco D1.' 
+      }), {
+        status: 404,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    // Busca as questões de 2024 vinculadas ao indicador
+    const results = await db
+      .select({
+        id: questoes.id,
+        chaveQuestao: questoes.chaveQuestao,
+        texto: questoes.texto,
+        indiceQuestao: questoes.indiceQuestao,
+        respostaRef: questoes.respostaRef,
+        notaRef: questoes.notaRef,
+        tipo: questoes.tipo,
+      })
+      .from(questoes)
+      .innerJoin(questionarios, eq(questoes.questionarioId, questionarios.id))
+      .where(
+        and(
+          eq(questionarios.indicadorId, indicadorData[0].id),
+          eq(questionarios.anoRef, ano)
+        )
+      )
+      .orderBy(asc(questoes.id));
+
+    return new Response(JSON.stringify(results), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  } catch (error: any) {
+    return new Response(JSON.stringify({ 
+      error: 'Database Error', 
+      message: error.message,
+      hint: 'Se o erro for "no such column", execute: npx wrangler d1 migrations apply DB --remote',
+      detail: error
+    }), {
+      status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   }
-
-  // Busca as questões de 2024 vinculadas ao indicador
-  // Joins: questoes -> questionarios -> indicadores
-  const results = await db
-    .select({
-      id: questoes.id,
-      chaveQuestao: questoes.chaveQuestao,
-      texto: questoes.texto,
-      indiceQuestao: questoes.indiceQuestao,
-      respostaRef: questoes.respostaRef,
-      notaRef: questoes.notaRef,
-      tipo: questoes.tipo,
-    })
-    .from(questoes)
-    .innerJoin(questionarios, eq(questoes.questionarioId, questionarios.id))
-    .where(
-      and(
-        eq(questionarios.indicadorId, indicadorData[0].id),
-        eq(questionarios.anoRef, ano)
-      )
-    )
-    .orderBy(asc(questoes.id));
-
-  return new Response(JSON.stringify(results), {
-    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-  });
 }
 
 async function handleSimuladoEnviar(request: Request, db: any, url: URL) {
