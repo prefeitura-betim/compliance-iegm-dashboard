@@ -182,8 +182,12 @@ export default function Simulado() {
         }))
         .filter(r => r.resposta.trim() !== "");
 
-      if (respostasFormatadas.length === 0) {
-        setMensagem({ tipo: 'erro', texto: 'Por favor, escreva ao menos uma resposta antes de enviar.' });
+      if (respostasFormatadas.length < questoes.length) {
+        const faltam = questoes.length - respostasFormatadas.length;
+        setMensagem({ 
+          tipo: 'erro', 
+          texto: `Por favor, responda a todas as questões antes de enviar. Faltam ${faltam} perguntas.` 
+        });
         setSending(false);
         return;
       }
@@ -312,9 +316,10 @@ export default function Simulado() {
     q.texto.toLowerCase().includes(search.toLowerCase())
   );
 
-  const answeredCount = Object.keys(respostas).filter(k => 
-    questoes.some(q => q.chaveQuestao === k && respostas[k].trim() !== "")
-  ).length;
+  const answeredCount = questoes.filter(q => {
+    const resp = respostas[q.id];
+    return resp && resp.trim() !== "";
+  }).length;
 
   const progress = questoes.length > 0 ? (answeredCount / questoes.length) * 100 : 0;
 
