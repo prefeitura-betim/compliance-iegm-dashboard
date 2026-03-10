@@ -768,11 +768,15 @@ async function handleSimuladoEnviar(request: Request, db: any, url: URL) {
       criadoEm,
     }));
 
-    // Inserir respostas em lotes (evitar limite de parâmetros do SQLite/D1)
-    const chunkSize = 50;
+    // Inserir respostas usando db.batch do Drizzle (otimizado para Cloudflare D1)
+    // Dividimos em lotes pequenos para garantir estabilidade absoluta e evitar limites de parâmetros
+    const chunkSize = 20;
     for (let i = 0; i < dataToInsert.length; i += chunkSize) {
       const chunk = dataToInsert.slice(i, i + chunkSize);
-      await db.insert(simuladoRespostas).values(chunk);
+      // Criar um array de statements de inserção
+      const statements = chunk.map(data => db.insert(simuladoRespostas).values(data));
+      // Executar o lote no D1
+      await db.batch(statements as any);
     }
     
     return new Response(JSON.stringify({ success: true, count: dataToInsert.length }), {
