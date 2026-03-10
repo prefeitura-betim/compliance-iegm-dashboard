@@ -391,17 +391,19 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
     .orderBy(desc(respostasDetalhadas.nota))
     .limit(1000);
 
-  // Filtragem robusta em Javascript para contornar limitações de acentuação do SQLite
+  // Filtragem exata para remover apenas o ruído específico (igual ao localhost)
   const excludePatterns = [
-    'AÇÃO', 'ACAO', 'AÇÕES', 'ACOES', 'PROGRAMA', 'CÓDIGO', 'CODIGO',
-    'DESCRIÇÃO', 'DESCRICAO', 'METAS FÍSICAS', 'METAS FISICAS',
-    'VALOR LIQUIDADO', 'DOTAÇÃO', 'DOTACAO', 'META FÍSICA', 'META FISICA',
-    'VALOR ESTIMADO', 'VALOR ALCANÇADO', 'VALOR ALCANCADO', 'INDICADOR'
+    'Ações', 'Código da Ação', 'Código do Programa', 'Descrição do Programa', 
+    'Valor Estimado do Indicador', 'Valor Alcançado do Indicador', 
+    'Meta Física Estimada', 'Meta Física Alcançada', 'VALOR LIQUIDADO', 
+    'Dotação Final', 'Descrição', 'Quantidade de Programas:',
+    'Código da Atividade/Projeto/Operação Especial', 'Dotação Inicial'
   ];
 
   const results = rawResults.filter((r: any) => {
-    const q = (r.questao || '').toUpperCase();
-    return !excludePatterns.some(p => q.includes(p));
+    const q = (r.questao || '').trim();
+    // Usar correspondência exata para evitar remover perguntas legítimas que contenham as palavras-chave
+    return !excludePatterns.includes(q);
   });
 
   return new Response(JSON.stringify(results), {
