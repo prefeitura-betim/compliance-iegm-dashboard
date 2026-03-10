@@ -401,9 +401,9 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
   ];
 
   const results = rawResults.filter((r: any) => {
-    const q = (r.questao || '').trim();
-    // Usar correspondência exata para evitar remover perguntas legítimas que contenham as palavras-chave
-    return !excludePatterns.includes(q);
+    const q = (r.questao || '').trim().toUpperCase();
+    // Comparar em maiúsculas para maior robustez (case-insensitive)
+    return !excludePatterns.some(pattern => q === pattern.trim().toUpperCase());
   });
 
   return new Response(JSON.stringify(results), {

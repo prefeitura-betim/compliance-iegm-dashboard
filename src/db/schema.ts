@@ -64,7 +64,7 @@ export const questoes = sqliteTable('questoes', {
   questaoId: integer('questao_id').notNull(), // ID da questão no sistema original
   sequenciaBlocoRepeticao: integer('sequencia_bloco_repeticao'),
   indiceQuestao: text('indice_questao'), // ex: "001.", "001.001."
-  chaveQuestao: text('chave_questao').notNull(), // ex: "M05Q00900"
+  chaveQuestao: text('chave_questao'), // ex: "M05Q00900"
   texto: text('texto').notNull(), // texto da questão
   peso: real('peso').default(1.0),
   respostaRef: text('resposta_ref'),

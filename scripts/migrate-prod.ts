@@ -330,7 +330,7 @@ async function importCSVToD1(filename: string, tableName: string): Promise<numbe
     // Executar cada lote separadamente
     for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
       const batch = batches[batchIndex];
-      const sqlContent = batch.join('\n');
+      const sqlContent = `PRAGMA foreign_keys = OFF;\n` + batch.join('\n') + `\nPRAGMA foreign_keys = ON;`;
       const sqlFilename = `temp_import_${tableName}_batch_${batchIndex + 1}.sql`;
       writeFileSync(sqlFilename, sqlContent, 'utf8');
 
@@ -344,8 +344,10 @@ async function importCSVToD1(filename: string, tableName: string): Promise<numbe
         totalImported += batch.length;
         console.log(`  ✅ Lote ${batchIndex + 1} executado com sucesso`);
 
-      } catch (error) {
-        console.error(`  ❌ Erro no lote ${batchIndex + 1}:`, error);
+      } catch (error: any) {
+        console.error(`  ❌ Erro no lote ${batchIndex + 1}:`, error.message);
+        if (error.stdout) console.log('STDOUT:', error.stdout.toString());
+        if (error.stderr) console.log('STDERR:', error.stderr.toString());
         // Continuar com o próximo lote mesmo se este falhar
       } finally {
         // Limpar arquivo temporário do lote

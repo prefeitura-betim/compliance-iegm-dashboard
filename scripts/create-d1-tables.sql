@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS questionarios;
 DROP TABLE IF EXISTS indicadores;
 DROP TABLE IF EXISTS municipios;
 DROP TABLE IF EXISTS tribunais;
+DROP TABLE IF EXISTS simulado_respostas;
 
 CREATE TABLE `tribunais` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -66,7 +67,7 @@ CREATE TABLE `questoes` (
 	`questao_id` integer NOT NULL,
 	`sequencia_bloco_repeticao` integer,
 	`indice_questao` text,
-	`chave_questao` text NOT NULL,
+	`chave_questao` text,
 	`texto` text NOT NULL,
 	`peso` real DEFAULT 1,
 	`resposta_ref` text,
@@ -229,7 +230,7 @@ CREATE TABLE `simulado_respostas` (
 	`setor` text NOT NULL,
 	`indicador_codigo` text NOT NULL,
 	`questao_id` integer NOT NULL,
-	`chave_questao` text NOT NULL,
+	`chave_questao` text,
 	`texto_questao` text NOT NULL,
 	`resposta` text NOT NULL,
 	`criado_em` text NOT NULL
