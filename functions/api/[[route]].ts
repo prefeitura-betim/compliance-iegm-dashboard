@@ -29,9 +29,9 @@ export async function onRequestOptions(context: any) {
 
 // Main handler
 export async function onRequest(context: any) {
-  const { request, env } = context;
+  const { request, env, params } = context;
   const url = new URL(request.url);
-  const path = url.pathname.replace('/api/', '');
+  const path = Array.isArray(params.route) ? params.route.join('/') : params.route || '';
 
   // Handle preflight requests
   if (request.method === 'OPTIONS') {
@@ -108,7 +108,12 @@ export async function onRequest(context: any) {
         return await handleKVGet(request, env);
 
       default:
-        return new Response(JSON.stringify({ error: 'Endpoint not found' }), {
+        return new Response(JSON.stringify({ 
+          error: 'Endpoint not found', 
+          path, 
+          urlPath: url.pathname,
+          params: params.route 
+        }), {
           status: 404,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         });
@@ -118,7 +123,8 @@ export async function onRequest(context: any) {
     console.error('API error:', error);
     return new Response(JSON.stringify({
       error: 'Internal server error',
-      message: error instanceof Error ? error.message : 'Unknown error'
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : null
     }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -378,15 +384,16 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
     whereConditions.push(sql`UPPER(${respostasDetalhadas.indicador}) LIKE ${`%${cleanIndicador}%`}`);
   }
 
-  // Filtros de ruído para limpar a seção de detalhes
+  // Filtros de ruído para limpar a seção de detalhes - Mais agressivos e abrangentes
   const excludePatterns = [
-    'Ação:', 'Programa:', 'Código da Ação', 'Código do Programa', 
+    'Ação', 'Ações', 'Programa', 'Programas', 'Código da Ação', 'Código do Programa', 
     'Descrição do Programa', 'Metas Físicas', 'VALOR LIQUIDADO', 
-    'Dotação Final', 'Dotação Inicial', 'Meta Física', 'Quantidade de Programas'
+    'Dotação Final', 'Dotação Inicial', 'Meta Física', 'Quantidade de Programas',
+    'Descrição', 'Valor Estimado', 'Valor Alcançado', 'Indicador'
   ];
 
   excludePatterns.forEach(pattern => {
-    whereConditions.push(notLike(respostasDetalhadas.questao, `%${pattern}%`));
+    whereConditions.push(sql`UPPER(${respostasDetalhadas.questao}) NOT LIKE ${`%${pattern.toUpperCase()}%`}`);
   });
 
   const results = await db
