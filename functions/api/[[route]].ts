@@ -378,6 +378,12 @@ async function handleRespostasDetalhadas(request: Request, db: any, url: URL) {
     sql`UPPER(${respostasDetalhadas.municipio}) LIKE ${`%${searchMunicipio}%`}`
   ];
 
+  if (indicador) {
+    // Normalizar indicador (ex: i-Educ ou EDUC)
+    const cleanIndicador = indicador.trim().replace(/^i-/, '').replace(/^i/, '').toUpperCase();
+    whereConditions.push(sql`UPPER(${respostasDetalhadas.indicador}) LIKE ${`%${cleanIndicador}%`}`);
+  }
+
   const rawResults = await db
     .select()
     .from(respostasDetalhadas)
