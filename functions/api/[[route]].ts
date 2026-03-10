@@ -773,8 +773,13 @@ async function handleSimuladoEnviar(request: Request, db: any, url: URL) {
     return new Response(JSON.stringify({ success: true, count: dataToInsert.length }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
-  } catch (error) {
-    return new Response(JSON.stringify({ error: 'Failed to save answers', message: error }), {
+  } catch (error: any) {
+    console.error('Error in handleSimuladoEnviar:', error);
+    return new Response(JSON.stringify({ 
+      error: 'Failed to save answers', 
+      message: error.message || String(error),
+      stack: error.stack 
+    }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });

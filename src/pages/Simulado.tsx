@@ -178,7 +178,7 @@ export default function Simulado() {
           questaoId: q.id,
           chaveQuestao: q.chaveQuestao,
           textoQuestao: q.texto,
-          resposta: respostas[q.chaveQuestao] || ""
+          resposta: respostas[q.id] || ""
         }))
         .filter(r => r.resposta.trim() !== "");
 
@@ -238,7 +238,7 @@ export default function Simulado() {
 
     // Respostas
     questoes.forEach((q, idx) => {
-      const resp = respostas[q.chaveQuestao];
+      const resp = respostas[q.id];
       if (!resp) return;
 
       if (y > 270) {
@@ -501,7 +501,7 @@ export default function Simulado() {
               <div key={q.chaveQuestao} className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-md transition-all p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex justify-between items-start mb-4">
                   <span className="text-xs font-bold text-betim-blue bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded">Questão {originalIdx + 1}</span>
-                  {respostas[q.chaveQuestao] && (
+                  {respostas[q.id] && (
                     <span className="text-[10px] font-bold text-green-500 flex items-center gap-1 uppercase tracking-wider">
                         <CheckCircle2 size={12}/> Respondido
                     </span>
@@ -517,9 +517,9 @@ export default function Simulado() {
                       {['Sim', 'Não'].map(opcao => (
                         <button
                           key={opcao}
-                          onClick={() => handleRespostaChange(q.chaveQuestao, opcao)}
+                          onClick={() => handleRespostaChange(String(q.id), opcao)}
                           className={`flex-1 py-3 rounded-xl border-2 font-bold transition-all ${
-                            respostas[q.chaveQuestao] === opcao
+                            respostas[q.id] === opcao
                               ? 'bg-betim-blue border-betim-blue text-white shadow-md'
                               : 'bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-700 text-gray-500 hover:border-betim-blue/30'
                           }`}
@@ -530,8 +530,8 @@ export default function Simulado() {
                     </div>
                   ) : (
                     <textarea
-                        value={respostas[q.chaveQuestao] || ''}
-                        onChange={e => handleRespostaChange(q.chaveQuestao, e.target.value)}
+                        value={respostas[q.id] || ''}
+                        onChange={e => handleRespostaChange(String(q.id), e.target.value)}
                         placeholder="Escreva sua resposta detalhada aqui..."
                         className="w-full min-h-[120px] p-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-betim-blue focus:border-transparent transition-all outline-none resize-y"
                     />

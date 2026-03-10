@@ -267,7 +267,7 @@ export const simuladoRespostas = sqliteTable('simulado_respostas', {
   setor: text('setor').notNull(),
   indicadorCodigo: text('indicador_codigo').notNull(),
   questaoId: integer('questao_id').notNull(),
-  chaveQuestao: text('chave_questao').notNull(),
+  chaveQuestao: text('chave_questao'),
   textoQuestao: text('texto_questao').notNull(),
   resposta: text('resposta').notNull(),
   criadoEm: text('criado_em').notNull(),
