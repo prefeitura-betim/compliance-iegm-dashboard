@@ -1,18 +1,21 @@
 import { useState, useEffect, useCallback } from 'react';
-import { 
-  User, 
-  Briefcase, 
-  Building2, 
-  ChevronRight, 
-  ChevronLeft, 
-  Send, 
-  CheckCircle2, 
+import {
+  User,
+  Briefcase,
+  Building2,
+  ChevronRight,
+  ChevronLeft,
+  Send,
+  CheckCircle2,
   AlertCircle,
   Loader2,
   Trash2,
   Search,
   Download,
-  Cloud
+  Cloud,
+  Copy,
+  Link2,
+  Check
 } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 
@@ -43,11 +46,15 @@ interface RespostaSimulado {
   resposta: string;
 }
 
+function gerarCodigo(): string {
+  return Math.random().toString(36).substring(2, 8).toUpperCase();
+}
+
 export default function Simulado() {
-  
+
   // Etapas: 'identificacao' | 'selecao' | 'questionario' | 'sucesso'
   const [etapa, setEtapa] = useState<'identificacao' | 'selecao' | 'questionario' | 'sucesso'>('identificacao');
-  
+
   // Dados de Identificação
   const [identificacao, setIdentificacao] = useState({
     nome: '',
@@ -55,10 +62,15 @@ export default function Simulado() {
     setor: ''
   });
 
+  // Sessão compartilhada
+  const [codigoSessao, setCodigoSessao] = useState('');
+  const [codigoInput, setCodigoInput] = useState('');
+  const [copiado, setCopiado] = useState(false);
+
   // Estado do Simulado
   const [indicadorSelecionado, setIndicadorSelecionado] = useState<typeof INDICADORES[0] | null>(null);
   const [questoes, setQuestoes] = useState<Questao[]>([]);
-  const [respostas, setRespostas] = useState<Record<string, string>>({}); // chaveQuestao -> resposta
+  const [respostas, setRespostas] = useState<Record<string, string>>({}); // questaoId -> resposta
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(false);
   const [sending, setSending] = useState(false);
@@ -76,34 +88,48 @@ export default function Simulado() {
     if (savedRespostas) {
       setRespostas(JSON.parse(savedRespostas));
     }
+
+    const savedCodigo = localStorage.getItem('simulado_codigo_sessao');
+    if (savedCodigo) {
+      setCodigoSessao(savedCodigo);
+      setCodigoInput(savedCodigo);
+    }
   }, []);
 
-  // Sincronizar com Cloudflare KV (Busca Rascunho)
-  const fetchRascunhoKV = useCallback(async (nome: string, indicador: string) => {
+  // Persistir código de sessão
+  useEffect(() => {
+    if (codigoSessao) {
+      localStorage.setItem('simulado_codigo_sessao', codigoSessao);
+    }
+  }, [codigoSessao]);
+
+  // Sincronizar com Cloudflare KV (Busca Rascunho da sessão compartilhada)
+  const fetchRascunhoKV = useCallback(async (codigo: string, indicador: string) => {
+    if (!codigo) return;
     try {
-        const key = `simulado:rascunho:${nome.trim().toLowerCase()}:${indicador}`;
+        const key = `simulado:sessao:${indicador}:${codigo}`;
         const response = await fetch(`/api/kv/get?key=${encodeURIComponent(key)}`);
         const data = await response.json();
-        
+
         if (data.value) {
             const remoteRespostas = JSON.parse(data.value);
-            // Mesclar com local, priorizando o que tiver mais respostas ou o remoto se for mais recente?
-            // Por simplicidade, vamos usar o remoto se ele existir
-            setRespostas(remoteRespostas);
+            // Merge: respostas remotas preenchem o que ainda não foi respondido localmente.
+            // Respostas locais já existentes têm prioridade (o usuário atual pode ter corrigido algo).
+            setRespostas(prev => ({ ...remoteRespostas, ...prev }));
             setLastSync(new Date());
-            console.log("☁️ Rascunho recuperado da nuvem (KV)");
+            console.log("☁️ Rascunho da sessão recuperado da nuvem (KV)");
         }
     } catch (err) {
         console.error("Erro ao buscar rascunho no KV:", err);
     }
   }, []);
 
-  // Salvar rascunho no KV (com TTL de 30 dias)
-  const saveRascunhoKV = useCallback(async (nome: string, indicador: string, data: any) => {
-    if (!nome || !indicador || Object.keys(data).length === 0) return;
-    
+  // Salvar rascunho no KV vinculado ao código de sessão (com TTL de 30 dias)
+  const saveRascunhoKV = useCallback(async (codigo: string, indicador: string, data: any) => {
+    if (!codigo || !indicador || Object.keys(data).length === 0) return;
+
     try {
-        const key = `simulado:rascunho:${nome.trim().toLowerCase()}:${indicador}`;
+        const key = `simulado:sessao:${indicador}:${codigo}`;
         await fetch('/api/kv/put', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -126,19 +152,34 @@ export default function Simulado() {
     }
   }, [identificacao]);
 
-  // Salvar respostas ao mudar (debounce) e Push para KV
+  // Salvar respostas ao mudar (debounce) e Push para KV da sessão
   useEffect(() => {
     const timer = setTimeout(() => {
       if (Object.keys(respostas).length > 0) {
         localStorage.setItem('simulado_respostas', JSON.stringify(respostas));
-        
-        if (indicadorSelecionado && identificacao.nome) {
-            saveRascunhoKV(identificacao.nome, indicadorSelecionado.codigo, respostas);
+
+        if (indicadorSelecionado && codigoSessao) {
+            saveRascunhoKV(codigoSessao, indicadorSelecionado.codigo, respostas);
         }
       }
     }, 1500);
     return () => clearTimeout(timer);
-  }, [respostas, indicadorSelecionado, identificacao.nome, saveRascunhoKV]);
+  }, [respostas, indicadorSelecionado, codigoSessao, saveRascunhoKV]);
+
+  // Ao avançar da identificação: gera código se não foi informado
+  const handleProximoIdentificacao = () => {
+    const codigo = codigoInput.trim().toUpperCase() || gerarCodigo();
+    setCodigoSessao(codigo);
+    setCodigoInput(codigo);
+    setEtapa('selecao');
+  };
+
+  const handleCopiarCodigo = () => {
+    navigator.clipboard.writeText(codigoSessao).then(() => {
+      setCopiado(true);
+      setTimeout(() => setCopiado(false), 2000);
+    });
+  };
 
   const handleIndicadorSelect = async (indicador: typeof INDICADORES[0]) => {
     setIndicadorSelecionado(indicador);
@@ -148,12 +189,12 @@ export default function Simulado() {
       if (!response.ok) throw new Error('Falha ao carregar questões');
       const data = await response.json();
       setQuestoes(data);
-      
-      // Tentar buscar rascunho na nuvem ao entrar
-      if (identificacao.nome) {
-          await fetchRascunhoKV(identificacao.nome, indicador.codigo);
+
+      // Buscar rascunho da sessão compartilhada ao entrar no questionário
+      if (codigoSessao) {
+          await fetchRascunhoKV(codigoSessao, indicador.codigo);
       }
-      
+
       setEtapa('questionario');
     } catch (err) {
       setMensagem({ tipo: 'erro', texto: 'Erro ao conectar com o servidor. Verifique se o backend está rodando.' });
@@ -168,10 +209,10 @@ export default function Simulado() {
 
   const handleEnviar = async () => {
     if (!indicadorSelecionado) return;
-    
+
     setSending(true);
     setMensagem(null);
-    
+
     try {
       const respostasFormatadas: RespostaSimulado[] = questoes
         .map(q => ({
@@ -184,9 +225,9 @@ export default function Simulado() {
 
       if (respostasFormatadas.length < questoes.length) {
         const faltam = questoes.length - respostasFormatadas.length;
-        setMensagem({ 
-          tipo: 'erro', 
-          texto: `Por favor, responda a todas as questões antes de enviar. Faltam ${faltam} perguntas.` 
+        setMensagem({
+          tipo: 'erro',
+          texto: `Por favor, responda a todas as questões antes de enviar. Faltam ${faltam} perguntas.`
         });
         setSending(false);
         return;
@@ -210,9 +251,9 @@ export default function Simulado() {
       }
       setEtapa('sucesso');
     } catch (err: any) {
-      setMensagem({ 
-        tipo: 'erro', 
-        texto: `Erro ao enviar dados: ${err.message || 'Tente novamente.'}` 
+      setMensagem({
+        tipo: 'erro',
+        texto: `Erro ao enviar dados: ${err.message || 'Tente novamente.'}`
       });
     } finally {
       setSending(false);
@@ -222,41 +263,38 @@ export default function Simulado() {
   const generatePDF = () => {
     const doc = new jsPDF();
     const margin = 20;
-    let y = 30; // Começar um pouco mais abaixo para dar espaço ao cabeçalho
+    let y = 30;
 
-    // --- FASE 1: Renderizar Conteúdo ---
-
-    // Título Principal (apenas na pág 1)
     doc.setFontSize(20);
-    doc.setTextColor(0, 71, 187); // Betim Blue
+    doc.setTextColor(0, 71, 187);
     doc.text('Simulado IEGM - Resultados e Gabarito', margin, 25);
     y = 40;
 
-    // Identificação
     doc.setFontSize(12);
     doc.setTextColor(0, 0, 0);
     doc.setFont('helvetica', 'bold');
     doc.text(`Participante: ${identificacao.nome}`, margin, y); y += 7;
     doc.text(`Cargo: ${identificacao.funcao}`, margin, y); y += 7;
     doc.text(`Setor: ${identificacao.setor}`, margin, y); y += 7;
-    doc.text(`Indicador: ${indicadorSelecionado?.nome} (${indicadorSelecionado?.codigo})`, margin, y); y += 12;
+    doc.text(`Indicador: ${indicadorSelecionado?.nome} (${indicadorSelecionado?.codigo})`, margin, y); y += 7;
+    doc.text(`Código de Sessão: ${codigoSessao}`, margin, y); y += 12;
 
     doc.setDrawColor(200, 200, 200);
     doc.line(margin, y - 5, 190, y - 5);
     y += 5;
 
-    // Respostas
     questoes.forEach((q, idx) => {
       const resp = respostas[q.id];
       if (!resp) return;
 
       if (y > 270) {
         doc.addPage();
-        y = 30; // Margem superior para novas páginas
+        y = 30;
       }
 
       doc.setFontSize(10);
       doc.setFont('helvetica', 'bold');
+      doc.setTextColor(0, 0, 0);
       const textLines = doc.splitTextToSize(`${idx + 1}. ${q.texto}`, 170);
       doc.text(textLines, margin, y);
       y += (textLines.length * 5) + 2;
@@ -267,7 +305,6 @@ export default function Simulado() {
       doc.text(respLines, margin + 5, y);
       y += (respLines.length * 5) + 4;
 
-      // Referência e Nota (Se existir)
       if (q.respostaRef) {
         doc.setFont('helvetica', 'italic');
         doc.setTextColor(100, 100, 100);
@@ -277,25 +314,22 @@ export default function Simulado() {
 
         doc.setFontSize(8);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(0, 128, 0); // Verde para nota
+        doc.setTextColor(0, 128, 0);
         doc.text(`Nota Oficial TCE: ${q.notaRef ?? 0}`, margin + 10, y);
         y += 8;
       } else {
         y += 4;
       }
-      
-      doc.setTextColor(0, 0, 0);
     });
 
-    // --- FASE 2: Adicionar Cabeçalhos (Data/Página) em todas as páginas ---
     const pageCount = doc.internal.pages.length - 1;
     const now = new Date().toLocaleString();
-    
+
     for (let i = 1; i <= pageCount; i++) {
         doc.setPage(i);
         doc.setFontSize(8);
         doc.setTextColor(150, 150, 150);
-        
+
         if (i === 1) {
             doc.text(`Gerado em: ${now}`, 190, 12, { align: 'right' });
             doc.text(`Página ${i} de ${pageCount}`, 190, 16, { align: 'right' });
@@ -311,13 +345,16 @@ export default function Simulado() {
     if (confirm("Deseja realmente apagar todo o seu progresso?")) {
       localStorage.removeItem('simulado_respostas');
       localStorage.removeItem('simulado_id');
+      localStorage.removeItem('simulado_codigo_sessao');
       setRespostas({});
       setIdentificacao({ nome: '', funcao: '', setor: '' });
+      setCodigoSessao('');
+      setCodigoInput('');
       setEtapa('identificacao');
     }
   };
 
-  const filteredQuestoes = questoes.filter(q => 
+  const filteredQuestoes = questoes.filter(q =>
     q.texto.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -328,7 +365,6 @@ export default function Simulado() {
 
   const progress = questoes.length > 0 ? (answeredCount / questoes.length) * 100 : 0;
 
-  // Renderização das etapas
   return (
     <div className="max-w-4xl mx-auto pb-20 px-4 sm:px-0">
       <div className="mb-8 flex justify-between items-end">
@@ -340,10 +376,10 @@ export default function Simulado() {
             {lastSync && (
                 <div className="flex items-center gap-1.5 text-[10px] font-bold text-gray-400 bg-gray-50 dark:bg-gray-800 px-3 py-1.5 rounded-full border border-gray-100 dark:border-gray-700">
                     <Cloud size={12} className="text-betim-blue" />
-                    Salvo na Nuvem: {lastSync.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    Salvo: {lastSync.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </div>
             )}
-            <button 
+            <button
                 onClick={handleLimparTudo}
                 className="text-gray-300 hover:text-red-500 p-2 rounded-full transition-colors"
                 title="Limpar todo o progresso"
@@ -378,31 +414,61 @@ export default function Simulado() {
             <User className="text-betim-blue" /> Seus Dados
           </h2>
           <div className="grid gap-6">
-            <InputGroup 
-              label="Nome Completo" 
-              icon={<User size={18}/>} 
-              value={identificacao.nome} 
-              onChange={v => setIdentificacao({...identificacao, nome: v})} 
+            <InputGroup
+              label="Nome Completo"
+              icon={<User size={18}/>}
+              value={identificacao.nome}
+              onChange={v => setIdentificacao({...identificacao, nome: v})}
               placeholder="Ex: João da Silva"
             />
-            <InputGroup 
-              label="Função / Cargo" 
-              icon={<Briefcase size={18}/>} 
-              value={identificacao.funcao} 
-              onChange={v => setIdentificacao({...identificacao, funcao: v})} 
+            <InputGroup
+              label="Função / Cargo"
+              icon={<Briefcase size={18}/>}
+              value={identificacao.funcao}
+              onChange={v => setIdentificacao({...identificacao, funcao: v})}
               placeholder="Ex: Secretário de Educação"
             />
-            <InputGroup 
-              label="Setor / Departamento" 
-              icon={<Building2 size={18}/>} 
-              value={identificacao.setor} 
-              onChange={v => setIdentificacao({...identificacao, setor: v})} 
+            <InputGroup
+              label="Setor / Departamento"
+              icon={<Building2 size={18}/>}
+              value={identificacao.setor}
+              onChange={v => setIdentificacao({...identificacao, setor: v})}
               placeholder="Ex: Gerência de TI"
             />
+
+            {/* Sessão compartilhada */}
+            <div className="border-t border-gray-100 dark:border-gray-700 pt-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Link2 size={16} className="text-betim-blue" />
+                <span className="text-sm font-bold text-gray-700 dark:text-gray-300">Sessão Compartilhada</span>
+                <span className="text-xs text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded-full">opcional</span>
+              </div>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
+                Se um colega de outra secretaria já começou a preencher este questionário, insira o <strong>código da sessão</strong> dele para continuar de onde parou — as respostas já registradas serão carregadas automaticamente.<br/>
+                Se deixar em branco, um código novo será gerado para você compartilhar com outros.
+              </p>
+              <div className="space-y-1.5">
+                <label className="text-sm font-bold text-gray-700 dark:text-gray-300 ml-1">Código de Sessão</label>
+                <div className="relative group">
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-betim-blue transition-colors">
+                    <Link2 size={18} />
+                  </div>
+                  <input
+                    type="text"
+                    value={codigoInput}
+                    onChange={e => setCodigoInput(e.target.value.toUpperCase())}
+                    placeholder="Ex: AB12CD  (deixe vazio para criar nova sessão)"
+                    maxLength={8}
+                    className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-betim-blue focus:border-transparent outline-none transition-all font-mono tracking-widest uppercase"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
+
           <div className="mt-10 flex justify-end">
             <button
-              onClick={() => setEtapa('selecao')}
+              onClick={handleProximoIdentificacao}
               disabled={!identificacao.nome || !identificacao.funcao}
               className="bg-betim-blue text-white px-8 py-3 rounded-lg font-bold hover:bg-betim-blue-dark disabled:opacity-50 flex items-center gap-2 transition-all shadow-md active:scale-95"
             >
@@ -415,12 +481,30 @@ export default function Simulado() {
       {/* Etapa 2: Seleção de Indicador */}
       {etapa === 'selecao' && (
         <div className="animate-in slide-in-from-right-4 duration-500">
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex justify-between items-center mb-4">
             <button onClick={() => setEtapa('identificacao')} className="text-gray-600 flex items-center gap-1 hover:text-betim-blue transition-colors">
               <ChevronLeft size={20}/> Voltar
             </button>
-            <span className="text-sm font-medium text-gray-500">Olá, <span className="text-gray-900 font-bold">{identificacao.nome}</span></span>
+            <span className="text-sm font-medium text-gray-500">Olá, <span className="text-gray-900 dark:text-white font-bold">{identificacao.nome}</span></span>
           </div>
+
+          {/* Código de sessão ativo */}
+          <div className="flex items-center justify-between bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-xl px-4 py-3 mb-6">
+            <div className="flex items-center gap-2">
+              <Link2 size={14} className="text-betim-blue" />
+              <span className="text-xs text-gray-600 dark:text-gray-400">Código da sessão:</span>
+              <code className="font-mono font-bold text-betim-blue text-sm tracking-widest">{codigoSessao}</code>
+            </div>
+            <button
+              onClick={handleCopiarCodigo}
+              className="flex items-center gap-1.5 text-xs font-bold text-betim-blue hover:text-betim-blue-dark transition-colors"
+              title="Copiar código para compartilhar"
+            >
+              {copiado ? <Check size={14} className="text-green-500" /> : <Copy size={14} />}
+              {copiado ? 'Copiado!' : 'Copiar'}
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {INDICADORES.map((ind) => (
               <button
@@ -455,10 +539,19 @@ export default function Simulado() {
                 </button>
                 <div>
                     <h2 className="font-bold text-lg">{indicadorSelecionado.nome}</h2>
-                    <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded font-mono font-bold text-betim-blue-dark">{indicadorSelecionado.codigo}</span>
-                    <span>•</span>
-                    <span className="font-bold">{questoes.length} perguntas</span>
+                    <div className="flex items-center gap-2 text-xs text-gray-500 flex-wrap">
+                      <span className="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded font-mono font-bold text-betim-blue-dark">{indicadorSelecionado.codigo}</span>
+                      <span>•</span>
+                      <span className="font-bold">{questoes.length} perguntas</span>
+                      <span>•</span>
+                      <div className="flex items-center gap-1">
+                        <Link2 size={11} className="text-gray-400" />
+                        <span>Sessão:</span>
+                        <code className="font-mono font-bold text-betim-blue tracking-widest">{codigoSessao}</code>
+                        <button onClick={handleCopiarCodigo} className="ml-0.5" title="Copiar código">
+                          {copiado ? <Check size={11} className="text-green-500" /> : <Copy size={11} className="text-gray-400 hover:text-betim-blue transition-colors" />}
+                        </button>
+                      </div>
                     </div>
                 </div>
                 </div>
@@ -466,7 +559,7 @@ export default function Simulado() {
                 <div className="flex items-center gap-3 flex-1 md:max-w-xs">
                     <div className="relative flex-1">
                         <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
-                        <input 
+                        <input
                             type="text"
                             placeholder="Buscar pergunta..."
                             value={search}
@@ -487,7 +580,7 @@ export default function Simulado() {
             </div>
 
             <div className="relative h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
-                <div 
+                <div
                     className="absolute h-full bg-betim-blue transition-all duration-500 rounded-full"
                     style={{ width: `${progress}%` }}
                 />
@@ -504,9 +597,8 @@ export default function Simulado() {
                     <p className="text-gray-500">Nenhuma pergunta encontrada para "{search}"</p>
                 </div>
             ) : filteredQuestoes.map((q) => {
-              // Buscar índice original
               const originalIdx = questoes.findIndex(item => item.id === q.id);
-              
+
               return (
               <div key={q.id} className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-md transition-all p-6 border border-gray-100 dark:border-gray-700">
                 <div className="flex justify-between items-start mb-4">
@@ -520,7 +612,7 @@ export default function Simulado() {
                 <h3 className="text-gray-800 dark:text-gray-100 font-bold mb-6 leading-relaxed text-lg">
                   {q.texto}
                 </h3>
-                
+
                 <div className="space-y-4">
                   {q.tipo === 'boolean' ? (
                     <div className="flex gap-4">
@@ -554,7 +646,9 @@ export default function Simulado() {
           <div className="mt-12 bg-white dark:bg-gray-800 p-8 rounded-3xl border-2 border-dashed border-gray-100 dark:border-gray-700 flex flex-col items-center text-center shadow-sm">
             <CheckCircle2 size={48} className="text-green-500 mb-4 opacity-20" />
             <h3 className="text-2xl font-bold mb-2">Pronto para finalizar?</h3>
-            <p className="text-gray-500 mb-8 max-w-sm">Suas respostas estão sendo salvas localmente e na nuvem enquanto você digita. Clique abaixo para consolidar no banco de dados.</p>
+            <p className="text-gray-500 mb-8 max-w-sm">
+              Suas respostas estão sendo salvas na nuvem em tempo real — qualquer colega com o código <code className="font-mono font-bold text-betim-blue">{codigoSessao}</code> pode continuar de onde você parou.
+            </p>
             <button
                onClick={handleEnviar}
                disabled={sending}
@@ -577,7 +671,7 @@ export default function Simulado() {
               <p className="text-gray-500 mb-10 max-w-md mx-auto">
                   Suas respostas foram registradas com sucesso. Agora você pode baixar o seu documento completo em PDF para conferência ou impressão.
               </p>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
                   <button
                     onClick={generatePDF}
@@ -611,8 +705,8 @@ function InputGroup({ label, icon, value, onChange, placeholder }: { label: stri
         <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-betim-blue transition-colors">
           {icon}
         </div>
-        <input 
-          type="text" 
+        <input
+          type="text"
           value={value}
           onChange={e => onChange(e.target.value)}
           placeholder={placeholder}
