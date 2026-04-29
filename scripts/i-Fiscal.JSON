@@ -1,0 +1,895 @@
+{
+  "indicador": "i-Fiscal",
+  "questoes": {
+    "0": {
+      "numero": "1",
+      "codigo_questao": "M04Q00300",
+      "enunciado": "Há estrutura administrativa voltada para a administração tributária?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "1": {
+      "numero": "1.1",
+      "codigo_questao": "M04Q00352",
+      "enunciado": "O Município possui lei que defina a estrutura organizacional da Administração Tributária?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0.5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "2": {
+      "numero": "1.2",
+      "codigo_questao": "M04Q00310R00100",
+      "enunciado": "Qual o número de cargos de fiscais/auditores tributários preenchidos? Efetivo:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "3": {
+      "numero": "1.3",
+      "codigo_questao": "M04Q00310R00300",
+      "enunciado": "Qual o número de cargos de fiscais/auditores tributários preenchidos? Terceirizado:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "4": {
+      "numero": "1.4",
+      "codigo_questao": "M04Q00310R00200",
+      "enunciado": "Qual o número de cargos de fiscais/auditores tributários preenchidos? Em comissão:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "5": {
+      "numero": "1.5",
+      "codigo_questao": "M04Q00331",
+      "enunciado": "Os fiscais tributários recebem treinamento específico para execução das atividades inerentes ao cargo?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 10 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "6": {
+      "numero": "1.6",
+      "codigo_questao": "M04Q00333",
+      "enunciado": "O Município possui Plano de Cargos e Salários específico para seus fiscais tributários?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "7": {
+      "numero": "1.6.1",
+      "codigo_questao": "M04Q00335R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do Plano de Cargos e Salários específico os fiscais tributários:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "8": {
+      "numero": "1.7",
+      "codigo_questao": "M04Q00350",
+      "enunciado": "Há segregação de funções entre os setores de lançadoria, arrecadação, fiscalização e contabilidade?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "9": {
+      "numero": "1.7.1",
+      "codigo_questao": "M04Q00351",
+      "enunciado": "Há segregação nas permissões de acesso do sistema, com identificação do usuário e registro das transações efetuadas?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim", "valor": 5 },
+        { "texto": "Não", "valor": 0 },
+        { "texto": "Não possui sistema (software) para lançamento, arrecadação ou fiscalização dos tributos", "valor": -3 }
+      ]
+    },
+    "10": {
+      "numero": "2",
+      "codigo_questao": "M03Q03100",
+      "enunciado": "O servidor responsável pela contabilidade do município é ocupante de cargo de provimento efetivo?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 4 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "11": {
+      "numero": "3",
+      "codigo_questao": "M04Q00400",
+      "enunciado": "O Município adotou medidas efetivas para aumento da arrecadação?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 30 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "12": {
+      "numero": "3.1",
+      "codigo_questao": "M04Q00420",
+      "enunciado": "Assinale as medidas implementadas para aumento da arrecadação:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Recadastramento de Imóveis", "valor": 0 },
+        { "texto": "Programas de Recuperação Fiscal", "valor": 0 },
+        { "texto": "Implementação de Nota Fiscal Eletrônica", "valor": 0 },
+        { "texto": "Convênios com a União e o Estado para compartilhamento de Informações", "valor": 0 },
+        { "texto": "Parceria/Convênio com os tabelionatos de notas e Registros de Imóveis", "valor": 0 },
+        { "texto": "Protesto da Certidão de Dívida Ativa", "valor": 0 },
+        { "texto": "Convênios com órgãos de proteção ao crédito", "valor": 0 },
+        { "texto": "Convênio com o Governo Federal para a cobrança do ITR", "valor": 0 },
+        { "texto": "Outros", "valor": 0 }
+      ]
+    },
+    "13": {
+      "numero": "4",
+      "codigo_questao": "M04Q10200",
+      "enunciado": "Foi instituído procedimento de revisão do cadastro imobiliário estabelecendo a sua periodicidade?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "14": {
+      "numero": "4.1",
+      "codigo_questao": "M04Q10201R00200",
+      "enunciado": "Informe o instrumento normativo (número e data da aprovação) e endereço eletrônico de divulgação do procedimento de revisão do cadastro imobiliário:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "15": {
+      "numero": "4.2",
+      "codigo_questao": "M04Q00600",
+      "enunciado": "Qual a periodicidade da atualização geral do Cadastro Imobiliário?",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Menor ou igual a 1 ano", "valor": 0 },
+        { "texto": "Maior que 1 e menor ou igual a 4 anos", "valor": 0 },
+        { "texto": "Maior que 4 e menor ou igual a 8 anos", "valor": 0 },
+        { "texto": "Maior que 8 anos", "valor": 0 }
+      ]
+    },
+    "16": {
+      "numero": "4.3",
+      "codigo_questao": "M04Q10202",
+      "enunciado": "O cadastro imobiliário está com a revisão periódica ou geral atualizada?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "17": {
+      "numero": "5",
+      "codigo_questao": "M04Q00500",
+      "enunciado": "O instrumento da Planta Genérica de Valores (PGV) foi aprovado por lei, conforme previsto no Código Tributário Nacional (CTN)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "18": {
+      "numero": "5.1",
+      "codigo_questao": "M04Q00521R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do Instrumento Normativo de aprovação da Planta Genérica de Valores (PGV):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "19": {
+      "numero": "5.2",
+      "codigo_questao": "M04Q00510",
+      "enunciado": "O Código Tributário Municipal ou Lei específica que tenha instituído o IPTU prevê a revisão periódica obrigatória da Planta Genérica de Valores (PGV)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "20": {
+      "numero": "5.2.1",
+      "codigo_questao": "M04Q00512R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do Instrumento normativo de revisão da Planta Genérica de Valores (PGV):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "21": {
+      "numero": "5.3",
+      "codigo_questao": "M04Q00550",
+      "enunciado": "Os dados da Planta Genérica de Valores (PGV) e do Cadastro Imobiliário atualizam a base de cálculo do IPTU?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, de forma automática no sistema", "valor": 6 },
+        { "texto": "Sim, de forma manual", "valor": 2 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "22": {
+      "numero": "6",
+      "codigo_questao": "M04Q10300",
+      "enunciado": "Sobre a alíquota do IPTU, quais critérios o município instituiu para a cobrança do imposto?",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Alíquotas diferenciadas em razão da localização do imóvel", "valor": 50 },
+        { "texto": "Outros", "valor": 0 },
+        { "texto": "Não há diferenciação nas alíquotas dos imóveis", "valor": -1 },
+        { "texto": "Alíquotas progressivas em razão do valor do imóvel", "valor": 1 },
+        { "texto": "Alíquotas diferenciadas em razão do uso do imóvel", "valor": 0.5 }
+      ]
+    },
+    "23": {
+      "numero": "7",
+      "codigo_questao": "M04Q00800",
+      "enunciado": "O município adotou programa de isenção do IPTU?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "24": {
+      "numero": "7.1",
+      "codigo_questao": "M04Q00821R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do Instrumento normativo de regulamentação do programa de isenção do IPTU:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "25": {
+      "numero": "8",
+      "codigo_questao": "M04Q10400",
+      "enunciado": "O Imposto sobre Serviços de Qualquer Natureza (ISSQN) foi instituído no município?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 1 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "26": {
+      "numero": "8.1",
+      "codigo_questao": "M04Q10401",
+      "enunciado": "O Município atualizou sua legislação conforme as novas hipóteses de incidência de ISS previstas na LC 157/2016?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 2 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "27": {
+      "numero": "9",
+      "codigo_questao": "M04Q01000",
+      "enunciado": "Houve rotina de fiscalização para detectar contribuintes que deixaram de emitir a Nota Fiscal de Serviços por determinado período ou que apresentaram queda acentuada em suas operações, a fim de detectar o fim das atividades ou a sonegação do ISSQN?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim por meio de sistema automatizado", "valor": 15 },
+        { "texto": "Sim, manualmente", "valor": 8 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "28": {
+      "numero": "10",
+      "codigo_questao": "M04Q01010",
+      "enunciado": "A pesquisa de autenticidade de notas fiscais eletrônicas está disponível ao público?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, sem restrição", "valor": 0 },
+        { "texto": "Sim, com restrição (Ex.: há necessidade de cadastro para acessar o resultado da pesquisa)", "valor": -9 },
+        { "texto": "Serviço não disponibilizado", "valor": -15 },
+        { "texto": "Não implantou a NFS-e", "valor": -15 }
+      ]
+    },
+    "29": {
+      "numero": "11",
+      "codigo_questao": "M04Q02200",
+      "enunciado": "O Imposto sobre Transmissão de Bens Imóveis (ITBI) foi regulamentado?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "30": {
+      "numero": "11.1",
+      "codigo_questao": "M04Q02211R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação da regulamentação do ITBI:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "31": {
+      "numero": "11.2",
+      "codigo_questao": "M04Q02252",
+      "enunciado": "O município instituiu normativo que obrigue o(s) Cartório(s) de Registro de Imóveis e Distribuidor(es) a informar periodicamente as transmissões imobiliárias realizadas no seu território, para fins de incidência do ITBI?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 2 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "32": {
+      "numero": "11.2.1",
+      "codigo_questao": "M04Q02253",
+      "enunciado": "O município aplica penalidade ou multa aos Cartórios, quando não cumpridos os termos da lei mencionada na resposta do item anterior?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "33": {
+      "numero": "11.3",
+      "codigo_questao": "M04Q01100",
+      "enunciado": "O município estabelece alíquotas progressivas para o ITBI, com base no valor venal do imóvel?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": -30 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "34": {
+      "numero": "12",
+      "codigo_questao": "M04Q01400",
+      "enunciado": "A Contribuição para Custeio da Iluminação Pública (CIP) foi instituída?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "35": {
+      "numero": "12.1",
+      "codigo_questao": "M04Q01430R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do instrumento normativo de instituição da Contribuição para Custeio da Iluminação Pública (CIP):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "36": {
+      "numero": "12.2",
+      "codigo_questao": "M04Q02350",
+      "enunciado": "Os recursos da Contribuição para Custeio da Iluminação Pública (CIP) foram movimentados em contas específicas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -5 }
+      ]
+    },
+    "37": {
+      "numero": "13",
+      "codigo_questao": "M04Q10500",
+      "enunciado": "Houve regulamentação sobre a retenção de IRRF das contratações efetuadas pelo município nas compras de bens e serviços?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "38": {
+      "numero": "14",
+      "codigo_questao": "M04Q02400",
+      "enunciado": "No exercício de 2024, foram concedidos benefícios e incentivos de natureza tributária, financeira e creditícia da qual decorram em renúncia de receitas?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "39": {
+      "numero": "14.1",
+      "codigo_questao": "M04Q02420",
+      "enunciado": "Há normas e procedimentos relativos à renúncia de receita?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -10 }
+      ]
+    },
+    "40": {
+      "numero": "14.1.1",
+      "codigo_questao": "M04Q02422R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do instrumento normativo de regulamentação dos procedimentos relativos à renúncia de receita:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "41": {
+      "numero": "14.2",
+      "codigo_questao": "M04Q10600",
+      "enunciado": "A Prefeitura Municipal realizou acompanhamento e (re)avaliação das renúncias de receita?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, de parte das renúncias de receita", "valor": -2 },
+        { "texto": "Não", "valor": -5 },
+        { "texto": "Sim, de todas as renúncias de receita", "valor": 0 }
+      ]
+    },
+    "42": {
+      "numero": "14.3",
+      "codigo_questao": "M04Q01210",
+      "enunciado": "O Anexo de Metas Fiscais, que integra a LDO, contém demonstrativo da estimativa e compensação da renúncia de receita para o respectivo exercício orçamentário?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Todas as renúncias concedidas estão contidas no demonstrativo", "valor": 0 },
+        { "texto": "A maior parte das renúncias concedidas estão contidas no demonstrativo", "valor": -1 },
+        { "texto": "A menor parte das renúncias concedidas estão contidas no demonstrativo", "valor": -3 },
+        { "texto": "Não há demonstrativo", "valor": -5 }
+      ]
+    },
+    "43": {
+      "numero": "14.3.1",
+      "codigo_questao": "M04Q01211",
+      "enunciado": "O valor da renúncia de receita de 2024 está compatível com a estimativa constante no Anexo de Metas Fiscais da Lei de Diretrizes Orçamentárias?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -5 }
+      ]
+    },
+    "44": {
+      "numero": "14.4",
+      "codigo_questao": "M04Q02440",
+      "enunciado": "Houve publicidade e transparência dos benefícios concedidos por Renúncia de Receitas em 2024?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -10 }
+      ]
+    },
+    "45": {
+      "numero": "14.4.1",
+      "codigo_questao": "M04Q02445R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação das informações referente aos benefícios concedidos por Renúncia de Receitas em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "46": {
+      "numero": "15",
+      "codigo_questao": "M04Q02500",
+      "enunciado": "O município possui regulamentação sobre dívida ativa?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 1 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "47": {
+      "numero": "15.1",
+      "codigo_questao": "M04Q02511R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação da regulamentação da dívida ativa:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "48": {
+      "numero": "15.2",
+      "codigo_questao": "M04Q02540",
+      "enunciado": "Assinale os critérios estabelecidos na legislação sobre dívida ativa:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Cobrança administrativa da dívida ativa", "valor": 1.5 },
+        { "texto": "Parcelamento da dívida ativa", "valor": 1.5 },
+        { "texto": "Restrição e controle da inadimplência nos parcelamentos da dívida ativa", "valor": 1.5 },
+        { "texto": "Início do trâmite da execução judicial da dívida ativa", "valor": 1.5 },
+        { "texto": "Anistia", "valor": 1.5 },
+        { "texto": "Remissão", "valor": 1.5 }
+      ]
+    },
+    "49": {
+      "numero": "16",
+      "codigo_questao": "M04Q02800",
+      "enunciado": "No exercício de 2024 houve dívidas prescritas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não houve prescrição", "valor": 0 }
+      ]
+    },
+    "50": {
+      "numero": "16.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe as dívidas prescristas do ano de 2024:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Sim, houve prescrição ordinária", "valor": -10 },
+        { "texto": "Sim, houve prescrição intercorrente", "valor": 0 }
+      ]
+    },
+    "51": {
+      "numero": "16.2",
+      "codigo_questao": "M04Q02830",
+      "enunciado": "O montante da dívida ativa prescrita cobrada de forma judicial e extrajudicial estava registrado na conta de Provisão para Perdas de Dívida Ativa?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -5 }
+      ]
+    },
+    "52": {
+      "numero": "17",
+      "codigo_questao": "M04Q03500",
+      "enunciado": "A Prefeitura possui controle das ações judiciais em que é parte (polo passivo)?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, de todas as ações", "valor": 0 },
+        { "texto": "Sim, da maior parte das ações", "valor": -1 },
+        { "texto": "Sim, da menor parte das ações", "valor": -3 },
+        { "texto": "Não", "valor": -5 }
+      ]
+    },
+    "53": {
+      "numero": "18",
+      "codigo_questao": "M07Q00900",
+      "enunciado": "Os dados relativos à transparência na gestão fiscal são divulgados na página eletrônica do Município?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "54": {
+      "numero": "18.1",
+      "codigo_questao": "M07Q00920",
+      "enunciado": "Assinale os itens que são divulgados na página eletrônica do Município:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "PPA, LDO e LOA", "valor": 2.5 },
+        { "texto": "Balanços de exercício", "valor": 2.5 },
+        { "texto": "Prestação de contas do ano anterior", "valor": 2.5 },
+        { "texto": "Parecer prévio do TC", "valor": 2.5 },
+        { "texto": "Relatório de Gestão Fiscal (RGF)", "valor": 2.5 },
+        { "texto": "Relatório Resumido da Execução Orçamentária (RREO)", "valor": 2.5 }
+      ]
+    },
+    "55": {
+      "numero": "19",
+      "codigo_questao": "M04Q02900",
+      "enunciado": "Houve divulgação das receitas arrecadadas em tempo real?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "56": {
+      "numero": "19.1",
+      "codigo_questao": "M04Q02910",
+      "enunciado": "Assinale os itens da receita divulgados em tempo real:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Categoria econômica", "valor": 0.3 },
+        { "texto": "Origem", "valor": 0.3 },
+        { "texto": "Espécie", "valor": 0.3 },
+        { "texto": "Desdobramento para identificação de peculiaridades", "valor": 0.3 },
+        { "texto": "Tipo", "valor": 0.3 },
+        { "texto": "Valor previsto", "valor": 0.3 },
+        { "texto": "Valor arrecadado", "valor": 0.3 },
+        { "texto": "Data de arrecadação", "valor": 0.3 },
+        { "texto": "Recursos extraordinários", "valor": 0.3 },
+        { "texto": "Outros", "valor": 0.3 }
+      ]
+    },
+    "57": {
+      "numero": "20",
+      "codigo_questao": "M04Q03000",
+      "enunciado": "Houve divulgação das despesas executadas em tempo real?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "58": {
+      "numero": "20.1",
+      "codigo_questao": "M04Q03010",
+      "enunciado": "Assinale os itens das despesas divulgados em tempo real:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Valor empenhado", "valor": 0.3 },
+        { "texto": "Valor liquidado", "valor": 0.3 },
+        { "texto": "Valor pago", "valor": 0.3 },
+        { "texto": "Número do processo da execução nº empenho", "valor": 0.3 },
+        { "texto": "Unidade Orçamentária - UO", "valor": 0.3 },
+        { "texto": "Função", "valor": 0.3 },
+        { "texto": "Subfunção", "valor": 0.3 },
+        { "texto": "Categoria Econômica da despesa", "valor": 0.3 },
+        { "texto": "Grupo de Natureza da despesa", "valor": 0.3 },
+        { "texto": "Modalidade de aplicação", "valor": 0.3 },
+        { "texto": "Elemento", "valor": 0.6 },
+        { "texto": "Subelemento", "valor": 0.6 },
+        { "texto": "Fonte de recurso", "valor": 0.3 },
+        { "texto": "Favorecido do pagamento", "valor": 0.3 },
+        { "texto": "Modalidade da licitação", "valor": 0.3 },
+        { "texto": "Número do processo licitatório", "valor": 0.3 },
+        { "texto": "Bem fornecido ou serviço prestado", "valor": 0.3 },
+        { "texto": "Outros", "valor": 0.3 }
+      ]
+    },
+    "59": {
+      "numero": "21",
+      "codigo_questao": "M04Q03100",
+      "enunciado": "Houve divulgação de remuneração individualizada por nome do agente público, contendo dados sobre os vencimentos, descontos, indenizações e valor líquido?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "60": {
+      "numero": "21.1",
+      "codigo_questao": "M04Q03110R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação da remuneração individualizada por nome do agente público:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "61": {
+      "numero": "22",
+      "codigo_questao": "M04Q03200",
+      "enunciado": "Houve divulgação de diárias e passagens por nome de favorecido e constando data, destino, cargo e motivo de viagem?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "62": {
+      "numero": "22.1",
+      "codigo_questao": "M04Q03210R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação de diárias e passagens:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "63": {
+      "numero": "23",
+      "codigo_questao": "M04Q03300",
+      "enunciado": "Os repasses para o Regime Geral de Previdência Social (RGPS) da competência de 2024 foram realizados em qual prazo?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Todos os repasses foram dentro do prazo legal", "valor": 0 },
+        { "texto": "A maior parte dos repasses recolhidos até 30 dias após o vencimento", "valor": -4 },
+        { "texto": "A maior parte dos repasses recolhidos de 31 a 90 dias do vencimento", "valor": -15 },
+        { "texto": "A maior parte dos repasses recolhidos acima de 90 dias do vencimento", "valor": -21 },
+        { "texto": "Os repasses não foram realizados", "valor": -30 }
+      ]
+    },
+    "64": {
+      "numero": "24",
+      "codigo_questao": "M04Q03400",
+      "enunciado": "A Prefeitura aderiu a algum parcelamento de encargos sociais (Regime Geral de Previdência Social - RGPS)?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "65": {
+      "numero": "24.1",
+      "codigo_questao": "M04Q03410",
+      "enunciado": "As parcelas referentes ao parcelamento para o Regime Geral de Previdência Social (RGPS) com vencimento em 2024 foram realizados em qual prazo?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Todas as parcelas foram recolhidas dentro do prazo legal", "valor": 0 },
+        { "texto": "A maior parte das parcelas recolhidas até 30 dias após o vencimento", "valor": -4 },
+        { "texto": "A maior parte das parcelas recolhidas de 31 a 90 dias do vencimento", "valor": -15 },
+        { "texto": "A maior parte das parcelas recolhidas acima de 90 dias do vencimento", "valor": -21 },
+        { "texto": "As parcelas não foram recolhidas", "valor": -30 }
+      ]
+    },
+    "66": {
+      "numero": "25",
+      "codigo_questao": "M04Q01900",
+      "enunciado": "O Município efetuou, no exercício de 2024, compensação de encargos sociais junto à Receita Federal do Brasil?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "67": {
+      "numero": "25.1",
+      "codigo_questao": "M04Q01910",
+      "enunciado": "Houve autorização formal administrativa da Receita Federal do Brasil (RFB) ou decisão judicial para realizar as compensações?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -25 }
+      ]
+    },
+    "68": {
+      "numero": "26",
+      "codigo_questao": "M04Q09000",
+      "enunciado": "Pontualidade na Prestação de Contas:",
+      "peso": 50,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Encaminhou no prazo", "valor": 50 },
+        { "texto": "Encaminhou fora do prazo", "valor": 25 },
+        { "texto": "Não encaminhou", "valor": 0 }
+      ]
+    },
+    "69": {
+      "numero": "27",
+      "codigo_questao": "M04Q09300",
+      "enunciado": "Alertas recebidos advindo do Tribunal de Contas",
+      "peso": 25,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Menor ou igual a 20", "valor": 25 },
+        { "texto": "Maior que 20 e menor que 41", "valor": 10 },
+        { "texto": "Maior ou igual a 41", "valor": 0 }
+      ]
+    },
+    "70": {
+      "numero": "28",
+      "codigo_questao": "M04Q09400",
+      "enunciado": "Informe: Balancetes rejeitados",
+      "peso": 25,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Menor ou igual a 1", "valor": 25 },
+        { "texto": "Maior que 1 e menor que 18", "valor": 10 },
+        { "texto": "Maior ou igual a 18", "valor": 0 }
+      ]
+    },
+    "71": {
+      "numero": "29",
+      "codigo_questao": "M04Q08205R00100",
+      "enunciado": "Informe os créditos adicionais abertos com base em superávit financeiro referente ao resultado isolado da prefeitura em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "72": {
+      "numero": "30",
+      "codigo_questao": "M04Q09100R00100",
+      "enunciado": "Informe o valor do saldo inicial da dívida ativa em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "73": {
+      "numero": "31",
+      "codigo_questao": "M04Q09100R00200",
+      "enunciado": "Informe o valor do total de recebimentos em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "74": {
+      "numero": "32",
+      "codigo_questao": "M04Q09200R00100",
+      "enunciado": "Informe o valor do total de cancelamentos em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "75": {
+      "numero": "33",
+      "codigo_questao": "M04Q09700R00300",
+      "enunciado": "Sobre o limite de endividamento, de acordo com a regra de ouro, informe o valor de autorizações mediate créditos suplementares ou especiais com finalidade precisa, aprovadas pelo Poder Legislativo por maioria absoluta, em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "76": {
+      "numero": "34",
+      "codigo_questao": "M04Q02000",
+      "enunciado": "Gostaria de registrar suas impressões, comentários e sugestões a respeito do presente questionário?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "77": {
+      "numero": "34.1",
+      "codigo_questao": "M04Q02010R00100",
+      "enunciado": "Utilize o espaço abaixo para registrar suas impressões, comentários e sugestões a respeito do presente questionário.",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "78": {
+      "numero": "35",
+      "codigo_questao": null,
+      "enunciado": "Nome Completo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "79": {
+      "numero": "36",
+      "codigo_questao": null,
+      "enunciado": "Cargo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "80": {
+      "numero": "37",
+      "codigo_questao": null,
+      "enunciado": "E-mail",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "81": {
+      "numero": "38",
+      "codigo_questao": null,
+      "enunciado": "CPF",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    }
+  }
+}

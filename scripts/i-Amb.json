@@ -1,0 +1,1993 @@
+{
+  "indicador": "i-Amb",
+  "questoes": {
+    "0": {
+      "numero": "1",
+      "codigo_questao": "M05Q00900",
+      "enunciado": "A prefeitura possui alguma estrutura organizacional para tratar de assuntos ligados ao Meio Ambiente Municipal?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "1": {
+      "numero": "1.1",
+      "codigo_questao": "M05Q00910",
+      "enunciado": "A Prefeitura possui recursos humanos para operacionalização dos assuntos ligados ao Meio Ambiente?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "2": {
+      "numero": "1.1.1",
+      "codigo_questao": "M05Q00911R00100",
+      "enunciado": "Informe: Nº de efetivos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "3": {
+      "numero": "1.1.2",
+      "codigo_questao": "M05Q00911R00200",
+      "enunciado": "Informe: Nº de comissionados:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "4": {
+      "numero": "1.1.3",
+      "codigo_questao": "M05Q00911R00300",
+      "enunciado": "Informe: Nº de terceirizados/contratados:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "5": {
+      "numero": "1.1.4",
+      "codigo_questao": "M05Q00912",
+      "enunciado": "Os servidores responsáveis pelo Meio Ambiente realizaram treinamento específico voltado ao Meio Ambiente em 2024?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 20
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "6": {
+      "numero": "1.1.5",
+      "codigo_questao": "M05Q00942",
+      "enunciado": "A Secretaria Municipal de Meio Ambiente ou similar ofereceu cursos/treinamento sobre educação ambiental para qual público?",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Para escolas",
+          "valor": 5
+        },
+        {
+          "texto": "Para munícipes ou empresas",
+          "valor": 3
+        },
+        {
+          "texto": "Não ofereceu nenhum curso/treinamento no ano",
+          "valor": 0
+        },
+        {
+          "texto": "Para outras secretarias / entidades municipais",
+          "valor": 2
+        }
+      ]
+    },
+    "7": {
+      "numero": "1.2",
+      "codigo_questao": "M05Q00940",
+      "enunciado": "Assinale os recursos disponibilizados para a operacionalização das atividades de meio ambiente:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Recursos Tecnológicos",
+          "valor": 5
+        },
+        {
+          "texto": "Recursos Orçamentários",
+          "valor": 5
+        },
+        {
+          "texto": "Recursos Materiais",
+          "valor": 5
+        },
+        {
+          "texto": "Outros",
+          "valor": 5
+        }
+      ]
+    },
+    "8": {
+      "numero": "2.0",
+      "codigo_questao": "M05Q03350",
+      "enunciado": "Município participa de algum Programa de Educação Ambiental?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "9": {
+      "numero": "2.1",
+      "codigo_questao": "M05Q00500R00100",
+      "enunciado": "Sobre programa ou ação de educação ambiental na rede escolar municipal, informe: Número de escolas dos Anos Iniciais (1º ao 5º ano do Ensino Fundamental) que adotam programa ou ação de educação ambiental:",
+      "peso": 50,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "10": {
+      "numero": "3",
+      "codigo_questao": "M05Q00600",
+      "enunciado": "A prefeitura municipal estimula entre seus órgãos e entidades de sua responsabilidade projetos e/ou ações que promovam o uso racional de recursos naturais?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para todos os órgãos e entidades",
+          "valor": 10
+        },
+        {
+          "texto": "Parcialmente",
+          "valor": 3
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "11": {
+      "numero": "3.1",
+      "codigo_questao": "M05Q00620",
+      "enunciado": "Assinale quais tipos de ações realizadas pela Prefeitura para o uso racional de recursos naturais:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Coleta seletiva",
+          "valor": 1.5
+        },
+        {
+          "texto": "Uso racional da água",
+          "valor": 1.5
+        },
+        {
+          "texto": "Uso racional de energia elétrica",
+          "valor": 1.5
+        },
+        {
+          "texto": "Reúso de materiais",
+          "valor": 1.5
+        },
+        {
+          "texto": "Horta coletiva",
+          "valor": 1.5
+        },
+        {
+          "texto": "Compostagem",
+          "valor": 1.5
+        },
+        {
+          "texto": "Instalação de bicicletários e vestiários para os servidores públicos",
+          "valor": 1.5
+        },
+        {
+          "texto": "Implantação de caixas acopladas nos vasos sanitários",
+          "valor": 1.5
+        },
+        {
+          "texto": "Substituição de lâmpadas fluorescentes por lâmpadas LED",
+          "valor": 1.5
+        },
+        {
+          "texto": "Instalação de estruturas para a captação de água de chuva",
+          "valor": 1.5
+        },
+        {
+          "texto": "Instalação de torneiras com redutores de pressão",
+          "valor": 1.5
+        },
+        {
+          "texto": "Substituição de material descartável",
+          "valor": 1.5
+        },
+        {
+          "texto": "Logística reversa de pilhas, baterias e eletrônicos",
+          "valor": 1.5
+        },
+        {
+          "texto": "Outros",
+          "valor": 0.5
+        }
+      ]
+    },
+    "12": {
+      "numero": "4",
+      "codigo_questao": "M05Q44100",
+      "enunciado": "O município fiscalizou a emissão de poluentes de combustíveis fósseis (diesel) na frota da Prefeitura Municipal?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, com medição da densidade colorimétrica da Escala Ringelmann ou equivalente",
+          "valor": 20
+        },
+        {
+          "texto": "Sim, através de outra forma de medição",
+          "valor": 15
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "13": {
+      "numero": "5",
+      "codigo_questao": "M05Q03500",
+      "enunciado": "A Prefeitura Municipal possui contrato de prestação de serviço de poda e corte de árvores, arbustos e outras plantas lenhosas em áreas urbanas?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "14": {
+      "numero": "5.1",
+      "codigo_questao": "M05Q03510R00100",
+      "enunciado": "Informe o número do contrato e o prestador de serviço:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "15": {
+      "numero": "5.2",
+      "codigo_questao": "M05Q01210",
+      "enunciado": "A Prefeitura mantém uma periodicidade de poda/manutenção das árvores?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não realiza poda e/ou corte de árvores",
+          "valor": -15
+        }
+      ]
+    },
+    "16": {
+      "numero": "5.2.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre a periodicidade:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Não tem uma periodicidade",
+          "valor": -10
+        },
+        {
+          "texto": "Somente por solicitação",
+          "valor": -10
+        }
+      ]
+    },
+    "17": {
+      "numero": "5.2.2",
+      "codigo_questao": "M05Q01212",
+      "enunciado": "Qual a destinação dos resíduos das podas de árvores?",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Uso na construção civil",
+          "valor": 0
+        },
+        {
+          "texto": "Geração de energia",
+          "valor": 0
+        },
+        {
+          "texto": "Queima para aquecimento e cocção",
+          "valor": 0
+        },
+        {
+          "texto": "Compostagem para produção de mudas, na jardinagem e arborização da cidade",
+          "valor": 0
+        },
+        {
+          "texto": "Reaproveitamento para produzir móveis, brinquedos, utensílios ou objetos de decoração",
+          "valor": 0
+        },
+        {
+          "texto": "Armazenamento dos resíduos das podas",
+          "valor": 0
+        },
+        {
+          "texto": "Envio para aterro sanitário",
+          "valor": -5
+        }
+      ]
+    },
+    "18": {
+      "numero": "5.3",
+      "codigo_questao": "M05Q01200",
+      "enunciado": "O pessoal da prefeitura responsável por manutenção das árvores é devidamente orientado/treinado para realizar a poda de maneira correta?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -10
+        }
+      ]
+    },
+    "19": {
+      "numero": "6",
+      "codigo_questao": "M05Q01600",
+      "enunciado": "Existem ações e medidas preventivas de contingenciamento para os períodos de estiagem executados pela Prefeitura?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 20
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "20": {
+      "numero": "6.1",
+      "codigo_questao": "M05Q01620",
+      "enunciado": "Assinale as ações e medidas preventivas de contingenciamento para os períodos de estiagem executados pela Prefeitura:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Plano emergencial ou de contingenciamento sobre abastecimento de água no caso de sua escassez",
+          "valor": 30
+        },
+        {
+          "texto": "Manejo/manobras de água entre os reservatórios",
+          "valor": 0
+        },
+        {
+          "texto": "Campanha de conscientização da população",
+          "valor": 5
+        },
+        {
+          "texto": "Busca de fontes alternativas de abastecimento, como: poços artesianos",
+          "valor": 0
+        },
+        {
+          "texto": "Uso racional da distribuição de água (racionamento)",
+          "valor": 0
+        },
+        {
+          "texto": "Implantação de rodízio de fornecimento de água",
+          "valor": 0
+        },
+        {
+          "texto": "Redução da pressão no abastecimento de água",
+          "valor": 0
+        },
+        {
+          "texto": "Multa em caso de desperdício de água",
+          "valor": 0
+        },
+        {
+          "texto": "Tarifa/taxa diferenciada para o aumento de consumo de água",
+          "valor": 0
+        },
+        {
+          "texto": "Fornecimento de caminhões pipa",
+          "valor": 0
+        },
+        {
+          "texto": "Drenagem pluvial",
+          "valor": 0
+        },
+        {
+          "texto": "Incentivo à instalação de sistema para água de reúso",
+          "valor": 5
+        },
+        {
+          "texto": "Redução das perdas na distribuição de água",
+          "valor": 0
+        },
+        {
+          "texto": "Desassoreamento",
+          "valor": 0
+        },
+        {
+          "texto": "Divulgação dos resultados obtidos com o contingenciamento, situação dos mananciais/represas/ETAs",
+          "valor": 10
+        }
+      ]
+    },
+    "21": {
+      "numero": "6.2",
+      "codigo_questao": "M05Q01950",
+      "enunciado": "Em quais setores existem ações e medidas de contingenciamento específicos para provisão de água potável?",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Rede Municipal de Educação",
+          "valor": 10
+        },
+        {
+          "texto": "Rede Municipal da Atenção Básica da Saúde",
+          "valor": 10
+        },
+        {
+          "texto": "Outro",
+          "valor": 5
+        }
+      ]
+    },
+    "22": {
+      "numero": "7",
+      "codigo_questao": "M05Q01100",
+      "enunciado": "O município possui seu Plano Municipal ou Regional de Saneamento Básico instituído?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "23": {
+      "numero": "7.1",
+      "codigo_questao": "M05Q01111R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) do Plano Municipal ou Regional de Saneamento Básico:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "24": {
+      "numero": "7.2",
+      "codigo_questao": "M05Q03600",
+      "enunciado": "O Plano Municipal ou Regional de Saneamento Básico possui metas de abastecimento de água potável?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "25": {
+      "numero": "7.2.1",
+      "codigo_questao": "M05Q03620",
+      "enunciado": "Assinale quais as metas estabelecidas sobre abastecimento de água potável:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Metas de expansão do serviço de abastecimento de água",
+          "valor": 0
+        },
+        {
+          "texto": "Metas de redução de perdas na distribuição de água tratada",
+          "valor": 2.5
+        },
+        {
+          "texto": "Metas de qualidade na prestação do serviço de abastecimento de água",
+          "valor": 2.5
+        },
+        {
+          "texto": "Metas de eficiência e de uso racional da água",
+          "valor": 2.5
+        },
+        {
+          "texto": "Estabelecimento de volume mínimo de abastecimento de água per capita",
+          "valor": 2.5
+        },
+        {
+          "texto": "Estabelecimento de direitos e deveres dos usuários",
+          "valor": 2.5
+        },
+        {
+          "texto": "Meta de universalização do abastecimento de água potável até 31 de dezembro de 2033",
+          "valor": 2.5
+        },
+        {
+          "texto": "Estabelecimento de cronograma para o atingimento das metas assinaladas acima",
+          "valor": 5
+        }
+      ]
+    },
+    "26": {
+      "numero": "7.2.2",
+      "codigo_questao": "M05Q03610R00100",
+      "enunciado": "Qual a data prevista para universalização do abastecimento de água potável no município?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "27": {
+      "numero": "7.3",
+      "codigo_questao": "M05Q01121",
+      "enunciado": "O Plano Municipal ou Regional de Saneamento Básico possui metas de coleta de esgoto?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "28": {
+      "numero": "7.3.1",
+      "codigo_questao": "M05Q03630",
+      "enunciado": "Assinale quais as metas estabelecidas sobre coleta de esgoto:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Metas de expansão do serviço de coleta de esgoto",
+          "valor": 0
+        },
+        {
+          "texto": "Metas de qualidade na prestação do serviço de coleta de esgoto",
+          "valor": 3.5
+        },
+        {
+          "texto": "Meta do reúso de efluentes sanitários",
+          "valor": 3.5
+        },
+        {
+          "texto": "Estabelecimento de direitos e deveres dos usuários",
+          "valor": 3.5
+        },
+        {
+          "texto": "Meta de universalização da coleta de esgoto até 31 de dezembro de 2033",
+          "valor": 3.5
+        },
+        {
+          "texto": "Estabelecimento de cronograma para o atingimento das metas assinaladas acima",
+          "valor": 6
+        }
+      ]
+    },
+    "29": {
+      "numero": "7.3.2",
+      "codigo_questao": "M05Q01124R00100",
+      "enunciado": "Qual a data prevista para universalização da coleta de esgoto no município?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "30": {
+      "numero": "7.4",
+      "codigo_questao": "M05Q01125",
+      "enunciado": "O Plano Municipal ou Regional de Saneamento Básico possui metas de tratamento de esgoto?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 30
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "31": {
+      "numero": "7.4.1",
+      "codigo_questao": "M05Q01128R00100",
+      "enunciado": "Qual a data prevista para universalização do tratamento de esgoto no município?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "32": {
+      "numero": "7.5",
+      "codigo_questao": "M05Q01129",
+      "enunciado": "Realiza monitoramento e avaliação das ações e metas relacionadas ao abastecimento de água potável e esgotamento sanitário?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 30
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "33": {
+      "numero": "7.5.1",
+      "codigo_questao": "M05Q01130",
+      "enunciado": "De que forma é realizado o monitoramento e avaliação relacionadas ao abastecimento de água potável e esgotamento sanitário?",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Relatórios anuais discutidos e/ou publicados",
+          "valor": 0
+        },
+        {
+          "texto": "Indicadores de eficácia e eficiência",
+          "valor": 0
+        },
+        {
+          "texto": "Avaliação de recursos aplicados",
+          "valor": 0
+        },
+        {
+          "texto": "Outro",
+          "valor": 0
+        }
+      ]
+    },
+    "34": {
+      "numero": "7.6",
+      "codigo_questao": "M05Q01120",
+      "enunciado": "O Plano Municipal ou Regional de Saneamento Básico possui cronograma com as metas a serem cumpridas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 20
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "35": {
+      "numero": "7.6.1",
+      "codigo_questao": "M05Q01132",
+      "enunciado": "As metas do Plano relacionadas ao abastecimento de água potável e esgotamento sanitário estão sendo cumpridas no prazo estipulado?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Todas as metas foram cumpridas dentro do prazo",
+          "valor": 50
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "36": {
+      "numero": "7.6.1.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe se as metas do Plano relacionadas ao abastecimento de água potável e esgotamento sanitário estão sendo cumpridas no prazo estipulado:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "A maior parte das metas foram cumpridas dentro do prazo",
+          "valor": 30
+        },
+        {
+          "texto": "A menor parte das metas foram cumpridas dentro do prazo",
+          "valor": 10
+        },
+        {
+          "texto": "As metas não foram cumpridas dentro do prazo",
+          "valor": 0
+        }
+      ]
+    },
+    "37": {
+      "numero": "7.6.1.2",
+      "codigo_questao": "M05Q01133",
+      "enunciado": "Assinale os motivos pelos quais as metas relacionadas ao abastecimento de água potável e esgotamento sanitário não estão sendo cumpridas:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Falta de recursos orçamentários",
+          "valor": 0
+        },
+        {
+          "texto": "Falta de aprovação legislativa",
+          "valor": 0
+        },
+        {
+          "texto": "Atraso na licitação",
+          "valor": 0
+        },
+        {
+          "texto": "Não realizou licitação necessária",
+          "valor": 0
+        },
+        {
+          "texto": "Falta de pessoal qualificado",
+          "valor": 0
+        },
+        {
+          "texto": "Falta de consenso no consórcio intermunicipal",
+          "valor": 0
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "38": {
+      "numero": "7.7",
+      "codigo_questao": "M05Q01140",
+      "enunciado": "Possui previsão para áreas prioritárias/críticas de abastecimento de água potável e esgotamento sanitário do município?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 3
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        },
+        {
+          "texto": "Não há áreas prioritárias/críticas no município",
+          "valor": 3
+        }
+      ]
+    },
+    "39": {
+      "numero": "7.8",
+      "codigo_questao": "M05Q01150R00100",
+      "enunciado": "Qual a data da última revisão do Plano Municipal ou Regional de Saneamento Básico?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "40": {
+      "numero": "8",
+      "codigo_questao": "M05Q00100",
+      "enunciado": "Foi elaborado o Plano Municipal ou Regional de Gestão Integrada de Resíduos Sólidos, conforme Lei nº 12.305/2010?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "41": {
+      "numero": "8.1",
+      "codigo_questao": "M05Q00111R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) do instrumento normativo do Plano Municipal ou Regional de Gestão Integrada de Resíduos Sólidos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "42": {
+      "numero": "8.2",
+      "codigo_questao": "M05Q00150",
+      "enunciado": "A Prefeitura realizou a caracterização qualitativa e quantitativa dos resíduos sólidos urbanos gerados no município, identificando ainda sua origem?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "43": {
+      "numero": "8.2.1",
+      "codigo_questao": "M05Q00151",
+      "enunciado": "Assinale a forma utilizada para caracterizar os resíduos sólidos do município:",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Estimativa com base em dados secundários",
+          "valor": 0
+        },
+        {
+          "texto": "Realização de estudo gravimétrico, por amostragem",
+          "valor": 0
+        },
+        {
+          "texto": "Pesquisa de dados primários com medição direta",
+          "valor": 0
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "44": {
+      "numero": "8.3",
+      "codigo_questao": "M05Q00140",
+      "enunciado": "Possui cronograma com as metas a serem cumpridas de resíduos sólidos?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 20
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "45": {
+      "numero": "8.3.1",
+      "codigo_questao": "M05Q00141",
+      "enunciado": "Assinale quais as metas estabelecidas sobre resíduos sólidos:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Metas de redução da geração de resíduos sólidos na fonte",
+          "valor": 2.5
+        },
+        {
+          "texto": "Metas de coleta seletiva",
+          "valor": 2
+        },
+        {
+          "texto": "Metas de redução de resíduos sólidos secos dispostos em aterros",
+          "valor": 2.5
+        },
+        {
+          "texto": "Metas de redução de resíduos sólidos úmidos dispostos em aterros",
+          "valor": 2.5
+        },
+        {
+          "texto": "Outro",
+          "valor": 0.5
+        }
+      ]
+    },
+    "46": {
+      "numero": "8.3.2",
+      "codigo_questao": "M05Q00143",
+      "enunciado": "Realiza monitoramento e avaliação das ações e metas de resíduos sólidos?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 30
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "47": {
+      "numero": "8.3.2.1",
+      "codigo_questao": "M05Q00144",
+      "enunciado": "De que forma é realizado o monitoramento e avaliação das ações e metas de resíduos sólidos?",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Relatórios anuais discutidos e/ou publicados",
+          "valor": 0
+        },
+        {
+          "texto": "Indicadores de eficácia e eficiência",
+          "valor": 0
+        },
+        {
+          "texto": "Avaliação de recursos aplicados",
+          "valor": 0
+        },
+        {
+          "texto": "Outro",
+          "valor": 0
+        }
+      ]
+    },
+    "48": {
+      "numero": "8.3.3",
+      "codigo_questao": "M05Q00147",
+      "enunciado": "As metas do Plano Municipal ou Regional de Gestão Integrada de Resíduos Sólidos estão sendo cumpridas no prazo estipulado?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Todas as metas foram cumpridas dentro do prazo",
+          "valor": 50
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "49": {
+      "numero": "8.3.3.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe se as metas do Plano Municipal ou Regional de Gestão Integrada de Resíduos Sólidos estão sendo cumpridas no prazo estipulado:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "A maior parte das metas foram cumpridas dentro do prazo",
+          "valor": 30
+        },
+        {
+          "texto": "A menor parte das metas foram cumpridas dentro do prazo",
+          "valor": 10
+        },
+        {
+          "texto": "As metas não foram cumpridas dentro do prazo",
+          "valor": 0
+        }
+      ]
+    },
+    "50": {
+      "numero": "8.3.3.2",
+      "codigo_questao": "M05Q00148",
+      "enunciado": "Assinale os motivos pelos quais as metas do Plano Municipal ou Regional de Gestão Integrada de Resíduos Sólidos não estão sendo cumpridas:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Falta de recursos orçamentários",
+          "valor": 0
+        },
+        {
+          "texto": "Falta de aprovação legislativa",
+          "valor": 0
+        },
+        {
+          "texto": "Atraso na licitação",
+          "valor": 0
+        },
+        {
+          "texto": "Não realizou licitação necessária",
+          "valor": 0
+        },
+        {
+          "texto": "Falta de pessoal qualificado",
+          "valor": 0
+        },
+        {
+          "texto": "Falta de consenso no consórcio intermunicipal",
+          "valor": 0
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "51": {
+      "numero": "8.3.4",
+      "codigo_questao": "M05Q00160R00100",
+      "enunciado": "Qual a data da última revisão do Plano Municipal ou Regional de Gestão Integrada de Resíduos Sólidos?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "52": {
+      "numero": "9",
+      "codigo_questao": "M05Q00200",
+      "enunciado": "A prefeitura municipal realiza a coleta seletiva de resíduos sólidos?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "53": {
+      "numero": "9.1",
+      "codigo_questao": "M05Q00250",
+      "enunciado": "A coleta seletiva ocorre de forma programada (determinados os horários e dias da semana)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -30
+        }
+      ]
+    },
+    "54": {
+      "numero": "9.1.1",
+      "codigo_questao": "M05Q00253",
+      "enunciado": "Informe a escala da coleta seletiva:",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Diariamente",
+          "valor": 0
+        },
+        {
+          "texto": "3 vezes na semana",
+          "valor": 0
+        },
+        {
+          "texto": "2 vezes na semana",
+          "valor": 0
+        },
+        {
+          "texto": "1 vez na semana",
+          "valor": 0
+        },
+        {
+          "texto": "A cada 15 dias",
+          "valor": 0
+        },
+        {
+          "texto": "Mensalmente",
+          "valor": 0
+        }
+      ]
+    },
+    "55": {
+      "numero": "9.2",
+      "codigo_questao": "M05Q00260",
+      "enunciado": "Todas as regiões do município são atendidas pela coleta seletiva?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Todos os bairros do município são atendidos",
+          "valor": 100
+        },
+        {
+          "texto": "A maior parte dos bairros são atendidos",
+          "valor": 50
+        },
+        {
+          "texto": "A menor parte dos bairros são atendidos",
+          "valor": 10
+        }
+      ]
+    },
+    "56": {
+      "numero": "9.3",
+      "codigo_questao": "M05Q00270",
+      "enunciado": "A Prefeitura incentiva e orienta a população por meio de Ações e/ou Campanhas sobre a importância da coleta seletiva?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "57": {
+      "numero": "9.3.1",
+      "codigo_questao": "M05Q00272",
+      "enunciado": "Assinale quais Ações e/ou Campanhas foram realizadas:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Divulgações em redes sociais e/ou site da prefeitura",
+          "valor": 1
+        },
+        {
+          "texto": "Ações de educação ambiental",
+          "valor": 0.5
+        },
+        {
+          "texto": "Campanhas de conscientização por meio de sinalizações, folders, cartazes, propagandas e materiais impressos",
+          "valor": 1
+        },
+        {
+          "texto": "Projetos de incentivo",
+          "valor": 1
+        },
+        {
+          "texto": "Workshops/Palestras",
+          "valor": 0.5
+        },
+        {
+          "texto": "Instalação de lixeiras seletivas e distribuição de sacolas retornáveis para separação dos resíduos recicláveis",
+          "valor": 1
+        }
+      ]
+    },
+    "58": {
+      "numero": "10",
+      "codigo_questao": "M05Q03300",
+      "enunciado": "É realizada a coleta de lixo doméstico (resíduos domiciliares)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -100
+        }
+      ]
+    },
+    "59": {
+      "numero": "10.1",
+      "codigo_questao": "M05Q03320",
+      "enunciado": "A coleta de lixo doméstico (resíduos domiciliares) ocorre de forma programada (determinados os horários e dias da semana)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -30
+        }
+      ]
+    },
+    "60": {
+      "numero": "10.2",
+      "codigo_questao": "M05Q03330",
+      "enunciado": "Todas as regiões do município são atendidas pela coleta de lixo doméstico (resíduos domiciliares)?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Todos os bairros do município são atendidos",
+          "valor": 0
+        },
+        {
+          "texto": "A maior parte dos bairros são atendidos",
+          "valor": -10
+        },
+        {
+          "texto": "A menor parte dos bairros são atendidos",
+          "valor": -30
+        }
+      ]
+    },
+    "61": {
+      "numero": "10.3",
+      "codigo_questao": "M05Q03340",
+      "enunciado": "Existe Área de Transbordo e Triagem (ATT) para os Resíduos Sólidos Urbanos no município?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "62": {
+      "numero": "11",
+      "codigo_questao": "M05Q00300",
+      "enunciado": "A prefeitura possui Plano de Gerenciamento de Resíduos da Construção Civil (PGRCC) elaborado e implantado de acordo com a resolução CONAMA 307/2002 e suas alterações?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "63": {
+      "numero": "11.1",
+      "codigo_questao": "M05Q00331R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) do Plano de Gerenciamento de Resíduos da Construção Civil (PGRCC):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "64": {
+      "numero": "11.2",
+      "codigo_questao": "M05Q00360",
+      "enunciado": "Possui cronograma com as metas a serem cumpridas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 30
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "65": {
+      "numero": "11.2.1",
+      "codigo_questao": "M05Q00363",
+      "enunciado": "Realiza monitoramento e avaliação das ações e metas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 20
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "66": {
+      "numero": "11.2.1.1",
+      "codigo_questao": "M05Q00364",
+      "enunciado": "De que forma é realizado o monitoramento e avaliação?",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Relatórios anuais discutidos e/ou publicados",
+          "valor": 0
+        },
+        {
+          "texto": "Indicadores de eficácia e eficiência",
+          "valor": 0
+        },
+        {
+          "texto": "Avaliação de recursos aplicados",
+          "valor": 0
+        },
+        {
+          "texto": "Outro",
+          "valor": 0
+        }
+      ]
+    },
+    "67": {
+      "numero": "11.2.2",
+      "codigo_questao": "M05Q00366",
+      "enunciado": "As metas do Plano estão sendo cumpridas no prazo estipulado?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Todas as metas foram cumpridas dentro do prazo",
+          "valor": 40
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "68": {
+      "numero": "11.2.2.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe se as metas do Plano não estão sendo cumpridas no prazo estipulado:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "A maior parte das metas foram cumpridas dentro do prazo",
+          "valor": 30
+        },
+        {
+          "texto": "A menor parte das metas foram cumpridas dentro do prazo",
+          "valor": 10
+        },
+        {
+          "texto": "As metas não foram cumpridas dentro do prazo",
+          "valor": 0
+        }
+      ]
+    },
+    "69": {
+      "numero": "11.2.2.2",
+      "codigo_questao": "M05Q00367",
+      "enunciado": "Assinale os motivos pelos quais as metas não estão sendo cumpridas:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Falta de recursos orçamentários",
+          "valor": 0
+        },
+        {
+          "texto": "Falta de aprovação legislativa",
+          "valor": 0
+        },
+        {
+          "texto": "Atraso na licitação",
+          "valor": 0
+        },
+        {
+          "texto": "Não realizou licitação necessária",
+          "valor": 0
+        },
+        {
+          "texto": "Falta de pessoal qualificado",
+          "valor": 0
+        },
+        {
+          "texto": "Falta de consenso no consórcio intermunicipal",
+          "valor": 0
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "70": {
+      "numero": "11.3",
+      "codigo_questao": "M05Q02500",
+      "enunciado": "Quem é o responsável pela triagem dos resíduos da construção civil?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Gerador dos resíduos",
+          "valor": 0
+        },
+        {
+          "texto": "Prefeitura",
+          "valor": -10
+        },
+        {
+          "texto": "Outros",
+          "valor": -10
+        }
+      ]
+    },
+    "71": {
+      "numero": "11.4",
+      "codigo_questao": "M05Q00370",
+      "enunciado": "A Prefeitura realiza fiscalizações das atividades envolvidas no gerenciamento dos resíduos da construção civil?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "72": {
+      "numero": "12",
+      "codigo_questao": "M05Q02650",
+      "enunciado": "Antes de aterrar o lixo, o município realiza algum tipo de processamento de resíduos?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "73": {
+      "numero": "12.1",
+      "codigo_questao": "M05Q02651",
+      "enunciado": "Assinale qual a forma realizada de processamento de resíduos:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Reciclagem",
+          "valor": 4
+        },
+        {
+          "texto": "Compostagem",
+          "valor": 20
+        },
+        {
+          "texto": "Reutilização",
+          "valor": 20
+        },
+        {
+          "texto": "Sistema de Logística Reversa",
+          "valor": 10
+        },
+        {
+          "texto": "Outro",
+          "valor": 0
+        }
+      ]
+    },
+    "74": {
+      "numero": "13",
+      "codigo_questao": "M05Q02600",
+      "enunciado": "Existe aterro para os resíduos sólidos urbanos (lixo doméstico e limpeza urbana) no município?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "75": {
+      "numero": "13.1",
+      "codigo_questao": "M05Q02670",
+      "enunciado": "Assinale as características do local de destinação final dos resíduos sólidos urbanos do município (aterro):",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Local da instalação foi planejado",
+          "valor": 0
+        },
+        {
+          "texto": "Capacidade do local é definida",
+          "valor": 0
+        },
+        {
+          "texto": "Há desenvolvimento de células individuais",
+          "valor": 0
+        },
+        {
+          "texto": "Impermeabilização do solo",
+          "valor": 0
+        },
+        {
+          "texto": "Total gestão do chorume",
+          "valor": 0
+        },
+        {
+          "texto": "Total gestão dos gases",
+          "valor": 0
+        },
+        {
+          "texto": "Aplicação diária de camadas intermediárias e finais cobertura do solo",
+          "valor": 0
+        },
+        {
+          "texto": "Há compactação dos resíduos",
+          "valor": 0
+        },
+        {
+          "texto": "Há proteção vegetal (manutenção do paisagismo sobre as células de resíduos)",
+          "valor": 0
+        },
+        {
+          "texto": "Há desenvolvimento e manutenção das vias de acesso do aterro",
+          "valor": 0
+        },
+        {
+          "texto": "Há cercas/muros ao redor do local do aterro",
+          "valor": 0
+        },
+        {
+          "texto": "Há controle de acesso ao local do aterro",
+          "valor": 0
+        },
+        {
+          "texto": "Controle total do quantitativo de resíduos que entram no aterro",
+          "valor": 0
+        },
+        {
+          "texto": "Controle total da procedência dos resíduos que entram no aterro",
+          "valor": 0
+        },
+        {
+          "texto": "Controle total da composição dos resíduos que entram no aterro",
+          "valor": 0
+        },
+        {
+          "texto": "Não há coleta de resíduos por catadores dentro do aterro",
+          "valor": 0
+        },
+        {
+          "texto": "Não há comércio de resíduos dentro do aterro",
+          "valor": 0
+        },
+        {
+          "texto": "Não há presença de animais domésticos e/ou animais silvestres (urubus, garças, etc.)",
+          "valor": 0
+        },
+        {
+          "texto": "Não há odores nem presença de moscas",
+          "valor": 0
+        },
+        {
+          "texto": "Não há queima de resíduos dentro do aterro",
+          "valor": 0
+        },
+        {
+          "texto": "Conhecimento da data provável de fechamento do aterrо",
+          "valor": 0
+        },
+        {
+          "texto": "Previsão de gerenciamento do aterro pós-fechamento",
+          "valor": 0
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "76": {
+      "numero": "13.1.1",
+      "codigo_questao": "M05Q02672R00100",
+      "enunciado": "Informe a data provável de fechamento do aterro:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "77": {
+      "numero": "14",
+      "codigo_questao": "M05Q03700",
+      "enunciado": "Existem pontos de descarte irregular de lixo no munícipio?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": -30
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "78": {
+      "numero": "14.1",
+      "codigo_questao": "M05Q03730",
+      "enunciado": "Assinale as ações promovidas pela Prefeitura para combater o descarte irregular de lixo no ano:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Campanhas de conscientização",
+          "valor": 5
+        },
+        {
+          "texto": "Mobilização de grupos de bairro",
+          "valor": 5
+        },
+        {
+          "texto": "Retirada dos resíduos sólidos por caminhões",
+          "valor": 5
+        },
+        {
+          "texto": "Sinalização no local sobre a proibição de descarte naquele local",
+          "valor": 5
+        },
+        {
+          "texto": "Plantio de árvores em áreas que não deveriam receber lixo ou entulho",
+          "valor": 5
+        },
+        {
+          "texto": "Notificações e multas aos responsáveis",
+          "valor": 5
+        }
+      ]
+    },
+    "79": {
+      "numero": "15",
+      "codigo_questao": "M05Q03800",
+      "enunciado": "O Município definiu a entidade responsável pela regulação e fiscalização dos serviços públicos de saneamento básico?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 2
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "80": {
+      "numero": "15.1",
+      "codigo_questao": "M05Q03810",
+      "enunciado": "Assinale quais os serviços que possuem entidade responsável pela regulação e fiscalização:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Abastecimento de água potável:",
+          "valor": 1
+        },
+        {
+          "texto": "Esgotamento sanitário:",
+          "valor": 1
+        },
+        {
+          "texto": "Limpeza urbana e manejo de resíduos sólidos:",
+          "valor": 1
+        },
+        {
+          "texto": "Drenagem e manejo das águas pluviais urbanas:",
+          "valor": 0
+        }
+      ]
+    },
+    "81": {
+      "numero": "15.1.1",
+      "codigo_questao": "M05Q03811R00100",
+      "enunciado": "Informe a entidade responsável pela regulação e fiscalização do abastecimento de água potável do município:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "82": {
+      "numero": "15.1.2",
+      "codigo_questao": "M05Q03812R00100",
+      "enunciado": "Informe a entidade responsável pela regulação e fiscalização do esgotamento sanitário do município:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "83": {
+      "numero": "15.1.3",
+      "codigo_questao": "M05Q03813R00100",
+      "enunciado": "Informe a entidade responsável pela regulação e fiscalização de limpeza urbana e manejo de resíduos sólidos do município:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "84": {
+      "numero": "15.1.4",
+      "codigo_questao": "M05Q03814R00100",
+      "enunciado": "Informe a entidade responsável pela regulação e fiscalização de drenagem e manejo das águas pluviais urbanas do município:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "85": {
+      "numero": "16",
+      "codigo_questao": "M05Q04000",
+      "enunciado": "Foram enviados / informados os dados relativos ao abastecimento de água e esgotamento sanitário, limpeza urbana e manejo de resíduos sólidos e manejo das águas pluviais urbanas ao SINISA (Sistema Nacional de Informações sobre Saneamento)?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "86": {
+      "numero": "16.1",
+      "codigo_questao": "M05Q04010",
+      "enunciado": "Informe quais dados foram enviados ao SINISA:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Abastecimento de água e esgotamento sanitário",
+          "valor": 0
+        },
+        {
+          "texto": "Limpeza urbana e manejo de resíduos sólidos",
+          "valor": 0
+        },
+        {
+          "texto": "Drenagem e manejo de águas pluviais urbanas",
+          "valor": 0
+        }
+      ]
+    },
+    "87": {
+      "numero": "16.1.1",
+      "codigo_questao": "M05Q04011R00100",
+      "enunciado": "Dados sobre abastecimento de água e esgotamento sanitário: Percentual de população atendida com abastecimento de água:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "88": {
+      "numero": "16.1.2",
+      "codigo_questao": "M05Q04011R00200",
+      "enunciado": "Dados sobre abastecimento de água e esgotamento sanitário: Percentual de perdas na distribuição de água:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "89": {
+      "numero": "16.1.3",
+      "codigo_questao": "M05Q04011R00300",
+      "enunciado": "Dados sobre abastecimento de água e esgotamento sanitário: Percentual de população atendida com coleta de esgoto:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "90": {
+      "numero": "16.1.4",
+      "codigo_questao": "M05Q04011R00400",
+      "enunciado": "Dados sobre abastecimento de água e esgotamento sanitário: Índice de tratamento de esgoto:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "91": {
+      "numero": "16.1.5",
+      "codigo_questao": "M05Q04011R00500",
+      "enunciado": "Dados sobre abastecimento de água e esgotamento sanitário: Índice de esgoto tratado referido à água consumida:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "92": {
+      "numero": "16.1.6",
+      "codigo_questao": "M05Q04012R00100",
+      "enunciado": "Dados sobre limpeza urbana e manejo de resíduos sólidos Taxa de cobertura do serviço de coleta de resíduos domiciliares em relação à população total:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "93": {
+      "numero": "16.1.7",
+      "codigo_questao": "M05Q04012R00200",
+      "enunciado": "Dados sobre limpeza urbana e manejo de resíduos sólidos Taxa de cobertura do serviço de coleta de resíduos domiciliares em relação à população urbana:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "94": {
+      "numero": "16.1.8",
+      "codigo_questao": "M05Q04013R00100",
+      "enunciado": "Dados sobre limpeza urbana e manejo de resíduos sólidos Massa coletada de resíduos sólidos da população urbana por dia (em kg/hab/dia):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "95": {
+      "numero": "16.1.9",
+      "codigo_questao": "M05Q04013R00200",
+      "enunciado": "Dados sobre limpeza urbana e manejo de resíduos sólidos Massa recuperada per capita de materiais recicláveis em relação a população urbana (em kg/hab/ano):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "96": {
+      "numero": "16.1.10",
+      "codigo_questao": "M05Q04014R00100",
+      "enunciado": "Dados sobre drenagem e manejo de águas pluviais urbanas: Taxa de cobertura de pavimentação e meio-fio:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "97": {
+      "numero": "16.1.11",
+      "codigo_questao": "M05Q04014R00200",
+      "enunciado": "Dados sobre drenagem e manejo de águas pluviais urbanas: Taxa de cobertura de vias públicas com redes ou canais pluviais subterrâneos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "98": {
+      "numero": "16.1.12",
+      "codigo_questao": "M05Q04014R00300",
+      "enunciado": "Dados sobre drenagem e manejo de águas pluviais urbanas: Parcela de domicílios em situação de risco de inundação:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "99": {
+      "numero": "17",
+      "codigo_questao": "M05Q04100",
+      "enunciado": "Foi instituída taxa / tarifa de cobrança dos serviços de limpeza urbana e manejo de resíduos sólidos?",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        },
+        {
+          "texto": "Não foi informado ao SNIS",
+          "valor": 0
+        }
+      ]
+    },
+    "100": {
+      "numero": "18",
+      "codigo_questao": "M05Q04200",
+      "enunciado": "O município utiliza balança para pesagem rotineira dos resíduos sólidos coletados?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        },
+        {
+          "texto": "Não foi informado ao SNIS",
+          "valor": 0
+        }
+      ]
+    },
+    "101": {
+      "numero": "19",
+      "codigo_questao": "M05Q03200",
+      "enunciado": "Gostaria de registrar suas impressões, comentários e sugestões a respeito do presente questionário?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "102": {
+      "numero": "19.1",
+      "codigo_questao": "M05Q03210R00100",
+      "enunciado": "Utilize o espaço abaixo para registrar suas impressões, comentários e sugestões a respeito do presente questionário.",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "103": {
+      "numero": "20",
+      "codigo_questao": null,
+      "enunciado": "Nome Completo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "104": {
+      "numero": "21",
+      "codigo_questao": null,
+      "enunciado": "Cargo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "105": {
+      "numero": "22",
+      "codigo_questao": null,
+      "enunciado": "E-mail",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "106": {
+      "numero": "23",
+      "codigo_questao": null,
+      "enunciado": "CPF",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    }
+  }
+}

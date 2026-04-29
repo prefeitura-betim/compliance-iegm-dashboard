@@ -1,0 +1,2716 @@
+{
+  "indicador": "i-Saude",
+  "questoes": {
+    "0": {
+      "numero": "1",
+      "codigo_questao": "M02Q09900",
+      "enunciado": "O Conselho Municipal de Saúde participou da elaboração do Plano Municipal de Saúde 2022-2025?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, com propostas para construção das diretrizes e metas da saúde municipal",
+          "valor": 5
+        },
+        {
+          "texto": "Sim, apenas aprovando as propostas da gestão (Secretaria Municipal)",
+          "valor": 2
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "1": {
+      "numero": "2",
+      "codigo_questao": "M02Q06100",
+      "enunciado": "Quando ocorreu a aprovação do Plano Municipal de Saúde 2022-2025 pelo Conselho Municipal da Saúde?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Até prazo de envio à Câmara Municipal do projeto de lei sobre PPA 2022-2025",
+          "valor": 10
+        },
+        {
+          "texto": "Aprovado após prazo de envio à Câmara Municipal do projeto de lei sobre o PPA 2022-2025, mas antes da aprovação do PPA 2022-2025 pela Câmara Municipal",
+          "valor": 7
+        },
+        {
+          "texto": "Aprovado após a aprovação do PPA 2022-2025 pela Câmara Municipal",
+          "valor": 3
+        },
+        {
+          "texto": "Não aprovado",
+          "valor": 0
+        }
+      ]
+    },
+    "2": {
+      "numero": "3",
+      "codigo_questao": "M02Q06200",
+      "enunciado": "Quando ocorreu a aprovação da Programação Anual de Saúde de 2024 pelo Conselho Municipal de Saúde?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Até prazo de envio à Câmara Municipal do projeto de lei de diretrizes orçamentárias 2024",
+          "valor": 10
+        },
+        {
+          "texto": "Aprovado após prazo de envio à Câmara Municipal do projeto de lei de diretrizes orçamentárias 2024, mas antes da aprovação da LDO 2024 pela Câmara Municipal",
+          "valor": 7
+        },
+        {
+          "texto": "Aprovado após a aprovação da LDO 2024 pela Câmara Municipal",
+          "valor": 3
+        },
+        {
+          "texto": "Não aprovado",
+          "valor": 0
+        }
+      ]
+    },
+    "3": {
+      "numero": "4",
+      "codigo_questao": null,
+      "enunciado": "Informe sobre a situação de aprovação do Programação Anual de Saúde de 2024 pelo Conselho Municipal de Saúde?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Aprovado",
+          "valor": 0
+        },
+        {
+          "texto": "Não aprovado",
+          "valor": 0
+        }
+      ]
+    },
+    "4": {
+      "numero": "4.1",
+      "codigo_questao": "M02Q06210",
+      "enunciado": "As ações previstas na Programação Anual de Saúde de 2024 foram executadas?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, todas as ações foram executadas",
+          "valor": 4
+        },
+        {
+          "texto": "Sim, a maior parte das ações foram executadas",
+          "valor": 2
+        },
+        {
+          "texto": "Sim, a menor parte das ações foram executadas",
+          "valor": 1
+        },
+        {
+          "texto": "Nenhuma ação foi executada",
+          "valor": 0
+        }
+      ]
+    },
+    "5": {
+      "numero": "4.2",
+      "codigo_questao": "M02Q06220",
+      "enunciado": "As metas previstas para os indicadores foram atingidas na Programação Anual de Saúde de 2024?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, todas as metas foram atingidas",
+          "valor": 4
+        },
+        {
+          "texto": "Sim, a maior parte das metas foram atingidas",
+          "valor": 2
+        },
+        {
+          "texto": "Sim, a menor parte das metas foram atingidas",
+          "valor": 1
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "6": {
+      "numero": "5",
+      "codigo_questao": "M22Q10800",
+      "enunciado": "A Secretaria Municipal de Saúde ou similar ofereceu cursos/treinamento sobre saúde para qual público?",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Para outras secretarias / entidades municipais",
+          "valor": 1
+        },
+        {
+          "texto": "Não ofereceu nenhum curso/treinamento no ano",
+          "valor": 0
+        },
+        {
+          "texto": "Para escolas",
+          "valor": 2.5
+        },
+        {
+          "texto": "Para membros do Conselho Municipal de Saúde",
+          "valor": 1
+        },
+        {
+          "texto": "Para munícipes ou empresas",
+          "valor": 1.5
+        }
+      ]
+    },
+    "7": {
+      "numero": "6",
+      "codigo_questao": "M02Q04100",
+      "enunciado": "Os recursos financeiros municipais (fonte 1) destinados ao Sistema Único de Saúde (SUS) são movimentados em contas bancárias próprias?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 4
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "8": {
+      "numero": "6.1",
+      "codigo_questao": "M02Q04110R00100",
+      "enunciado": "Informe o Banco:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "9": {
+      "numero": "6.2",
+      "codigo_questao": "M02Q04120R00100",
+      "enunciado": "Informe a agência:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "10": {
+      "numero": "6.3",
+      "codigo_questao": "M02Q04130R00100",
+      "enunciado": "Informe o nº da conta:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "11": {
+      "numero": "7",
+      "codigo_questao": "M02Q05100",
+      "enunciado": "As despesas consideradas, para fins de apuração do mínimo constitucional de aplicação de recursos próprios em saúde, foram de responsabilidade específica do setor de saúde e com recursos municipais movimentados somente pelo Fundo Municipal de Saúde?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, com responsabilidade específica do setor de saúde e com recursos movimentados exclusivamente pelo Fundo",
+          "valor": 5
+        },
+        {
+          "texto": "Sim, com responsabilidade específica do setor de saúde, mas não houve movimentação de recursos exclusivamente pelo Fundo",
+          "valor": 3
+        },
+        {
+          "texto": "Sim, com recursos movimentados exclusivamente pelo Fundo, mas sem responsabilidade específica do setor de saúde",
+          "valor": 1
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "12": {
+      "numero": "8",
+      "codigo_questao": "M02Q06300",
+      "enunciado": "O gestor municipal de saúde apresentou quais Relatórios Quadrimestrais de 2024 previstos no art. 36 da Lei Complementar 141/2012 em audiência pública na Câmara Municipal?",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Relatório do 1º Quadrimestre até o final do mês de maio de 2024",
+          "valor": 1
+        },
+        {
+          "texto": "Relatório do 2º Quadrimestre até o final do mês de setembro de 2024",
+          "valor": 1
+        },
+        {
+          "texto": "Relatório do 3º Quadrimestre até o final do mês de fevereiro de 2025",
+          "valor": 1
+        },
+        {
+          "texto": "Não apresentou nenhum relatório quadrimestral dentro de prazo",
+          "valor": 0
+        },
+        {
+          "texto": "Não apresentou nenhum relatório quadrimestral em audiência pública na Câmara Municipal",
+          "valor": -1
+        }
+      ]
+    },
+    "13": {
+      "numero": "9",
+      "codigo_questao": "M02Q06400",
+      "enunciado": "O Relatório Anual de Gestão de 2024 foi encaminhado ao Conselho Municipal de Saúde até 30/03/2025 (ano seguinte ao da execução financeira)?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, meio eletrônico",
+          "valor": 2
+        },
+        {
+          "texto": "Sim, meio físico",
+          "valor": 2
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "14": {
+      "numero": "10",
+      "codigo_questao": null,
+      "enunciado": "Sobre o Parecer Conclusivo do Relatório Anual de Gestão 2023 informe:",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Foi apreciado",
+          "valor": 0
+        },
+        {
+          "texto": "Não foi apreciado",
+          "valor": 0
+        }
+      ]
+    },
+    "15": {
+      "numero": "10.1",
+      "codigo_questao": "M02Q06511R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do Parecer Conclusivo sobre o Relatório Anual de Gestão 2023:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "16": {
+      "numero": "11",
+      "codigo_questao": "M02Q06500",
+      "enunciado": "O Parecer Conclusivo sobre o Relatório Anual de Gestão 2023 foi \"aprovado sem ressalvas\", \"aprovado com ressalvas\" ou \"irregular/não aprovado\"?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Aprovado sem ressalvas",
+          "valor": 18
+        },
+        {
+          "texto": "Aprovado com ressalvas",
+          "valor": 10
+        },
+        {
+          "texto": "Irregular/Não aprovado",
+          "valor": 0
+        },
+        {
+          "texto": "Não apreciado",
+          "valor": -10
+        }
+      ]
+    },
+    "17": {
+      "numero": "12",
+      "codigo_questao": "M02Q06550R02800",
+      "enunciado": "Sobre os estabelecimentos de saúde sob gestão municipal, em dezembro de 2024, informe: Quantidade de estabelecimentos de saúde sob gestão municipal com AVCB:",
+      "peso": 100,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "18": {
+      "numero": "13",
+      "codigo_questao": "M02Q06550R03000",
+      "enunciado": "Sobre os estabelecimentos de saúde sob gestão municipal, em dezembro de 2024, informe: Quantidade de estabelecimentos de saúde sob gestão municipal que necessitavam de reparos:",
+      "peso": 100,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "19": {
+      "numero": "14",
+      "codigo_questao": "M02Q06550R02900",
+      "enunciado": "Sobre os estabelecimentos de saúde sob gestão municipal, em dezembro de 2024, informe: Quantidade de estabelecimentos de saúde sob gestão municipal com licença da vigilância sanitária:",
+      "peso": 100,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "20": {
+      "numero": "15",
+      "codigo_questao": "M02Q06550R03200",
+      "enunciado": "Sobre os estabelecimentos de saúde sob gestão municipal, em dezembro de 2024, informe: Estabelecimentos de saúde sob gestão municipal com atendimento direto à população:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "21": {
+      "numero": "16",
+      "codigo_questao": "M02Q06550R00100",
+      "enunciado": "Sobre os estabelecimentos de saúde sob gestão municipal, em dezembro de 2024, informe: Estabelecimentos de saúde sob gestão municipal:",
+      "peso": 100,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "22": {
+      "numero": "17",
+      "codigo_questao": "M02Q06550R03100",
+      "enunciado": "Sobre os estabelecimentos de saúde sob gestão municipal, em dezembro de 2024, informe: Quantidade de estabelecimentos de saúde sob gestão municipal que tiveram seu funcionamento interrompido no ano:",
+      "peso": 100,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "23": {
+      "numero": "18",
+      "codigo_questao": "M02Q05800",
+      "enunciado": "O município possui Plano de Carreira, Cargos e Salários (PCCS) específico elaborado e implantado para seus profissionais de saúde?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "24": {
+      "numero": "18.1",
+      "codigo_questao": "M02Q05821R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do Plano de Carreira, Cargos e Salários (PCCS) específico para os profissionais de saúde:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "25": {
+      "numero": "19",
+      "codigo_questao": "M02Q07100",
+      "enunciado": "O município adotou a Estratégia de Saúde da Família em sua rede de serviços como a estratégia prioritária de organização da Atenção Básica?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "26": {
+      "numero": "19.1",
+      "codigo_questao": "M02Q07111R00200",
+      "enunciado": "Informe o total de equipes de saúde da família e equipes de atenção primária (eSF+eAP): Nº de equipes incompletas (EI):",
+      "peso": 50,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "27": {
+      "numero": "19.2",
+      "codigo_questao": "M02Q07111R00100",
+      "enunciado": "Informe o total de equipes de saúde da família e equipes de atenção primária (eSF+eAP): Nº de equipes completas (EC):",
+      "peso": 50,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "28": {
+      "numero": "19.3",
+      "codigo_questao": "M02Q07120R00300",
+      "enunciado": "Informe: Nº de pessoas cadastradas nas Equipes de Atenção Primária:",
+      "peso": 40,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "29": {
+      "numero": "19.4",
+      "codigo_questao": "M02Q07120R00200",
+      "enunciado": "Informe: Nº de pessoas cadastradas nas Equipes de Saúde da Família:",
+      "peso": 40,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "30": {
+      "numero": "20",
+      "codigo_questao": "M02Q06700",
+      "enunciado": "A Prefeitura registra a frequência dos profissionais de saúde da Atenção Básica de forma eletrônica?",
+      "peso": 5,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não houve registro eletrônico de nenhum profissional de saúde",
+          "valor": 0
+        }
+      ]
+    },
+    "31": {
+      "numero": "20.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe o registro da frequência dos profissionais de saúde da Atenção Básica de forma eletrônica:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para todos os profissionais da saúde",
+          "valor": 5
+        },
+        {
+          "texto": "Sim, para a maior parte dos profissionais da saúde",
+          "valor": 3
+        },
+        {
+          "texto": "Sim, para a menor parte dos profissionais da saúde",
+          "valor": 1
+        }
+      ]
+    },
+    "32": {
+      "numero": "20.2",
+      "codigo_questao": "M02Q06730",
+      "enunciado": "Os médicos da Atenção Básica cumprem integralmente sua jornada de trabalho?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, todos cumprem integralmente a jornada de trabalho",
+          "valor": 15
+        },
+        {
+          "texto": "Sim, a maior parte cumpre integralmente a jornada de trabalho",
+          "valor": 8
+        },
+        {
+          "texto": "Sim, todos permanecem apenas nas consultas agendadas",
+          "valor": 5
+        },
+        {
+          "texto": "Sim, a maior parte permanece apenas nas consultas agendadas",
+          "valor": 2
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "33": {
+      "numero": "21",
+      "codigo_questao": "M02Q06750",
+      "enunciado": "Assinale o intervalo de agendamento das consultas médicas na Atenção Básica:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Pronto atendimento",
+          "valor": 1
+        },
+        {
+          "texto": "Agendamento de cada paciente em horário único com, no mínimo, 15 minutos de atendimento",
+          "valor": 1
+        },
+        {
+          "texto": "Agendamento de cada paciente em horário único com menos de 15 minutos de atendimento",
+          "valor": 0
+        },
+        {
+          "texto": "Agendamento de 2 ou mais pacientes no mesmo horário",
+          "valor": 0
+        }
+      ]
+    },
+    "34": {
+      "numero": "22",
+      "codigo_questao": "M02Q01800",
+      "enunciado": "O município disponibilizou serviço de agendamento remoto para consulta médica na Atenção Básica?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "35": {
+      "numero": "23",
+      "codigo_questao": "M02Q07200",
+      "enunciado": "O município possui controle de absenteísmo para as consultas médicas da Atenção Básica?",
+      "peso": 2,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "36": {
+      "numero": "23.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre controle de absenteísmo para as consultas médicas da Atenção Básica:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para todas as consultas",
+          "valor": 2
+        },
+        {
+          "texto": "Sim, para a maior parte das consultas",
+          "valor": 1
+        },
+        {
+          "texto": "Sim, para a menor parte das consultas",
+          "valor": 0.5
+        }
+      ]
+    },
+    "37": {
+      "numero": "23.2",
+      "codigo_questao": "M02Q07210R00100",
+      "enunciado": "Informe a taxa de absenteísmo de consulta médica nas UBSs: Em 2022:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "38": {
+      "numero": "23.3",
+      "codigo_questao": "M02Q07210R00200",
+      "enunciado": "Informe a taxa de absenteísmo de consulta médica nas UBSs: Em 2023:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "39": {
+      "numero": "23.4",
+      "codigo_questao": "M02Q07210R00300",
+      "enunciado": "Informe a taxa de absenteísmo de consulta médica nas UBSs: Em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "40": {
+      "numero": "23.5",
+      "codigo_questao": "M02Q07220",
+      "enunciado": "O município realiza medidas para a redução desta taxa de absenteísmo? (Atenção Básica - Consultas)",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -2
+        }
+      ]
+    },
+    "41": {
+      "numero": "24",
+      "codigo_questao": "M02Q09700",
+      "enunciado": "A Prefeitura Municipal possui controle de absenteísmo para os exames laboratoriais realizados sob sua gestão?",
+      "peso": 2,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        },
+        {
+          "texto": "Todos os exames laboratoriais são de pronto atendimento",
+          "valor": 2
+        }
+      ]
+    },
+    "42": {
+      "numero": "24.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre o controle de absenteísmo para os exames médicos da Atenção Básica:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para todos os exames",
+          "valor": 2
+        },
+        {
+          "texto": "Sim, para a maior parte dos exames",
+          "valor": 1
+        },
+        {
+          "texto": "Sim, para a menor parte dos exames",
+          "valor": 0.5
+        }
+      ]
+    },
+    "43": {
+      "numero": "24.2",
+      "codigo_questao": "M02Q09710R00100",
+      "enunciado": "Informe a taxa de absenteísmo de exame médico da Atenção Básica: Em 2022:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "44": {
+      "numero": "24.3",
+      "codigo_questao": "M02Q09710R00200",
+      "enunciado": "Informe a taxa de absenteísmo de exame médico da Atenção Básica: Em 2023:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "45": {
+      "numero": "24.4",
+      "codigo_questao": "M02Q09710R00300",
+      "enunciado": "Informe a taxa de absenteísmo de exame médico da Atenção Básica: Em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "46": {
+      "numero": "24.5",
+      "codigo_questao": "M02Q09720",
+      "enunciado": "O município realiza medidas para a redução desta taxa de absenteísmo? (Exames Laboratoriais)",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -2
+        }
+      ]
+    },
+    "47": {
+      "numero": "25",
+      "codigo_questao": "M02Q07300",
+      "enunciado": "O município implantou o Prontuário Eletrônico do Paciente na Atenção Básica?",
+      "peso": 10,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "48": {
+      "numero": "25.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre o Prontuário Eletrônico do Paciente na Atenção Básica:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para todos os procedimentos da saúde",
+          "valor": 10
+        },
+        {
+          "texto": "Sim, para a maior parte dos procedimentos da saúde",
+          "valor": 7
+        },
+        {
+          "texto": "Sim, para a menor parte dos procedimentos da saúde",
+          "valor": 3
+        }
+      ]
+    },
+    "49": {
+      "numero": "25.2",
+      "codigo_questao": "M02Q07310",
+      "enunciado": "Assinale os serviços da Atenção Básica inseridos no Prontuário Eletrônico do Paciente:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Atendimento pela ESF",
+          "valor": 1
+        },
+        {
+          "texto": "Consultas médicas em Atenção Primária",
+          "valor": 1
+        },
+        {
+          "texto": "Exames laboratoriais",
+          "valor": 1
+        },
+        {
+          "texto": "Terapias / tratamentos",
+          "valor": 1
+        },
+        {
+          "texto": "Medicamentos",
+          "valor": 1
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "50": {
+      "numero": "26",
+      "codigo_questao": "M02Q10900",
+      "enunciado": "O município possui atendimento de Atenção Especializada (média e/ou alta complexidade)?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não, somente encaminhamento para outro município",
+          "valor": 0
+        }
+      ]
+    },
+    "51": {
+      "numero": "26.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre o atendimento de Atenção Especializada (média e/ou alta complexidade):",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, sob gestão municipal e sob gestão estadual",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, sob gestão estadual",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, sob gestão municipal",
+          "valor": 0
+        }
+      ]
+    },
+    "52": {
+      "numero": "26.2",
+      "codigo_questao": "M02Q10901",
+      "enunciado": "Os profissionais de saúde da Atenção Especializada sob gestão municipal registram sua frequência de forma eletrônica?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Não houve registro eletrônico de nenhum profissional de saúde",
+          "valor": -3
+        },
+        {
+          "texto": "Sim",
+          "valor": 0
+        }
+      ]
+    },
+    "53": {
+      "numero": "26.2.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre o registro de frequência de forma eletrônica dos profissionais de saúde da Atenção Especializada sob gestão municipal",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para a menor parte dos profissionais da saúde",
+          "valor": -2
+        },
+        {
+          "texto": "Sim, para a maior parte dos profissionais da saúde",
+          "valor": -1
+        },
+        {
+          "texto": "Sim, para todos os profissionais da saúde",
+          "valor": 0
+        }
+      ]
+    },
+    "54": {
+      "numero": "26.2.2",
+      "codigo_questao": "M02Q10902",
+      "enunciado": "Os médicos ambulatoriais da Atenção Especializada sob gestão municipal cumprem integralmente sua jornada de trabalho?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, todos permanecem apenas nas consultas agendadas",
+          "valor": -4
+        },
+        {
+          "texto": "Sim, todos cumprem integralmente a jornada de trabalho",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        },
+        {
+          "texto": "Sim, a maior parte permanece apenas nas consultas agendadas",
+          "valor": -3
+        },
+        {
+          "texto": "Sim, a maior parte cumpre integralmente a jornada de trabalho",
+          "valor": -1
+        }
+      ]
+    },
+    "55": {
+      "numero": "26.2.3",
+      "codigo_questao": "M02Q10903",
+      "enunciado": "Os médicos plantonistas da Atenção Especializada sob gestão municipal cumprem integralmente sua jornada de trabalho?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, a maior parte dos médicos cumpre a jornada de trabalho",
+          "valor": -1
+        },
+        {
+          "texto": "Não possui médicos plantonistas",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        },
+        {
+          "texto": "Sim, a menor parte dos médicos cumprem a jornada de trabalho",
+          "valor": -3
+        },
+        {
+          "texto": "Sim, todos cumprem integralmente a jornada de trabalho",
+          "valor": 0
+        }
+      ]
+    },
+    "56": {
+      "numero": "26.3",
+      "codigo_questao": "M02Q10904",
+      "enunciado": "Assinale o intervalo de agendamento das consultas médicas da Atenção Especializada sob gestão municipal:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Agendamento de 2 ou mais pacientes no mesmo horário",
+          "valor": -0.5
+        },
+        {
+          "texto": "Agendamento de cada paciente em horário único com menos de 15 minutos de atendimento",
+          "valor": -0.5
+        },
+        {
+          "texto": "Agendamento de cada paciente em horário único com, no mínimo, 15 minutos de atendimento",
+          "valor": 0
+        },
+        {
+          "texto": "Não há agendamento de consultas da Atenção Especializada, pois todas são de pronto atendimento",
+          "valor": 0
+        }
+      ]
+    },
+    "57": {
+      "numero": "26.4",
+      "codigo_questao": "M02Q10905",
+      "enunciado": "O município possui controle de absenteísmo de consultas médicas da Atenção Especializada sob gestão municipal?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Não",
+          "valor": -3
+        },
+        {
+          "texto": "Sim",
+          "valor": 0
+        }
+      ]
+    },
+    "58": {
+      "numero": "26.4.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre o controle de absenteísmo de consultas médicas da Atenção Especializada sob gestão municipal",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para todas as consultas médicas",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, para a maior parte das consultas médicas",
+          "valor": -1
+        },
+        {
+          "texto": "Sim, para a menor parte das consultas médicas",
+          "valor": -2
+        }
+      ]
+    },
+    "59": {
+      "numero": "26.4.2",
+      "codigo_questao": "M02Q09883R00100",
+      "enunciado": "Informe a taxa de absenteísmo de consulta médica da Atenção Especializada sob gestão municipal em 2022:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "60": {
+      "numero": "26.4.3",
+      "codigo_questao": "M02Q09883R00200",
+      "enunciado": "Informe a taxa de absenteísmo de consulta médica da Atenção Especializada sob gestão municipal em 2023:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "61": {
+      "numero": "26.4.4",
+      "codigo_questao": "M02Q09883R00300",
+      "enunciado": "Informe a taxa de absenteísmo de consulta médica da Atenção Especializada sob gestão municipal em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "62": {
+      "numero": "26.4.5",
+      "codigo_questao": "M02Q10906",
+      "enunciado": "O município realiza medidas para a redução desta taxa de absenteísmo? (Atenção Especializada - Consultas)",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -2
+        }
+      ]
+    },
+    "63": {
+      "numero": "26.5",
+      "codigo_questao": "M02Q10908",
+      "enunciado": "A Prefeitura Municipal possui controle de absenteísmo para os exames médicos da Atenção Especializada sob sua gestão?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -3
+        }
+      ]
+    },
+    "64": {
+      "numero": "26.5.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre o controle de absenteísmo de exames médicos da Atenção Especializada sob gestão municipal",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para a menor parte dos exames",
+          "valor": -2
+        },
+        {
+          "texto": "Sim, para todos os exames",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, para a maior parte dos exames",
+          "valor": -1
+        }
+      ]
+    },
+    "65": {
+      "numero": "26.5.2",
+      "codigo_questao": "M02Q10909R00300",
+      "enunciado": "Informe a taxa de absenteísmo de exame médico da Atenção Especializada sob gestão municipal em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "66": {
+      "numero": "26.5.3",
+      "codigo_questao": "M02Q10909R00100",
+      "enunciado": "Informe a taxa de absenteísmo de exame médico da Atenção Especializada sob gestão municipal em 2022:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "67": {
+      "numero": "26.5.4",
+      "codigo_questao": "M02Q10909R00200",
+      "enunciado": "Informe a taxa de absenteísmo de exame médico da Atenção Especializada sob gestão municipal em 2023:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "68": {
+      "numero": "26.5.5",
+      "codigo_questao": "M02Q09884",
+      "enunciado": "O município realiza medidas para a redução desta taxa de absenteísmo? (Atenção Especializada - Exames)",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -2
+        }
+      ]
+    },
+    "69": {
+      "numero": "26.6",
+      "codigo_questao": "M02Q10910",
+      "enunciado": "O município utiliza sistema informatizado de regulação com oferta dos serviços da Atenção Especializada sob gestão municipal?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "70": {
+      "numero": "26.6.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre a utilização de sistema informatizado de regulação com oferta dos serviços da Atenção Especializada sob gestão municipal:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, a menor parte dos serviços",
+          "valor": -3
+        },
+        {
+          "texto": "Sim, todos os serviços",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, a maior parte dos serviços",
+          "valor": -1
+        }
+      ]
+    },
+    "71": {
+      "numero": "26.6.2",
+      "codigo_questao": "M22Q10912",
+      "enunciado": "O sistema informatizado de regulação utilizado pelo município permite conhecer a lista de espera (relação nominal de pacientes com tempo de espera) dos serviços da Atenção Especializada sob gestão municipal?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "72": {
+      "numero": "26.6.2.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre a permição da lista de espera:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, a menor parte dos serviços",
+          "valor": -3
+        },
+        {
+          "texto": "Sim, a maior parte dos serviços",
+          "valor": -1
+        },
+        {
+          "texto": "Sim, todos os serviços",
+          "valor": 0
+        }
+      ]
+    },
+    "73": {
+      "numero": "26.6.2.2",
+      "codigo_questao": "M22Q11000",
+      "enunciado": "Assinale os serviços da Atenção Especializada inseridos no sistema de regulação:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Consultas por especialidade",
+          "valor": 0
+        },
+        {
+          "texto": "Exames",
+          "valor": 0
+        },
+        {
+          "texto": "Terapias / tratamentos",
+          "valor": 0
+        },
+        {
+          "texto": "Cirurgias eletivas",
+          "valor": 0
+        },
+        {
+          "texto": "OPM",
+          "valor": 0
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "74": {
+      "numero": "26.7",
+      "codigo_questao": "M22Q11600",
+      "enunciado": "O município implantou o Prontuário Eletrônico do Paciente na Atenção Especializada sob sua gestão?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "75": {
+      "numero": "26.7.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre o Prontuário Eletrônico do Paciente na Atenção Especializada:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para a menor parte dos procedimentos da saúde",
+          "valor": -3
+        },
+        {
+          "texto": "Sim, para a maior parte dos procedimentos da saúde",
+          "valor": -1
+        },
+        {
+          "texto": "Sim, para todos os procedimentos da saúde",
+          "valor": 0
+        }
+      ]
+    },
+    "76": {
+      "numero": "26.7.2",
+      "codigo_questao": "M22Q11700",
+      "enunciado": "Assinale os serviços da Atenção Especializada inseridos no Prontuário Eletrônico do Paciente:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "OPM",
+          "valor": 0
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        },
+        {
+          "texto": "Cirurgias eletivas",
+          "valor": 0
+        },
+        {
+          "texto": "Medicamentos",
+          "valor": 0
+        },
+        {
+          "texto": "Terapias / tratamentos",
+          "valor": 0
+        },
+        {
+          "texto": "Exames radiológicos e por imagem",
+          "valor": 0
+        },
+        {
+          "texto": "Exames laboratoriais",
+          "valor": 0
+        },
+        {
+          "texto": "Consultas médicas por especialidade",
+          "valor": 0
+        }
+      ]
+    },
+    "77": {
+      "numero": "26.8",
+      "codigo_questao": "M22Q11800",
+      "enunciado": "O município possui estabelecimentos de saúde da rede própria com mamógrafos?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "78": {
+      "numero": "26.8.1",
+      "codigo_questao": "M22Q11900R00100",
+      "enunciado": "Informe: Quantidade de exames de mamógrafos realizados em estabelecimentos de saúde da rede própria sob gestão municipal em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "79": {
+      "numero": "26.8.2",
+      "codigo_questao": "M22Q11900R00200",
+      "enunciado": "Informe: Quantidade de mamógrafos em estabelecimentos de saúde da rede própria sob gestão municipal em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "80": {
+      "numero": "26.9",
+      "codigo_questao": "M22Q12000",
+      "enunciado": "O município possui estabelecimentos de saúde da rede própria com equipamentos de ultrassom convencional?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "81": {
+      "numero": "26.9.1",
+      "codigo_questao": "M22Q12100R00300",
+      "enunciado": "Informe: Quantidade de exames de ultrassom convencional realizados em estabelecimentos de saúde da rede própria sob gestão municipal em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "82": {
+      "numero": "26.9.2",
+      "codigo_questao": "M22Q12100R00100",
+      "enunciado": "Informe: Quantidade de exames de ultrassom convencional realizados em estabelecimentos de saúde da rede própria sob gestão municipal em 2022:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "83": {
+      "numero": "26.9.3",
+      "codigo_questao": "M22Q12100R00200",
+      "enunciado": "Quantidade de exames de ultrassom convencional realizados em estabelecimentos de saúde da rede própria sob gestão municipal em 2023:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "84": {
+      "numero": "26.9.4",
+      "codigo_questao": "M22Q12100R00600",
+      "enunciado": "Quantidade de equipamentos de ultrassom convencional em estabelecimentos de saúde da rede própria sob gestão municipal em 2024 (EQAA):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "85": {
+      "numero": "26.9.5",
+      "codigo_questao": "M22Q12100R00500",
+      "enunciado": "Quantidade de equipamentos de ultrassom convencional em estabelecimentos de saúde da rede própria sob gestão municipal em 2023 (EQAA-1):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "86": {
+      "numero": "26.9.6",
+      "codigo_questao": "M22Q12100R00400",
+      "enunciado": "Quantidade de equipamentos de ultrassom convencional em estabelecimentos de saúde da rede própria sob gestão municipal em 2022 (EQAA-2):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "87": {
+      "numero": "26.10",
+      "codigo_questao": "M22Q12200",
+      "enunciado": "O município possui hospital ou Santa Casa sob sua gestão?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "88": {
+      "numero": "26.10.1",
+      "codigo_questao": "M02Q09080R00200",
+      "enunciado": "Número total de leitos-dia em 2024 dos estabelecimentos de saúde (hospitais) da rede própria sob gestão municipal:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "89": {
+      "numero": "26.10.2",
+      "codigo_questao": "M02Q09080R00100",
+      "enunciado": "Total de pacientes-dia atendidos em 2024 dos estabelecimentos de saúde (hospitais) da rede própria sob gestão municipal:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "90": {
+      "numero": "26.10.3",
+      "codigo_questao": "M02Q09090R00300",
+      "enunciado": "Informe o nº de estabelecimentos de saúde (hospitais) da rede própria sob gestão municipal que tiveram taxa de ocupação hospitalar instalada superior a 100% em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "91": {
+      "numero": "26.10.4",
+      "codigo_questao": "M02Q09090R00200",
+      "enunciado": "Informe o nº de estabelecimentos de saúde (hospitais) da rede própria sob gestão municipal que tiveram taxa de ocupação hospitalar instalada superior a 100% em 2023",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "92": {
+      "numero": "26.10.5",
+      "codigo_questao": "M02Q09090R00100",
+      "enunciado": "Informe o nº de estabelecimentos de saúde (hospitais) da rede própria sob gestão municipal que tiveram taxa de ocupação hospitalar instalada superior a 100% em 2022:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "93": {
+      "numero": "27",
+      "codigo_questao": "M02Q07400",
+      "enunciado": "No município, há demanda de ações e de serviços voltados para a assistência aos portadores de transtornos mentais, bem como para usuários de substâncias psicoativas?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "94": {
+      "numero": "27.1",
+      "codigo_questao": "M02Q07410",
+      "enunciado": "Realizou Plano de Ação municipal para inclusão do município à sua RAPS?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -10
+        }
+      ]
+    },
+    "95": {
+      "numero": "27.2",
+      "codigo_questao": "M02Q07420",
+      "enunciado": "A Secretaria Municipal de Saúde (ou equivalente) está integrada com os outros órgãos municipais de forma a ampliar a oferta de ações e de serviços voltados para a assistência aos portadores de transtornos mentais?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "96": {
+      "numero": "27.3",
+      "codigo_questao": "M02Q07440",
+      "enunciado": "O município possui indicadores específicos para a Atenção Psicossocial?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "97": {
+      "numero": "27.4",
+      "codigo_questao": "M02Q07450",
+      "enunciado": "O município possui população superior a 15 mil habitantes?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "98": {
+      "numero": "27.4.1",
+      "codigo_questao": "M02Q07453",
+      "enunciado": "Todos os serviços assistenciais ofertados pelo CAPS e Unidades de Acolhimento (vagas) estão disponibilizados no sistema de regulação municipal?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -10
+        }
+      ]
+    },
+    "99": {
+      "numero": "27.4.2",
+      "codigo_questao": "M02Q07455",
+      "enunciado": "A quantidade de vagas dos CAPS é suficiente para demanda da população que apresenta prioritariamente, intenso sofrimento psíquico decorrente de transtornos mentais graves e persistentes, incluindo aqueles relacionados ao uso de substâncias psicoativas, e outras situações clínicas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -10
+        }
+      ]
+    },
+    "100": {
+      "numero": "28",
+      "codigo_questao": "M02Q07500",
+      "enunciado": "No município, há demanda de moradia para portadores de transtornos mentais crônicos com necessidade de cuidados de longa permanência, prioritariamente egressos de internações psiquiátricas e de hospitais de custódia, que não possuam suporte financeiro, social e/ou laços familiares que permitam outra forma de reinserção?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "101": {
+      "numero": "28.1",
+      "codigo_questao": "M02Q07510",
+      "enunciado": "A Quantidade de SRTs ofertadas é adequada, inclusive quanto a distribuição geográfica, para a demanda de moradia para portadores de transtornos mentais crônicos com necessidade de cuidados de longa permanência, prioritariamente egressos de internações psiquiátricas e de hospitais de custódia, que não possuam suporte financeiro, social e/ou laços familiares que permitam outra forma de reinserção?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "102": {
+      "numero": "28.2",
+      "codigo_questao": "M02Q07520R00100",
+      "enunciado": "Informe a quantidade de unidades: Para SRT I:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "103": {
+      "numero": "28.3",
+      "codigo_questao": "M02Q07520R00200",
+      "enunciado": "Informe a quantidade de unidades: Para SRT II:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "104": {
+      "numero": "28.4",
+      "codigo_questao": "M02Q07520R00300",
+      "enunciado": "Informe a quantidade de unidades: Equivalente",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "105": {
+      "numero": "28.5",
+      "codigo_questao": "M02Q07530",
+      "enunciado": "As vagas dos Serviços Residenciais Terapêuticos ou equivalente para os residentes do município estão cadastradas no sistema de informação de regulação municipal?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -10
+        }
+      ]
+    },
+    "106": {
+      "numero": "28.5.1",
+      "codigo_questao": "M02Q07531R00100",
+      "enunciado": "Informe a quantidade de vagas cadastradas no sistema de regulação: Para SRT tipo I:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "107": {
+      "numero": "28.5.2",
+      "codigo_questao": "M02Q07531R00200",
+      "enunciado": "Informe a quantidade de vagas cadastradas no sistema de regulação: Para SRT tipo II:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "108": {
+      "numero": "28.5.3",
+      "codigo_questao": "M02Q07531R00300",
+      "enunciado": "Informe a quantidade de vagas cadastradas no sistema de regulação: Equivalente:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "109": {
+      "numero": "28.6",
+      "codigo_questao": "M02Q07540",
+      "enunciado": "A Secretaria Municipal de Saúde (ou equivalente), com apoio técnico do Ministério da Saúde, tem rotinas estabelecidas de acompanhamento, supervisão, controle e avaliação para a garantia do funcionamento com qualidade dos Serviços Residenciais Terapêuticos em Saúde Mental?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "110": {
+      "numero": "28.7",
+      "codigo_questao": "M02Q07550R00100",
+      "enunciado": "Informe: Número de leitos de internação psiquiátrica prolongada nos estabelecimentos sob gestão municipal - 2023:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "111": {
+      "numero": "28.8",
+      "codigo_questao": "M02Q07550R00200",
+      "enunciado": "Informe: Número de leitos de internação psiquiátrica prolongada nos estabelecimentos sob gestão municipal - 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "112": {
+      "numero": "28.9",
+      "codigo_questao": "M02Q07550R00300",
+      "enunciado": "Informe: Número de vagas disponibilizadas em Serviços Residenciais Terapêuticos nos estabelecimentos sob gestão municipal 2023:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "113": {
+      "numero": "28.10",
+      "codigo_questao": "M02Q07550R00400",
+      "enunciado": "Informe: Número de vagas disponibilizadas em Serviços Residenciais Terapêuticos nos estabelecimentos sob gestão municipal  2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "114": {
+      "numero": "29",
+      "codigo_questao": "M02Q09300",
+      "enunciado": "Sobre Vigilância em Saúde, a Prefeitura realiza gestão de quais tipos de insumos?",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Imunobiológicos (soros, vacinas e imunoglobulinas)",
+          "valor": 0
+        },
+        {
+          "texto": "Meios de diagnóstico laboratorial para as doenças sob monitoramento epidemiológico (coleta de sangue, fluidos orgânicos como: saliva, secreção, suor, urina, fezes)",
+          "valor": 0
+        },
+        {
+          "texto": "Controle de vetores (inseticidas, larvicidas)",
+          "valor": 0
+        }
+      ]
+    },
+    "115": {
+      "numero": "29.1",
+      "codigo_questao": "M02Q09310",
+      "enunciado": "A Prefeitura utiliza frigobar para refrigeração, manutenção, monitoramento e controle da temperatura dos imunobiológicos (soros, vacinas e imunoglobulinas)?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, em todos os estabelecimentos de saúde sob gestão municipal",
+          "valor": -5
+        },
+        {
+          "texto": "Sim, na maior parte dos estabelecimentos de saúde sob gestão municipal",
+          "valor": -3
+        },
+        {
+          "texto": "Sim, na menor parte dos estabelecimentos de saúde sob gestão municipal",
+          "valor": -1
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "116": {
+      "numero": "29.2",
+      "codigo_questao": "M02Q09320",
+      "enunciado": "A Prefeitura disponibilizou os materiais necessários para a coleta dos meios de diagnóstico laboratorial para as doenças sob monitoramento epidemiológico (coleta de sangue, fluidos orgânicos como: saliva, secreção, suor, urina, fezes)?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para todas as amostras",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, para a maior parte das amostras",
+          "valor": -1
+        },
+        {
+          "texto": "Sim, para a menor parte das amostras",
+          "valor": -3
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "117": {
+      "numero": "29.3",
+      "codigo_questao": "M02Q09330",
+      "enunciado": "A Prefeitura disponibilizou todos os equipamentos de proteção individual (EPIs) para o manuseio dos insumos para controle de vetores (inseticidas e pesticidas)?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, para todos os profissionais",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, para a maior parte dos profissionais",
+          "valor": -1
+        },
+        {
+          "texto": "Sim, para a menor parte dos profissionais",
+          "valor": -3
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "118": {
+      "numero": "30",
+      "codigo_questao": "M02Q07800",
+      "enunciado": "O município analisa semanalmente os dados de casos de arboviroses, acompanhando a tendência dos casos e verificando as variações entre as semanas epidemiológicas?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        },
+        {
+          "texto": "Não houve casos de arboviroses",
+          "valor": 10
+        }
+      ]
+    },
+    "119": {
+      "numero": "31",
+      "codigo_questao": "M02Q07900",
+      "enunciado": "O município investiga casos notificados, surtos e óbitos de arboviroses?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, investiga todos os casos",
+          "valor": 30
+        },
+        {
+          "texto": "Sim, investiga parte dos casos",
+          "valor": 15
+        },
+        {
+          "texto": "Não houve casos em 2024",
+          "valor": 30
+        },
+        {
+          "texto": "Não investiga",
+          "valor": 0
+        }
+      ]
+    },
+    "120": {
+      "numero": "32",
+      "codigo_questao": "M02Q08000",
+      "enunciado": "O município exerceu as atribuições relacionadas a vigilância entomológica e controle vetorial em 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "121": {
+      "numero": "32.1",
+      "codigo_questao": "M02Q08010",
+      "enunciado": "Assinale as atribuições da vigilância entomológica e controle vetorial:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Incluir a vigilância sanitária municipal e como suporte às ações de vigilância e controle vetorial, que exigem o cumprimento da legislação sanitária",
+          "valor": 3
+        },
+        {
+          "texto": "Integrar as equipes de saúde da família nas atividades de controle vetorial, unificando os territórios de atuação de ACS e ACE",
+          "valor": 3
+        },
+        {
+          "texto": "Realizar o levantamento de indicadores entomológicos",
+          "valor": 3
+        },
+        {
+          "texto": "Executar as ações de controle mecânico, químico e biológico do mosquito",
+          "valor": 3
+        },
+        {
+          "texto": "Enviar os dados entomológicos ao nível estadual, dentro dos prazos estabelecidos",
+          "valor": 3
+        },
+        {
+          "texto": "Gerenciar os estoques municipais de inseticidas e biolarvicidas",
+          "valor": 3
+        },
+        {
+          "texto": "Adquirir as vestimentas e equipamentos necessários à rotina de controle vetorial",
+          "valor": 3
+        },
+        {
+          "texto": "Adquirir os equipamentos de EPI recomendados para a aplicação de inseticidas e biolarvicidas nas ações de rotina",
+          "valor": 3
+        },
+        {
+          "texto": "Coletar e enviar ao laboratório de referência amostras de sangue aos trabalhadores do controle vetorial que manuseiam inseticidas e/ou larvicidas, para dosagem de colinesterase, na frequência recomendada",
+          "valor": 3
+        },
+        {
+          "texto": "Possuir Comitê Gestor Intersetorial, sob coordenação da secretaria municipal de saúde, com representantes das áreas do município que tenham interface com o problema dengue (defesa civil, limpeza urbana, infraestrutura, segurança, turismo, planejamento, saneamento etc.), definindo responsabilidades, metas e indicadores de acompanhamento de cada área de atuação",
+          "valor": 3
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "122": {
+      "numero": "33",
+      "codigo_questao": "M02Q08100",
+      "enunciado": "O município executou atividades de Educação em Saúde?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "123": {
+      "numero": "33.1",
+      "codigo_questao": "M02Q08110",
+      "enunciado": "Assinale as campanhas realizadas em 2024:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Planejamento familiar - concepção e contracepção (Prevenção à Gravidez)",
+          "valor": 0.5
+        },
+        {
+          "texto": "Pré-Natal",
+          "valor": 0.5
+        },
+        {
+          "texto": "Assistência ao parto, ao puerpério e ao neonato, incluindo aleitamento materno e doação de leite materno",
+          "valor": 0.5
+        },
+        {
+          "texto": "Prevenção às IST - Infecção Sexualmente Transmissível",
+          "valor": 0.5
+        },
+        {
+          "texto": "Prevenção dos cânceres do colo do útero, de mama e da saúde do homem",
+          "valor": 0.5
+        },
+        {
+          "texto": "Vacinação",
+          "valor": 0.5
+        },
+        {
+          "texto": "Doença Falciforme",
+          "valor": 0
+        },
+        {
+          "texto": "Hipertensão",
+          "valor": 0.5
+        },
+        {
+          "texto": "Diabetes",
+          "valor": 0.5
+        },
+        {
+          "texto": "Hanseníase",
+          "valor": 0.5
+        },
+        {
+          "texto": "Hepatite",
+          "valor": 0.5
+        },
+        {
+          "texto": "Coronavirus - COVID19",
+          "valor": 0.5
+        },
+        {
+          "texto": "Tuberculose",
+          "valor": 0.5
+        },
+        {
+          "texto": "Doença de Chagas",
+          "valor": 0.5
+        },
+        {
+          "texto": "Dengue/Zika/Chikungunya/Febre Amarela/Malária (Arboviroses)",
+          "valor": 0.5
+        },
+        {
+          "texto": "Tabaco",
+          "valor": 0.5
+        },
+        {
+          "texto": "Drogas e entorpecentes",
+          "valor": 0.5
+        },
+        {
+          "texto": "Saúde Bucal",
+          "valor": 0.5
+        },
+        {
+          "texto": "Doação de Sangue",
+          "valor": 0.5
+        },
+        {
+          "texto": "Doação de Órgãos",
+          "valor": 0.5
+        },
+        {
+          "texto": "Prevenção à Depressão e ao Suicídio",
+          "valor": 0.5
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "124": {
+      "numero": "34",
+      "codigo_questao": "M02Q08200",
+      "enunciado": "O município desenvolve ações reguladoras em seu território, operacionalizando por meio de complexo regulador municipal e/ou participando em co-gestão da operacionalização dos Complexos Reguladores Regionais?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "125": {
+      "numero": "35",
+      "codigo_questao": "M02Q05700",
+      "enunciado": "O município elaborou os protocolos de regulação de acesso formalizados?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "126": {
+      "numero": "36",
+      "codigo_questao": "M02Q08300",
+      "enunciado": "O município regula a referência a ser realizada em outros municípios, de acordo com a programação pactuada e integrada, integrando-se aos fluxos regionais estabelecidos?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "127": {
+      "numero": "37",
+      "codigo_questao": "M02Q10000",
+      "enunciado": "O município possui controle da fila de espera para os atendimentos de média/alta complexidade que não foram inseridos no sistema de regulação do governo estadual ?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não possui controle da fila de espera",
+          "valor": 0
+        },
+        {
+          "texto": "Não possui fila de espera além da inserida no sistema de regulação do governo estadual",
+          "valor": 5
+        }
+      ]
+    },
+    "128": {
+      "numero": "37.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre o controle da fila de espera para os atendimentos de média/alta complexidade que não foram inseridos no sistema de regulação do governo estadual:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, com a relação nominal de pacientes e tempo de espera para todos os serviços de média e alta complexidade com fila de espera",
+          "valor": 5
+        },
+        {
+          "texto": "Sim, com a relação nominal de pacientes e tempo de espera para a maior parte dos serviços de média e alta complexidade com fila de espera",
+          "valor": 2
+        },
+        {
+          "texto": "Sim, com a relação nominal de pacientes e tempo de espera para a menor parte dos serviços de média e alta complexidade com fila de espera",
+          "valor": 1
+        }
+      ]
+    },
+    "129": {
+      "numero": "37.2",
+      "codigo_questao": "M02Q10010",
+      "enunciado": "Assinale o tipo de controle da lista de espera para os atendimentos de média/alta complexidade que não foram inseridos no sistema de regulação do governo estadual:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Em sistema informatizado",
+          "valor": 5
+        },
+        {
+          "texto": "De forma manual",
+          "valor": -5
+        }
+      ]
+    },
+    "130": {
+      "numero": "38",
+      "codigo_questao": "M02Q08400",
+      "enunciado": "O município mantém atualizado o Cadastro de Estabelecimentos e Profissionais de Saúde (CNES)?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "SIM, os cadastros de estabelecimentos e de profissionais estão atualizados",
+          "valor": 15
+        },
+        {
+          "texto": "Sim, somente o cadastro de estabelecimentos está atualizado",
+          "valor": 5
+        },
+        {
+          "texto": "Sim, somente o cadastro de profissionais está atualizado",
+          "valor": 5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "131": {
+      "numero": "39",
+      "codigo_questao": "M02Q05500",
+      "enunciado": "O município possui Complexo Regulador Municipal? Sim",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "132": {
+      "numero": "39.1",
+      "codigo_questao": "M02Q05510",
+      "enunciado": "O Complexo Regulador Municipal possui Central de Regulação?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "133": {
+      "numero": "39.1.1",
+      "codigo_questao": "M02Q05511",
+      "enunciado": "Assinale os tipos de central de regulação existentes no município:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Central de Urgência",
+          "valor": 3
+        },
+        {
+          "texto": "Central de Internações",
+          "valor": 3
+        },
+        {
+          "texto": "Central de Consultas e Serviços de Apoio Diagnóstico e terapêutico",
+          "valor": 3
+        }
+      ]
+    },
+    "134": {
+      "numero": "40",
+      "codigo_questao": "M02Q08600",
+      "enunciado": "O município possui serviços de atenção pré-hospitalar e Central Samu 192 ou integra Central Samu 192 de abrangência regional?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "135": {
+      "numero": "40.1",
+      "codigo_questao": "M02Q08610R00100",
+      "enunciado": "Tempo de resposta em minutos dos atendimentos do SAMU (ou equivalente): 2022 - Mínimo:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "136": {
+      "numero": "40.2",
+      "codigo_questao": "M02Q08610R00200",
+      "enunciado": "Tempo de resposta em minutos dos atendimentos do SAMU (ou equivalente): 2022 - Médio:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "137": {
+      "numero": "40.3",
+      "codigo_questao": "M02Q08610R00300",
+      "enunciado": "Tempo de resposta em minutos dos atendimentos do SAMU (ou equivalente): 2022  Máximo:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "138": {
+      "numero": "40.4",
+      "codigo_questao": "M02Q08610R00400",
+      "enunciado": "Tempo de resposta em minutos dos atendimentos do SAMU (ou equivalente): 2023  Mínimo:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "139": {
+      "numero": "40.5",
+      "codigo_questao": "M02Q08610R00500",
+      "enunciado": "Tempo de resposta em minutos dos atendimentos do SAMU (ou equivalente): 2023 - Médio:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "140": {
+      "numero": "40.6",
+      "codigo_questao": "M02Q08610R00600",
+      "enunciado": "Tempo de resposta em minutos dos atendimentos do SAMU (ou equivalente): 2023 - Máximo:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "141": {
+      "numero": "40.7",
+      "codigo_questao": "M02Q08610R00700",
+      "enunciado": "Tempo de resposta em minutos dos atendimentos do SAMU (ou equivalente): 2024 - Mínimo:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "142": {
+      "numero": "40.8",
+      "codigo_questao": "M02Q08610R00800",
+      "enunciado": "Tempo de resposta em minutos dos atendimentos do SAMU (ou equivalente): 2024 Médio:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "143": {
+      "numero": "40.9",
+      "codigo_questao": "M02Q08610R00900",
+      "enunciado": "Tempo de resposta em minutos dos atendimentos do SAMU (ou equivalente): 2024 Máximo:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "144": {
+      "numero": "40.10",
+      "codigo_questao": "M02Q08620",
+      "enunciado": "As equipes da Central de Regulação das Urgências tiveram ao menos a composição mínima estipulada na legislação no decorrer do exercício?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Todas as equipes tinham composição mínima",
+          "valor": 0
+        },
+        {
+          "texto": "A maior parte das equipes tinham composição mínima",
+          "valor": -3
+        },
+        {
+          "texto": "A menor parte das equipes tinham composição mínima",
+          "valor": -7
+        },
+        {
+          "texto": "Nenhuma equipe tinha composição mínima",
+          "valor": -10
+        }
+      ]
+    },
+    "145": {
+      "numero": "40.11",
+      "codigo_questao": "M02Q08630",
+      "enunciado": "As equipes das Unidades Móveis tiveram ao menos a composição mínima estipulada na legislação no decorrer do exercício?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Todas as equipes tinham composição mínima",
+          "valor": 0
+        },
+        {
+          "texto": "A maior parte das equipes tinham composição mínima",
+          "valor": -10
+        },
+        {
+          "texto": "A menor parte das equipes tinham composição mínima",
+          "valor": -15
+        },
+        {
+          "texto": "Nenhuma equipe tinha composição mínima",
+          "valor": -20
+        }
+      ]
+    },
+    "146": {
+      "numero": "41",
+      "codigo_questao": "M02Q00600",
+      "enunciado": "O município utiliza sistema informatizado para gerenciar o estoque de materiais e insumos médicos?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "147": {
+      "numero": "41.1",
+      "codigo_questao": "M02Q00620",
+      "enunciado": "Assinale as funções do sistema de gestão de estoque de materiais e insumos médicos:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Fornece a posição de estoque, movimentação de entrada e saída, lote e validade",
+          "valor": 15
+        },
+        {
+          "texto": "Gerenciar o processo de compras dos insumos/materiais de saúde, desde o planejamento até a entrega e o recebimento da nota fiscal",
+          "valor": 15
+        },
+        {
+          "texto": "Gerenciar a reposição dos insumos/materiais de saúde por estabelecimento de saúde",
+          "valor": 15
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "148": {
+      "numero": "42",
+      "codigo_questao": "M02Q03900",
+      "enunciado": "O município possui Ouvidoria da Saúde implantada?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "149": {
+      "numero": "42.1",
+      "codigo_questao": "M02Q03930",
+      "enunciado": "Assinale as características da Ouvidoria da Saúde:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Instituída por ato formal no organograma da secretaria de saúde ou equivalente",
+          "valor": 3
+        },
+        {
+          "texto": "Possui estrutura física",
+          "valor": 2
+        },
+        {
+          "texto": "Possui equipe ou profissional designado",
+          "valor": 5
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "150": {
+      "numero": "43",
+      "codigo_questao": "M02Q08700",
+      "enunciado": "O município utiliza o Sistema OuvidorSUS ou sistema equivalente que, além de permitir a disseminação de informações, o registro e o encaminhamento das manifestações dos cidadãos, possibilita troca de informações entre os órgãos responsáveis pela gestão do SUS?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "151": {
+      "numero": "44",
+      "codigo_questao": "M02Q00800",
+      "enunciado": "O município possui o componente municipal do Sistema Nacional de Auditoria?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "152": {
+      "numero": "44.1",
+      "codigo_questao": "M02Q00810",
+      "enunciado": "Assinale as características do componente municipal do Sistema Nacional de Auditoria -SNA:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Instituído por ato formal no organograma da secretaria de saúde ou equivalente",
+          "valor": 3
+        },
+        {
+          "texto": "Possui estrutura física",
+          "valor": 2
+        },
+        {
+          "texto": "Possui equipe com ao menos um médico e um enfermeiro",
+          "valor": 10
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "153": {
+      "numero": "44.1.1",
+      "codigo_questao": "M02Q00811R00100",
+      "enunciado": "Especifique as \"Outras\" características do componente municipal do Sistema Nacional de Auditoria -SNA:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "154": {
+      "numero": "44.2",
+      "codigo_questao": "M02Q00820",
+      "enunciado": "As auditorias concluídas (encerradas) do exercício de 2024 pelo componente municipal do Sistema Nacional de Auditoria do SUS - SNA estão disponibilizadas em site para consulta?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 10
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "155": {
+      "numero": "45",
+      "codigo_questao": "M02Q08800",
+      "enunciado": "O município utiliza sistema informatizado para gerenciar o estoque de itens de medicamentos?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "156": {
+      "numero": "45.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre o sistema utilizado pelo município:",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, utiliza Sistema Próprio",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, utiliza o Sistema Hórus",
+          "valor": 40
+        }
+      ]
+    },
+    "157": {
+      "numero": "45.2",
+      "codigo_questao": "M02Q08810",
+      "enunciado": "Assinale as funções existentes no sistema de gestão de estoque de medicamentos:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Fornecer a posição de estoque, movimentação de entrada e saída, lote e validade",
+          "valor": 10
+        },
+        {
+          "texto": "Permitir a rastreabilidade dos medicamentos dispensados aos pacientes",
+          "valor": 10
+        },
+        {
+          "texto": "Gerenciar o processo de compras de itens de medicamentos, desde o planejamento até a entrega e o recebimento da nota fiscal",
+          "valor": 10
+        },
+        {
+          "texto": "Gerenciar a reposição de itens de medicamentos por estabelecimento de saúde",
+          "valor": 10
+        },
+        {
+          "texto": "Integrado à Base Nacional de Dados de Ações e Serviços da Assistência Farmacêutica (BNAFAR)",
+          "valor": 0
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "158": {
+      "numero": "46",
+      "codigo_questao": "M02Q08900R00100",
+      "enunciado": "Informe: Nº de itens de medicamentos do Componente Básico da Assistência Farmacêutica presentes na Relação Municipal de Medicamentos Essenciais com desabastecimento (falta do medicamento) superior a um mês no exercício de 2024:",
+      "peso": 90,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "159": {
+      "numero": "47",
+      "codigo_questao": "M02Q08900R00200",
+      "enunciado": "Informe: O total de itens de medicamentos do Componente Básico da Assistência Farmacêutica presentes na Relação Municipal de Medicamentos Essenciais:",
+      "peso": 90,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "160": {
+      "numero": "48",
+      "codigo_questao": "M02Q06000R00100",
+      "enunciado": "Aplicação do mínimo constitucional em saúde: Despesa aplicada em Saúde com recursos próprios:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "161": {
+      "numero": "49",
+      "codigo_questao": "M02Q06000R00200",
+      "enunciado": "Aplicação do mínimo constitucional em saúde: Receita de Impostos (Saúde):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "162": {
+      "numero": "50",
+      "codigo_questao": "TCMG000100",
+      "enunciado": "Qual foi o valor gasto com saúde no exercício de 2024, decorrente de decisões judiciais?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "163": {
+      "numero": "51",
+      "codigo_questao": "M02Q06600",
+      "enunciado": "Gostaria de registrar suas impressões, comentários e sugestões a respeito do presente questionário?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "164": {
+      "numero": "51.1",
+      "codigo_questao": "M02Q06610R00100",
+      "enunciado": "Utilize o espaço abaixo para registrar suas impressões, comentários e sugestões a respeito do presente questionário.",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "165": {
+      "numero": "52",
+      "codigo_questao": null,
+      "enunciado": "Nome Completo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "166": {
+      "numero": "53",
+      "codigo_questao": null,
+      "enunciado": "Cargo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "167": {
+      "numero": "54",
+      "codigo_questao": null,
+      "enunciado": "E-mail",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "168": {
+      "numero": "55",
+      "codigo_questao": null,
+      "enunciado": "CPF",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    }
+  }
+}

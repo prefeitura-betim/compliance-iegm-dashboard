@@ -2,7 +2,7 @@
 import { drizzle } from 'drizzle-orm/d1';
 import * as schema from '../../src/db/schema';
 import { eq, and, desc, asc, sql, count, avg, min, max, like, notLike } from 'drizzle-orm';
-import { resultadosMunicipios, municipios as municipiosTable, indicadores, questionarios, questoes, respostas, questionarioRespostas, tribunais, respostasDetalhadas, simuladoRespostas } from '../../src/db/schema';
+import { resultadosMunicipios, municipios as municipiosTable, indicadores, questionarios, questoes, respostas, questionarioRespostas, tribunais, respostasDetalhadas, simuladoRespostas, simuladoAnexos } from '../../src/db/schema';
 
 // Interface para o ambiente Cloudflare Pages
 interface Env {
@@ -100,6 +100,9 @@ export async function onRequest(context: any) {
 
       case 'simulado/enviar':
         return await handleSimuladoEnviar(request, db, url);
+
+      case 'simulado/anexo':
+        return await handleSimuladoAnexo(request, db);
 
       case 'kv/put':
         return await handleKVPut(request, env);
@@ -707,6 +710,8 @@ async function handleSimuladoQuestoes(request: Request, db: any, url: URL) {
         respostaRef: questoes.respostaRef,
         notaRef: questoes.notaRef,
         tipo: questoes.tipo,
+        opcoes: questoes.opcoes,
+        peso: questoes.peso,
       })
       .from(questoes)
       .innerJoin(questionarios, eq(questoes.questionarioId, questionarios.id))
@@ -794,6 +799,39 @@ async function handleSimuladoEnviar(request: Request, db: any, url: URL) {
     });
   }
 }
+async function handleSimuladoAnexo(request: Request, db: any) {
+  if (request.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
+  try {
+    const body: any = await request.json();
+    const { questaoId, codigoSessao, nomeArquivo, tipoArquivo, tamanho, dados } = body;
+
+    if (!questaoId || !codigoSessao || !nomeArquivo || !dados) {
+      return new Response(JSON.stringify({ error: 'Campos obrigatórios ausentes: questaoId, codigoSessao, nomeArquivo, dados' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    const criadoEm = new Date().toISOString();
+    await db.insert(simuladoAnexos).values({ questaoId, codigoSessao, nomeArquivo, tipoArquivo, tamanho, dados, criadoEm });
+
+    return new Response(JSON.stringify({ success: true }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  } catch (error: any) {
+    return new Response(JSON.stringify({ error: 'Falha ao salvar anexo', message: error.message }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+}
+
 async function handleKVPut(request: Request, env: Env) {
   if (request.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405 });

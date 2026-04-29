@@ -1,0 +1,1075 @@
+{
+  "indicador": "i-Plan",
+  "questoes": {
+    "0": {
+      "numero": "1",
+      "codigo_questao": "M03001800",
+      "enunciado": "A Prefeitura realizou audiências públicas para elaboração das peças orçamentárias de 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "1": {
+      "numero": "1.1",
+      "codigo_questao": "M03Q01890",
+      "enunciado": "Assinale para quais peças orçamentárias foram realizadas as audiências públicas:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "LDO 2024", "valor": 1 },
+        { "texto": "PPA inicial 2022-2025", "valor": 1 },
+        { "texto": "LOA 2024", "valor": 1 }
+      ]
+    },
+    "2": {
+      "numero": "1.2",
+      "codigo_questao": "M03Q01850",
+      "enunciado": "Assinale o dia e horário de realização das audiências públicas:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Dia de semana em horário comercial (8 as 18 horas)", "valor": 0 },
+        { "texto": "Dia de semana após as 18 horas", "valor": 2 },
+        { "texto": "Aos sábados, domingos e feriados", "valor": 2 }
+      ]
+    },
+    "3": {
+      "numero": "1.3",
+      "codigo_questao": "M03Q01810",
+      "enunciado": "As audiências públicas são transcritas em atas ou outro documento de registro das demandas/sugestões apresentadas pela participação popular?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "4": {
+      "numero": "1.3.1",
+      "codigo_questao": "M03Q01883R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação das atas de audiências públicas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "5": {
+      "numero": "1.4",
+      "codigo_questao": "M03Q01812",
+      "enunciado": "Assinale os elementos considerados no processo de planejamento e organização das audiências públicas:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Planejamento logístico. Ex.: localização do ambiente, acomodações adequadas aos participantes, regulação e testagem dos equipamentos eletrônicos (som, vídeo e iluminação), verificação dos equipamentos relacionados a transmissão das audiências etc.", "valor": 1 },
+        { "texto": "Elaboração e divulgação do Relatório contendo a análise das demandas e sugestões coletadas", "valor": 1 },
+        { "texto": "Estabelecimento da abordagem de interação", "valor": 0.5 },
+        { "texto": "Disponibilização prévia de material de apoio a respeito dos temas a serem debatidos", "valor": 0.5 },
+        { "texto": "Estabelecimento da Pauta", "valor": 0.5 },
+        { "texto": "Convocação contendo o dia, o horário e o local através dos jornais, das rádios, do Portal da Prefeitura e outras plataformas digitais. Ex.: Instagram, Facebook etc.", "valor": 0.5 },
+        { "texto": "Definição de mecanismos de avaliação", "valor": 0.5 },
+        { "texto": "Indicação de mediador qualificado", "valor": 0.5 }
+      ]
+    },
+    "6": {
+      "numero": "2",
+      "codigo_questao": "M03Q03500",
+      "enunciado": "Houve a realização de consulta pública online para coleta de sugestões para a elaboração do PPA 2022-2025?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 6 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "7": {
+      "numero": "2.1",
+      "codigo_questao": "M03Q03511",
+      "enunciado": "Na consulta pública online de elaboração do Plano Plurianual (PPA) foi disponibilizado glossário explicando os objetivos, como contribuir, em linguagem clara e simples?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 2 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "8": {
+      "numero": "3",
+      "codigo_questao": "M03Q01400",
+      "enunciado": "Além das audiências públicas, a Prefeitura realizou diagnóstico anteriormente ao planejamento, através do levantamento formal de seus problemas, necessidades e deficiências?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "9": {
+      "numero": "3.1",
+      "codigo_questao": "M03Q01430",
+      "enunciado": "A elaboração do diagnóstico levou em conta algum plano do governo federal e/ou estadual?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 14 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "10": {
+      "numero": "3.2",
+      "codigo_questao": "M03Q13800",
+      "enunciado": "Os programas do PPA 2022-2025 tiveram diagnóstico prévio?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Não foi realizado diagnóstico prévio para nenhum programa do PPA", "valor": 0 },
+        { "texto": "Sim, para todos os programas do PPA", "valor": 10 },
+        { "texto": "Sim, para a menor parte dos programas do PPA", "valor": 3 },
+        { "texto": "Sim, para a maior parte dos programas do PPA", "valor": 5 }
+      ]
+    },
+    "11": {
+      "numero": "4",
+      "codigo_questao": "M03Q03900",
+      "enunciado": "Há o estabelecimento de metas físicas e financeiras de forma anual nas ações previstas no PPA?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não houve o estabelecimento de metas anuais", "valor": 0 }
+      ]
+    },
+    "12": {
+      "numero": "4.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe o estabelecimento de metas físicas e financeiras de forma anual nas ações previstas no PPA:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, apenas com metas físicas", "valor": 5 },
+        { "texto": "Sim, apenas com metas financeiras", "valor": 5 },
+        { "texto": "Sim, com metas físicas e financeiras", "valor": 10 }
+      ]
+    },
+    "13": {
+      "numero": "4.2",
+      "codigo_questao": "M03Q03910",
+      "enunciado": "Os programas finalísticos articulam um conjunto de ações que concorrem para um objetivo comum preestabelecido, visando à solução de um problema ou necessidade da sociedade?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Nenhum programa finalístico", "valor": 0 }
+      ]
+    },
+    "14": {
+      "numero": "4.2.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre programas finalísticos que articulam um conjunto de ações que concorrem para um objetivo comum preestabelecido, visando à solução de um problema ou necessidade da sociedade:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Todos os programas finalísticos do PPA", "valor": 15 },
+        { "texto": "A maior parte dos programas finalísticos", "valor": 10 },
+        { "texto": "A menor parte dos programas finalísticos", "valor": 5 }
+      ]
+    },
+    "15": {
+      "numero": "4.2.2",
+      "codigo_questao": "M03Q03911",
+      "enunciado": "Houve avaliação da implementação dos programas finalísticos em relação a seus indicadores, objetivos e metas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim, houve avaliação", "valor": 0 },
+        { "texto": "Não houve avaliação", "valor": 0 }
+      ]
+    },
+    "16": {
+      "numero": "4.2.2.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe a avaliação da implementação dos programas finalísticos em relação a seus indicadores, objetivos e metas:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, para todos os programas finalísticos monitorados", "valor": 10 },
+        { "texto": "Sim, para a maior parte dos programas finalísticos monitorados", "valor": 7 },
+        { "texto": "Sim, para a menor parte dos programas finalísticos monitorados", "valor": 3 }
+      ]
+    },
+    "17": {
+      "numero": "4.2.2.2",
+      "codigo_questao": "M03Q03912",
+      "enunciado": "Houve a elaboração de Relatório Anual de Avaliação dos programas finalísticos do PPA?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim, houve a elaboração", "valor": 0 },
+        { "texto": "Não houve elaboração do Relatório Anual de Avaliação", "valor": 0 }
+      ]
+    },
+    "18": {
+      "numero": "4.2.2.2.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe a elaboração de Relatório Anual de Avaliação dos programas finalísticos do PPA:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, para todos os programas finalísticos do PPA", "valor": 7 },
+        { "texto": "Sim, para a maior parte dos programas finalísticos", "valor": 4 },
+        { "texto": "Sim, para a menor parte dos programas finalísticos", "valor": 1 }
+      ]
+    },
+    "19": {
+      "numero": "4.2.2.2.2",
+      "codigo_questao": "M03Q02580",
+      "enunciado": "Assinale os aspectos analisados no processo de acompanhamento e avaliação do PPA:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Percepção de coerência, em todos os programas, do necessário encadeamento lógico-causal entre os insumos que mobiliza, os produtos/ações que gera, os resultados que provoca e os impactos esperados pela sociedade", "valor": 20 },
+        { "texto": "Análise quanto a se Programas, Metas e Ações são mensurados por um ou mais indicadores próprios e adequados, e que permitam aferir a situação atual (aquela que se pretende modificar) e os avanços obtidos ao longo da execução do programa (em direção àquela mudança pretendida)", "valor": 20 },
+        { "texto": "Avaliação entre os produtos ofertados à população e as reais demandas da sociedade, coletadas, principalmente, nas audiências públicas realizadas e nos demais instrumentos de diagnóstico dos problemas, necessidades e deficiências do município", "valor": 20 },
+        { "texto": "Outros", "valor": 0 }
+      ]
+    },
+    "20": {
+      "numero": "4.2.2.3",
+      "codigo_questao": "M03Q02700",
+      "enunciado": "Houve publicação dos resultados da avaliação dos programas finalísticos do PPA?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "21": {
+      "numero": "4.2.2.3.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre a publicação dos resultados da avaliação dos programas finalísticos do PPA:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, para todos os programas finalísticos avaliados do PPA", "valor": 4 },
+        { "texto": "Sim, para a maior parte dos programas finalísticos avaliados", "valor": 3 },
+        { "texto": "Sim, para a menor parte dos programas finalísticos avaliados", "valor": 1 }
+      ]
+    },
+    "22": {
+      "numero": "4.2.2.3.2",
+      "codigo_questao": "M03Q02712R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação dos resultados da avaliação dos programas finalísticos do PPA:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "23": {
+      "numero": "4.3",
+      "codigo_questao": "M03Q03920",
+      "enunciado": "Os indicadores são mensuráveis e estão coerentes com as metas físico-financeiras estabelecidas?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Todos os indicadores do PPA", "valor": 25 },
+        { "texto": "A maior parte dos indicadores", "valor": 17 },
+        { "texto": "A menor parte dos indicadores", "valor": 8 },
+        { "texto": "Nenhum indicador", "valor": 0 }
+      ]
+    },
+    "24": {
+      "numero": "4.4",
+      "codigo_questao": "M03Q03930",
+      "enunciado": "Assinale os Planos Setoriais que foram incorporados no Plano Plurianual (PPA):",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Plano Diretor", "valor": 0 },
+        { "texto": "Plano Municipal da Educação", "valor": 2.5 },
+        { "texto": "Plano Municipal pela Primeira Infância", "valor": 0 },
+        { "texto": "Plano Municipal da Saúde", "valor": 2.5 },
+        { "texto": "Plano de Mobilidade Urbana", "valor": 0 },
+        { "texto": "Plano de Saneamento Básico", "valor": 2.5 },
+        { "texto": "Plano de Resíduos Sólidos", "valor": 2.5 },
+        { "texto": "Plano de Contingência Municipal - PLANCON de Defesa Civil", "valor": 2.5 },
+        { "texto": "Plano Diretor de Tecnologia da Informação", "valor": 2.5 },
+        { "texto": "Não incorporou nenhum dos planos acima", "valor": -10 }
+      ]
+    },
+    "25": {
+      "numero": "5",
+      "codigo_questao": "M03Q03700",
+      "enunciado": "É realizado estudo/análise para previsão de receitas, no mínimo, anualmente?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 6 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "26": {
+      "numero": "5.1",
+      "codigo_questao": "M03Q03710",
+      "enunciado": "Assinale os tipos de tributos e repasses/transferências avaliados na análise e estudo da previsão da receita:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Imposto sobre a Propriedade Predial e Territorial Urbano (IPTU)", "valor": 0.5 },
+        { "texto": "Transferências Obrigatórias Recebidas do Estado. Ex.: ICMS, IPVA.", "valor": 1 },
+        { "texto": "Outros", "valor": 0 },
+        { "texto": "Transferências Obrigatórias Recebidas da União. Ex.: FPM, CIDE, ITR, Royalties e FUNDEB.", "valor": 1 },
+        { "texto": "Contribuições", "valor": 0.25 },
+        { "texto": "Taxas", "valor": 0.25 },
+        { "texto": "Imposto Sobre Serviços de Qualquer Natureza (ISSQN)", "valor": 0.5 },
+        { "texto": "Imposto sobre a Transmissão de Bens Imóveis (ITBI)", "valor": 0.5 }
+      ]
+    },
+    "27": {
+      "numero": "5.2",
+      "codigo_questao": null,
+      "enunciado": "Transferências Obrigatórias Recebidas do Estado. Ex.: ICMS, IPVA. foi um tipo de tributo e repasse/transferência avaliado na análise e estudo da previsão da receita?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "28": {
+      "numero": "5.2.1",
+      "codigo_questao": "M03Q03712",
+      "enunciado": "A estimativa de transferências obrigatórias leva em consideração o cálculo de previsão de repasse do ICMS realizado periodicamente pela Fazenda Pública Estadual?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, com reestimativa da receita prevista na LOA no decorrer da execução orçamentária-financeira", "valor": 2 },
+        { "texto": "Sim, somente para elaborar a LOA", "valor": 1 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "29": {
+      "numero": "5.3",
+      "codigo_questao": "M03Q03730",
+      "enunciado": "A metodologia utilizada para projeção da receita varia de acordo com a espécie da receita orçamentária projetada?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 6 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "30": {
+      "numero": "6",
+      "codigo_questao": "M03Q04010",
+      "enunciado": "Assinale os itens que a LDO dispõe:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Dispor sobre pagamento de servidor ou empregado público com recursos vinculados à parceria firmada com o terceiro setor", "valor": 0 },
+        { "texto": "Critérios para ajuda financeira a entidades da Administração indireta", "valor": 0 },
+        { "texto": "Critérios para repasses a entidades do terceiro setor", "valor": 0 },
+        { "texto": "Determinação do índice de preços para atualização monetária do principal da Dívida Mobiliária Refinanciada", "valor": 0 },
+        { "texto": "Requisitos para início de novos projetos, após o adequado atendimento/manutenção dos que estão em andamento", "valor": 0.5 },
+        { "texto": "Custos estimados, indicadores e metas físicas que se correlacionam com as ações do governo municipal", "valor": 0.5 },
+        { "texto": "Critérios para o Poder Executivo estabelecer a programação financeira mensal para todo o Município, nele incluido a Câmara", "valor": 1 },
+        { "texto": "Percentual da Receita Corrente Líquida que será retido, na peça orçamentária, enquanto Reserva de Contingência, destinada a passivos contingentes e outros riscos fiscais", "valor": 1 },
+        { "texto": "Critérios para limitação de empenho e movimentação financeira; ressalvados os pagamentos do serviço da dívida, os relativos à inovação e ao desenvolvimento científico e tecnológico custeadas por fundo criado para tal finalidade.", "valor": 0.5 },
+        { "texto": "Critérios para contratação de horas extras quando o Poder superar o limite prudencial para pessoal: Executivo, 51,30% da RCL; Legislativo, 5,7% da RCL", "valor": 0.5 },
+        { "texto": "Autorização para o Município auxiliar o custeio de despesas próprias do Estado e da União", "valor": 0 }
+      ]
+    },
+    "31": {
+      "numero": "7",
+      "codigo_questao": "M03Q02100",
+      "enunciado": "Houve alteração orçamentária decorrente de remanejamento, transposição ou transferência de uma categoria de programação para outra ou de um órgão para outro por decreto?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "32": {
+      "numero": "7.1",
+      "codigo_questao": "M03Q02120",
+      "enunciado": "Assinale a classificação funcional da despesa, objeto de alterações orçamentárias decorrentes de remanejamento, transposição e transferências realizadas por decreto:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "17-Saneamento", "valor": -5 },
+        { "texto": "10-Saúde", "valor": -5 },
+        { "texto": "Outras", "valor": -5 },
+        { "texto": "19 - Ciência e Tecnologia", "valor": 0 },
+        { "texto": "12-Educação", "valor": -5 },
+        { "texto": "26-Transporte", "valor": -5 }
+      ]
+    },
+    "33": {
+      "numero": "8",
+      "codigo_questao": "M03Q04100",
+      "enunciado": "O Anexo de Metas Fiscais integra a Lei de Diretrizes Orçamentárias (LDO), nos termos exigidos pela Lei de Responsabilidade Fiscal?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "34": {
+      "numero": "8.1",
+      "codigo_questao": "M03Q04130R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do Anexo de Metas Fiscais:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "35": {
+      "numero": "8.2",
+      "codigo_questao": "M03Q04121",
+      "enunciado": "Assinale os demonstrativos contidos no Anexo de Metas Fiscais:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Metas Fiscais Atuais Comparadas com as Metas Fiscais Fixadas nos três exercícios anteriores", "valor": 0.7 },
+        { "texto": "Margem de Expansão das Despesas Obrigatórias de Caráter Continuado", "valor": 1.2 },
+        { "texto": "Origem e Aplicação dos Recursos Obtidos com a Alienação de Ativos", "valor": 0 },
+        { "texto": "Avaliação da Situação Financeira e Atuarial do RPPS", "valor": 0 },
+        { "texto": "Estimativa e Compensação da Renúncia de Receita", "valor": 0 },
+        { "texto": "Outros", "valor": 0 },
+        { "texto": "Metas Anuais", "valor": 0.7 },
+        { "texto": "Avaliação do Cumprimento das Metas Fiscais do Exercício Anterior", "valor": 0.7 },
+        { "texto": "Evolução do Patrimônio Líquido", "valor": 0.7 }
+      ]
+    },
+    "36": {
+      "numero": "9",
+      "codigo_questao": "M03Q04200",
+      "enunciado": "O Anexo de Riscos Fiscais integra a Lei de Diretrizes Orçamentárias (LDO), nos termos exigidos pela Lei de Responsabilidade Fiscal?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "37": {
+      "numero": "9.1",
+      "codigo_questao": "M03Q04230R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do Anexo de Riscos Fiscais:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "38": {
+      "numero": "9.2",
+      "codigo_questao": "M03Q04221",
+      "enunciado": "Assinale as etapas para gerenciamento dos riscos contidas Anexo de Riscos Fiscais:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Estimativa do grau de tolerância das contas públicas ao comportamento frente ao risco", "valor": 0.5 },
+        { "texto": "Identificação do tipo de risco e da exposição ao risco", "valor": 0.5 },
+        { "texto": "Monitoramento contínuo da exposição ao longo do tempo, preferencialmente através de sistemas institucionalizados (Controle Interno)", "valor": 1 },
+        { "texto": "Implementação de condutas de mitigação do risco e de mecanismos de controle para prevenir perdas decorrentes do risco", "valor": 0.5 },
+        { "texto": "Decisão estratégica sobre as opções para enfrentar o risco", "valor": 0.5 },
+        { "texto": "Mensuração ou quantificação dessa exposição", "valor": 0.5 }
+      ]
+    },
+    "39": {
+      "numero": "10",
+      "codigo_questao": "M03Q04310",
+      "enunciado": "Assinale os itens capazes de atestar a compatibilidade entre a LOA, PPA e LDO:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "As receitas e despesas da LOA são compatíveis com o Resultado Primário da LDO, incluindo, no máximo, a variação da inflação do interregno temporal dos referidos projetos de lei", "valor": 2 },
+        { "texto": "O Resultado Nominal constante da LDO consta da LOA, com variação de no máximo a variação da inflação do interregno temporal dos referidos projetos de lei", "valor": 2 },
+        { "texto": "A estimativa de renúncia fiscal prevista na LDO coincide com o estimado na LOA com variação limitada à variação da inflação", "valor": 2 },
+        { "texto": "A estimativa de receita e respectivos critérios presentes na LOA são compatíveis com os previstos na LDO em relação à receita de IPTU", "valor": 2 },
+        { "texto": "A estimativa de receita e respectivos critérios presentes na LOA são compatíveis com os previstos na LDO em relação à receita de ISSQN", "valor": 2 },
+        { "texto": "A estimativa de receita e respectivos critérios presentes na LOA são compatíveis com os previstos na LDO em relação à receita de ITBI", "valor": 2 },
+        { "texto": "Os investimentos, parte das despesas de capital, previstas na LOA e LDO são compatíveis com as previsões do PPA", "valor": 2 },
+        { "texto": "A LDO e a LOA não são compatíveis com o PPA", "valor": -10 },
+        { "texto": "Programas constantes do PPA constam na LOA", "valor": 1 },
+        { "texto": "Programas e ações constantes da LDO constam da LOA", "valor": 2 }
+      ]
+    },
+    "40": {
+      "numero": "11",
+      "codigo_questao": "M03Q02000",
+      "enunciado": "Na Lei Orçamentária Anual (LOA), há previsão para abertura de créditos adicionais por decreto?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "41": {
+      "numero": "11.1",
+      "codigo_questao": "M03Q02010R00100",
+      "enunciado": "Qual o percentual autorizado na Lei Orçamentária Anual (LOA) para abertura de crédito adicional suplementar?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "42": {
+      "numero": "12",
+      "codigo_questao": "M03Q00700",
+      "enunciado": "Há estrutura administrativa voltada para planejamento?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "43": {
+      "numero": "12.1",
+      "codigo_questao": "M03Q00710",
+      "enunciado": "A prefeitura dispõe de recursos humanos para operacionalização das atividades de planejamento?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "44": {
+      "numero": "12.1.1",
+      "codigo_questao": "M03Q00711",
+      "enunciado": "Os servidores da equipe de planejamento possuem qualificação técnica para o exercício das atividades de planejamento, gestão e orçamento?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, todos os servidores possuem qualificação técnica", "valor": 0 },
+        { "texto": "Sim, a maior parte dos servidores possuem qualificação técnica", "valor": -5 },
+        { "texto": "Sim, a menor parte dos servidores possuem qualificação técnica", "valor": -8 },
+        { "texto": "Não", "valor": -10 }
+      ]
+    },
+    "45": {
+      "numero": "12.1.2",
+      "codigo_questao": "M03Q00900",
+      "enunciado": "Os servidores responsáveis pelo planejamento recebem treinamento específico para a matéria?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -10 }
+      ]
+    },
+    "46": {
+      "numero": "13",
+      "codigo_questao": "M03Q02500",
+      "enunciado": "Há acompanhamento da execução do planejamento?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "47": {
+      "numero": "13.1",
+      "codigo_questao": "M03Q02550",
+      "enunciado": "A prefeitura demonstra e avalia, com periodicidade quadrimestral, o cumprimento das metas fiscais em audiências públicas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não realizou nenhuma audiência pública quadrimestral na Câmara Municipal", "valor": 0 }
+      ]
+    },
+    "48": {
+      "numero": "13.1.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre a realização de audiências públicas:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Realizou Audiência pública do 3º Quadrimestre até o final do mês de fevereiro de 2024", "valor": 2 },
+        { "texto": "Não realizou audiência pública quadrimestral dentro do prazo", "valor": 0 },
+        { "texto": "Realizou Audiência pública do 1º Quadrimestre até o final do mês de maio de 2024", "valor": 2 },
+        { "texto": "Realizou Audiência pública do 2º Quadrimestre até o final do mês de setembro de 2024", "valor": 2 }
+      ]
+    },
+    "49": {
+      "numero": "13.1.2",
+      "codigo_questao": "M23Q02592",
+      "enunciado": "Foram elaborados os Relatórios Quadrimestrais das metas fiscais para as audiências públicas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não elaborou relatório de nenhuma audiência pública quadrimestral", "valor": 0 }
+      ]
+    },
+    "50": {
+      "numero": "13.1.2.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre a elaboração dos relatórios:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Relatório da Audiência pública do 1º Quadrimestre", "valor": 1 },
+        { "texto": "Relatório da Audiência pública do 2º Quadrimestre", "valor": 1 },
+        { "texto": "Relatório da Audiência pública do 3º Quadrimestre", "valor": 1 }
+      ]
+    },
+    "51": {
+      "numero": "13.1.2.2",
+      "codigo_questao": "M23Q02593R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação dos Relatórios Quadrimestrais de Metas Fiscais:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "52": {
+      "numero": "13.2",
+      "codigo_questao": "M03Q02590",
+      "enunciado": "Houve acompanhamento periódico da execução orçamentária com participação do Prefeito?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 4 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "53": {
+      "numero": "13.3",
+      "codigo_questao": "M03Q02540",
+      "enunciado": "O acompanhamento e avaliação da execução orçamentária serve de retroalimentação para o replanejamento dos programas e metas das peças orçamentárias?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, com emissão de relatório e sem ciência do prefeito", "valor": 10 },
+        { "texto": "Sim, com emissão de relatórios e ciência do prefeito", "valor": 20 },
+        { "texto": "Sim, sem emissão de relatório e sem ciência do prefeito", "valor": 5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "54": {
+      "numero": "14",
+      "codigo_questao": "M03Q03000",
+      "enunciado": "Houve a instituição e regulamentação das operações do Sistema de Controle Interno?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "55": {
+      "numero": "14.1",
+      "codigo_questao": "M03Q03021R00100",
+      "enunciado": "Página eletrônica (link na internet) de divulgação do instrumento de regulamentação do sistema de controle interno:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "56": {
+      "numero": "14.2",
+      "codigo_questao": "M03Q03060",
+      "enunciado": "O Sistema de Controle Interno no Município possui atribuições formalmente definidas e regulamentadas, que atendam às determinações da Constituição Federal e Lei de Responsabilidade Fiscal?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "57": {
+      "numero": "14.2.1",
+      "codigo_questao": "M03Q03061",
+      "enunciado": "Assinale as funções constitucionais e legais atribuídas ao sistema controle interno:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Avaliar o cumprimento das metas físicas e financeiras dos planos orçamentários, bem como a eficiência de seus resultados", "valor": 1 },
+        { "texto": "Comprovar a legalidade da gestão orçamentária, financeira e patrimonial", "valor": 1 },
+        { "texto": "Comprovar a legalidade dos repasses a entidades do terceiro setor, avaliando a eficácia e a eficiência dos resultados alcançados", "valor": 1 },
+        { "texto": "Exercer o controle das operações de crédito, avais e garantias, bem como dos direitos e haveres do Município", "valor": 1 },
+        { "texto": "Em conjunto com autoridades da Administração Financeira do Município, assinar o Relatório de Gestão Fiscal", "valor": 1 },
+        { "texto": "Atestar a regularidade da tomada de contas dos ordenadores de despesa, recebedores, tesoureiros, pagadores ou assemelhados", "valor": 1 },
+        { "texto": "Apoiar o Tribunal de Contas no exercício de sua missão institucional", "valor": 1 },
+        { "texto": "Comprovar a eficácia e a eficiência da gestão orçamentária, financeira e patrimonial", "valor": 1 },
+        { "texto": "Acompanhar as metas de superávit orçamentário, primário e nominal", "valor": 1 },
+        { "texto": "Observar se as operações de créditos sujeitam-se aos limites e condições das Resoluções 40 e 43/2001, do Senado", "valor": 1 },
+        { "texto": "Verificar se os empréstimos e financiamentos vêm sendo pagos tal qual previsto nos respectivos contratos", "valor": 1 },
+        { "texto": "Verificar se está sendo providenciada a recondução da despesa de pessoal e da dívida consolidada a seus limites fiscais", "valor": 1 },
+        { "texto": "Comprovar se os recursos da alienação de ativos estão sendo despendidos em gastos de capital e, não, em despesas correntes", "valor": 1 },
+        { "texto": "Constatar se está sendo satisfeito o limite para gastos totais das Câmaras Municipais", "valor": 1 },
+        { "texto": "Verificar a fidelidade funcional dos responsáveis por bens e valores públicos", "valor": 1 }
+      ]
+    },
+    "58": {
+      "numero": "14.3",
+      "codigo_questao": "M03Q03070",
+      "enunciado": "A prefeitura dispõe de recursos humanos para operacionalização das atividades do sistema de controle interno?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0.5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "59": {
+      "numero": "14.3.1",
+      "codigo_questao": "M03Q03077",
+      "enunciado": "O responsável pela Unidade Central de Controle Interno (UCCI) ocupa cargo efetivo na Administração Municipal?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "60": {
+      "numero": "14.3.2",
+      "codigo_questao": "M03Q03071",
+      "enunciado": "O quadro funcional do Sistema de Controle Interno recebe treinamento específico para execução das atividades inerentes ao cargo?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 6 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "61": {
+      "numero": "14.3.3",
+      "codigo_questao": "M03Q04350",
+      "enunciado": "Na Prefeitura existe formalização da segregação de funções financeiras e de controle?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "62": {
+      "numero": "14.3.4",
+      "codigo_questao": "M03Q03073",
+      "enunciado": "A Unidade Central de Controle Interno (UCCI) possui autonomia e independência para o exercício de suas funções?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 6 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "63": {
+      "numero": "14.3.4.1",
+      "codigo_questao": "M03Q03082",
+      "enunciado": "A estrutura organizacional da Unidade Central de Controle Interno (UCCI) está associada ou subordinada a qual secretaria/diretoria?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Administração", "valor": -6 },
+        { "texto": "Finanças/Fazenda", "valor": -6 },
+        { "texto": "Planejamento/Orçamento/Gestão", "valor": -6 },
+        { "texto": "Gabinete do Prefeito", "valor": 0 },
+        { "texto": "Outra", "valor": -6 }
+      ]
+    },
+    "64": {
+      "numero": "14.3.4.2",
+      "codigo_questao": "M03Q03084",
+      "enunciado": "A Unidade Central de Controle Interno (UCCI) procedeu com alguma comunicação de irregularidade ou ilegalidade em 2024?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, houve comunicação da irregularidade ou ilegalidade", "valor": 0 },
+        { "texto": "Houve irregularidade ou ilegalidade, mas não procedeu a comunicação", "valor": -3 },
+        { "texto": "Não houve irregularidades nem ilegalidades", "valor": 0 }
+      ]
+    },
+    "65": {
+      "numero": "14.3.5",
+      "codigo_questao": "M03Q03075",
+      "enunciado": "O responsável pela Unidade Central de Controle Interno (UCCI) apresentou relatórios periódicos que demonstram efetivo exercício de suas atribuições?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "66": {
+      "numero": "14.3.5.1",
+      "codigo_questao": "M03Q00110",
+      "enunciado": "Com base no relatório do Controle Interno, o Prefeito determinou as providências cabíveis diante das irregularidades e ilegalidades apontadas?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Não foram relatadas irregularidades", "valor": 6 },
+        { "texto": "Não", "valor": 0 },
+        { "texto": "Sim", "valor": 0 }
+      ]
+    },
+    "67": {
+      "numero": "14.3.5.1.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe o SIM informado anteriormente:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim de todos os apontamentos", "valor": 6 },
+        { "texto": "Sim de parte dos apontamentos", "valor": 2 }
+      ]
+    },
+    "68": {
+      "numero": "14.3.5.1.2",
+      "codigo_questao": "M03Q00111",
+      "enunciado": "O Controle Interno acompanhou as medidas e os prazos das providências determinadas pelo Prefeito diante dos apontamentos do relatório do Controle Interno?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim de todas as providências determinadas pelo Prefeito", "valor": 0 },
+        { "texto": "Sim de parte das providências determinadas pelo Prefeito", "valor": 0 },
+        { "texto": "Não", "valor": -3 }
+      ]
+    },
+    "69": {
+      "numero": "14.4",
+      "codigo_questao": "M03Q03090",
+      "enunciado": "Houve a elaboração de Plano Operativo Anual?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "70": {
+      "numero": "14.4.1",
+      "codigo_questao": "M03Q03091",
+      "enunciado": "Assinale as atividades previstas no Plano Operativo Anual:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Os limites e condições para a inscrição de despesas em Restos a Pagar", "valor": 0 },
+        { "texto": "Cumprimento das metas do PPA e a execução dos programas de governo e dos orçamentos (LOA e LDO)", "valor": 0 },
+        { "texto": "Cumprimento do limite de gastos totais dos legislativos municipais, inclusive no que se refere ao atingimento de metas fiscais (Gestão Fiscal)", "valor": 0 },
+        { "texto": "Cumprimento da legislação de licitações e fiscalização de contratos", "valor": 0 },
+        { "texto": "Aplicação de recursos públicos por entidades de direito privado", "valor": 0 },
+        { "texto": "Cumprimento das metas fiscais, físicas e de resultados dos programas de governo, no que tange a eficiência, eficácia e efetividade", "valor": 0 },
+        { "texto": "Receitas", "valor": 0 },
+        { "texto": "Despesas", "valor": 0 },
+        { "texto": "Administração de pessoal", "valor": 0 },
+        { "texto": "Estoques e almoxarifados", "valor": 0 },
+        { "texto": "Outros", "valor": 0 },
+        { "texto": "Lei de Acesso à Informação", "valor": 0 },
+        { "texto": "Transparência", "valor": 0 },
+        { "texto": "Contabilidade", "valor": 0 },
+        { "texto": "Transferência para o Legislativo Municipal (Repasses de Duodécimos)", "valor": 0 },
+        { "texto": "Administração do patrimônio", "valor": 0 },
+        { "texto": "Aplicação de recursos públicos por entidades de direito público", "valor": 0 }
+      ]
+    },
+    "71": {
+      "numero": "15",
+      "codigo_questao": "M03003300",
+      "enunciado": "Houve a criação da ouvidoria pública no âmbito do Poder Executivo Municipal?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "72": {
+      "numero": "15.1",
+      "codigo_questao": "M03Q03321R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do instrumento normativo de criação da Ouvidoria Pública:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "73": {
+      "numero": "15.2",
+      "codigo_questao": "M03003360",
+      "enunciado": "Assinale as características que a ouvidoria dispõe para a execução de suas atribuições:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Independência", "valor": -0.5 },
+        { "texto": "Isenção", "valor": -0.5 },
+        { "texto": "Acessibilidade", "valor": -0.5 },
+        { "texto": "Transparência", "valor": -0.5 },
+        { "texto": "Confidencialidade", "valor": -0.5 },
+        { "texto": "Outros", "valor": 0 }
+      ]
+    },
+    "74": {
+      "numero": "15.3",
+      "codigo_questao": "M03Q03370",
+      "enunciado": "A ouvidoria elaborou Relatório de Gestão do exercício de 2024 contendo a consolidação das manifestações encaminhadas pelos usuários de serviços públicos, e com base nelas, apontou falhas e sugeriu melhorias em sua prestação?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -10 }
+      ]
+    },
+    "75": {
+      "numero": "15.3.1",
+      "codigo_questao": "M03Q03371",
+      "enunciado": "Assinale as informações constantes nos relatórios gerenciais elaborados pela ouvidoria:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Número de manifestações recebidas no exercício anterior", "valor": 0 },
+        { "texto": "Motivos das Manifestações", "valor": 0 },
+        { "texto": "Análise dos Pontos recorrentes", "valor": 0 },
+        { "texto": "Providências adotadas pela administração pública nas soluções apresentadas", "valor": 0 }
+      ]
+    },
+    "76": {
+      "numero": "15.3.2",
+      "codigo_questao": "M03Q03373R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação do Relatório de Gestão do exercício de 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "77": {
+      "numero": "15.4",
+      "codigo_questao": "M03003380",
+      "enunciado": "Assinale as iniciativas de divulgação e mobilização social das ouvidorias:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Realização de palestras para grupos e instituições. Ex.: escolas, igrejas, associações civis, outros grupos organizados etc.", "valor": 0 },
+        { "texto": "Realização de eventos que estimulem a participação e coleta das demandas sociais. Ex.: realização de audiências públicas para divulgação dos trabalhos desempenhados pela ouvidoria e ouvir as demandas da população.", "valor": 0 },
+        { "texto": "Utilização de outras plataformas digitais para a divulgação da missão, do modo de trabalho das ouvidorias e incentivando a participação popular. Ex.: instagram, facebook, twiter etc.", "valor": 0 },
+        { "texto": "Link da página eletrônica da ouvidoria no sítio da Prefeitura Municipal", "valor": 0 },
+        { "texto": "Outras", "valor": 0 }
+      ]
+    },
+    "78": {
+      "numero": "16",
+      "codigo_questao": "M03Q04400",
+      "enunciado": "A prefeitura elaborou a \"Carta de Serviço ao Usuário\", que trata dos serviços prestados pelos seus órgãos e entidades, as formas de acesso a esses serviços e seus compromissos e padrões de qualidade de atendimento ao público, conforme artigo 7°, §§ 2ºe 3º, da Lei Federal nº 13.460/2017?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 4 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "79": {
+      "numero": "16.1",
+      "codigo_questao": "M03Q04413R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) de divulgação da \"Carta de Serviço ao Usuário\":",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "80": {
+      "numero": "16.2",
+      "codigo_questao": "M03Q04414",
+      "enunciado": "A \"Carta de Serviço ao Usuário\" está atualizada?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 2 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "81": {
+      "numero": "16.3",
+      "codigo_questao": "M03Q04420",
+      "enunciado": "A prefeitura regulamentou a operacionalização da Carta de Serviços ao Usuário, conforme o artigo 7°, § 5º, da Lei Federal nº 13.460/2017?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 4 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "82": {
+      "numero": "17",
+      "codigo_questao": "M03Q04500",
+      "enunciado": "A prefeitura regulamentou e instituiu o Conselho de Usuários, nos termos definidos nos artigos 18 a 21 da Lei Federal nº 13.460/2017?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 4 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "83": {
+      "numero": "18",
+      "codigo_questao": "M03Q01000",
+      "enunciado": "O município elaborou Plano Diretor conforme Lei nº 10.257/01?",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 },
+        { "texto": "Não se aplica", "valor": 0 }
+      ]
+    },
+    "84": {
+      "numero": "18.1",
+      "codigo_questao": "M03Q01040R00100",
+      "enunciado": "Informe a data da última atualização do Plano Diretor:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "85": {
+      "numero": "19",
+      "codigo_questao": "M03Q03400",
+      "enunciado": "Gostaria de registrar suas impressões, comentários e sugestões a respeito do presente questionário?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "86": {
+      "numero": "19.1",
+      "codigo_questao": "M03Q03410R00100",
+      "enunciado": "Utilize o espaço abaixo para registrar suas impressões, comentários e sugestões a respeito do presente questionário.",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "87": {
+      "numero": "20",
+      "codigo_questao": null,
+      "enunciado": "Nome Completo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "88": {
+      "numero": "21",
+      "codigo_questao": null,
+      "enunciado": "Cargo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "89": {
+      "numero": "22",
+      "codigo_questao": null,
+      "enunciado": "E-mail",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "90": {
+      "numero": "23",
+      "codigo_questao": null,
+      "enunciado": "CPF",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    }
+  }
+}

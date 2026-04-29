@@ -1,0 +1,415 @@
+{
+  "submissao": {
+    "indicador": "i-Plan TCEMG-2025",
+    "numero_indicador": 103,
+    "id_submissao": "76869",
+    "municipio_ibge": "3106705",
+    "municipio_nome": "BETIM",
+    "data_inicio": "2025-06-17T09:19:43",
+    "data_termino": "2025-07-09T07:44:01",
+    "status": "Aguardando Validação",
+    "respondente": {
+      "nome": "Leonardo Cardoso de Alvarenga",
+      "cargo": "Assessor VI",
+      "email": "leo.alvarenga@betim.mg.gov.br",
+      "cpf": "554.237.606-15"
+    }
+  },
+  "respostas": [
+    {
+      "numero": "1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1",
+      "resposta": [
+        "LDO 2024",
+        "PPA inicial 2022-2025",
+        "LOA 2024"
+      ]
+    },
+    {
+      "numero": "1.2",
+      "resposta": [
+        "Dia de semana em horário comercial (8 as 18 horas)"
+      ]
+    },
+    {
+      "numero": "1.3",
+      "resposta": "Não"
+    },
+    {
+      "numero": "1.4",
+      "resposta": [
+        "Planejamento logístico. Ex.: localização do ambiente, acomodações adequadas aos participantes, regulação e testagem dos equipamentos eletrônicos (som, vídeo e iluminação), verificação dos equipamentos relacionados a transmissão das audiências etc.",
+        "Estabelecimento da abordagem de interação",
+        "Estabelecimento da Pauta",
+        "Indicação de mediador qualificado"
+      ]
+    },
+    {
+      "numero": "2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.2",
+      "resposta": "Sim, para a maior parte dos programas do PPA"
+    },
+    {
+      "numero": "4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.1",
+      "resposta": "Sim, com metas físicas e financeiras"
+    },
+    {
+      "numero": "4.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.2.1",
+      "resposta": "Todos os programas finalísticos do PPA"
+    },
+    {
+      "numero": "4.2.2",
+      "resposta": "Não houve avaliação"
+    },
+    {
+      "numero": "4.3",
+      "resposta": "A menor parte dos indicadores"
+    },
+    {
+      "numero": "4.4",
+      "resposta": [
+        "Plano Diretor",
+        "Plano Municipal da Educação",
+        "Plano Municipal da Saúde",
+        "Plano de Mobilidade Urbana",
+        "Plano de Saneamento Básico",
+        "Plano de Resíduos Sólidos",
+        "Plano de Contingência Municipal - PLANCON de Defesa Civil"
+      ]
+    },
+    {
+      "numero": "5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "5.1",
+      "resposta": [
+        "Imposto sobre a Propriedade Predial e Territorial Urbano (IPTU)",
+        "Transferências Obrigatórias Recebidas do Estado. Ex.: ICMS, IPVA.",
+        "Outros",
+        "Transferências Obrigatórias Recebidas da União. Ex.: FPM, CIDE, ITR, Royalties e FUNDEB.",
+        "Contribuições",
+        "Taxas",
+        "Imposto Sobre Serviços de Qualquer Natureza (ISSQN)",
+        "Imposto sobre a Transmissão de Bens Imóveis (ITBI)"
+      ]
+    },
+    {
+      "numero": "5.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "5.2.1",
+      "resposta": "Sim, com reestimativa da receita prevista na LOA no decorrer da execução orçamentária-financeira"
+    },
+    {
+      "numero": "5.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "6",
+      "resposta": [
+        "Dispor sobre pagamento de servidor ou empregado público com recursos vinculados à parceria firmada com o terceiro setor",
+        "Critérios para ajuda financeira a entidades da Administração indireta",
+        "Critérios para repasses a entidades do terceiro setor",
+        "Custos estimados, indicadores e metas físicas que se correlacionam com as ações do governo municipal",
+        "Critérios para o Poder Executivo estabelecer a programação financeira mensal para todo o Município, nele incluído a Câmara",
+        "Percentual da Receita Corrente Líquida que será retido, na peça orçamentária, enquanto Reserva de Contingência, destinada a passivos contingentes e outros riscos fiscais",
+        "Critérios para limitação de empenho e movimentação financeira; ressalvados os pagamentos do serviço da dívida, os relativos à inovação e ao desenvolvimento científico e tecnológico custeadas por fundo criado para tal finalidade.",
+        "Critérios para contratação de horas extras quando o Poder superar o limite prudencial para pessoal: Executivo, 51,30% da RCL; Legislativo, 5,7% da RCL",
+        "Autorização para o Município auxiliar o custeio de despesas próprias do Estado e da União"
+      ]
+    },
+    {
+      "numero": "7",
+      "resposta": "Não"
+    },
+    {
+      "numero": "8",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "8.1",
+      "resposta": "https://servicos.betim.mg.gov.br/transparencia/#/orcamento"
+    },
+    {
+      "numero": "8.2",
+      "resposta": [
+        "Metas Fiscais Atuais Comparadas com as Metas Fiscais Fixadas nos três exercícios anteriores",
+        "Margem de Expansão das Despesas Obrigatórias de Caráter Continuado",
+        "Origem e Aplicação dos Recursos Obtidos com a Alienação de Ativos",
+        "Avaliação da Situação Financeira e Atuarial do RPPS",
+        "Estimativa e Compensação da Renúncia de Receita",
+        "Outros",
+        "Metas Anuais",
+        "Avaliação do Cumprimento das Metas Fiscais do Exercício Anterior",
+        "Evolução do Patrimônio Líquido"
+      ]
+    },
+    {
+      "numero": "9",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "9.1",
+      "resposta": "https://servicos.betim.mg.gov.br/transparencia/#/orcamento"
+    },
+    {
+      "numero": "9.2",
+      "resposta": [
+        "Estimativa do grau de tolerância das contas públicas ao comportamento frente ao risco"
+      ]
+    },
+    {
+      "numero": "10",
+      "resposta": [
+        "As receitas e despesas da LOA são compatíveis com o Resultado Primário da LDO, incluindo, no máximo, a variação da inflação do interregno temporal dos referidos projetos de lei",
+        "O Resultado Nominal constante da LDO consta da LOA, com variação de no máximo a variação da inflação do interregno temporal dos referidos projetos de lei",
+        "A estimativa de renúncia fiscal prevista na LDO coincide com o estimado na LOA com variação limitada à variação da inflação",
+        "A estimativa de receita e respectivos critérios presentes na LOA são compatíveis com os previstos na LDO em relação à receita de IPTU",
+        "A estimativa de receita e respectivos critérios presentes na LOA são compatíveis com os previstos na LDO em relação à receita de ISSQN",
+        "A estimativa de receita e respectivos critérios presentes na LOA são compatíveis com os previstos na LDO em relação à receita de ITBI",
+        "Os investimentos, parte das despesas de capital, previstas na LOA e LDO são compatíveis com as previsões do PPA",
+        "Programas constantes do PPA constam na LOA",
+        "Programas e ações constantes da LDO constam da LOA"
+      ]
+    },
+    {
+      "numero": "11",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "11.1",
+      "resposta": "30,0000"
+    },
+    {
+      "numero": "12",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "12.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "12.1.1",
+      "resposta": "Sim, todos os servidores possuem qualificação técnica"
+    },
+    {
+      "numero": "12.1.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "13",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "13.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "13.1.1",
+      "resposta": [
+        "Realizou Audiência pública do 3º Quadrimestre até o final do mês de fevereiro de 2024",
+        "Realizou Audiência pública do 1º Quadrimestre até o final do mês de maio de 2024",
+        "Realizou Audiência pública do 2º Quadrimestre até o final do mês de setembro de 2024"
+      ]
+    },
+    {
+      "numero": "13.1.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "13.1.2.1",
+      "resposta": [
+        "Relatório da Audiência pública do 1º Quadrimestre",
+        "Relatório da Audiência pública do 2º Quadrimestre",
+        "Relatório da Audiência pública do 3º Quadrimestre"
+      ]
+    },
+    {
+      "numero": "13.1.2.2",
+      "resposta": "https://servicos.betim.mg.gov.br/transparencia/#/metas-fiscais"
+    },
+    {
+      "numero": "13.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "13.3",
+      "resposta": "Sim, com emissão de relatórios e ciência do prefeito"
+    },
+    {
+      "numero": "14",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.1",
+      "resposta": "https://sistemas.betim.mg.gov.br/controladoria/"
+    },
+    {
+      "numero": "14.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.2.1",
+      "resposta": [
+        "Comprovar a legalidade dos repasses a entidades do terceiro setor, avaliando a eficácia e a eficiência dos resultados alcançados",
+        "Exercer o controle das operações de crédito, avais e garantias, bem como dos direitos e haveres do Município",
+        "Em conjunto com autoridades da Administração Financeira do Município, assinar o Relatório de Gestão Fiscal",
+        "Atestar a regularidade da tomada de contas dos ordenadores de despesa, recebedores, tesoureiros, pagadores ou assemelhados",
+        "Apoiar o Tribunal de Contas no exercício de sua missão institucional",
+        "Constatar se está sendo satisfeito o limite para gastos totais das Câmaras Municipais",
+        "Verificar a fidelidade funcional dos responsáveis por bens e valores públicos"
+      ]
+    },
+    {
+      "numero": "14.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.3.1",
+      "resposta": "Não"
+    },
+    {
+      "numero": "14.3.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.3.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.3.4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.3.4.1",
+      "resposta": "Gabinete do Prefeito"
+    },
+    {
+      "numero": "14.3.4.2",
+      "resposta": "Não houve irregularidades nem ilegalidades"
+    },
+    {
+      "numero": "14.3.5",
+      "resposta": "Não"
+    },
+    {
+      "numero": "14.4",
+      "resposta": "Não"
+    },
+    {
+      "numero": "15",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "15.1",
+      "resposta": "https://legislativo.camarabetim.mg.gov.br/NormaJuridica/ShowNormaJuridica/31959 https://legislativo.camarabetim.mg.gov.br/NormaJuridica/ShowNormaJuridica/37747"
+    },
+    {
+      "numero": "15.2",
+      "resposta": [
+        "Independência",
+        "Isenção",
+        "Acessibilidade",
+        "Transparência",
+        "Confidencialidade",
+        "Outros"
+      ]
+    },
+    {
+      "numero": "15.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "15.3.1",
+      "resposta": [
+        "Número de manifestações recebidas no exercício anterior",
+        "Análise dos Pontos recorrentes"
+      ]
+    },
+    {
+      "numero": "15.3.2",
+      "resposta": "https://sistemas.betim.mg.gov.br/acessoouvidoria/arquivo/dados_estatisticos_2024.pdf"
+    },
+    {
+      "numero": "15.4",
+      "resposta": [
+        "Realização de palestras para grupos e instituições. Ex.: escolas, igrejas, associações civis, outros grupos organizados etc.",
+        "Realização de eventos que estimulem a participação e coleta das demandas sociais. Ex.: realização de audiências públicas para divulgação dos trabalhos desempenhados pela ouvidoria e ouvir as demandas da população.",
+        "Utilização de outras plataformas digitais para a divulgação da missão, do modo de trabalho das ouvidorias e incentivando a participação popular. Ex.: instagram, facebook, twiter etc.",
+        "Link da página eletrônica da ouvidoria no sítio da Prefeitura Municipal"
+      ]
+    },
+    {
+      "numero": "16",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "16.1",
+      "resposta": "https://www.betim.mg.gov.br/portal/carta-servicos"
+    },
+    {
+      "numero": "16.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "16.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "17",
+      "resposta": "Não"
+    },
+    {
+      "numero": "18",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "18.1",
+      "resposta": "11/03/2024"
+    },
+    {
+      "numero": "19",
+      "resposta": "Não"
+    },
+    {
+      "numero": "20",
+      "resposta": "Leonardo Cardoso de Alvarenga"
+    },
+    {
+      "numero": "21",
+      "resposta": "Assessor VI"
+    },
+    {
+      "numero": "22",
+      "resposta": "leo.alvarenga@betim.mg.gov.br"
+    },
+    {
+      "numero": "23",
+      "resposta": "554.237.606-15"
+    }
+  ]
+}

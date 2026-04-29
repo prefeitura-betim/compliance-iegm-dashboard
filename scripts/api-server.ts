@@ -35,7 +35,7 @@ db.prepare('DELETE FROM kv_temp WHERE expires_at < ?').run(Math.floor(Date.now()
 
 // Middleware
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '20mb' }));
 
 // Logger
 app.use((req, res, next) => {
@@ -535,25 +535,22 @@ app.get('/api/simulado/questoes', (req, res) => {
         ];
         const placeholders = filters.map(() => '?').join(',');
 
-        // Buscar questões e cruzar com a resposta de referência de Betim 2024
+        // Buscar questões usando tipo e opcoes da tabela (atualizados pela migration 0005)
+        // e resposta_ref importada do questionário oficial
         const questoes = db.prepare(`
-            SELECT 
+            SELECT
                 q.id,
                 q.chave_questao as "chaveQuestao",
                 q.texto,
                 q.indice_questao as "indiceQuestao",
-                r.resposta as "respostaRef",
-                r.nota as "notaRef",
-                CASE 
-                    WHEN r.resposta IN ('Sim', 'Não', 'S', 'N') THEN 'boolean'
-                    ELSE 'text'
-                END as tipo
+                q.resposta_ref as "respostaRef",
+                q.nota_ref as "notaRef",
+                COALESCE(q.tipo, 'text') as tipo,
+                q.opcoes,
+                q.peso
             FROM questoes q
             JOIN questionarios quest ON q.questionario_id = quest.id
-            LEFT JOIN respostas_detalhadas r ON q.chave_questao = r.chave_questao 
-                AND r.municipio = 'BETIM' 
-                AND r.ano_ref = 2024
-            WHERE quest.indicador_id = ? 
+            WHERE quest.indicador_id = ?
             AND quest.ano_ref = 2024
             AND q.texto NOT IN (${placeholders})
             ORDER BY q.id ASC
@@ -563,6 +560,28 @@ app.get('/api/simulado/questoes', (req, res) => {
     } catch (error) {
         console.error('Erro em /api/simulado/questoes:', error);
         res.status(500).json({ error: 'Erro ao buscar questões do simulado' });
+    }
+});
+
+/**
+ * POST /api/simulado/anexo
+ * Salva anexo de uma questão do simulado
+ */
+app.post('/api/simulado/anexo', (req, res) => {
+    try {
+        const { questaoId, codigoSessao, nomeArquivo, tipoArquivo, tamanho, dados } = req.body;
+        if (!questaoId || !codigoSessao || !nomeArquivo || !dados) {
+            return res.status(400).json({ error: 'Campos obrigatórios ausentes' });
+        }
+        const criadoEm = new Date().toISOString();
+        db.prepare(`
+            INSERT INTO simulado_anexos (questao_id, codigo_sessao, nome_arquivo, tipo_arquivo, tamanho, dados, criado_em)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        `).run(questaoId, codigoSessao, nomeArquivo, tipoArquivo, tamanho ?? null, dados, criadoEm);
+        res.json({ success: true });
+    } catch (error) {
+        console.error('Erro em /api/simulado/anexo:', error);
+        res.status(500).json({ error: 'Erro ao salvar anexo' });
     }
 });
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   User,
   Briefcase,
@@ -15,7 +15,10 @@ import {
   Cloud,
   Copy,
   Link2,
-  Check
+  Check,
+  Paperclip,
+  X,
+  FileText,
 } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 
@@ -29,6 +32,11 @@ const INDICADORES = [
   { codigo: 'i-Plan', nome: 'Planejamento', cor: 'bg-yellow-500' },
 ];
 
+interface OpcaoMultipla {
+  texto: string;
+  valor: number | null;
+}
+
 interface Questao {
   id: number;
   chaveQuestao: string | null;
@@ -36,7 +44,16 @@ interface Questao {
   indiceQuestao: string | null;
   respostaRef: string | null;
   notaRef: number | null;
-  tipo: 'boolean' | 'text';
+  tipo: 'boolean' | 'text' | 'multipla_escolha' | 'radio';
+  opcoes: string | null; // JSON string: OpcaoMultipla[] | string[]
+  peso: number | null;
+}
+
+interface Anexo {
+  nome: string;
+  tipo: string;
+  tamanho: number;
+  dados: string; // base64
 }
 
 // Cada resposta guarda quem respondeu
@@ -77,6 +94,8 @@ export default function Simulado() {
   const [sending, setSending] = useState(false);
   const [lastSync, setLastSync] = useState<Date | null>(null);
   const [mensagem, setMensagem] = useState<{tipo: 'sucesso' | 'erro', texto: string} | null>(null);
+  const [anexos, setAnexos] = useState<Record<string, Anexo>>({});
+  const fileInputRefs = useRef<Record<string, HTMLInputElement | null>>({});
 
   // Carregar dados do localStorage
   useEffect(() => {
@@ -202,6 +221,34 @@ export default function Simulado() {
     }));
   };
 
+  const handleMultiplaEscolha = (questaoId: string, opcao: string, marcado: boolean) => {
+    const atual = respostas[questaoId]?.resposta ?? '';
+    const selecionadas = atual ? atual.split('|').map(s => s.trim()).filter(Boolean) : [];
+    const novas = marcado ? [...selecionadas, opcao] : selecionadas.filter(s => s !== opcao);
+    handleRespostaChange(questaoId, novas.join(' | '));
+  };
+
+  const handleFileChange = (questaoId: string, file: File) => {
+    if (file.size > 5 * 1024 * 1024) {
+      setMensagem({ tipo: 'erro', texto: 'O arquivo não pode ultrapassar 5 MB.' });
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const dados = (e.target?.result as string).split(',')[1];
+      setAnexos(prev => ({
+        ...prev,
+        [questaoId]: { nome: file.name, tipo: file.type, tamanho: file.size, dados },
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleRemoverAnexo = (questaoId: string) => {
+    setAnexos(prev => { const next = { ...prev }; delete next[questaoId]; return next; });
+    if (fileInputRefs.current[questaoId]) fileInputRefs.current[questaoId]!.value = '';
+  };
+
   const handleEnviar = async () => {
     if (!indicadorSelecionado) return;
 
@@ -222,9 +269,10 @@ export default function Simulado() {
         const faltam = questoes.length - respostasFormatadas.length;
         setMensagem({
           tipo: 'erro',
-          texto: `Por favor, responda a todas as questões antes de enviar. Faltam ${faltam} perguntas.`
+          texto: `Faltam ${faltam} ${faltam === 1 ? 'pergunta' : 'perguntas'} sem resposta. Role a página para encontrá-las (sem resposta = sem marcação).`
         });
         setSending(false);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
 
@@ -244,6 +292,28 @@ export default function Simulado() {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.message || errorData.error || 'Falha ao enviar respostas');
       }
+
+      // Salvar anexos em D1 (falha silenciosa — não bloqueia o fluxo)
+      const anexoEntries = Object.entries(anexos);
+      if (anexoEntries.length > 0) {
+        await Promise.allSettled(
+          anexoEntries.map(([questaoId, anexo]) =>
+            fetch('/api/simulado/anexo', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                questaoId: Number(questaoId),
+                codigoSessao,
+                nomeArquivo: anexo.nome,
+                tipoArquivo: anexo.tipo,
+                tamanho: anexo.tamanho,
+                dados: anexo.dados,
+              }),
+            })
+          )
+        );
+      }
+
       setEtapa('sucesso');
     } catch (err: any) {
       setMensagem({ tipo: 'erro', texto: `Erro ao enviar dados: ${err.message || 'Tente novamente.'}` });
@@ -272,33 +342,56 @@ export default function Simulado() {
     doc.setTextColor(120, 120, 120);
     doc.text(`Código de sessão: ${codigoSessao}`, margin, y); y += 3;
 
+    // Score IEGM no cabeçalho do PDF
+    if (score.possiveis > 0) {
+      const cls = classificacaoIEGM(scoreIEGM);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(30, 30, 30);
+      doc.text(`Score estimado: ${scoreIEGM.toFixed(3)}  —  Faixa ${cls.faixa} (${cls.label})`, margin, y);
+      y += 5;
+      doc.setFontSize(8);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(120, 120, 120);
+      doc.text(`${score.obtidos.toFixed(1)} de ${score.possiveis.toFixed(1)} pontos (questoes com pontuacao explicita)`, margin, y);
+      y += 3;
+    }
+
     doc.setDrawColor(220, 220, 220);
     doc.line(margin, y + 3, 190, y + 3); y += 10;
 
     // ── Respostas com autoria ────────────────────────────────────────────────
+    // Renderiza linhas individualmente para nunca cortar no rodapé
+    const renderLinhas = (
+      linhas: string[],
+      x: number,
+      alturaLinha: number
+    ) => {
+      for (const linha of linhas) {
+        if (y + alturaLinha > 280) { doc.addPage(); y = 20; }
+        doc.text(linha, x, y);
+        y += alturaLinha;
+      }
+    };
+
     questoes.forEach((q, idx) => {
       const entry = respostas[q.id];
       if (!entry?.resposta) return;
-
-      if (y > 260) {
-        doc.addPage();
-        y = 20;
-      }
 
       // Texto da questão
       doc.setFontSize(10);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(30, 30, 30);
       const textLines = doc.splitTextToSize(`${idx + 1}. ${q.texto}`, 170);
-      doc.text(textLines, margin, y);
-      y += textLines.length * 5 + 2;
+      renderLinhas(textLines, margin, 5);
+      y += 2;
 
       // Resposta
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(50, 50, 50);
       const respLines = doc.splitTextToSize(`Resposta: ${entry.resposta}`, 160);
-      doc.text(respLines, margin + 5, y);
-      y += respLines.length * 5 + 2;
+      renderLinhas(respLines, margin + 5, 5);
+      y += 2;
 
       // Autoria
       doc.setFontSize(8);
@@ -306,39 +399,57 @@ export default function Simulado() {
       doc.setTextColor(100, 100, 100);
       const autoria = `Respondido por: ${entry.nome}  |  ${entry.funcao}  |  ${entry.setor}`;
       const autoriaLines = doc.splitTextToSize(autoria, 155);
-      doc.text(autoriaLines, margin + 5, y);
-      y += autoriaLines.length * 4.5 + 2;
+      renderLinhas(autoriaLines, margin + 5, 4.5);
+      y += 2;
 
-      // Referência oficial (se houver)
+      // Anexo (se houver)
+      const anexo = anexos[q.id];
+      if (anexo) {
+        if (y + 6 > 280) { doc.addPage(); y = 20; }
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(80, 80, 200);
+        doc.text(`Anexo: ${anexo.nome} (${(anexo.tamanho / 1024).toFixed(1)} KB)`, margin + 5, y);
+        y += 6;
+      }
+
+      // Referência Betim 2025 (só no PDF)
       if (q.respostaRef) {
-        if (y > 265) { doc.addPage(); y = 20; }
-        doc.setFont('helvetica', 'italic');
-        doc.setTextColor(130, 130, 130);
-        const refLines = doc.splitTextToSize(`Referência Betim 2024: ${q.respostaRef}`, 150);
-        doc.text(refLines, margin + 10, y);
-        y += refLines.length * 4.5 + 2;
+        let refTexto = q.respostaRef;
+        if (q.respostaRef.startsWith('[')) {
+          try {
+            const opcoes: string[] = JSON.parse(q.respostaRef);
+            refTexto = opcoes.map(op => `- ${op}`).join('\n');
+          } catch { /* mantém o texto original */ }
+        }
 
+        if (y + 5 > 280) { doc.addPage(); y = 20; }
+        doc.setFontSize(7.5);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(0, 128, 0);
-        doc.text(`Nota Oficial TCE: ${q.notaRef ?? 0}`, margin + 10, y);
-        y += 7;
+        doc.setTextColor(180, 120, 0);
+        doc.text('Betim respondeu em 2025:', margin + 10, y);
+        y += 4.5;
+
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(160, 100, 0);
+        const refLines = doc.splitTextToSize(refTexto, 145);
+        renderLinhas(refLines, margin + 12, 4.5);
+        y += 3;
       }
 
       // Separador entre questões
+      if (y + 6 > 280) { doc.addPage(); y = 20; }
       doc.setDrawColor(240, 240, 240);
       doc.line(margin, y, 190, y);
       y += 5;
     });
 
-    // ── Rodapé: data + paginação ─────────────────────────────────────────────
+    // ── Rodapé: paginação ───────────────────────────────────────────────────
     const pageCount = doc.internal.pages.length - 1;
-    const now = new Date().toLocaleString('pt-BR');
     for (let i = 1; i <= pageCount; i++) {
       doc.setPage(i);
       doc.setFontSize(7);
       doc.setTextColor(180, 180, 180);
       doc.setFont('helvetica', 'normal');
-      doc.text(`Gerado em ${now}  —  Sessão ${codigoSessao}`, margin, 292);
       doc.text(`${i} / ${pageCount}`, 190, 292, { align: 'right' });
     }
 
@@ -364,6 +475,79 @@ export default function Simulado() {
 
   const answeredCount = questoes.filter(q => respostas[q.id]?.resposta?.trim()).length;
   const progress = questoes.length > 0 ? (answeredCount / questoes.length) * 100 : 0;
+
+  // Retorna os pontos explícitos de uma questão boolean a partir das opções do JSON.
+  // Só pontua quando os valores estão visíveis ao usuário.
+  const getBooleanPontos = (q: Questao): { sim: number; nao: number } | null => {
+    if (q.opcoes) {
+      try {
+        const opts = JSON.parse(q.opcoes) as OpcaoMultipla[];
+        const simOpt = opts.find(o => o.texto === 'Sim');
+        const naoOpt = opts.find(o => o.texto === 'Não');
+        const simVal = simOpt?.valor ?? 0;
+        const naoVal = naoOpt?.valor ?? 0;
+        // Só é pontuável se alguma opção tiver valor explícito != 0
+        if (simVal !== 0 || naoVal !== 0) return { sim: simVal, nao: naoVal };
+      } catch { /* opcoes inválido */ }
+    }
+    // Sem opcoes explícitas → usa notaRef somente se > 0 (pontuação explícita no manual)
+    if ((q.notaRef ?? 0) > 0) return { sim: q.notaRef!, nao: 0 };
+    return null; // questão NÃO pontuável
+  };
+
+  const calcularScore = (): { obtidos: number; possiveis: number } => {
+    let obtidos = 0;
+    let possiveis = 0;
+    for (const q of questoes) {
+      // peso=0 → questão informativa, sem contribuição para a nota
+      if ((q.peso ?? 1) === 0) continue;
+
+      const entrada = respostas[q.id];
+
+      if (q.tipo === 'multipla_escolha' && q.opcoes) {
+        const opts = JSON.parse(q.opcoes) as OpcaoMultipla[];
+        const hasAnyPoints = opts.some(o => (o.valor ?? 0) !== 0);
+        if (!hasAnyPoints) continue;
+        const maxPossivel = opts.reduce((s, o) => s + Math.max(0, o.valor ?? 0), 0);
+        possiveis += maxPossivel;
+        if (entrada?.resposta) {
+          const selecionadas = entrada.resposta.split(' | ').map(s => s.trim());
+          obtidos += opts
+            .filter(o => selecionadas.includes(o.texto))
+            .reduce((s, o) => s + (o.valor ?? 0), 0);
+        }
+
+      } else if (q.tipo === 'radio' && q.opcoes) {
+        const opts = JSON.parse(q.opcoes) as OpcaoMultipla[];
+        const hasAnyPoints = opts.some(o => (o.valor ?? 0) !== 0);
+        if (!hasAnyPoints) continue;
+        possiveis += Math.max(0, ...opts.map(o => o.valor ?? 0));
+        if (entrada?.resposta) {
+          const selecionada = opts.find(o => o.texto === entrada.resposta);
+          obtidos += selecionada?.valor ?? 0; // inclui penalidades negativas
+        }
+
+      } else if (q.tipo === 'boolean') {
+        const pts = getBooleanPontos(q);
+        if (!pts) continue;
+        possiveis += Math.max(0, pts.sim, pts.nao);
+        if (entrada?.resposta === 'Sim') obtidos += pts.sim;
+        else if (entrada?.resposta === 'Não') obtidos += pts.nao;
+      }
+    }
+    return { obtidos, possiveis };
+  };
+
+  const score = calcularScore();
+  const scoreIEGM = score.possiveis > 0 ? score.obtidos / score.possiveis : 0;
+
+  const classificacaoIEGM = (s: number) => {
+    if (s >= 0.8) return { faixa: 'A',  label: 'Altamente Efetiva', cor: 'text-green-700',  bg: 'bg-green-100 dark:bg-green-900/30'  };
+    if (s >= 0.7) return { faixa: 'B+', label: 'Muito Efetiva',     cor: 'text-green-500',  bg: 'bg-green-50 dark:bg-green-900/20'   };
+    if (s >= 0.6) return { faixa: 'B',  label: 'Efetiva',           cor: 'text-blue-600',   bg: 'bg-blue-50 dark:bg-blue-900/20'     };
+    if (s >= 0.5) return { faixa: 'C+', label: 'Em Adequação',      cor: 'text-yellow-600', bg: 'bg-yellow-50 dark:bg-yellow-900/20' };
+    return               { faixa: 'C',  label: 'Baixo Nível',       cor: 'text-red-600',    bg: 'bg-red-50 dark:bg-red-900/20'       };
+  };
 
   return (
     <div className="max-w-4xl mx-auto pb-20 px-4 sm:px-0">
@@ -575,6 +759,37 @@ export default function Simulado() {
                 {answeredCount} de {questoes.length} respondidas ({Math.round(progress)}%)
               </span>
             </div>
+
+            {score.possiveis > 0 && (
+              <div className="flex items-center justify-between bg-gray-50 dark:bg-gray-900/50 rounded-xl px-4 py-2.5 border border-gray-100 dark:border-gray-700">
+                {(() => { const cls = classificacaoIEGM(scoreIEGM); return (
+                <div className="flex items-center gap-3 flex-wrap">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Pontuação estimada</p>
+                    <p className="text-sm font-bold text-gray-700 dark:text-gray-200">
+                      {score.obtidos.toFixed(1)} <span className="text-gray-400 font-normal">/ {score.possiveis.toFixed(1)} pts</span>
+                    </p>
+                  </div>
+                  <div className="w-px h-8 bg-gray-200 dark:bg-gray-700" />
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Score IEGM</p>
+                    <p className={`text-sm font-bold ${cls.cor}`}>{scoreIEGM.toFixed(3)}</p>
+                  </div>
+                  <div className="w-px h-8 bg-gray-200 dark:bg-gray-700" />
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Faixa</p>
+                    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-bold ${cls.cor} ${cls.bg}`}>
+                      <span className="font-black">{cls.faixa}</span>
+                      <span className="font-normal opacity-80">— {cls.label}</span>
+                    </span>
+                  </div>
+                </div>
+                ); })()}
+                <p className="text-[9px] text-gray-400 max-w-[120px] text-right leading-tight">
+                  Baseado apenas em questões com pontos explícitos
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="grid gap-6">
@@ -614,51 +829,196 @@ export default function Simulado() {
 
                   <div className="space-y-4">
                     {q.tipo === 'boolean' ? (
-                      <div className="flex gap-4">
-                        {['Sim', 'Não'].map(opcao => (
-                          <button
-                            key={opcao}
-                            onClick={() => handleRespostaChange(String(q.id), opcao)}
-                            className={`flex-1 py-3 rounded-xl border-2 font-bold transition-all ${
-                              entrada?.resposta === opcao
-                                ? 'bg-betim-blue border-betim-blue text-white shadow-md'
-                                : 'bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-700 text-gray-500 hover:border-betim-blue/30'
-                            }`}
-                          >
-                            {opcao}
-                          </button>
-                        ))}
+                      (() => {
+                        const pts = getBooleanPontos(q);
+                        return (
+                          <div className="flex gap-4">
+                            {['Sim', 'Não'].map(opcao => {
+                              const valorNum = pts ? (opcao === 'Sim' ? pts.sim : pts.nao) : null;
+                              return (
+                                <button
+                                  key={opcao}
+                                  onClick={() => handleRespostaChange(String(q.id), opcao)}
+                                  className={`flex-1 py-3 rounded-xl border-2 font-bold transition-all flex items-center justify-center gap-2 ${
+                                    entrada?.resposta === opcao
+                                      ? 'bg-betim-blue border-betim-blue text-white shadow-md'
+                                      : 'bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-700 text-gray-500 hover:border-betim-blue/30'
+                                  }`}
+                                >
+                                  {opcao}
+                                  {valorNum !== null && valorNum !== 0 && (
+                                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
+                                      entrada?.resposta === opcao
+                                        ? 'bg-white/20 text-white'
+                                        : valorNum > 0
+                                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                                          : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                                    }`}>
+                                      {valorNum > 0 ? `+${valorNum}` : `${valorNum}`}
+                                    </span>
+                                  )}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        );
+                      })()
+                    ) : q.tipo === 'multipla_escolha' && q.opcoes ? (
+                      <div className="space-y-2">
+                        {(JSON.parse(q.opcoes) as (OpcaoMultipla | string)[]).map(item => {
+                          const opcao: OpcaoMultipla = typeof item === 'string'
+                            ? { texto: item, valor: null }
+                            : item;
+                          const selecionadas = entrada?.resposta ? entrada.resposta.split(' | ').map(s => s.trim()) : [];
+                          const marcado = selecionadas.includes(opcao.texto);
+                          const temValor = opcao.valor !== null && opcao.valor !== undefined;
+                          return (
+                            <label
+                              key={opcao.texto}
+                              className={`flex items-start gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${
+                                marcado
+                                  ? 'bg-blue-50 dark:bg-blue-900/20 border-betim-blue'
+                                  : 'bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-700 hover:border-betim-blue/30'
+                              }`}
+                            >
+                              <input
+                                type="checkbox"
+                                checked={marcado}
+                                onChange={e => handleMultiplaEscolha(String(q.id), opcao.texto, e.target.checked)}
+                                className="mt-0.5 accent-betim-blue w-4 h-4 flex-shrink-0"
+                              />
+                              <span className={`text-sm leading-relaxed flex-1 ${marcado ? 'text-betim-blue font-medium' : 'text-gray-700 dark:text-gray-300'}`}>
+                                {opcao.texto}
+                              </span>
+                              {temValor && (
+                                <span className={`text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${
+                                  opcao.valor! > 0
+                                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                                    : 'bg-gray-100 dark:bg-gray-700 text-gray-400'
+                                }`}>
+                                  {opcao.valor! > 0 ? `+${opcao.valor}` : '0'}
+                                </span>
+                              )}
+                            </label>
+                          );
+                        })}
+                      </div>
+                    ) : q.tipo === 'radio' && q.opcoes ? (
+                      <div className="space-y-2">
+                        {(JSON.parse(q.opcoes) as OpcaoMultipla[]).map(opcao => {
+                          const marcado = entrada?.resposta === opcao.texto;
+                          const temValor = opcao.valor !== null && opcao.valor !== undefined;
+                          const valorNum = opcao.valor ?? 0;
+                          return (
+                            <label
+                              key={opcao.texto}
+                              className={`flex items-start gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${
+                                marcado
+                                  ? 'bg-blue-50 dark:bg-blue-900/20 border-betim-blue'
+                                  : 'bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-700 hover:border-betim-blue/30'
+                              }`}
+                            >
+                              <input
+                                type="radio"
+                                name={`radio-${q.id}`}
+                                checked={marcado}
+                                onChange={() => handleRespostaChange(String(q.id), opcao.texto)}
+                                className="mt-0.5 accent-betim-blue w-4 h-4 flex-shrink-0"
+                              />
+                              <span className={`text-sm leading-relaxed flex-1 ${marcado ? 'text-betim-blue font-medium' : 'text-gray-700 dark:text-gray-300'}`}>
+                                {opcao.texto}
+                              </span>
+                              {temValor && (
+                                <span className={`text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${
+                                  valorNum > 0
+                                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                                    : valorNum < 0
+                                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                                    : 'bg-gray-100 dark:bg-gray-700 text-gray-400'
+                                }`}>
+                                  {valorNum > 0 ? `+${valorNum}` : `${valorNum}`}
+                                </span>
+                              )}
+                            </label>
+                          );
+                        })}
                       </div>
                     ) : (
                       <textarea
                         value={entrada?.resposta || ''}
                         onChange={e => handleRespostaChange(String(q.id), e.target.value)}
-                        placeholder="Escreva sua resposta detalhada aqui..."
+                        placeholder={q.tipo === 'multipla_escolha' ? 'Liste as opções aplicáveis separadas por " | "...' : 'Escreva sua resposta detalhada aqui...'}
                         className="w-full min-h-[120px] p-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-betim-blue focus:border-transparent transition-all outline-none resize-y"
                       />
                     )}
+
+                    {/* Anexo de documento */}
+                    <div className="flex items-center gap-3 pt-1">
+                      {anexos[q.id] ? (
+                        <div className="flex items-center gap-2 bg-blue-50 dark:bg-blue-900/20 border border-betim-blue/30 rounded-lg px-3 py-2 text-sm flex-1">
+                          <FileText size={14} className="text-betim-blue flex-shrink-0" />
+                          <span className="text-betim-blue font-medium truncate">{anexos[q.id].nome}</span>
+                          <span className="text-gray-400 text-xs flex-shrink-0">({(anexos[q.id].tamanho / 1024).toFixed(0)} KB)</span>
+                          <button
+                            onClick={() => handleRemoverAnexo(String(q.id))}
+                            className="ml-auto text-gray-400 hover:text-red-500 transition-colors flex-shrink-0"
+                            title="Remover anexo"
+                          >
+                            <X size={14} />
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          onClick={() => fileInputRefs.current[String(q.id)]?.click()}
+                          className="flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-betim-blue border border-dashed border-gray-200 dark:border-gray-700 hover:border-betim-blue/50 rounded-lg px-3 py-2 transition-all"
+                        >
+                          <Paperclip size={13} />
+                          Anexar documento
+                        </button>
+                      )}
+                      <input
+                        type="file"
+                        accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg"
+                        className="hidden"
+                        ref={el => { fileInputRefs.current[String(q.id)] = el; }}
+                        onChange={e => { const f = e.target.files?.[0]; if (f) handleFileChange(String(q.id), f); }}
+                      />
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          <div className="mt-12 bg-white dark:bg-gray-800 p-8 rounded-3xl border-2 border-dashed border-gray-100 dark:border-gray-700 flex flex-col items-center text-center shadow-sm">
-            <CheckCircle2 size={48} className="text-green-500 mb-4 opacity-20" />
-            <h3 className="text-2xl font-bold mb-2">Pronto para finalizar?</h3>
-            <p className="text-gray-500 mb-8 max-w-sm">
-              Suas respostas estão sendo salvas na nuvem em tempo real — qualquer colega com o código{' '}
-              <code className="font-mono font-bold text-betim-blue">{codigoSessao}</code> pode continuar de onde você parou.
-            </p>
-            <button
-              onClick={handleEnviar}
-              disabled={sending}
-              className="bg-betim-blue text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-betim-blue-dark flex items-center gap-3 transition-all shadow-xl active:scale-95 disabled:grayscale"
-            >
-              {sending ? <Loader2 className="animate-spin" /> : <Send />}
-              Finalizar e Enviar Simulado
-            </button>
-          </div>
+          {(() => {
+            const faltam = questoes.length - answeredCount;
+            const pronto = faltam === 0;
+            return (
+              <div className="mt-12 bg-white dark:bg-gray-800 p-8 rounded-3xl border-2 border-dashed border-gray-100 dark:border-gray-700 flex flex-col items-center text-center shadow-sm">
+                <CheckCircle2 size={48} className={`mb-4 ${pronto ? 'text-green-500 opacity-80' : 'text-gray-300'}`} />
+                <h3 className="text-2xl font-bold mb-2">
+                  {pronto ? 'Pronto para finalizar!' : `Faltam ${faltam} ${faltam === 1 ? 'resposta' : 'respostas'}`}
+                </h3>
+                <p className="text-gray-500 mb-8 max-w-sm">
+                  {pronto
+                    ? <>Suas respostas estão salvas na nuvem — qualquer colega com o código{' '}
+                        <code className="font-mono font-bold text-betim-blue">{codigoSessao}</code> pode verificar.</>
+                    : 'Role a página para cima e responda todas as questões marcadas em vermelho antes de enviar.'
+                  }
+                </p>
+                <button
+                  onClick={handleEnviar}
+                  disabled={sending || !pronto}
+                  className={`text-white px-10 py-4 rounded-2xl font-bold text-lg flex items-center gap-3 transition-all shadow-xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed ${
+                    pronto ? 'bg-betim-blue hover:bg-betim-blue-dark' : 'bg-gray-400 cursor-not-allowed'
+                  }`}
+                >
+                  {sending ? <Loader2 className="animate-spin" /> : <Send />}
+                  {pronto ? 'Finalizar e Enviar Simulado' : `Responda mais ${faltam} ${faltam === 1 ? 'questão' : 'questões'}`}
+                </button>
+              </div>
+            );
+          })()}
         </div>
       )}
 
@@ -669,6 +1029,23 @@ export default function Simulado() {
             <CheckCircle2 size={40} />
           </div>
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">Simulado Enviado!</h2>
+
+          {score.possiveis > 0 && (() => {
+            const cls = classificacaoIEGM(scoreIEGM);
+            return (
+              <div className={`inline-flex flex-col items-center rounded-2xl px-8 py-5 mb-8 border ${cls.bg} border-current/10`}>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1">Score IEGM estimado</p>
+                <p className={`text-5xl font-black ${cls.cor} mb-2`}>{scoreIEGM.toFixed(3)}</p>
+                <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-bold ${cls.cor} ${cls.bg} border border-current/20 mb-1`}>
+                  <span className="font-black text-base">{cls.faixa}</span>
+                  <span>— {cls.label}</span>
+                </span>
+                <p className="text-xs text-gray-400 mt-2">{score.obtidos.toFixed(1)} / {score.possiveis.toFixed(1)} pontos</p>
+                <p className="text-[9px] text-gray-400 mt-1">Baseado em questões com pontuação explícita</p>
+              </div>
+            );
+          })()}
+
           <p className="text-gray-500 mb-10 max-w-md mx-auto">
             Suas respostas foram registradas com sucesso. Baixe o PDF com o gabarito completo — cada resposta identifica quem a preencheu.
           </p>

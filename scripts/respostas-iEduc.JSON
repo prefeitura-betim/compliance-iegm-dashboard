@@ -1,0 +1,1291 @@
+{
+  "submissao": {
+    "indicador": "i-Educ Nacional - 2025",
+    "numero_indicador": 81,
+    "id_submissao": "76445",
+    "municipio_ibge": "3106705",
+    "municipio_nome": "BETIM",
+    "data_inicio": "2025-06-16T09:28:24",
+    "data_termino": "2025-07-09T16:50:54",
+    "status": "Aguardando Validação",
+    "respondente": {
+      "nome": "LUCIANO ALVES GOMES",
+      "cargo": "ASSESSOR",
+      "email": "gabinete@semed.betim.mg.gov.br",
+      "cpf": "034.193.566-25"
+    }
+  },
+  "respostas": [
+    {
+      "numero": "1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1.1",
+      "resposta": "83"
+    },
+    {
+      "numero": "1.1.2",
+      "resposta": "0"
+    },
+    {
+      "numero": "1.1.3",
+      "resposta": "0"
+    },
+    {
+      "numero": "1.1.4",
+      "resposta": "0"
+    },
+    {
+      "numero": "1.1.5",
+      "resposta": "83"
+    },
+    {
+      "numero": "1.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.2.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.2.1.1",
+      "resposta": "Diária"
+    },
+    {
+      "numero": "1.2.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.3",
+      "resposta": "74"
+    },
+    {
+      "numero": "1.4",
+      "resposta": "46"
+    },
+    {
+      "numero": "1.5",
+      "resposta": "41"
+    },
+    {
+      "numero": "1.6",
+      "resposta": "118"
+    },
+    {
+      "numero": "1.7",
+      "resposta": "573"
+    },
+    {
+      "numero": "1.8",
+      "resposta": "181"
+    },
+    {
+      "numero": "1.9",
+      "resposta": "4 624,7800"
+    },
+    {
+      "numero": "1.10",
+      "resposta": "27"
+    },
+    {
+      "numero": "1.11",
+      "resposta": "1951"
+    },
+    {
+      "numero": "1.12",
+      "resposta": "2349"
+    },
+    {
+      "numero": "1.13",
+      "resposta": "180"
+    },
+    {
+      "numero": "1.14",
+      "resposta": "117"
+    },
+    {
+      "numero": "1.15",
+      "resposta": "74"
+    },
+    {
+      "numero": "1.16",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.16.1",
+      "resposta": "190"
+    },
+    {
+      "numero": "1.16.2",
+      "resposta": "190"
+    },
+    {
+      "numero": "1.16.3",
+      "resposta": "90"
+    },
+    {
+      "numero": "1.16.4",
+      "resposta": "90"
+    },
+    {
+      "numero": "1.17",
+      "resposta": "6"
+    },
+    {
+      "numero": "1.18",
+      "resposta": "3"
+    },
+    {
+      "numero": "1.19",
+      "resposta": "4"
+    },
+    {
+      "numero": "1.20",
+      "resposta": "5"
+    },
+    {
+      "numero": "1.21",
+      "resposta": "12"
+    },
+    {
+      "numero": "1.22",
+      "resposta": "2"
+    },
+    {
+      "numero": "1.23",
+      "resposta": "14"
+    },
+    {
+      "numero": "1.24",
+      "resposta": "16"
+    },
+    {
+      "numero": "1.25",
+      "resposta": "27"
+    },
+    {
+      "numero": "1.26",
+      "resposta": "7"
+    },
+    {
+      "numero": "1.27",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.27.1",
+      "resposta": "Sobre planejamento e desempenho da criança"
+    },
+    {
+      "numero": "1.28",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.28.1",
+      "resposta": "20/02/2024"
+    },
+    {
+      "numero": "1.29",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.29.1",
+      "resposta": "26/06/2024"
+    },
+    {
+      "numero": "1.30",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.31",
+      "resposta": "11394"
+    },
+    {
+      "numero": "1.32",
+      "resposta": "8950"
+    },
+    {
+      "numero": "1.33",
+      "resposta": "76"
+    },
+    {
+      "numero": "1.34",
+      "resposta": "310"
+    },
+    {
+      "numero": "1.35",
+      "resposta": "130"
+    },
+    {
+      "numero": "1.36",
+      "resposta": "7"
+    },
+    {
+      "numero": "2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.1.1",
+      "resposta": "94"
+    },
+    {
+      "numero": "2.1.2",
+      "resposta": "0"
+    },
+    {
+      "numero": "2.1.3",
+      "resposta": "0"
+    },
+    {
+      "numero": "2.1.4",
+      "resposta": "94"
+    },
+    {
+      "numero": "2.1.5",
+      "resposta": "0"
+    },
+    {
+      "numero": "2.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.2.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.2.1.1",
+      "resposta": "Diária"
+    },
+    {
+      "numero": "2.2.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.3",
+      "resposta": "53"
+    },
+    {
+      "numero": "2.4",
+      "resposta": "62"
+    },
+    {
+      "numero": "2.5",
+      "resposta": "56"
+    },
+    {
+      "numero": "2.6",
+      "resposta": "32"
+    },
+    {
+      "numero": "2.7",
+      "resposta": "65"
+    },
+    {
+      "numero": "2.8",
+      "resposta": "75"
+    },
+    {
+      "numero": "2.9",
+      "resposta": "4 624,7800"
+    },
+    {
+      "numero": "2.10",
+      "resposta": "3737"
+    },
+    {
+      "numero": "2.11",
+      "resposta": "3058"
+    },
+    {
+      "numero": "2.12",
+      "resposta": "183"
+    },
+    {
+      "numero": "2.13",
+      "resposta": "117"
+    },
+    {
+      "numero": "2.14",
+      "resposta": "19"
+    },
+    {
+      "numero": "2.15",
+      "resposta": "360"
+    },
+    {
+      "numero": "2.16",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.16.1",
+      "resposta": "2280"
+    },
+    {
+      "numero": "2.16.2",
+      "resposta": "1805"
+    },
+    {
+      "numero": "2.16.3",
+      "resposta": "2660"
+    },
+    {
+      "numero": "2.16.4",
+      "resposta": "93"
+    },
+    {
+      "numero": "2.17",
+      "resposta": "3"
+    },
+    {
+      "numero": "2.18",
+      "resposta": "2"
+    },
+    {
+      "numero": "2.19",
+      "resposta": "3"
+    },
+    {
+      "numero": "2.20",
+      "resposta": "2"
+    },
+    {
+      "numero": "2.21",
+      "resposta": "27"
+    },
+    {
+      "numero": "2.22",
+      "resposta": "16"
+    },
+    {
+      "numero": "2.23",
+      "resposta": "12"
+    },
+    {
+      "numero": "2.24",
+      "resposta": "14"
+    },
+    {
+      "numero": "2.25",
+      "resposta": "2"
+    },
+    {
+      "numero": "2.26",
+      "resposta": "7"
+    },
+    {
+      "numero": "2.27",
+      "resposta": "Sobre planejamento e desempenho da criança"
+    },
+    {
+      "numero": "2.28",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.28.1",
+      "resposta": "20/02/2024"
+    },
+    {
+      "numero": "2.29",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.29.1",
+      "resposta": "26/06/2024"
+    },
+    {
+      "numero": "2.30",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.31",
+      "resposta": "9697"
+    },
+    {
+      "numero": "2.32",
+      "resposta": "10797"
+    },
+    {
+      "numero": "2.33",
+      "resposta": "407"
+    },
+    {
+      "numero": "2.34",
+      "resposta": "96"
+    },
+    {
+      "numero": "2.35",
+      "resposta": "6"
+    },
+    {
+      "numero": "2.36",
+      "resposta": "0"
+    },
+    {
+      "numero": "3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.1",
+      "resposta": "14"
+    },
+    {
+      "numero": "3.2",
+      "resposta": "671"
+    },
+    {
+      "numero": "3.3",
+      "resposta": "357"
+    },
+    {
+      "numero": "3.4",
+      "resposta": "4"
+    },
+    {
+      "numero": "3.5",
+      "resposta": "1851"
+    },
+    {
+      "numero": "3.6",
+      "resposta": "405"
+    },
+    {
+      "numero": "3.7",
+      "resposta": "7 052,1600"
+    },
+    {
+      "numero": "3.8",
+      "resposta": "165"
+    },
+    {
+      "numero": "3.9",
+      "resposta": "6797"
+    },
+    {
+      "numero": "3.10",
+      "resposta": "2520"
+    },
+    {
+      "numero": "3.11",
+      "resposta": "9690"
+    },
+    {
+      "numero": "3.12",
+      "resposta": "144"
+    },
+    {
+      "numero": "3.13",
+      "resposta": "64"
+    },
+    {
+      "numero": "3.14",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.14.1",
+      "resposta": "724"
+    },
+    {
+      "numero": "3.14.2",
+      "resposta": "850"
+    },
+    {
+      "numero": "3.14.3",
+      "resposta": "128"
+    },
+    {
+      "numero": "3.14.4",
+      "resposta": "128"
+    },
+    {
+      "numero": "3.15",
+      "resposta": "4"
+    },
+    {
+      "numero": "3.16",
+      "resposta": "9"
+    },
+    {
+      "numero": "3.17",
+      "resposta": "22"
+    },
+    {
+      "numero": "3.18",
+      "resposta": "33"
+    },
+    {
+      "numero": "3.19",
+      "resposta": "5"
+    },
+    {
+      "numero": "3.20",
+      "resposta": "25"
+    },
+    {
+      "numero": "3.21",
+      "resposta": "18"
+    },
+    {
+      "numero": "3.22",
+      "resposta": "19"
+    },
+    {
+      "numero": "3.23",
+      "resposta": "0"
+    },
+    {
+      "numero": "3.24",
+      "resposta": "1"
+    },
+    {
+      "numero": "3.25",
+      "resposta": "Sobre planejamento e desempenho da criança"
+    },
+    {
+      "numero": "3.26",
+      "resposta": "200,0000"
+    },
+    {
+      "numero": "3.27",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.28",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.29",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.29.1",
+      "resposta": "20/02/2024"
+    },
+    {
+      "numero": "3.30",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.30.1",
+      "resposta": "21/03/2024"
+    },
+    {
+      "numero": "3.31",
+      "resposta": "Não"
+    },
+    {
+      "numero": "3.32",
+      "resposta": "Não"
+    },
+    {
+      "numero": "3.33",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.34",
+      "resposta": "24777"
+    },
+    {
+      "numero": "3.35",
+      "resposta": "26051"
+    },
+    {
+      "numero": "3.36",
+      "resposta": "12163"
+    },
+    {
+      "numero": "3.37",
+      "resposta": "12614"
+    },
+    {
+      "numero": "3.38",
+      "resposta": "545"
+    },
+    {
+      "numero": "3.39",
+      "resposta": "495"
+    },
+    {
+      "numero": "3.40",
+      "resposta": "6"
+    },
+    {
+      "numero": "3.41",
+      "resposta": "0"
+    },
+    {
+      "numero": "3.42",
+      "resposta": "Sim, utilizando contratação de terceiros"
+    },
+    {
+      "numero": "3.43",
+      "resposta": "0"
+    },
+    {
+      "numero": "3.44",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.44.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.44.1.1",
+      "resposta": "A maior parte das metas foram atingidas"
+    },
+    {
+      "numero": "3.45",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.45.1",
+      "resposta": [
+        "Ligação/mensagem para os responsáveis",
+        "Visita domiciliar",
+        "Contato com familiares/amigos/vizinhos",
+        "Apoio do orientador comunitário/assistente social escolar",
+        "Encaminhamento do caso ao Conselho Tutelar",
+        "Encaminhamento do caso ao CRAS - Centro de Referência de Assistência Social",
+        "Outro."
+      ]
+    },
+    {
+      "numero": "3.45.2",
+      "resposta": "0"
+    },
+    {
+      "numero": "3.45.3",
+      "resposta": "24"
+    },
+    {
+      "numero": "3.45.4",
+      "resposta": "0"
+    },
+    {
+      "numero": "3.45.5",
+      "resposta": "0"
+    },
+    {
+      "numero": "3.45.6",
+      "resposta": "0"
+    },
+    {
+      "numero": "3.45.7",
+      "resposta": "7"
+    },
+    {
+      "numero": "3.45.8",
+      "resposta": "37"
+    },
+    {
+      "numero": "4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.1",
+      "resposta": "200"
+    },
+    {
+      "numero": "4.2",
+      "resposta": "390"
+    },
+    {
+      "numero": "4.3",
+      "resposta": "9"
+    },
+    {
+      "numero": "4.4",
+      "resposta": "0"
+    },
+    {
+      "numero": "4.5",
+      "resposta": "575"
+    },
+    {
+      "numero": "4.6",
+      "resposta": "1613"
+    },
+    {
+      "numero": "4.7",
+      "resposta": "7 052,1600"
+    },
+    {
+      "numero": "4.8",
+      "resposta": "112"
+    },
+    {
+      "numero": "4.9",
+      "resposta": "230"
+    },
+    {
+      "numero": "4.10",
+      "resposta": "9274"
+    },
+    {
+      "numero": "4.11",
+      "resposta": "1420"
+    },
+    {
+      "numero": "4.12",
+      "resposta": "496"
+    },
+    {
+      "numero": "4.13",
+      "resposta": "7016"
+    },
+    {
+      "numero": "4.14",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.14.1",
+      "resposta": "690"
+    },
+    {
+      "numero": "4.14.2",
+      "resposta": "850"
+    },
+    {
+      "numero": "4.14.3",
+      "resposta": "125"
+    },
+    {
+      "numero": "4.14.4",
+      "resposta": "125"
+    },
+    {
+      "numero": "4.15",
+      "resposta": "33"
+    },
+    {
+      "numero": "4.16",
+      "resposta": "12"
+    },
+    {
+      "numero": "4.17",
+      "resposta": "8"
+    },
+    {
+      "numero": "4.18",
+      "resposta": "2"
+    },
+    {
+      "numero": "4.19",
+      "resposta": "0"
+    },
+    {
+      "numero": "4.20",
+      "resposta": "21"
+    },
+    {
+      "numero": "4.21",
+      "resposta": "12"
+    },
+    {
+      "numero": "4.22",
+      "resposta": "5"
+    },
+    {
+      "numero": "4.23",
+      "resposta": "17"
+    },
+    {
+      "numero": "4.24",
+      "resposta": "0"
+    },
+    {
+      "numero": "4.25",
+      "resposta": "Sobre planejamento e desempenho da criança"
+    },
+    {
+      "numero": "4.26",
+      "resposta": "200,0000"
+    },
+    {
+      "numero": "4.27",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.28",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.28.1",
+      "resposta": "21/02/2024"
+    },
+    {
+      "numero": "4.29",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.29.1",
+      "resposta": "21/03/2024"
+    },
+    {
+      "numero": "4.30",
+      "resposta": "Não"
+    },
+    {
+      "numero": "4.31",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.31.1",
+      "resposta": "As avaliações formativas do Avalia Betim permitem um acompanhamento individual de cada estudante ao longo do ano letivo. Por meio desta avaliação é possível embasar estratégias de intervenções pedagógicas mais assertivas, possibilitando uma melhoria continua da aprendizagem dos estudantes."
+    },
+    {
+      "numero": "4.31.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.31.2.1",
+      "resposta": "Instrumento avaliativo instituído pela Secretaria Municipal de Educação de Betim, elaborado pela Assessoria de Ensino Fundamental a partir da seleção de habilidades do Currículo Referência de Minas Gerais (CRMG) nos componentes Língua Portuguesa e Matemática os estudantes são classificados nos níveis de desempenho: bom, médio, baixo e muito baixo."
+    },
+    {
+      "numero": "4.31.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.31.4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.31.4.1",
+      "resposta": "3612"
+    },
+    {
+      "numero": "4.31.4.2",
+      "resposta": "206"
+    },
+    {
+      "numero": "4.32",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.33",
+      "resposta": "16987"
+    },
+    {
+      "numero": "4.34",
+      "resposta": "18968"
+    },
+    {
+      "numero": "4.35",
+      "resposta": "8383"
+    },
+    {
+      "numero": "4.36",
+      "resposta": "8604"
+    },
+    {
+      "numero": "4.37",
+      "resposta": "438"
+    },
+    {
+      "numero": "4.38",
+      "resposta": "159"
+    },
+    {
+      "numero": "4.39",
+      "resposta": "2"
+    },
+    {
+      "numero": "4.40",
+      "resposta": "0"
+    },
+    {
+      "numero": "4.41",
+      "resposta": "0"
+    },
+    {
+      "numero": "4.42",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.42.1",
+      "resposta": "328"
+    },
+    {
+      "numero": "4.42.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.42.2.1",
+      "resposta": "A maior parte das metas foram atingidas"
+    },
+    {
+      "numero": "4.43",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.43.1",
+      "resposta": [
+        "Ligação/mensagem para os responsáveis",
+        "Visita domiciliar",
+        "Contato com familiares/amigos/vizinhos",
+        "Apoio do orientador comunitário/assistente social escolar",
+        "Encaminhamento do caso ao Conselho Tutelar",
+        "Encaminhamento do caso ao CRAS - Centro de Referência de Assistência Social",
+        "Outro."
+      ]
+    },
+    {
+      "numero": "4.43.2",
+      "resposta": "0"
+    },
+    {
+      "numero": "4.43.3",
+      "resposta": "42"
+    },
+    {
+      "numero": "4.43.4",
+      "resposta": "0"
+    },
+    {
+      "numero": "4.43.5",
+      "resposta": "0"
+    },
+    {
+      "numero": "4.43.6",
+      "resposta": "0"
+    },
+    {
+      "numero": "4.43.7",
+      "resposta": "5"
+    },
+    {
+      "numero": "4.43.8",
+      "resposta": "74"
+    },
+    {
+      "numero": "5",
+      "resposta": "64"
+    },
+    {
+      "numero": "6",
+      "resposta": "90"
+    },
+    {
+      "numero": "7",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.1",
+      "resposta": "Lei Municipal 2.886, de 24 de junho de 1996- Plano de Cargos, Carreira e Vencimentos."
+    },
+    {
+      "numero": "7.2",
+      "resposta": [
+        "Remuneração condigna dos profissionais na educação básica da rede pública",
+        "Integração entre o trabalho individual e a proposta pedagógica da escola",
+        "Melhoria da qualidade do ensino e da aprendizagem",
+        "Contempla capacitação profissional especialmente direcionada à formação continuada com vistas à melhoria da qualidade do ensino."
+      ]
+    },
+    {
+      "numero": "8",
+      "resposta": "Não"
+    },
+    {
+      "numero": "9",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "9.1",
+      "resposta": "2"
+    },
+    {
+      "numero": "9.2",
+      "resposta": "0"
+    },
+    {
+      "numero": "9.3",
+      "resposta": "Não"
+    },
+    {
+      "numero": "10",
+      "resposta": "Na Secretaria de Educação e em todas as escolas"
+    },
+    {
+      "numero": "11",
+      "resposta": "Em todas as escolas"
+    },
+    {
+      "numero": "12",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "12.1",
+      "resposta": [
+        "Condições físicas e estruturais da cozinha (0.25)",
+        "Recebimento dos alimentos para controle de procedência (0.25)",
+        "Higienização dos alimentos (0.25)",
+        "Higienização dos equipamentos (0.25)",
+        "Acondicionamento dos alimentos (0.25)",
+        "Acompanhamento da preparação dos alimentos (0.25)",
+        "Acompanhamento e orientação sobre a manipulação dos alimentos (0.25)",
+        "Aceitação do cardápio proposto (0.25)."
+      ]
+    },
+    {
+      "numero": "13",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "13.1",
+      "resposta": [
+        "Controle de Estoque com sistema PVPS o primeiro que vence é o primeiro que sai (0.38)",
+        "Telas nas janelas e frestas (0.35)",
+        "Possui sistema de ventilação (0.35)",
+        "As luminárias são protegidas (0.35)",
+        "Possui ralos sifonados, dotados de dispositivos que permitam o seu fechamento (0.35)",
+        "O estoque não possui sinais de goteiras, vazamentos, umidade, trincas, rachaduras, bolores, infiltrações ou descascamento (0.35)",
+        "Há adequada distância no armazenamento de produtos alimentícios do piso, parede, forro (0.35)",
+        "As geladeiras/câmaras frias são higienizadas periodicamente (0.35)",
+        "Ventilação do estoque (0.35)",
+        "Temperatura (0.35)",
+        "Umidade do ar (0.35)",
+        "Prazo de validade (0.35)",
+        "Tipo de alimento (0.35)",
+        "Os alimentos abertos são etiquetados com data de abertura e validade (0.35)",
+        "Desinsetização a cada 6 meses (0.35)",
+        "Desratização a cada 6 meses (0.35)",
+        "Limpeza da caixa dágua a cada 6 meses (0.38)."
+      ]
+    },
+    {
+      "numero": "14",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.1.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.1.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.1.3",
+      "resposta": "Sim, todos os veículos"
+    },
+    {
+      "numero": "14.1.4",
+      "resposta": "Sim, todos os condutores"
+    },
+    {
+      "numero": "14.1.5",
+      "resposta": "Não"
+    },
+    {
+      "numero": "14.1.6",
+      "resposta": "Sim, todos os condutores"
+    },
+    {
+      "numero": "15",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "15.1",
+      "resposta": "https://servicos.betim.mg.gov.br/transparencia/#/educacao"
+    },
+    {
+      "numero": "15.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "15.2.1",
+      "resposta": "A maior parte das metas foram atingidas dentro do prazo"
+    },
+    {
+      "numero": "16",
+      "resposta": "Não"
+    },
+    {
+      "numero": "17",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "17.1",
+      "resposta": [
+        "Recursos Humanos (0.5)",
+        "Recursos Tecnológicos (0.5)",
+        "Estrutura Física (0.5)",
+        "Recursos Orçamentários (0.5)",
+        "Recursos Materiais (0.5)."
+      ]
+    },
+    {
+      "numero": "17.2",
+      "resposta": [
+        "Consultiva (0.5)",
+        "Normativa (0.5)",
+        "Deliberativa (0.5)."
+      ]
+    },
+    {
+      "numero": "17.3",
+      "resposta": [
+        "Participação na discussão e definição das políticas e do planejamento educacional (0.6)",
+        "Acompanhamento e avaliação do cumprimento do Plano Municipal de Educação (0.6)",
+        "Fiscalização da implementação do BNCC (Base Nacional Comum Curricular) (0.6)",
+        "Emissão de pareceres, resoluções, instruções e recomendações sobre a educação (0.6)."
+      ]
+    },
+    {
+      "numero": "17.4",
+      "resposta": "Não compete ao Conselho aprovar as contas da Secretaria"
+    },
+    {
+      "numero": "17.5",
+      "resposta": "9"
+    },
+    {
+      "numero": "18",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "18.1",
+      "resposta": "Sim, com estrutura independente do Conselho Municipal de Educação"
+    },
+    {
+      "numero": "18.2",
+      "resposta": "https://www.betim.mg.gov.br/portal/secretarias/11/confundeb/"
+    },
+    {
+      "numero": "18.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "18.3.1",
+      "resposta": [
+        "Nomes dos conselheiros e das entidades ou segmentos que representam; (0.4)",
+        "Correio eletrônico ou outro canal de contato direto com o conselho (0.4)",
+        "Atas de reuniões (0.4)",
+        "Relatórios e pareceres (0.4)",
+        "Outros documentos produzidos pelo conselho (0.4)."
+      ]
+    },
+    {
+      "numero": "18.3.2",
+      "resposta": "https://www.betim.mg.gov.br/portal/secretarias-paginas/266/conselheiros/"
+    },
+    {
+      "numero": "18.4",
+      "resposta": [
+        "Recursos Humanos (0.5)",
+        "Recursos Tecnológicos (0.5)",
+        "Estrutura Física (0.5)",
+        "Recursos Orçamentários (0.5)",
+        "Recursos Materiais (0.5)."
+      ]
+    },
+    {
+      "numero": "18.5",
+      "resposta": [
+        "Elaboração do parecer das prestações de contas do FUNDEB (1.5)",
+        "Supervisão da elaboração da proposta orçamentária anual (0.5)",
+        "Apresentação de manifestação formal acerca dos registros contábeis e demonstrativos gerenciais do Fundo aos órgãos competentes (0.5)",
+        "Convocação dos responsáveis para prestação de esclarecimentos acerca do fluxo de recursos e da execução das despesas do Fundo (0.5)",
+        "Requisição ao Poder Executivo de cópia de documentos (0.5)",
+        "Supervisão do censo escolar anual (1)",
+        "Acompanhar a aplicação dos recursos federais transferidos à conta do PNATE e do PEJA e analisar suas prestações de contas (0.5)."
+      ]
+    },
+    {
+      "numero": "18.6",
+      "resposta": "Aprovado sem ressalva"
+    },
+    {
+      "numero": "18.7",
+      "resposta": "9"
+    },
+    {
+      "numero": "19",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "19.1",
+      "resposta": [
+        "Recursos Humanos (0.5)",
+        "Recursos Tecnológicos (0.5)",
+        "Estrutura Física (0.5)",
+        "Recursos Orçamentários (0.5)",
+        "Recursos Materiais (0.5)."
+      ]
+    },
+    {
+      "numero": "19.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "19.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "19.3.1",
+      "resposta": [
+        "Acompanhamento e fiscalização do cumprimento das diretrizes estabelecidas sobre alimentação escolar (0.5)",
+        "Acompanhamento e fiscalização da aplicação dos recursos destinados à alimentação escolar (1)",
+        "Aferição da qualidade dos alimentos, em especial quanto às condições higiênicas, bem como a aceitabilidade dos cardápios oferecidos (1)",
+        "Aferição das condições físicas e estruturais da cozinha (1)",
+        "Sobre o relatório anual de gestão do PNAE, emitiu parecer conclusivo a respeito, aprovando ou reprovando a execução do Programa (1)",
+        "Comunicou aos órgãos de controle as irregularidades observadas",
+        "Forneceu informações e apresentou relatórios de acompanhamento da execução do PNAE sempre que solicitado",
+        "Realizou visitas periódicas às escolas (1)",
+        "Realizou reuniões periódicas (0.5)."
+      ]
+    },
+    {
+      "numero": "20",
+      "resposta": "Houve adesão ao Currículo elaborado pela Secretaria da Educação do Estado?"
+    },
+    {
+      "numero": "21",
+      "resposta": "0,0000"
+    },
+    {
+      "numero": "22",
+      "resposta": "72,6400"
+    },
+    {
+      "numero": "23",
+      "resposta": "27,5800"
+    },
+    {
+      "numero": "24",
+      "resposta": "1 814 533 633,8000"
+    },
+    {
+      "numero": "25",
+      "resposta": "Não"
+    },
+    {
+      "numero": "26",
+      "resposta": "LUCIANO ALVES GOMES"
+    },
+    {
+      "numero": "27",
+      "resposta": "ASSESSOR"
+    },
+    {
+      "numero": "28",
+      "resposta": "gabinete@semed.betim.mg.gov.br"
+    },
+    {
+      "numero": "29",
+      "resposta": "034.193.566-25"
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "submissao": {
+    "indicador": "I-Amb Nacional - 2025",
+    "numero_indicador": 77,
+    "id_submissao": "76862",
+    "municipio_ibge": "3106705",
+    "municipio_nome": "BETIM",
+    "data_inicio": "2025-06-17T09:13:15",
+    "data_termino": "2025-07-07T14:07:03",
+    "status": "Aguardando Validação",
+    "respondente": {
+      "nome": "HUGO HENRIQUE NOVAIS DA SILVA",
+      "cargo": "ASSESSOR RAA 23",
+      "email": "hugohns@gmail.com",
+      "cpf": "054.698.546-71"
+    }
+  },
+  "respostas": [
+    {
+      "numero": "1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1.1",
+      "resposta": 26
+    },
+    {
+      "numero": "1.1.2",
+      "resposta": 27
+    },
+    {
+      "numero": "1.1.3",
+      "resposta": 1
+    },
+    {
+      "numero": "1.1.4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1.5",
+      "resposta": [
+        "Para escolas",
+        "Para outras secretarias / entidades municipais"
+      ]
+    },
+    {
+      "numero": "1.2",
+      "resposta": [
+        "Recursos Tecnológicos",
+        "Recursos Orçamentários",
+        "Recursos Materiais"
+      ]
+    },
+    {
+      "numero": "2.0",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.1",
+      "resposta": 69
+    },
+    {
+      "numero": "3",
+      "resposta": "Sim, para todos os órgãos e entidades"
+    },
+    {
+      "numero": "3.1",
+      "resposta": [
+        "Coleta seletiva",
+        "Uso racional da água",
+        "Uso racional de energia elétrica",
+        "Reúso de materiais",
+        "Compostagem",
+        "Instalação de bicicletários e vestiários para os servidores públicos",
+        "Substituição de lâmpadas fluorescentes por lâmpadas LED",
+        "Instalação de estruturas para a captação de água de chuva",
+        "Instalação de torneiras com redutores de pressão",
+        "Logística reversa de pilhas, baterias e eletrônicos",
+        "Substituição de material descartável"
+      ]
+    },
+    {
+      "numero": "4",
+      "resposta": "Não"
+    },
+    {
+      "numero": "5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "5.1",
+      "resposta": "ECO 003/2024 - SV EMPREENDIMENTOS IMOBILIÁRIOS LTDA"
+    },
+    {
+      "numero": "6",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "6.1",
+      "resposta": [
+        "Plano emergencial ou de contingenciamento sobre abastecimento de água no caso de sua escassez"
+      ]
+    },
+    {
+      "numero": "6.2",
+      "resposta": [
+        "Rede Municipal de Educação",
+        "Rede Municipal da Atenção Básica da Saúde"
+      ]
+    },
+    {
+      "numero": "7",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.1",
+      "resposta": "www.dpurb.betim.mg.gov.br"
+    },
+    {
+      "numero": "7.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.2.1",
+      "resposta": [
+        "Meta de universalização do abastecimento de água potável até 31 de dezembro de 2033"
+      ]
+    },
+    {
+      "numero": "7.2.2",
+      "resposta": "31/12/2033"
+    },
+    {
+      "numero": "7.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.3.1",
+      "resposta": [
+        "Metas de expansão do serviço de coleta de esgoto",
+        "Metas de qualidade na prestação do serviço de coleta de esgoto",
+        "Estabelecimento de direitos e deveres dos usuários",
+        "Meta de universalização da coleta de esgoto até 31 de dezembro de 2033"
+      ]
+    },
+    {
+      "numero": "7.3.2",
+      "resposta": "31/12/2033"
+    },
+    {
+      "numero": "7.4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.4.1",
+      "resposta": "31/12/2033"
+    },
+    {
+      "numero": "7.5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.5.1",
+      "resposta": [
+        "Relatórios anuais discutidos e/ou publicados"
+      ]
+    },
+    {
+      "numero": "7.6",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.6.1",
+      "resposta": "Todas as metas foram cumpridas dentro do prazo"
+    },
+    {
+      "numero": "7.7",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.8",
+      "resposta": "30/09/2018"
+    },
+    {
+      "numero": "8",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "8.1",
+      "resposta": "XYZ"
+    },
+    {
+      "numero": "8.2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "8.3",
+      "resposta": "Não"
+    },
+    {
+      "numero": "9",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "9.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "9.1.1",
+      "resposta": "3 vezes na semana"
+    },
+    {
+      "numero": "9.2",
+      "resposta": "A maior parte dos bairros são atendidos"
+    },
+    {
+      "numero": "9.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "9.3.1",
+      "resposta": [
+        "Ações de educação ambiental"
+      ]
+    },
+    {
+      "numero": "10",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "10.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "10.2",
+      "resposta": "Todos os bairros do município são atendidos"
+    },
+    {
+      "numero": "10.3",
+      "resposta": "Não"
+    },
+    {
+      "numero": "11",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "11.1",
+      "resposta": "www.dpurb.betim.mg.gov.br"
+    },
+    {
+      "numero": "11.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "11.2.1",
+      "resposta": "Não"
+    },
+    {
+      "numero": "11.2.2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "11.2.2.1",
+      "resposta": "A menor parte das metas foram cumpridas dentro do prazo"
+    },
+    {
+      "numero": "11.2.2.2",
+      "resposta": [
+        "Falta de recursos orçamentários"
+      ]
+    },
+    {
+      "numero": "11.3",
+      "resposta": "Gerador dos resíduos"
+    },
+    {
+      "numero": "11.4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "12",
+      "resposta": "Não"
+    },
+    {
+      "numero": "13",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "13.1",
+      "resposta": [
+        "Local da instalação foi planejado",
+        "Capacidade do local é definida",
+        "Impermeabilização do solo",
+        "Total gestão do chorume",
+        "Total gestão dos gases",
+        "Aplicação diária de camadas intermediárias e finais - cobertura do solo",
+        "Há compactação dos resíduos",
+        "Há proteção vegetal (manutenção do paisagismo sobre as células de resíduos)",
+        "Há desenvolvimento e manutenção das vias de acesso do aterro",
+        "Há cercas/muros ao redor do local do aterro",
+        "Há controle de acesso ao local do aterro",
+        "Controle total do quantitativo de resíduos que entram no aterro",
+        "Controle total da procedência dos resíduos que entram no aterro",
+        "Não há coleta de resíduos por catadores dentro do aterro",
+        "Não há comércio de resíduos dentro do aterro",
+        "Não há presença de animais domésticos e/ou animais silvestres (urubus, garças, etc.)",
+        "Não há queima de resíduos dentro do aterro",
+        "Previsão de gerenciamento do aterro pós-fechamento"
+      ]
+    },
+    {
+      "numero": "14",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.1",
+      "resposta": [
+        "Campanhas de conscientização",
+        "Retirada dos resíduos sólidos por caminhões",
+        "Sinalização no local sobre a proibição de descarte naquele local",
+        "Plantio de árvores em áreas que não deveriam receber lixo ou entulho"
+      ]
+    },
+    {
+      "numero": "15",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "15.1",
+      "resposta": [
+        "Abastecimento de água potável:",
+        "Esgotamento sanitário:"
+      ]
+    },
+    {
+      "numero": "15.1.1",
+      "resposta": "ECOS/DAΟΙΕ"
+    },
+    {
+      "numero": "15.1.2",
+      "resposta": "ECOS/DAΟΙΕ"
+    },
+    {
+      "numero": "16",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "16.1",
+      "resposta": [
+        "Limpeza urbana e manejo de resíduos sólidos"
+      ]
+    },
+    {
+      "numero": "16.1.6",
+      "resposta": 100.0
+    },
+    {
+      "numero": "16.1.7",
+      "resposta": 100.0
+    },
+    {
+      "numero": "16.1.8",
+      "resposta": 0.68
+    },
+    {
+      "numero": "16.1.9",
+      "resposta": 0.9
+    },
+    {
+      "numero": "17",
+      "resposta": "Não"
+    },
+    {
+      "numero": "18",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "19",
+      "resposta": "Não"
+    },
+    {
+      "numero": "20",
+      "resposta": "HUGO HENRIQUE NOVAIS DA SILVA"
+    },
+    {
+      "numero": "21",
+      "resposta": "ASSESSOR RAA 23"
+    },
+    {
+      "numero": "22",
+      "resposta": "hugohns@gmail.com"
+    },
+    {
+      "numero": "23",
+      "resposta": "054.698.546-71"
+    }
+  ]
+}

@@ -69,7 +69,8 @@ export const questoes = sqliteTable('questoes', {
   peso: real('peso').default(1.0),
   respostaRef: text('resposta_ref'),
   notaRef: real('nota_ref'),
-  tipo: text('tipo'), // 'boolean' ou 'text'
+  tipo: text('tipo'), // 'boolean' | 'text' | 'multipla_escolha'
+  opcoes: text('opcoes'), // JSON: string[] — opções para tipo multipla_escolha
 }, (table) => ({
   questionarioIdx: index('questao_questionario_idx').on(table.questionarioId),
   chaveQuestaoIdx: index('questao_chave_idx').on(table.chaveQuestao),
@@ -278,6 +279,24 @@ export const simuladoRespostas = sqliteTable('simulado_respostas', {
 }));
 
 // ============================================================================
+// TABELA DE ANEXOS DO SIMULADO
+// ============================================================================
+
+export const simuladoAnexos = sqliteTable('simulado_anexos', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  questaoId: integer('questao_id').notNull(),
+  codigoSessao: text('codigo_sessao').notNull(),
+  nomeArquivo: text('nome_arquivo').notNull(),
+  tipoArquivo: text('tipo_arquivo').notNull(),
+  tamanho: integer('tamanho'),
+  dados: text('dados').notNull(), // base64
+  criadoEm: text('criado_em').notNull(),
+}, (table) => ({
+  questaoIdx: index('simulado_anexo_questao_idx').on(table.questaoId),
+  sessaoIdx: index('simulado_anexo_sessao_idx').on(table.codigoSessao),
+}));
+
+// ============================================================================
 // TIPOS TYPESCRIPT
 // ============================================================================
 
@@ -319,3 +338,6 @@ export type NewMigracao = typeof migracoes.$inferInsert;
 
 export type SimuladoResposta = typeof simuladoRespostas.$inferSelect;
 export type NewSimuladoResposta = typeof simuladoRespostas.$inferInsert;
+
+export type SimuladoAnexo = typeof simuladoAnexos.$inferSelect;
+export type NewSimuladoAnexo = typeof simuladoAnexos.$inferInsert;

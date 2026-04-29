@@ -1,0 +1,721 @@
+{
+  "indicador": "i-Gov",
+  "questoes": {
+    "0": {
+      "numero": "1",
+      "codigo_questao": "M07Q03300",
+      "enunciado": "A Prefeitura possui uma área ou setor que cuida de Tecnologia da Informação e Comunicação (TIC)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 30 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "1": {
+      "numero": "1.1",
+      "codigo_questao": "M07Q00300",
+      "enunciado": "O departamento de Tecnologia da Informação possui funcionários efetivos e/ou comissionados e/ou estagiários?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "2": {
+      "numero": "1.1.1",
+      "codigo_questao": "M07Q00310R00100",
+      "enunciado": "Informe a quantidade de funcionários efetivos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "3": {
+      "numero": "1.1.2",
+      "codigo_questao": "M07Q00310R00200",
+      "enunciado": "Informe a quantidade de funcionários comissionados:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "4": {
+      "numero": "1.1.3",
+      "codigo_questao": "M07Q00310R00300",
+      "enunciado": "Informe a quantidade de estagiários no suporte e atendimento de primeiro nível:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "5": {
+      "numero": "1.1.4",
+      "codigo_questao": "M07Q00310R00400",
+      "enunciado": "Informe a quantidade de outros:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "6": {
+      "numero": "1.1.5",
+      "codigo_questao": "M07Q00400",
+      "enunciado": "A prefeitura municipal definiu formalmente as atribuições do pessoal do setor de Tecnologia da Informação e Comunicação (TIC)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 30 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "7": {
+      "numero": "1.1.6",
+      "codigo_questao": "M07Q00500",
+      "enunciado": "A prefeitura disponibilizou capacitação para o pessoal da área de Tecnologia da Informação e Comunicação (TIC)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 30 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "8": {
+      "numero": "1.1.6.1",
+      "codigo_questao": "M07Q00520",
+      "enunciado": "Informe em quais áreas houve capacitação:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Outros", "valor": 0 },
+        { "texto": "Gestão e Segurança", "valor": 0 },
+        { "texto": "Análise de Dados", "valor": 0 },
+        { "texto": "Desenvolvimento e Software", "valor": 0 },
+        { "texto": "Infraestrutura e Redes", "valor": 0 }
+      ]
+    },
+    "9": {
+      "numero": "1.1.7",
+      "codigo_questao": "M07Q01000",
+      "enunciado": "Nas licitações e contratos que tenham como soluções o uso de Tecnologia da Informação e Comunicação, houve participação formalizada do pessoal de TIC?",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Há participação do pessoal de TI no processo de compra (especificação técnica, comissão de julgamento, recebimento do objeto)", "valor": 0 },
+        { "texto": "Não há pessoal de TI envolvido no processo de compra", "valor": 0 }
+      ]
+    },
+    "10": {
+      "numero": "1.1.7.1",
+      "codigo_questao": "M07Q01010",
+      "enunciado": "Assinale as etapas que o pessoal de TI participa:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Elaboração do edital / especificação técnica", "valor": 15 },
+        { "texto": "Comissão de julgamento", "valor": 10 },
+        { "texto": "Recebimento do objeto", "valor": 15 }
+      ]
+    },
+    "11": {
+      "numero": "1.1.7.2",
+      "codigo_questao": "M07Q01020",
+      "enunciado": "Sobre programas de computador (softwares) adquiridos ou licenciados nos últimos 5 anos, foi realizada análise ou estudo antes de sua contratação com a participação do pessoal de Tecnologia da Informação e Comunicação (TIC)?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Não foi realizado", "valor": 0 },
+        { "texto": "Sim, para todos os softwares", "valor": 20 },
+        { "texto": "Sim, para a maior parte dos softwares", "valor": 15 },
+        { "texto": "Sim, para a menor parte dos softwares", "valor": 8 },
+        { "texto": "Não foi adquirido nenhum software nos últimos 5 anos", "valor": 20 }
+      ]
+    },
+    "12": {
+      "numero": "2",
+      "codigo_questao": "M07Q00100",
+      "enunciado": "A prefeitura municipal possui um PDTIC - Plano Diretor de Tecnologia da Informação e Comunicação - vigente que estabeleça diretrizes e metas de atingimento no futuro?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "SIM", "valor": 0 },
+        { "texto": "NÃO POSSUI PDTI", "valor": 0 }
+      ]
+    },
+    "13": {
+      "numero": "2.1",
+      "codigo_questao": "M07Q00100",
+      "enunciado": "Sobre as metas, informe: a prefeitura municipal possui um PDTI - Plano Diretor de Tecnologia da Informação - vigente que estabeleça diretrizes e metas de atingimento no futuro?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "SIM, com metas acima de 02 anos", "valor": 40 },
+        { "texto": "SIM, com metas para até 02 anos", "valor": 30 }
+      ]
+    },
+    "14": {
+      "numero": "2.2",
+      "codigo_questao": "M07Q00140R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) do PDTIC:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "15": {
+      "numero": "2.3",
+      "codigo_questao": "M07Q00120",
+      "enunciado": "O plano de TIC vigente contempla:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Alocação de recursos orçamentários", "valor": 10 },
+        { "texto": "Alocação de recursos humanos", "valor": 10 },
+        { "texto": "Alocação de recursos materiais", "valor": 10 },
+        { "texto": "Estratégia de execução indireta (terceirização)", "valor": 10 }
+      ]
+    },
+    "16": {
+      "numero": "2.4",
+      "codigo_questao": "M07Q00133R00100",
+      "enunciado": "Qual a data da última atualização do PDTIC?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "17": {
+      "numero": "3",
+      "codigo_questao": "M07Q03400",
+      "enunciado": "A Prefeitura dispõe de Política de Segurança da informação formalmente instituída e de cumprimento obrigatório?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 50 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "18": {
+      "numero": "3.1",
+      "codigo_questao": "M07Q00200",
+      "enunciado": "A Prefeitura estabelece procedimentos quanto ao uso da tecnologia da informação pelos funcionários municipais, conhecido como Termo de Responsabilidade/Compromisso?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 20 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "19": {
+      "numero": "3.1.1",
+      "codigo_questao": "M07Q00220",
+      "enunciado": "O Termo de Responsabilidade/Compromisso dispõe sobre o uso da assinatura eletrônica pelos funcionários municipais?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 40 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "20": {
+      "numero": "3.1.1.1",
+      "codigo_questao": "M07Q00222",
+      "enunciado": "Informe o tipo de assinatura eletrônica utilizada nos documentos digitais:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Assinatura eletrônica de uso gratuito", "valor": 10 },
+        { "texto": "Assinatura eletrônica onerosa", "valor": 0 }
+      ]
+    },
+    "21": {
+      "numero": "3.2",
+      "codigo_questao": "M07Q03442",
+      "enunciado": "Os riscos de TIC são identificados de acordo com as normas brasileiras da família ISO/IEC 27000?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "22": {
+      "numero": "3.2.1",
+      "codigo_questao": "M07Q42700",
+      "enunciado": "Informe quais normas da família ISO/IEC 27000 são utilizadas nos processos de segurança no uso de Tecnologia da Informação e Comunicação (TIC):",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "ISO/IEC 27002", "valor": 1.5 },
+        { "texto": "ISO/IEC 27004", "valor": 2 },
+        { "texto": "ISO/IEC 27005", "valor": 2 },
+        { "texto": "ISO/IEC 27003", "valor": 1.5 },
+        { "texto": "ISO/IEC 27000", "valor": 1.5 },
+        { "texto": "ISO/IEC 27001", "valor": 1.5 }
+      ]
+    },
+    "23": {
+      "numero": "3.3",
+      "codigo_questao": "M07Q03410",
+      "enunciado": "Os riscos de TIC são identificados de acordo com as normas da ABNT NBR ISO/IEC 31000?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 30 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "24": {
+      "numero": "3.4",
+      "codigo_questao": "M07Q03420",
+      "enunciado": "A Prefeitura possui um Plano de Continuidade dos Serviços de Tecnologia da Informação e Comunicação (TIC)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 30 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "25": {
+      "numero": "3.5",
+      "codigo_questao": "M07Q03430",
+      "enunciado": "A Prefeitura dispõe de política de cópias de segurança (backup) formalmente instituída como norma de cumprimento obrigatório?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 30 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "26": {
+      "numero": "3.6",
+      "codigo_questao": "M07Q03440",
+      "enunciado": "A Prefeitura possui inventário atualizado dos ativos de TIC?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 20 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "27": {
+      "numero": "4",
+      "codigo_questao": "M07Q01900",
+      "enunciado": "O município regulamentou a Lei de Acesso à Informação?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 40 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "28": {
+      "numero": "4.1",
+      "codigo_questao": "M07Q01911R00100",
+      "enunciado": "Página eletrônica (link na internet) do instrumento normativo:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "29": {
+      "numero": "5",
+      "codigo_questao": "M07Q00600",
+      "enunciado": "A prefeitura mantém site na Internet com informações atualizadas periodicamente?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 20 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "30": {
+      "numero": "5.1",
+      "codigo_questao": "M07Q00610R00100",
+      "enunciado": "Endereço da página(da Prefeitura) na Internet:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "31": {
+      "numero": "5.2",
+      "codigo_questao": "M07Q00620",
+      "enunciado": "O site contém ferramenta de pesquisa de conteúdo que, efetivamente, permita o acesso à informação?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, para todo o conteúdo do site", "valor": 20 },
+        { "texto": "Sim, para a maior parte do conteúdo do site", "valor": 10 },
+        { "texto": "Sim, para a menor parte do conteúdo do site", "valor": 5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "32": {
+      "numero": "5.3",
+      "codigo_questao": "M07Q00630",
+      "enunciado": "O site possibilita o download de relatórios em diversos formatos eletrônicos, inclusive abertos e não proprietários, tais como planilhas e texto (CSV), de modo a facilitar a análise das informações?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Possibilita para todos os relatórios", "valor": 20 },
+        { "texto": "Possibilita para a maior parte dos relatórios", "valor": 10 },
+        { "texto": "Possibilita para a menor parte dos relatórios", "valor": 5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "33": {
+      "numero": "5.4",
+      "codigo_questao": "M07Q00650",
+      "enunciado": "O site disponibiliza as respostas a perguntas mais frequentes da sociedade?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 10 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "34": {
+      "numero": "5.5",
+      "codigo_questao": "M07Q00660",
+      "enunciado": "O site disponibiliza acessibilidade de conteúdo para pessoas com deficiência?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, para todo o conteúdo do site", "valor": 30 },
+        { "texto": "Sim, para a maior parte do conteúdo do site", "valor": 15 },
+        { "texto": "Sim, para a menor parte do conteúdo do site", "valor": 5 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "35": {
+      "numero": "6",
+      "codigo_questao": "M07Q02300",
+      "enunciado": "A Prefeitura disponibiliza no site o Serviço de Informação ao Cidadão/e-SIC (LF nº 12.527/11)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 25 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "36": {
+      "numero": "6.1",
+      "codigo_questao": "M07Q02310",
+      "enunciado": "A solicitação por meio do e-SIC é simples, ou seja, sem a exigência de itens de identificação do requerente que dificultem ou impossibilitem o acesso à informação, tais como: envio de documentos, assinatura reconhecida, declaração de responsabilidade, maioridade?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 10 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "37": {
+      "numero": "6.2",
+      "codigo_questao": "M07Q02320",
+      "enunciado": "Apresenta possibilidade de acompanhamento posterior da solicitação?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 10 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "38": {
+      "numero": "6.3",
+      "codigo_questao": "M07Q02330",
+      "enunciado": "Há necessidade de ser informado os motivos para a solicitação de informações de interesse público?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 5 }
+      ]
+    },
+    "39": {
+      "numero": "7",
+      "codigo_questao": "M07Q03500",
+      "enunciado": "A Prefeitura possui softwares para gestão de processos?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 40 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "40": {
+      "numero": "7.1",
+      "codigo_questao": "M07Q03510",
+      "enunciado": "Os softwares englobam quais processos/setores?",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Contabilidade", "valor": 0 },
+        { "texto": "Gestão de tributos (arrecadação)", "valor": 0 },
+        { "texto": "Dívida Ativa", "valor": 0 },
+        { "texto": "Precatórios", "valor": 0 },
+        { "texto": "Gestão patrimonial (bens e equipamentos)", "valor": 0 },
+        { "texto": "Gestão de negócios (Business Intelligence)", "valor": 0 },
+        { "texto": "Planejamento", "valor": 0 },
+        { "texto": "Recursos humanos / Departamento pessoal", "valor": 0 },
+        { "texto": "Almoxarifado", "valor": 0 },
+        { "texto": "Controle de frotas", "valor": 0 },
+        { "texto": "Controle Interno", "valor": 0 },
+        { "texto": "Saúde", "valor": 0 },
+        { "texto": "Ensino (educação)", "valor": 0 },
+        { "texto": "Compras, licitações e contratos", "valor": 0 },
+        { "texto": "Certidões e alvarás", "valor": 0 },
+        { "texto": "Saneamento", "valor": 0 },
+        { "texto": "Cemitérios", "valor": 0 }
+      ]
+    },
+    "41": {
+      "numero": "7.2",
+      "codigo_questao": "M07Q03530",
+      "enunciado": "Informe quais sistemas encontram-se integrados ao Sistema de Contabilidade do município:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Gestão de tributos (arrecadação)", "valor": 0 },
+        { "texto": "Dívida Ativa", "valor": 0 },
+        { "texto": "Precatórios", "valor": 0 },
+        { "texto": "Gestão patrimonial (bens e equipamentos)", "valor": 0 },
+        { "texto": "Gestão de negócios (Business Intelligence)", "valor": 0 },
+        { "texto": "Planejamento", "valor": 0 },
+        { "texto": "Recursos humanos / Departamento pessoal", "valor": 0 },
+        { "texto": "Almoxarifado", "valor": 0 },
+        { "texto": "Controle de frotas", "valor": 0 },
+        { "texto": "Controle Interno", "valor": 0 },
+        { "texto": "Saúde", "valor": 0 },
+        { "texto": "Ensino (educação)", "valor": 0 },
+        { "texto": "Compras, licitações e contratos", "valor": 0 },
+        { "texto": "Certidões e alvarás", "valor": 0 },
+        { "texto": "Saneamento", "valor": 0 },
+        { "texto": "Cemitérios", "valor": 0 }
+      ]
+    },
+    "42": {
+      "numero": "7.2.1",
+      "codigo_questao": "M07Q03531",
+      "enunciado": "Informe o nível de integração entre o Sistema da Dívida Ativa e o de Contabilidade:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Totalmente integrado (Inscrição / Atualização e Baixa)", "valor": 50 },
+        { "texto": "Somente as Inscrições /Atualizações estão integrados", "valor": 10 },
+        { "texto": "Somente as Baixas estão integradas", "valor": 10 }
+      ]
+    },
+    "43": {
+      "numero": "7.2.2",
+      "codigo_questao": "M07Q03532",
+      "enunciado": "Informe o nível de integração entre o Sistema de Precatórios e o de Contabilidade:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Totalmente integrado (Provisão e Baixa)", "valor": 30 },
+        { "texto": "Somente as Provisões estão integradas", "valor": 5 },
+        { "texto": "Somente as Baixas estão integradas", "valor": 5 }
+      ]
+    },
+    "44": {
+      "numero": "7.3",
+      "codigo_questao": "M07Q03540",
+      "enunciado": "Assinale quais bases de dados encontram-se sob gestão direta da Prefeitura:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Contabilidade", "valor": 0 },
+        { "texto": "Gestão de tributos (arrecadação)", "valor": 0 },
+        { "texto": "Dívida Ativa", "valor": 0 },
+        { "texto": "Precatórios", "valor": 0 },
+        { "texto": "Gestão patrimonial (bens e equipamentos)", "valor": 0 },
+        { "texto": "Gestão de negócios (Business Intelligence)", "valor": 0 },
+        { "texto": "Planejamento", "valor": 0 },
+        { "texto": "Recursos humanos / Departamento pessoal", "valor": 0 },
+        { "texto": "Almoxarifado", "valor": 0 },
+        { "texto": "Controle de frotas", "valor": 0 },
+        { "texto": "Controle Interno", "valor": 0 },
+        { "texto": "Saúde", "valor": 0 },
+        { "texto": "Ensino (educação)", "valor": 0 },
+        { "texto": "Compras, licitações e contratos", "valor": 0 },
+        { "texto": "Certidões e alvarás", "valor": 0 },
+        { "texto": "Saneamento", "valor": 0 },
+        { "texto": "Cemitérios", "valor": 0 }
+      ]
+    },
+    "45": {
+      "numero": "7.4",
+      "codigo_questao": "M07Q03550",
+      "enunciado": "Assinale quais sistemas possuem controle de acesso à informação:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Contabilidade", "valor": 0 },
+        { "texto": "Gestão de tributos (arrecadação)", "valor": 0 },
+        { "texto": "Dívida Ativa", "valor": 0 },
+        { "texto": "Precatórios", "valor": 0 },
+        { "texto": "Gestão patrimonial (bens e equipamentos)", "valor": 0 },
+        { "texto": "Gestão de negócios (Business Intelligence)", "valor": 0 },
+        { "texto": "Planejamento", "valor": 0 },
+        { "texto": "Recursos humanos / Departamento pessoal", "valor": 0 },
+        { "texto": "Almoxarifado", "valor": 0 },
+        { "texto": "Controle de frotas", "valor": 0 },
+        { "texto": "Controle Interno", "valor": 0 },
+        { "texto": "Saúde", "valor": 0 },
+        { "texto": "Ensino (educação)", "valor": 0 },
+        { "texto": "Compras, licitações e contratos", "valor": 0 },
+        { "texto": "Certidões e alvarás", "valor": 0 },
+        { "texto": "Saneamento", "valor": 0 },
+        { "texto": "Cemitérios", "valor": 0 }
+      ]
+    },
+    "46": {
+      "numero": "8",
+      "codigo_questao": "M07Q03600",
+      "enunciado": "A Prefeitura oferece serviços de forma online?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "47": {
+      "numero": "8.1",
+      "codigo_questao": "M07Q03610",
+      "enunciado": "Quais tipos de serviços?",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Alvarás/licenças de funcionamento", "valor": 7.5 },
+        { "texto": "Certidões", "valor": 7.5 },
+        { "texto": "Licenças / autorizações", "valor": 7.5 },
+        { "texto": "Ouvidoria", "valor": 7.5 },
+        { "texto": "Consulta de débitos municipais", "valor": 7.5 },
+        { "texto": "Emissão de guias/boletos dos débitos municipais", "valor": 7.5 },
+        { "texto": "Solicitação de serviços de zeladoria", "valor": 7.5 },
+        { "texto": "Solicitação de obras e serviços de urbanização", "valor": 7.5 },
+        { "texto": "Inscrições em oficinas, cursos, eventos e vagas", "valor": 7.5 },
+        { "texto": "Nota fiscal eletrônica", "valor": 7.5 },
+        { "texto": "Canal de denúncias", "valor": 7.5 },
+        { "texto": "Cadastro de fornecedores", "valor": 7.5 },
+        { "texto": "Agendamento de consultas na rede pública de saúde", "valor": 7.5 },
+        { "texto": "Agendamento de exames em relação a doenças crônicas na rede pública de saúde", "valor": 7.5 },
+        { "texto": "Pesquisa de satisfação em relação aos serviços prestados pela Prefeitura", "valor": 7.5 },
+        { "texto": "Consulta a status de protocolos de todos os atendimentos dos serviços assinalados acima", "valor": 7.5 }
+      ]
+    },
+    "48": {
+      "numero": "8.2",
+      "codigo_questao": "M07Q03710",
+      "enunciado": "Quais as formas de atendimento à distância disponibilizadas ao público pela Prefeitura?",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Telefone", "valor": 0 },
+        { "texto": "Site da Prefeitura", "valor": 0 },
+        { "texto": "Aplicativo de mensagens", "valor": 0 },
+        { "texto": "Redes sociais", "valor": 0 },
+        { "texto": "Aplicativo da Prefeitura", "valor": 0 },
+        { "texto": "Correio eletrônico (e-mail)", "valor": 0 },
+        { "texto": "Outros", "valor": 0 }
+      ]
+    },
+    "49": {
+      "numero": "9",
+      "codigo_questao": "M07Q03900",
+      "enunciado": "A Prefeitura Municipal regulamentou o tratamento de dados pessoais, inclusive nos meios digitais, segundo a LGPD (Lei Federal nº 13.709, de 14 de agosto de 2018)?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "50": {
+      "numero": "9.1",
+      "codigo_questao": "M07Q03911R00100",
+      "enunciado": "Informe a página eletrônica (link na internet):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "51": {
+      "numero": "9.2",
+      "codigo_questao": "M07Q03920",
+      "enunciado": "Os contratos com os prestadores de serviços foram revisados acrescentando cláusula sobre observância da LGPD?",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Todos os contratos vigentes", "valor": 0 },
+        { "texto": "A maior parte dos contratos vigentes", "valor": 0 },
+        { "texto": "A menor parte dos contratos vigentes", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "52": {
+      "numero": "10",
+      "codigo_questao": "M07Q04100",
+      "enunciado": "A Prefeitura Municipal designou um encarregado para o tratamento de dados pessoais (DPO)?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "53": {
+      "numero": "10.1",
+      "codigo_questao": "M07Q04110R00100",
+      "enunciado": "Informe a página eletrônica (link na internet), que contenha a identidade e as informações de contato do encarregado:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "54": {
+      "numero": "11",
+      "codigo_questao": "M07Q03000",
+      "enunciado": "Gostaria de registrar suas impressões, comentários e sugestões a respeito do presente questionário?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "55": {
+      "numero": "11.1",
+      "codigo_questao": "M07Q03010R00100",
+      "enunciado": "Utilize o espaço abaixo para registrar suas impressões, comentários e sugestões a respeito do presente questionário.",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "56": {
+      "numero": "12",
+      "codigo_questao": null,
+      "enunciado": "Nome Completo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "57": {
+      "numero": "13",
+      "codigo_questao": null,
+      "enunciado": "Cargo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "58": {
+      "numero": "14",
+      "codigo_questao": null,
+      "enunciado": "E-mail",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "59": {
+      "numero": "15",
+      "codigo_questao": null,
+      "enunciado": "CPF",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    }
+  }
+}

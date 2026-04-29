@@ -1,0 +1,340 @@
+{
+  "submissao": {
+    "indicador": "i-Fiscal TCEMG-2025",
+    "numero_indicador": 101,
+    "id_submissao": "76872",
+    "municipio_ibge": "3106705",
+    "municipio_nome": "BETIM",
+    "data_inicio": "2025-06-17T09:24:52",
+    "data_termino": "2025-07-28T10:06:15",
+    "status": "Aguardando Validação",
+    "respondente": {
+      "nome": "FLAVIO WAGNER FONSECA",
+      "cargo": "SECRETARIO MUNICIPAL DA FAZENDA",
+      "email": "FLAVIOF@BETIM.MG.GOV.BR",
+      "cpf": "049.686.446-71"
+    }
+  },
+  "respostas": [
+    {
+      "numero": "1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.2",
+      "resposta": "17"
+    },
+    {
+      "numero": "1.3",
+      "resposta": "0"
+    },
+    {
+      "numero": "1.4",
+      "resposta": "0"
+    },
+    {
+      "numero": "1.5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.6",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.6.1",
+      "resposta": "https://legislativo.camarabetim.mg.gov.br/NormaJuridica/ShowNormaJuridica/31442"
+    },
+    {
+      "numero": "1.7",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.7.1",
+      "resposta": "Não"
+    },
+    {
+      "numero": "2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.1",
+      "resposta": [
+        "Convênios com a União e o Estado para compartilhamento de Informações"
+      ]
+    },
+    {
+      "numero": "4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.1",
+      "resposta": "https://www.betim.mg.gov.br/portal/diario-oficial/ver/3126 (página 10 a 20)"
+    },
+    {
+      "numero": "4.2",
+      "resposta": "Menor ou igual a 1 ano"
+    },
+    {
+      "numero": "4.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "5.1",
+      "resposta": "(Página 22 a 60) https://www.betim.mg.gov.br/uploads/diario_20241331163939d0079d7c6687c7c4670833bedb9870.pdf"
+    },
+    {
+      "numero": "5.2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "5.3",
+      "resposta": "Sim, de forma automática no sistema"
+    },
+    {
+      "numero": "6",
+      "resposta": [
+        "Alíquotas progressivas em razão do valor do imóvel",
+        "Alíquotas diferenciadas em razão do uso do imóvel"
+      ]
+    },
+    {
+      "numero": "7",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.1",
+      "resposta": "https://www.betim.mg.gov.br/uploads/diario_202517181610f801bfa51a2f4ff3ffcda33132db0f91.pdf (Página 7 a 79)"
+    },
+    {
+      "numero": "8",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "8.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "9",
+      "resposta": "Sim por meio de sistema automatizado"
+    },
+    {
+      "numero": "10",
+      "resposta": "Sim, sem restrição"
+    },
+    {
+      "numero": "11",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "11.1",
+      "resposta": "https://www.betim.mg.gov.br/uploads/diario_20241331163939d0079d7c6687c7c4670833bedb9870.pdf"
+    },
+    {
+      "numero": "11.2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "11.3",
+      "resposta": "Não"
+    },
+    {
+      "numero": "12",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "12.1",
+      "resposta": "=1"
+    },
+    {
+      "numero": "12.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "13",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.1.1",
+      "resposta": "https://servicos.betim.mg.gov.br/transparencia/#/renuncias-receitas/renuncias-receitas"
+    },
+    {
+      "numero": "14.2",
+      "resposta": "Sim, de todas as renúncias de receita"
+    },
+    {
+      "numero": "14.3",
+      "resposta": "Todas as renúncias concedidas estão contidas no demonstrativo"
+    },
+    {
+      "numero": "14.3.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.4.1",
+      "resposta": "https://servicos.betim.mg.gov.br/transparencia/#/renuncias-receitas/renuncias-receitas"
+    },
+    {
+      "numero": "15",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "15.1",
+      "resposta": "https://www.betim.mg.gov.br/publicos/63fa1b6a58b4cd6790248215c38a02da.pdf"
+    },
+    {
+      "numero": "15.2",
+      "resposta": [
+        "Cobrança administrativa da dívida ativa",
+        "Parcelamento da dívida ativa",
+        "Restrição e controle da inadimplência nos parcelamentos da dívida ativa",
+        "Início do trâmite da execução judicial da dívida ativa",
+        "Anistia"
+      ]
+    },
+    {
+      "numero": "16",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "16.1",
+      "resposta": [
+        "Sim, houve prescrição ordinária"
+      ]
+    },
+    {
+      "numero": "16.2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "17",
+      "resposta": "Sim, da maior parte das ações"
+    },
+    {
+      "numero": "18",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "18.1",
+      "resposta": [
+        "PPA, LDO e LOA",
+        "Relatório Resumido da Execução Orçamentária (RREO)"
+      ]
+    },
+    {
+      "numero": "19",
+      "resposta": "Não"
+    },
+    {
+      "numero": "20",
+      "resposta": "Não"
+    },
+    {
+      "numero": "21",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "21.1",
+      "resposta": "https://servicos.betim.mg.gov.br/transparencia/#/gestao-pessoas"
+    },
+    {
+      "numero": "22",
+      "resposta": "Não"
+    },
+    {
+      "numero": "23",
+      "resposta": "Todos os repasses foram dentro do prazo legal"
+    },
+    {
+      "numero": "24",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "24.1",
+      "resposta": "Todas as parcelas foram recolhidas dentro do prazo legal"
+    },
+    {
+      "numero": "25",
+      "resposta": "Não"
+    },
+    {
+      "numero": "26",
+      "resposta": "Encaminhou no prazo"
+    },
+    {
+      "numero": "27",
+      "resposta": "Menor ou igual a 20"
+    },
+    {
+      "numero": "28",
+      "resposta": "Menor ou igual a 1"
+    },
+    {
+      "numero": "29",
+      "resposta": "193 989 399,6100"
+    },
+    {
+      "numero": "30",
+      "resposta": "582 102 190,5300"
+    },
+    {
+      "numero": "31",
+      "resposta": "28 316 358,1800"
+    },
+    {
+      "numero": "32",
+      "resposta": "16 112 354,0000"
+    },
+    {
+      "numero": "33",
+      "resposta": "0,0000"
+    },
+    {
+      "numero": "34",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "34.1",
+      "resposta": "INFORMAMOS QUE DADOS REFERENTE A VALORES DE DEVIDA ATIVA FORAM PREENCHIDOS COM VALOR ZERO DEVIDO A AUSÊNCIA DAS INFORMAÇÕES DA PARTE DO SISTEMA OPERACIONAL. OS DADOS FORAM SOLICITADOS POREM NÃO HOUVE RETORNO EM TEMPO HÁBIL UMA VEZ QUE A DATA LIMITE PARA PREENCHIMENTO DO QUESTIONÁRIO SE ENCERRA HOJE. APÓS ANÁLISE AS INFORMAÇÕES NO MANUAL DE UTILIZAÇÃO IEGM EXISTE A POSSIBILIDADE DE ALTERAÇÃO VIA SOLICITAÇÃO JUNTO AO SEU RESPECTIVO TRIBUNAL A DEVIDA PERMISSÃO, NA QUAL UTILIZAREMOS A FERRAMENTA ASSIM QUE HOUVER RETORNO DOS VALORES."
+    },
+    {
+      "numero": "35",
+      "resposta": "FLAVIO WAGNER FONSECA"
+    },
+    {
+      "numero": "36",
+      "resposta": "SECRETARIO MUNICIPAL DA FAZENDA"
+    },
+    {
+      "numero": "37",
+      "resposta": "FLAVIOF@BETIM.MG.GOV.BR"
+    },
+    {
+      "numero": "38",
+      "resposta": "049.686.446-71"
+    }
+  ]
+}

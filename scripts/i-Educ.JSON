@@ -1,0 +1,4052 @@
+{
+  "indicador": "i-Educ",
+  "questoes": {
+    "0": {
+      "numero": "1",
+      "codigo_questao": "M01Q06400",
+      "enunciado": "A Prefeitura municipal oferece Creche?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "1": {
+      "numero": "1.1",
+      "codigo_questao": "M01Q13900",
+      "enunciado": "Algum estabelecimento que oferece Creche possui brinquedos no Pátio Infantil?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "2": {
+      "numero": "1.1.1",
+      "codigo_questao": "M01Q06420R00300",
+      "enunciado": "Informe quantos estabelecimentos que oferecem Creche possuem: Brinquedos no Pátio Infantil (BPI):",
+      "peso": 2,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "3": {
+      "numero": "1.1.2",
+      "codigo_questao": "M01Q12400R00300",
+      "enunciado": "Informe: Quantas creches realizam manutenção/troca dos brinquedos no Pátio Infantil SOMENTE por solicitação (SOLIC):",
+      "peso": 3,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "4": {
+      "numero": "1.1.3",
+      "codigo_questao": "M01Q12400R00200",
+      "enunciado": "Informe: Quantas creches possuem e NÃO CUMPRIRAM o cronograma de manutenção preventiva/troca dos brinquedos no Pátio infantil (NCRON):",
+      "peso": 3,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "5": {
+      "numero": "1.1.4",
+      "codigo_questao": "M01Q12400R00400",
+      "enunciado": "Informe: Quantas creches NÃO realizam manutenção/troca dos brinquedos no Pátio Infantil (NMANU):",
+      "peso": 3,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "6": {
+      "numero": "1.1.5",
+      "codigo_questao": "M01Q12400R00100",
+      "enunciado": "Informe: Quantas creches possuem e CUMPRIRAM o cronograma de manutenção preventiva/troca dos brinquedos no Pátio infantil (CRON):",
+      "peso": 3,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "7": {
+      "numero": "1.2",
+      "codigo_questao": "M01Q06440",
+      "enunciado": "A Prefeitura disponibiliza brinquedos/materiais pedagógicos para as crianças em todos os estabelecimentos de Creche do município?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "8": {
+      "numero": "1.2.1",
+      "codigo_questao": "M01Q06441",
+      "enunciado": "Realiza higienização dos brinquedos/materiais pedagógicos? (Creche)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "9": {
+      "numero": "1.2.1.1",
+      "codigo_questao": "M01Q06442",
+      "enunciado": "Qual a frequência de higienização? (Creche)",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Diária",
+          "valor": 5
+        },
+        {
+          "texto": "A cada 2 dias",
+          "valor": 4
+        },
+        {
+          "texto": "A cada 3 dias",
+          "valor": 3
+        },
+        {
+          "texto": "Semanal",
+          "valor": 2
+        },
+        {
+          "texto": "Mensal",
+          "valor": 1
+        },
+        {
+          "texto": "> 30 dias",
+          "valor": 0
+        }
+      ]
+    },
+    "10": {
+      "numero": "1.2.2",
+      "codigo_questao": "M01Q06443",
+      "enunciado": "Possui cronograma para compra de brinquedos/materiais pedagógicos? (Creche)",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "11": {
+      "numero": "1.3",
+      "codigo_questao": "M01Q06450R00300",
+      "enunciado": "Informe a quantidade de turmas de Creche em que o espaço por aluno em sala de aula (área da sala dividido pelo nº de alunos) era: Superior ou igual a 1,50 m² por aluno e inferior a 2,00 m² por aluno:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "12": {
+      "numero": "1.4",
+      "codigo_questao": "M01Q06450R00200",
+      "enunciado": "Informe a quantidade de turmas de Creche em que o espaço por aluno em sala de aula era: Superior ou igual a 2,00 m² por aluno e inferior a 2,30 m² por aluno:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "13": {
+      "numero": "1.5",
+      "codigo_questao": "M01Q06450R00100",
+      "enunciado": "Informe a quantidade de turmas de Creche em que o espaço por aluno em sala de aula era: Superior ou igual a 2,30 m² por aluno:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "14": {
+      "numero": "1.6",
+      "codigo_questao": "M01Q06450R00400",
+      "enunciado": "Informe a quantidade de turmas de Creche em que o espaço por aluno em sala de aula era: Inferior a 1,50 m² por aluno:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "15": {
+      "numero": "1.7",
+      "codigo_questao": "M01Q12500R00100",
+      "enunciado": "Informe a quantidade de professores de Creche que: Possuem formação de nível superior obtida em curso de licenciatura (GRAD):",
+      "peso": 18,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "16": {
+      "numero": "1.8",
+      "codigo_questao": "M01Q12500R00200",
+      "enunciado": "Informe a quantidade de professores de Creche que: Possuem pós-graduação (PGRAD):",
+      "peso": 18,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "17": {
+      "numero": "1.9",
+      "codigo_questao": "M01Q01300R00100",
+      "enunciado": "Qual o piso salarial mensal dos professores de Creche no município?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "18": {
+      "numero": "1.10",
+      "codigo_questao": "M01Q03700R00100",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Creches - QTA: Faltas injustificadas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "19": {
+      "numero": "1.11",
+      "codigo_questao": "M01Q03700R00200",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Creches - QTA: Faltas justificadas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "20": {
+      "numero": "1.12",
+      "codigo_questao": "M01Q03700R00300",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Creches - QTA: Licença médica:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "21": {
+      "numero": "1.13",
+      "codigo_questao": "M01Q03700R00400",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Creches - QTA: Licença maternidade/paternidade:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "22": {
+      "numero": "1.14",
+      "codigo_questao": "M01Q03700R00500",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Creches - QTA: Abonos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "23": {
+      "numero": "1.15",
+      "codigo_questao": "M01Q03700R00600",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Creches - QTA: Outros (inclusive ausências pontuais amparadas por lei):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "24": {
+      "numero": "1.16",
+      "codigo_questao": "M01Q06470",
+      "enunciado": "Os profissionais de Creche da rede municipal participaram de cursos de capacitação durante o ano de 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "25": {
+      "numero": "1.16.1",
+      "codigo_questao": "M01Q06471R00100",
+      "enunciado": "Informe a quantidade de profissionais de Creche: Professores regentes de Creche que participaram de cursos de capacitação durante o ano:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "26": {
+      "numero": "1.16.2",
+      "codigo_questao": "M01Q06471R00200",
+      "enunciado": "Informe a quantidade de profissionais de Creche: Profissionais de apoio e supervisão pedagógica de Creche que participaram de cursos de capacitação durante o ano:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "27": {
+      "numero": "1.16.3",
+      "codigo_questao": "M01Q06471R00300",
+      "enunciado": "Informe a quantidade de profissionais de Creche: Gestores escolares de Creche que participaram de cursos de capacitação durante o ano:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "28": {
+      "numero": "1.16.4",
+      "codigo_questao": "M01Q06471R00600",
+      "enunciado": "Informe a quantidade de profissionais de Creche: Total de gestores escolares de creche:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "29": {
+      "numero": "1.17",
+      "codigo_questao": "M01Q06460R00800",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores de Creches: Maior ou igual a 40%",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "30": {
+      "numero": "1.18",
+      "codigo_questao": "M01Q06460R00700",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores de Creches: Menor que 20%:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "31": {
+      "numero": "1.19",
+      "codigo_questao": "M01Q06460R00300",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores de Creches: Maior ou igual a 20% e menor que 30% dos professores:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "32": {
+      "numero": "1.20",
+      "codigo_questao": "M01Q06460R00400",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores de Creches: Maior ou igual a 30% e menor que 40% dos professores:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "33": {
+      "numero": "1.21",
+      "codigo_questao": "M01Q00220R00200",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Creche, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 1 ano e menor que 3 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "34": {
+      "numero": "1.22",
+      "codigo_questao": "M01Q00220R00500",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Creche, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 10 anos e menor que 15 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "35": {
+      "numero": "1.23",
+      "codigo_questao": "M01Q00220R00100",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Creche, ao final de 2024, permanecia à frente da mesma unidade por: Menor que 1 ano:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "36": {
+      "numero": "1.24",
+      "codigo_questao": "M01Q00220R00300",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Creche, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 3 anos e menor que 5 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "37": {
+      "numero": "1.25",
+      "codigo_questao": "M01Q00220R00400",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Creche, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 5 anos e menor que 10 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "38": {
+      "numero": "1.26",
+      "codigo_questao": "M01Q00220R00600",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Creche, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 15 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "39": {
+      "numero": "1.27",
+      "codigo_questao": "M01Q06481",
+      "enunciado": "Os professores realizam reuniões periódicas com os pais dos alunos de Creche sobre planejamento/projeto escolar e desempenho/desenvolvimento da criança?",
+      "peso": 2,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não realiza reuniões periódicas",
+          "valor": 0
+        }
+      ]
+    },
+    "40": {
+      "numero": "1.27.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre as reuniões periódicas com os pais dos alunos de Creche sobre planejamento/projeto escolar e desempenho/desenvolvimento da criança:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sobre planejamento e desempenho da criança",
+          "valor": 2
+        },
+        {
+          "texto": "Apenas sobre o projeto político-pedagógico",
+          "valor": 1.5
+        },
+        {
+          "texto": "Apenas sobre o desempenho da criança",
+          "valor": 1
+        }
+      ]
+    },
+    "41": {
+      "numero": "1.28",
+      "codigo_questao": "M01Q06483",
+      "enunciado": "Houve entrega do Kit escolar às Creches municipais no ano de 2024?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "O kit escolar permanece no almoxarifado da escola e é retirado no momento do uso pelos alunos",
+          "valor": 18
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "42": {
+      "numero": "1.28.1",
+      "codigo_questao": "M01Q06484R00100",
+      "enunciado": "Informe a data da última entrega na escola: (Creche)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "43": {
+      "numero": "1.29",
+      "codigo_questao": "M01Q06485",
+      "enunciado": "Houve entrega do material didático (livros, apostilas, etc.) às Creches municipais em 2024?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        },
+        {
+          "texto": "O material didático é elaborado na própria escola",
+          "valor": 18
+        }
+      ]
+    },
+    "44": {
+      "numero": "1.29.1",
+      "codigo_questao": "M01Q06486R00100",
+      "enunciado": "Informe a data da última entrega na escola: (Creche)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "45": {
+      "numero": "1.30",
+      "codigo_questao": "M01Q00200",
+      "enunciado": "A Prefeitura municipal fez uma pesquisa/estudo para levantar o número de crianças que necessitavam de Creches em 2024?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 50
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "46": {
+      "numero": "1.31",
+      "codigo_questao": "M01Q06487R00100",
+      "enunciado": "Informe: Número de crianças de 0 a 3 anos que solicitaram vaga em creche até 31/12/2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "47": {
+      "numero": "1.32",
+      "codigo_questao": "M01Q06487R00200",
+      "enunciado": "Informe: Número de vagas de creche ofertadas em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "48": {
+      "numero": "1.33",
+      "codigo_questao": "M01Q06489R00100",
+      "enunciado": "Informe a quantidade de turmas de Creche: Até 13 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "49": {
+      "numero": "1.34",
+      "codigo_questao": "M01Q06489R00200",
+      "enunciado": "Informe a quantidade de turmas de Creche: De 14 a 20 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "50": {
+      "numero": "1.35",
+      "codigo_questao": "M01Q06489R00300",
+      "enunciado": "Informe a quantidade de turmas de Creche: De 21 a 25 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "51": {
+      "numero": "1.36",
+      "codigo_questao": "M01Q06489R00400",
+      "enunciado": "Informe a quantidade de turmas de Creche: Acima de 25 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "52": {
+      "numero": "2",
+      "codigo_questao": "M01Q06500",
+      "enunciado": "A Prefeitura municipal oferece Pré-escola?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "53": {
+      "numero": "2.1",
+      "codigo_questao": "M01Q14000",
+      "enunciado": "Algum estabelecimento que oferece Pré-escola possui brinquedos no Pátio Infantil?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "54": {
+      "numero": "2.1.1",
+      "codigo_questao": "M01Q06510R00300",
+      "enunciado": "Informe quantos estabelecimentos que oferecem Pré-escola possuem: Brinquedos no Pátio Infantil (BPI):",
+      "peso": 2,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "55": {
+      "numero": "2.1.2",
+      "codigo_questao": "M01Q13800R00200",
+      "enunciado": "Quantas pré-escolas possuem e NÃO CUMPRIRAM o cronograma de manutenção preventiva/troca dos brinquedos no Pátio infantil (NCRON):",
+      "peso": 3,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "56": {
+      "numero": "2.1.3",
+      "codigo_questao": "M01Q13800R00300",
+      "enunciado": "Quantas pré-escolas realizam manutenção/troca dos brinquedos no Pátio Infantil SOMENTE por solicitação (SOLIC):",
+      "peso": 3,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "57": {
+      "numero": "2.1.4",
+      "codigo_questao": "M01Q13800R00100",
+      "enunciado": "Informe: Quantas pré-escolas possuem e CUMPRIRAM o cronograma de manutenção preventiva/troca dos brinquedos no Pátio infantil (CRON):",
+      "peso": 3,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "58": {
+      "numero": "2.1.5",
+      "codigo_questao": "M01Q13800R00400",
+      "enunciado": "Quantas pré-escolas NÃO realizam manutenção/troca dos brinquedos no Pátio Infantil (NMANU):",
+      "peso": 3,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "59": {
+      "numero": "2.2",
+      "codigo_questao": "M01Q06530",
+      "enunciado": "A Prefeitura disponibiliza brinquedos/materiais pedagógicos para as crianças em todos os estabelecimentos de Pré-escola do município?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "60": {
+      "numero": "2.2.1",
+      "codigo_questao": "M01Q06531",
+      "enunciado": "Realiza higienização dos brinquedos/materiais pedagógicos? (Pré-escola)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "61": {
+      "numero": "2.2.1.1",
+      "codigo_questao": "M01Q06532",
+      "enunciado": "Qual a frequência de higienização? (Pré-escola)",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Diária",
+          "valor": 5
+        },
+        {
+          "texto": "A cada 2 dias",
+          "valor": 4
+        },
+        {
+          "texto": "A cada 3 dias",
+          "valor": 3
+        },
+        {
+          "texto": "Semanal",
+          "valor": 2
+        },
+        {
+          "texto": "Mensal",
+          "valor": 1
+        },
+        {
+          "texto": "> 30 dias",
+          "valor": 0
+        }
+      ]
+    },
+    "62": {
+      "numero": "2.2.2",
+      "codigo_questao": "M01Q06533",
+      "enunciado": "Possui cronograma para compra de brinquedos/materiais pedagógicos? (Pré-escola)",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "63": {
+      "numero": "2.3",
+      "codigo_questao": "M01Q06540R00400",
+      "enunciado": "Informe a quantidade de turmas de Pré-escola em que o espaço por aluno em sala de aula (área da sala dividido pelo nº de alunos) era: Inferior a 0,90 m² por aluno:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "64": {
+      "numero": "2.4",
+      "codigo_questao": "M01Q06540R00300",
+      "enunciado": "Informe a quantidade de turmas de Pré-escola em que o espaço por aluno em sala de aula era: Superior ou igual a 0,90 m² por aluno e inferior a 1,10 m² por aluno:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "65": {
+      "numero": "2.5",
+      "codigo_questao": "M01Q06540R00100",
+      "enunciado": "Informe a quantidade de turmas de Pré-escola em que o espaço por aluno em sala de aula era: Superior ou igual a 1,36 m² por aluno:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "66": {
+      "numero": "2.6",
+      "codigo_questao": "M01Q06540R00200",
+      "enunciado": "Informe a quantidade de turmas de Pré-escola em que o espaço por aluno em sala de aula era: Superior ou igual a 1,10 m² por aluno e inferior a 1,36 m² por aluno:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "67": {
+      "numero": "2.7",
+      "codigo_questao": "M01Q12800R00200",
+      "enunciado": "Informe a quantidade de professores de Pré-escola que: Possuem pós-graduação (PGRAD):",
+      "peso": 18,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "68": {
+      "numero": "2.8",
+      "codigo_questao": "M01Q12800R00100",
+      "enunciado": "Informe a quantidade de professores de Pré-escola que: Possuem formação de nível superior obtida em curso de licenciatura (GRAD):",
+      "peso": 18,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "69": {
+      "numero": "2.9",
+      "codigo_questao": "M01Q01305R00100",
+      "enunciado": "Qual o piso salarial mensal dos professores de Pré-escola no município?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "70": {
+      "numero": "2.10",
+      "codigo_questao": "M01Q03705R00300",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Pré-Escola - QTA: Licença médica:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "71": {
+      "numero": "2.11",
+      "codigo_questao": "M01Q03705R00200",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Pré-Escola - QTA: Faltas justificadas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "72": {
+      "numero": "2.12",
+      "codigo_questao": "M01Q03705R00500",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Pré-Escola - QTA: Abonos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "73": {
+      "numero": "2.13",
+      "codigo_questao": "M01Q03705R00600",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Pré-Escola - QTA: Outros (inclusive ausências pontuais amparadas por lei):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "74": {
+      "numero": "2.14",
+      "codigo_questao": "M01Q03705R00100",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Pré-Escola - QTA: Faltas injustificadas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "75": {
+      "numero": "2.15",
+      "codigo_questao": "M01Q03705R00400",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para Pré-Escola - QTA: Licença maternidade/paternidade:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "76": {
+      "numero": "2.16",
+      "codigo_questao": "M01Q06570",
+      "enunciado": "Os profissionais de Pré-escola da rede municipal participaram de cursos de capacitação durante o ano de 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "77": {
+      "numero": "2.16.1",
+      "codigo_questao": "M01Q06571R00100",
+      "enunciado": "Informe a quantidade de profissionais de Pré-escola: Professores regentes de Pré-escola que participaram de cursos de capacitação durante o ano:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "78": {
+      "numero": "2.16.2",
+      "codigo_questao": "M01Q06571R00200",
+      "enunciado": "Informe a quantidade de profissionais de Pré-escola: Profissionais de apoio e supervisão pedagógica de Pré-escola que participaram de cursos de capacitação durante o ano:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "79": {
+      "numero": "2.16.3",
+      "codigo_questao": "M01Q06571R00300",
+      "enunciado": "Informe a quantidade de profissionais de Pré-escola: Gestores escolares de Pré-escola que participaram de cursos de capacitação durante o ano:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "80": {
+      "numero": "2.16.4",
+      "codigo_questao": "M01Q06571R00600",
+      "enunciado": "Informe a quantidade de profissionais de Pré-escola: Total de gestores escolares de pré-escola:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "81": {
+      "numero": "2.17",
+      "codigo_questao": "M01Q06560R00300",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores de Pré-escola: Maior ou igual a 20% e menor que 30% dos professores:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "82": {
+      "numero": "2.18",
+      "codigo_questao": "M01Q06560R00800",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores de Pré-escola: Maior ou igual a 40%",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "83": {
+      "numero": "2.19",
+      "codigo_questao": "M01Q06560R00700",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores de Pré-escola: Menor que 20%:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "84": {
+      "numero": "2.20",
+      "codigo_questao": "M01Q06560R00400",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores de Pré-escola: Maior ou igual a 30% e menor que 40% dos professores:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "85": {
+      "numero": "2.21",
+      "codigo_questao": "M01Q00225R00400",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Pré-escola, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 5 anos e menor que 10 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "86": {
+      "numero": "2.22",
+      "codigo_questao": "M01Q00225R00300",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Pré-escola, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 3 anos e menor que 5 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "87": {
+      "numero": "2.23",
+      "codigo_questao": "M01Q00225R00200",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Pré-escola, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 1 ano e menor que 3 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "88": {
+      "numero": "2.24",
+      "codigo_questao": "M01Q00225R00100",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Pré-escola, ao final de 2024, permanecia à frente da mesma unidade por: Menor que 1 ano:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "89": {
+      "numero": "2.25",
+      "codigo_questao": "M01Q00225R00500",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Pré-escola, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 10 anos e menor que 15 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "90": {
+      "numero": "2.26",
+      "codigo_questao": "M01Q00225R00600",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor de Pré-escola, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 15 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "91": {
+      "numero": "2.27",
+      "codigo_questao": "M01Q06581",
+      "enunciado": "Os professores realizam reuniões periódicas com os pais dos alunos de Pré-escola sobre planejamento/projeto escolar e desempenho/desenvolvimento da criança?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sobre planejamento e desempenho da criança",
+          "valor": 2
+        },
+        {
+          "texto": "Apenas sobre o projeto político-pedagógico",
+          "valor": 1.5
+        },
+        {
+          "texto": "Apenas sobre o desempenho da criança",
+          "valor": 1
+        },
+        {
+          "texto": "Não realiza reuniões periódicas",
+          "valor": 0
+        }
+      ]
+    },
+    "92": {
+      "numero": "2.28",
+      "codigo_questao": "M01Q06583",
+      "enunciado": "Houve entrega do Kit escolar às Pré-Escolas municipais em 2024?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "O kit escolar permanece no almoxarifado da escola e é retirado no momento do uso pelos alunos",
+          "valor": 18
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "93": {
+      "numero": "2.28.1",
+      "codigo_questao": "M01Q06584R00100",
+      "enunciado": "Informe a data da última entrega na escola: (Pré-escola)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "94": {
+      "numero": "2.29",
+      "codigo_questao": "M01Q06585",
+      "enunciado": "Houve entrega do material didático (livros, apostilas, etc.) às Pré-Escolas municipais em 2024?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        },
+        {
+          "texto": "O material didático é elaborado na própria escola",
+          "valor": 18
+        }
+      ]
+    },
+    "95": {
+      "numero": "2.29.1",
+      "codigo_questao": "M01Q06586R00100",
+      "enunciado": "Informe a data da última entrega na escola: (Pré-escola)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "96": {
+      "numero": "2.30",
+      "codigo_questao": "M01Q00305",
+      "enunciado": "A Prefeitura municipal fez uma pesquisa/estudo para levantar o número de crianças que necessitavam de Pré-escola em 2024?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 50
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "97": {
+      "numero": "2.31",
+      "codigo_questao": "M01Q06587R00100",
+      "enunciado": "Informe: Número de crianças de 4 a 5 anos que solicitaram vaga até 31/12/2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "98": {
+      "numero": "2.32",
+      "codigo_questao": "M01Q06587R00200",
+      "enunciado": "Informe: Número de vagas de pré-escola ofertadas em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "99": {
+      "numero": "2.33",
+      "codigo_questao": "M01Q06589R00100",
+      "enunciado": "Informe a quantidade de turmas de Pré-escola: Até 22 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "100": {
+      "numero": "2.34",
+      "codigo_questao": "M01Q06589R00200",
+      "enunciado": "Informe a quantidade de turmas de Pré-escola: De 23 a 25 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "101": {
+      "numero": "2.35",
+      "codigo_questao": "M01Q06589R00300",
+      "enunciado": "Informe a quantidade de turmas de Pré-escola: De 26 a 30 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "102": {
+      "numero": "2.36",
+      "codigo_questao": "M01Q06589R00400",
+      "enunciado": "Informe a quantidade de turmas de Pré-escola: Acima de 30 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "103": {
+      "numero": "3",
+      "codigo_questao": "M01Q06700",
+      "enunciado": "A Prefeitura Municipal oferece os Anos Iniciais do Ensino Fundamental (1º ao 5º ano)?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "104": {
+      "numero": "3.1",
+      "codigo_questao": "M01Q02800R00300",
+      "enunciado": "Informe a quantidade de turmas dos Anos Iniciais em que o espaço por aluno em sala de aula era: Superior ou igual a 1,00 e inferior a 1,20 m²:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "105": {
+      "numero": "3.2",
+      "codigo_questao": "M01Q02800R00200",
+      "enunciado": "Informe a quantidade de turmas dos Anos Iniciais em que o espaço por aluno em sala de aula era: Superior ou igual a 1,20 e inferior a 1,875 m²:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "106": {
+      "numero": "3.3",
+      "codigo_questao": "M01Q02800R00100",
+      "enunciado": "Informe a quantidade de turmas dos Anos Iniciais em que o espaço por aluno em sala de aula era: Superior ou igual a 1,875 m²:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "107": {
+      "numero": "3.4",
+      "codigo_questao": "M01Q02800R00400",
+      "enunciado": "Informe a quantidade de turmas dos Anos Iniciais em que o espaço por aluno em sala de aula era: Inferior a 1,00 m²:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "108": {
+      "numero": "3.5",
+      "codigo_questao": "M01Q13200R00100",
+      "enunciado": "Informe a quantidade de professores dos Anos Iniciais que: Possuem formação de nível superior obtida em curso de licenciatura (GRAD):",
+      "peso": 19,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "109": {
+      "numero": "3.6",
+      "codigo_questao": "M01Q13200R00200",
+      "enunciado": "Informe a quantidade de professores dos Anos Iniciais que: Possuem pós-graduação (PGRAD):",
+      "peso": 19,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "110": {
+      "numero": "3.7",
+      "codigo_questao": "M01Q01306R00100",
+      "enunciado": "Qual o piso salarial mensal dos professores dos Anos Iniciais?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "111": {
+      "numero": "3.8",
+      "codigo_questao": "M01Q03706R00500",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Iniciais - QTA: Abonos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "112": {
+      "numero": "3.9",
+      "codigo_questao": "M01Q03706R00200",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Iniciais - QTA: Faltas justificadas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "113": {
+      "numero": "3.10",
+      "codigo_questao": "M01Q03706R00400",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Iniciais - QTA: Licença maternidade/paternidade:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "114": {
+      "numero": "3.11",
+      "codigo_questao": "M01Q03706R00300",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Iniciais - QTA: Licença médica:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "115": {
+      "numero": "3.12",
+      "codigo_questao": "M01Q03706R00600",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Iniciais - QTA: Outros (inclusive ausências pontuais amparadas por lei):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "116": {
+      "numero": "3.13",
+      "codigo_questao": "M01Q03706R00100",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Iniciais - QTA: Faltas injustificadas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "117": {
+      "numero": "3.14",
+      "codigo_questao": "M01Q07100",
+      "enunciado": "Os profissionais dos Anos Iniciais da rede municipal participaram de cursos de capacitação durante o ano de 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "118": {
+      "numero": "3.14.1",
+      "codigo_questao": "M01Q07110R00100",
+      "enunciado": "Informe a quantidade de profissionais dos Anos Iniciais: Professores regentes dos Anos Iniciais que participaram de cursos de capacitação durante o ano:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "119": {
+      "numero": "3.14.2",
+      "codigo_questao": "M01Q07110R00200",
+      "enunciado": "Informe a quantidade de profissionais dos Anos Iniciais: Profissionais de apoio e supervisão pedagógica dos Anos Iniciais que participaram de cursos de capacitação durante o ano:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "120": {
+      "numero": "3.14.3",
+      "codigo_questao": "M01Q07110R00300",
+      "enunciado": "Informe a quantidade de profissionais dos Anos Iniciais: Gestores escolares dos Anos Iniciais que participaram de cursos de capacitação durante o ano:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "121": {
+      "numero": "3.14.4",
+      "codigo_questao": "M01Q07110R00600",
+      "enunciado": "Informe a quantidade de profissionais dos Anos Iniciais: Total de gestores escolares dos Anos Iniciais:",
+      "peso": 7,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "122": {
+      "numero": "3.15",
+      "codigo_questao": "M01Q07000R00800",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores dos Anos Iniciais: Maior ou igual a 40%",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "123": {
+      "numero": "3.16",
+      "codigo_questao": "M01Q07000R00400",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores dos Anos Iniciais: Maior ou igual a 30% e menor que 40% dos professores:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "124": {
+      "numero": "3.17",
+      "codigo_questao": "M01Q07000R00300",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores dos Anos Iniciais: Maior ou igual a 20% e menor que 30% dos professores:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "125": {
+      "numero": "3.18",
+      "codigo_questao": "M01Q07000R00700",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores dos Anos Iniciais: Menor que 20%:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "126": {
+      "numero": "3.19",
+      "codigo_questao": "M01Q00226R00300",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Iniciais, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 3 anos e menor que 5 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "127": {
+      "numero": "3.20",
+      "codigo_questao": "M01Q00226R00100",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Iniciais, ao final de 2024, permanecia à frente da mesma unidade por: Menor que 1 ano:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "128": {
+      "numero": "3.21",
+      "codigo_questao": "M01Q00226R00200",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Iniciais, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 1 ano e menor que 3 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "129": {
+      "numero": "3.22",
+      "codigo_questao": "M01Q00226R00400",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Iniciais, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 5 anos e menor que 10 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "130": {
+      "numero": "3.23",
+      "codigo_questao": "M01Q00226R00500",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Iniciais, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 10 anos e menor que 15 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "131": {
+      "numero": "3.24",
+      "codigo_questao": "M01Q00226R00600",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Iniciais, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 15 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "132": {
+      "numero": "3.25",
+      "codigo_questao": "M01Q07400",
+      "enunciado": "Os professores realizam reuniões periódicas com os pais dos alunos dos Anos Iniciais sobre planejamento/projeto escolar e desempenho/desenvolvimento da criança?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sobre planejamento e desempenho da criança",
+          "valor": 2
+        },
+        {
+          "texto": "Apenas sobre o projeto político-pedagógico",
+          "valor": 1.5
+        },
+        {
+          "texto": "Apenas sobre o desempenho da criança",
+          "valor": 1
+        },
+        {
+          "texto": "Não realiza reuniões periódicas",
+          "valor": 0
+        }
+      ]
+    },
+    "133": {
+      "numero": "3.26",
+      "codigo_questao": "M01Q07200R00100",
+      "enunciado": "Qual a média de dias letivos do ano de 2024 para as turmas dos Anos Iniciais?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "134": {
+      "numero": "3.27",
+      "codigo_questao": "M01Q02100",
+      "enunciado": "O município utilizou algum programa/atividade/projeto específico que desenvolveu as competências de leitura e escrita de seus alunos na rede municipal?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 12
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "135": {
+      "numero": "3.28",
+      "codigo_questao": "M01Q07500",
+      "enunciado": "O Município possui, no planejamento, ações governamentais para enfrentamento ao bullying? (Anos Iniciais)",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 2
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "136": {
+      "numero": "3.29",
+      "codigo_questao": "M01Q07600",
+      "enunciado": "Houve entrega do Kit escolar nas escolas dos Anos Iniciais em 2024?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "O kit escolar permanece no almoxarifado da escola e é retirado no momento do uso pelos alunos",
+          "valor": 20
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "137": {
+      "numero": "3.29.1",
+      "codigo_questao": "M01Q07610R00100",
+      "enunciado": "Informe a data da última entrega na escola: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "138": {
+      "numero": "3.30",
+      "codigo_questao": "M01Q07700",
+      "enunciado": "Houve entrega do material didático (livros, apostilas, etc.) nas escolas dos Anos Iniciais em 2024?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "139": {
+      "numero": "3.30.1",
+      "codigo_questao": "M01Q07710R00100",
+      "enunciado": "Informe a data da última entrega na escola: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "140": {
+      "numero": "3.31",
+      "codigo_questao": "M01Q07800",
+      "enunciado": "Houve entrega do uniforme escolar nas escolas dos Anos Iniciais em 2024?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "141": {
+      "numero": "3.31.1",
+      "codigo_questao": "M01Q07810R00100",
+      "enunciado": "Informe a data da última entrega na escola: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "142": {
+      "numero": "3.32",
+      "codigo_questao": "M01Q07900",
+      "enunciado": "O Município possui seu próprio indicador de qualidade de ensino? (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "143": {
+      "numero": "3.32.1",
+      "codigo_questao": "M01Q07910R00100",
+      "enunciado": "Especifique, descrevendo sua composição e forma de avaliação: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "144": {
+      "numero": "3.32.2",
+      "codigo_questao": "M01Q07920",
+      "enunciado": "O indicador próprio de qualidade de ensino do Município classifica os alunos por nível de desempenho? (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "145": {
+      "numero": "3.32.2.1",
+      "codigo_questao": "M01Q07921R00100",
+      "enunciado": "Especifique como são classificados os alunos por nível de desempenho: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "146": {
+      "numero": "3.32.3",
+      "codigo_questao": "M01Q07930",
+      "enunciado": "O indicador próprio de qualidade de ensino do Município possui metas específicas? (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "147": {
+      "numero": "3.32.3.1",
+      "codigo_questao": "M01Q07931R00100",
+      "enunciado": "Informe as metas e os resultados da última edição do indicador próprio de qualidade de ensino do Município: 4º ou 5º Ano do Ensino Fundamental - Meta:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "148": {
+      "numero": "3.32.3.2",
+      "codigo_questao": "M01Q07931R00200",
+      "enunciado": "Informe as metas e os resultados da última edição do indicador próprio de qualidade de ensino do Município: 4º ou 5º Ano do Ensino Fundamental - Resultado:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "149": {
+      "numero": "3.32.3.3",
+      "codigo_questao": "M01Q07931R00300",
+      "enunciado": "Informe as metas e os resultados da última edição do indicador próprio de qualidade de ensino do Município: 4º ou 5º Ano do Ensino Fundamental - Ano da última edição:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "150": {
+      "numero": "3.32.4",
+      "codigo_questao": "M01Q07940",
+      "enunciado": "É possível avaliar a quantidade de participantes da última edição da avaliação municipal própria? (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "151": {
+      "numero": "3.32.4.1",
+      "codigo_questao": "M01Q07941R00100",
+      "enunciado": "Em relação aos alunos matriculados nas escolas municipais, que integraram o público-alvo da última edição da avaliação municipal própria, informe: 4º ou 5º Ano do Ensino Fundamental - Alunos Avaliados:",
+      "peso": 18,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "152": {
+      "numero": "3.32.4.2",
+      "codigo_questao": "M01Q07941R00200",
+      "enunciado": "Em relação aos alunos matriculados nas escolas municipais, que integraram o público-alvo da última edição da avaliação municipal própria, informe: 4º ou 5º Ano do Ensino Fundamental - Alunos Ausentes:",
+      "peso": 18,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "153": {
+      "numero": "3.33",
+      "codigo_questao": "M01Q00400",
+      "enunciado": "A Prefeitura municipal fez uma pesquisa/estudo para levantar o número de crianças que necessitavam dos Anos Iniciais escolar em 2024?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 20
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "154": {
+      "numero": "3.34",
+      "codigo_questao": "M01Q08200R00100",
+      "enunciado": "Informe: Número de crianças de 6 a 10 anos que solicitaram vaga nos Anos Iniciais até 31/12/2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "155": {
+      "numero": "3.35",
+      "codigo_questao": "M01Q08200R00200",
+      "enunciado": "Informe: Número de vagas de Anos Iniciais ofertadas em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "156": {
+      "numero": "3.36",
+      "codigo_questao": "M01Q02900R00100",
+      "enunciado": "Informe o número de alunos matriculados dos Anos Iniciais por turno: Manhã:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "157": {
+      "numero": "3.37",
+      "codigo_questao": "M01Q02900R00200",
+      "enunciado": "Informe o número de alunos matriculados dos Anos Iniciais por turno: Tarde:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "158": {
+      "numero": "3.38",
+      "codigo_questao": "M01Q02700R00100",
+      "enunciado": "Informe a quantidade de turmas dos Anos Iniciais: Até 24 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "159": {
+      "numero": "3.39",
+      "codigo_questao": "M01Q02700R00200",
+      "enunciado": "Informe a quantidade de turmas dos Anos Iniciais: De 25 a 30 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "160": {
+      "numero": "3.40",
+      "codigo_questao": "M01Q02700R00300",
+      "enunciado": "Informe a quantidade de turmas dos Anos Iniciais: De 31 a 33 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "161": {
+      "numero": "3.41",
+      "codigo_questao": "M01Q02700R00400",
+      "enunciado": "Informe a quantidade de turmas dos Anos Iniciais: Acima de 33 alunos:",
+      "peso": 10,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "162": {
+      "numero": "3.42",
+      "codigo_questao": "M01Q06701",
+      "enunciado": "O município utilizou processo de sondagem ou avaliação diagnóstica para os Anos Iniciais do ensino fundamental?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, utilizando contratação de terceiros",
+          "valor": 1
+        },
+        {
+          "texto": "Sim, utilizando metodologia desenvolvida exclusivamente pelos profissionais da rede",
+          "valor": 2.5
+        },
+        {
+          "texto": "Não utilizou",
+          "valor": 0
+        }
+      ]
+    },
+    "163": {
+      "numero": "3.43",
+      "codigo_questao": "M01Q03200R00100",
+      "enunciado": "Qual foi o número de aulas vagas nos Anos Iniciais durante o ano de 2024?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "164": {
+      "numero": "3.44",
+      "codigo_questao": "M01Q03310",
+      "enunciado": "Há alunos dos Anos Iniciais, matriculados em escolas municipais, que participaram, durante o ano de 2024, de projetos de recuperação ou reforço escolar?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "165": {
+      "numero": "3.44.1",
+      "codigo_questao": "M01Q03330",
+      "enunciado": "Existem metas traçadas que visem à melhoria dos resultados dos projetos de recuperação ou reforço escolar? (Anos Iniciais)",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -10
+        }
+      ]
+    },
+    "166": {
+      "numero": "3.44.1.1",
+      "codigo_questao": "M01Q03311",
+      "enunciado": "As metas estão sendo atingidas? (Anos Iniciais)",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Todas as metas foram atingidas",
+          "valor": 0
+        },
+        {
+          "texto": "A maior parte das metas foram atingidas",
+          "valor": -5
+        },
+        {
+          "texto": "A menor parte das metas foram atingidas",
+          "valor": -7
+        },
+        {
+          "texto": "Nenhuma meta foi atingida",
+          "valor": -10
+        }
+      ]
+    },
+    "167": {
+      "numero": "3.45",
+      "codigo_questao": "M01Q00100",
+      "enunciado": "A Prefeitura municipal realizou ações e medidas para monitoramento da taxa de abandono das crianças na idade escolar (Anos Iniciais)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 25
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "168": {
+      "numero": "3.45.1",
+      "codigo_questao": "M01Q00130",
+      "enunciado": "Assinale as ações e medidas realizadas: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Ligação/mensagem para os responsáveis",
+          "valor": 0
+        },
+        {
+          "texto": "Visita domiciliar",
+          "valor": 0
+        },
+        {
+          "texto": "Plataforma de Busca Ativa (UNICEF)",
+          "valor": 0
+        },
+        {
+          "texto": "Contato com familiares/amigos/vizinhos",
+          "valor": 0
+        },
+        {
+          "texto": "Apoio do psicólogo escolar",
+          "valor": 0
+        },
+        {
+          "texto": "Apoio do orientador comunitário/assistente social escolar",
+          "valor": 0
+        },
+        {
+          "texto": "Encaminhamento do caso ao Conselho Tutelar",
+          "valor": 0
+        },
+        {
+          "texto": "Encaminhamento do caso ao CRAS - Centro de Referência de Assistência Social",
+          "valor": 0
+        },
+        {
+          "texto": "Outro",
+          "valor": 0
+        }
+      ]
+    },
+    "169": {
+      "numero": "3.45.2",
+      "codigo_questao": "M01Q00120R00100",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Dificuldade de acesso à escola: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "170": {
+      "numero": "3.45.3",
+      "codigo_questao": "M01Q00120R00200",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Desinteresse: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "171": {
+      "numero": "3.45.4",
+      "codigo_questao": "M01Q00120R00300",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Necessidade de trabalhar: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "172": {
+      "numero": "3.45.5",
+      "codigo_questao": "M01Q00120R00500",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Falta de infraestrutura escolar: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "173": {
+      "numero": "3.45.6",
+      "codigo_questao": "M01Q00120R00600",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Bullying: (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "174": {
+      "numero": "3.45.7",
+      "codigo_questao": "M01Q00120R00700",
+      "enunciado": "Mudança de localidade (país, estado ou de município):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "175": {
+      "numero": "3.45.8",
+      "codigo_questao": "M01Q00120R00400",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Outros (Anos Iniciais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "176": {
+      "numero": "4",
+      "codigo_questao": "M01Q06800",
+      "enunciado": "A Prefeitura Municipal oferece os Anos Finais do Ensino Fundamental (6º ao 9º ano)?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "177": {
+      "numero": "4.1",
+      "codigo_questao": "M01Q08700R00200",
+      "enunciado": "Informe a quantidade de turmas dos Anos Finais em que o espaço por aluno em sala de aula era: Superior ou igual a 1,20 e inferior a 1,5 m²:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "178": {
+      "numero": "4.2",
+      "codigo_questao": "M01Q08700R00100",
+      "enunciado": "Informe a quantidade de turmas dos Anos Finais em que o espaço por aluno em sala de aula era: Superior ou igual a 1,5 m²:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "179": {
+      "numero": "4.3",
+      "codigo_questao": "M01Q08700R00300",
+      "enunciado": "Informe a quantidade de turmas dos Anos Finais em que o espaço por aluno em sala de aula era: Superior ou igual a 1,00 e inferior a 1,20 m²:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "180": {
+      "numero": "4.4",
+      "codigo_questao": "M01Q08700R00400",
+      "enunciado": "Informe a quantidade de turmas dos Anos Finais em que o espaço por aluno em sala de aula era: Inferior a 1,00 m²:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "181": {
+      "numero": "4.5",
+      "codigo_questao": "M01Q13500R00200",
+      "enunciado": "Informe a quantidade de professores dos Anos Finais que: Possuem pós-graduação (PGRAD):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "182": {
+      "numero": "4.6",
+      "codigo_questao": "M01Q13500R00100",
+      "enunciado": "Informe a quantidade de professores dos Anos Finais que: Possuem formação de nível superior obtida em curso de licenciatura (GRAD):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "183": {
+      "numero": "4.7",
+      "codigo_questao": "M01Q01307R00100",
+      "enunciado": "Qual o piso salarial mensal dos professores dos Anos Finais no município?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "184": {
+      "numero": "4.8",
+      "codigo_questao": "M01Q03707R00100",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Finais - QTA: Faltas injustificadas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "185": {
+      "numero": "4.9",
+      "codigo_questao": "M01Q03707R00600",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Finais - QTA: Outros (inclusive ausências pontuais amparadas por lei):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "186": {
+      "numero": "4.10",
+      "codigo_questao": "M01Q03707R00300",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Finais - QTA: Licença médica:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "187": {
+      "numero": "4.11",
+      "codigo_questao": "M01Q03707R00400",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Finais - QTA: Licença maternidade/paternidade:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "188": {
+      "numero": "4.12",
+      "codigo_questao": "M01Q03707R00500",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Finais - QTA: Abonos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "189": {
+      "numero": "4.13",
+      "codigo_questao": "M01Q03707R00200",
+      "enunciado": "Informe a quantidade total (dias) de ausência dos professores por faltas para os Anos Finais - QTA: Faltas justificadas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "190": {
+      "numero": "4.14",
+      "codigo_questao": "M01Q09200",
+      "enunciado": "Os profissionais dos Anos Finais da rede municipal participaram de cursos de capacitação durante o ano de 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "191": {
+      "numero": "4.14.1",
+      "codigo_questao": "M01Q09210R00100",
+      "enunciado": "Informe a quantidade de profissionais dos Anos Finais: Professores regentes dos Anos Finais que participaram de cursos de capacitação durante o ano:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "192": {
+      "numero": "4.14.2",
+      "codigo_questao": "M01Q09210R00200",
+      "enunciado": "Informe a quantidade de profissionais dos Anos Finais: Profissionais de apoio e supervisão pedagógica dos Anos Finais que participaram de cursos de capacitação durante o ano:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "193": {
+      "numero": "4.14.3",
+      "codigo_questao": "M01Q09210R00300",
+      "enunciado": "Informe a quantidade de profissionais dos Anos Finais: Gestores escolares dos Anos Finais que participaram de cursos de capacitação durante o ano:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "194": {
+      "numero": "4.14.4",
+      "codigo_questao": "M01Q09210R00600",
+      "enunciado": "Informe a quantidade de profissionais dos Anos Finais: Total de gestores escolares dos Anos Finais:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "195": {
+      "numero": "4.15",
+      "codigo_questao": "M01Q09000R00700",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores dos Anos Finais: Menor que 20%:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "196": {
+      "numero": "4.16",
+      "codigo_questao": "M01Q09000R00300",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores dos Anos Finais: Maior ou igual a 20% e menor que 30% dos professores:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "197": {
+      "numero": "4.17",
+      "codigo_questao": "M01Q09000R00400",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores dos Anos Finais: Maior ou igual a 30% e menor que 40% dos professores:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "198": {
+      "numero": "4.18",
+      "codigo_questao": "M01Q09000R00800",
+      "enunciado": "Quanto a regularidade do corpo docente, informe o número de escolas em que houve rotatividade de professores dos Anos Finais: Maior ou igual a 40%",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "199": {
+      "numero": "4.19",
+      "codigo_questao": "M01Q09100R00500",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Finais, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 10 anos e menor que 15 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "200": {
+      "numero": "4.20",
+      "codigo_questao": "M01Q09100R00100",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Finais, ao final de 2024, permanecia à frente da mesma unidade por: Menor que 1 ano:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "201": {
+      "numero": "4.21",
+      "codigo_questao": "M01Q09100R00200",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Finais, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 1 ano e menor que 3 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "202": {
+      "numero": "4.22",
+      "codigo_questao": "M01Q09100R00300",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Finais, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 3 anos e menor que 5 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "203": {
+      "numero": "4.23",
+      "codigo_questao": "M01Q09100R00400",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Finais, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 5 anos e menor que 10 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "204": {
+      "numero": "4.24",
+      "codigo_questao": "M01Q09100R00600",
+      "enunciado": "Quanto a regularidade de gestores, indique a quantidade de escolas municipais cujo diretor/gestor dos Anos Finais, ao final de 2024, permanecia à frente da mesma unidade por: Maior ou igual a 15 anos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "205": {
+      "numero": "4.25",
+      "codigo_questao": "M01Q09500",
+      "enunciado": "Os professores realizam reuniões periódicas com os pais dos alunos dos Anos Finais sobre planejamento/projeto escolar e desempenho/desenvolvimento da criança?",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sobre planejamento e desempenho da criança",
+          "valor": 0
+        },
+        {
+          "texto": "Apenas sobre o projeto político-pedagógico",
+          "valor": 0
+        },
+        {
+          "texto": "Apenas sobre o desempenho da criança",
+          "valor": 0
+        },
+        {
+          "texto": "Não realiza reuniões periódicas",
+          "valor": 0
+        }
+      ]
+    },
+    "206": {
+      "numero": "4.26",
+      "codigo_questao": "M01Q09300R00100",
+      "enunciado": "Qual a média de dias letivos do ano de 2024 para as turmas dos Anos Finais?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "207": {
+      "numero": "4.27",
+      "codigo_questao": "M01Q09600",
+      "enunciado": "O Município possui, no planejamento, ações governamentais para enfrentamento ao bullying? (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "208": {
+      "numero": "4.28",
+      "codigo_questao": "M01Q09700",
+      "enunciado": "Houve entrega do Kit escolar nas escolas dos Anos Finais em 2024?",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "O kit escolar permanece no almoxarifado da escola e é retirado no momento do uso pelos alunos",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "209": {
+      "numero": "4.28.1",
+      "codigo_questao": "M01Q09710R00100",
+      "enunciado": "Informe a data da última entrega na escola: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "210": {
+      "numero": "4.29",
+      "codigo_questao": "M01Q09800",
+      "enunciado": "Houve entrega do material didático (livros, apostilas, etc.) nas escolas dos Anos Finais em 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "211": {
+      "numero": "4.29.1",
+      "codigo_questao": "M01Q09810R00100",
+      "enunciado": "Informe a data da última entrega na escola: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "212": {
+      "numero": "4.30",
+      "codigo_questao": "M01Q09900",
+      "enunciado": "Houve entrega do uniforme escolar nas escolas dos Anos Finais em 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "213": {
+      "numero": "4.30.1",
+      "codigo_questao": "M01Q09910R00100",
+      "enunciado": "Informe a data da última entrega na escola: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "214": {
+      "numero": "4.31",
+      "codigo_questao": "M01Q10000",
+      "enunciado": "O Município possui seu próprio indicador de qualidade de ensino? (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "215": {
+      "numero": "4.31.1",
+      "codigo_questao": "M01Q10010R00100",
+      "enunciado": "Especifique, descrevendo sua composição e forma de avaliação: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "216": {
+      "numero": "4.31.2",
+      "codigo_questao": "M01Q10020",
+      "enunciado": "O indicador próprio de qualidade de ensino do Município classifica os alunos por nível de desempenho? (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "217": {
+      "numero": "4.31.2.1",
+      "codigo_questao": "M01Q10021R00100",
+      "enunciado": "Especifique como são classificados os alunos por nível de desempenho: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "218": {
+      "numero": "4.31.3",
+      "codigo_questao": "M01Q10030",
+      "enunciado": "O indicador próprio de qualidade de ensino do Município possui metas específicas? (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "219": {
+      "numero": "4.31.4",
+      "codigo_questao": "M01Q10040",
+      "enunciado": "É possível avaliar a quantidade de participantes da última edição da avaliação municipal própria? (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "220": {
+      "numero": "4.31.4.1",
+      "codigo_questao": "M01Q10041R00100",
+      "enunciado": "Em relação aos alunos matriculados nas escolas municipais, que integraram o público-alvo da última edição da avaliação municipal própria, informe: 8º ou 9º Ano do Ensino Fundamental - Alunos Avaliados:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "221": {
+      "numero": "4.31.4.2",
+      "codigo_questao": "M01Q10041R00200",
+      "enunciado": "Em relação aos alunos matriculados nas escolas municipais, que integraram o público-alvo da última edição da avaliação municipal própria, informe: 8º ou 9º Ano do Ensino Fundamental - Alunos Ausentes:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "222": {
+      "numero": "4.32",
+      "codigo_questao": "M01Q10300",
+      "enunciado": "A Prefeitura municipal fez uma pesquisa/estudo para levantar o número de crianças que necessitavam dos Anos Finais escolar em 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "223": {
+      "numero": "4.33",
+      "codigo_questao": "M01Q10400R00100",
+      "enunciado": "Informe: Número de crianças de 11 a 14 anos que solicitaram vaga nos Anos Finais até 31/12/2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "224": {
+      "numero": "4.34",
+      "codigo_questao": "M01Q10400R00200",
+      "enunciado": "Informe: Número de vagas de Anos Finais ofertadas em 2024:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "225": {
+      "numero": "4.35",
+      "codigo_questao": "M01Q11100R00100",
+      "enunciado": "Informe o número de alunos matriculados dos Anos Finais por turno no ano de 2024: Manhã:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "226": {
+      "numero": "4.36",
+      "codigo_questao": "M01Q11100R00200",
+      "enunciado": "Informe o número de alunos matriculados dos Anos Finais por turno no ano de 2024: Tarde:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "227": {
+      "numero": "4.37",
+      "codigo_questao": "M01Q10700R00100",
+      "enunciado": "Informe a quantidade de turmas dos Anos Finais no ano de 2024: Até 30 alunos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "228": {
+      "numero": "4.38",
+      "codigo_questao": "M01Q10700R00200",
+      "enunciado": "Informe a quantidade de turmas dos Anos Finais no ano de 2024: De 31 a 35 alunos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "229": {
+      "numero": "4.39",
+      "codigo_questao": "M01Q10700R00300",
+      "enunciado": "Informe a quantidade de turmas dos Anos Finais no ano de 2024: De 36 a 39 alunos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "230": {
+      "numero": "4.40",
+      "codigo_questao": "M01Q10700R00400",
+      "enunciado": "Informe a quantidade de turmas dos Anos Finais no ano de 2024: Acima de 39 alunos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "231": {
+      "numero": "4.41",
+      "codigo_questao": "M01Q10800R00100",
+      "enunciado": "Qual foi o número de aulas vagas nos Anos Finais durante o ano de 2024? Quantidade de aulas vagas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "232": {
+      "numero": "4.42",
+      "codigo_questao": "M01Q10900",
+      "enunciado": "Há alunos dos Anos Finais, matriculados em escolas municipais, que participaram, durante o ano de 2024, de projetos de recuperação ou reforço escolar?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "233": {
+      "numero": "4.42.1",
+      "codigo_questao": "M01Q10910R00100",
+      "enunciado": "Informe o número de alunos dos Anos Finais que participaram de projetos de recuperação ou reforço escolar: Quantidade de alunos que participaram:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "234": {
+      "numero": "4.42.2",
+      "codigo_questao": "M01Q10920",
+      "enunciado": "Existem metas traçadas que visem à melhoria dos resultados dos projetos de recuperação ou reforço escolar? (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "235": {
+      "numero": "4.42.2.1",
+      "codigo_questao": "M01Q10921",
+      "enunciado": "As metas estão sendo atingidas? (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Todas as metas foram atingidas",
+          "valor": 0
+        },
+        {
+          "texto": "A maior parte das metas foram atingidas",
+          "valor": 0
+        },
+        {
+          "texto": "A menor parte das metas foram atingidas",
+          "valor": 0
+        },
+        {
+          "texto": "Nenhuma meta foi atingida",
+          "valor": 0
+        }
+      ]
+    },
+    "236": {
+      "numero": "4.43",
+      "codigo_questao": "M01Q11200",
+      "enunciado": "A Prefeitura municipal realizou ações e medidas para monitoramento da taxa de abandono das crianças na idade escolar (Anos Finais)?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "237": {
+      "numero": "4.43.1",
+      "codigo_questao": "M01Q11210",
+      "enunciado": "Assinale as ações e medidas realizadas: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Ligação/mensagem para os responsáveis",
+          "valor": 0
+        },
+        {
+          "texto": "Visita domiciliar",
+          "valor": 0
+        },
+        {
+          "texto": "Plataforma de Busca Ativa (UNICEF)",
+          "valor": 0
+        },
+        {
+          "texto": "Contato com familiares/amigos/vizinhos",
+          "valor": 0
+        },
+        {
+          "texto": "Apoio do psicólogo escolar",
+          "valor": 0
+        },
+        {
+          "texto": "Apoio do orientador comunitário/assistente social escolar",
+          "valor": 0
+        },
+        {
+          "texto": "Encaminhamento do caso ao Conselho Tutelar",
+          "valor": 0
+        },
+        {
+          "texto": "Encaminhamento do caso ao CRAS Centro de Referência de Assistência Social",
+          "valor": 0
+        },
+        {
+          "texto": "Outro",
+          "valor": 0
+        }
+      ]
+    },
+    "238": {
+      "numero": "4.43.2",
+      "codigo_questao": "M01Q11220R00100",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Dificuldade de acesso à escola: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "239": {
+      "numero": "4.43.3",
+      "codigo_questao": "M01Q11220R00200",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Desinteresse: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "240": {
+      "numero": "4.43.4",
+      "codigo_questao": "M01Q11220R00300",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Necessidade de trabalhar: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "241": {
+      "numero": "4.43.5",
+      "codigo_questao": "M01Q11220R00500",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Falta de infraestrutura escolar: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "242": {
+      "numero": "4.43.6",
+      "codigo_questao": "M01Q11220R00600",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Bullying: (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "243": {
+      "numero": "4.43.7",
+      "codigo_questao": "M01Q11220R00700",
+      "enunciado": "Mudança de localidade (país, estado ou de município):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "244": {
+      "numero": "4.43.8",
+      "codigo_questao": "M01Q11220R00400",
+      "enunciado": "Informe a quantidade de crianças que abandonaram a escola pelos seguintes motivos: Outros (Anos Finais)",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "245": {
+      "numero": "5",
+      "codigo_questao": "M01Q01000R00400",
+      "enunciado": "Informe a quantidade de estabelecimentos de ensino da rede municipal que oferecem Creche, Pré-escola e Anos Iniciais do Ensino Fundamental: Estabelecimentos que possuíam AVCB (Auto de Vistoria do Corpo de Bombeiros) vigente no ano de 2024:",
+      "peso": 75,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "246": {
+      "numero": "6",
+      "codigo_questao": "M01Q01000R00500",
+      "enunciado": "Informe a quantidade de estabelecimentos de ensino da rede municipal que oferecem Creche, Pré-escola e Anos Iniciais do Ensino Fundamental: Estabelecimentos que necessitavam de reparos em dezembro de 2024:",
+      "peso": 75,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "247": {
+      "numero": "7",
+      "codigo_questao": "M01Q05300",
+      "enunciado": "A Prefeitura/Secretaria da Educação Municipal possui Plano de Cargos e Salários para seus professores?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -10
+        }
+      ]
+    },
+    "248": {
+      "numero": "7.1",
+      "codigo_questao": "M01Q05320R00100",
+      "enunciado": "Informe o Instrumento Normativo, Número e Data da publicação:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "249": {
+      "numero": "7.2",
+      "codigo_questao": "M01Q11430",
+      "enunciado": "Assinale os requisitos contidos no Plano de Cargos e Salários dos professores:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Remuneração condigna dos profissionais na educação básica da rede pública",
+          "valor": 0
+        },
+        {
+          "texto": "Integração entre o trabalho individual e a proposta pedagógica da escola",
+          "valor": 0
+        },
+        {
+          "texto": "Melhoria da qualidade do ensino e da aprendizagem",
+          "valor": 0
+        },
+        {
+          "texto": "Medidas de incentivo para que profissionais mais bem avaliados exerçam suas funções em escolas de locais com piores indicadores socioeconômicos ou que atendam estudantes com deficiência...",
+          "valor": 0
+        },
+        {
+          "texto": "Contempla capacitação profissional especialmente direcionada à formação continuada com vistas à melhoria da qualidade do ensino",
+          "valor": 0
+        },
+        {
+          "texto": "Nenhum dos anteriores",
+          "valor": 0
+        }
+      ]
+    },
+    "250": {
+      "numero": "8",
+      "codigo_questao": "M01Q05200",
+      "enunciado": "Existe um programa de inibição ao absenteísmo de professores em sala de aula (incluindo os afastamentos legais)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "251": {
+      "numero": "8.1",
+      "codigo_questao": "M01Q11510R00100",
+      "enunciado": "Especifique qual o programa de inibição ao absenteísmo de professores:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "252": {
+      "numero": "9",
+      "codigo_questao": "M01Q11400",
+      "enunciado": "Houve nutricionista atuando na rede municipal de ensino no ano de 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "253": {
+      "numero": "9.1",
+      "codigo_questao": "M01Q11410R00100",
+      "enunciado": "Quantos nutricionistas atuavam no município em 2024? Servidores municipais:",
+      "peso": 12,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "254": {
+      "numero": "9.2",
+      "codigo_questao": "M01Q11410R00200",
+      "enunciado": "Quantos nutricionistas atuavam no município em 2024? Funcionários das empresas terceirizadas de preparação de merenda:",
+      "peso": 12,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "255": {
+      "numero": "9.3",
+      "codigo_questao": "M01Q11420",
+      "enunciado": "Os nutricionistas atuaram nas escolas estaduais?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "256": {
+      "numero": "9.3.1",
+      "codigo_questao": "M01Q11421R00100",
+      "enunciado": "Informe a quantidade de escolas estaduais com atuação de nutricionistas:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "257": {
+      "numero": "9.3.2",
+      "codigo_questao": "M01Q11422R00100",
+      "enunciado": "Informe a quantidade de alunos da rede estadual atendidos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "258": {
+      "numero": "10",
+      "codigo_questao": "M01Q11500",
+      "enunciado": "O município divulga o cardápio pré-estabelecido pela nutricionista na Secretaria de Educação e nas escolas?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Na Secretaria de Educação e em todas as escolas",
+          "valor": 2
+        },
+        {
+          "texto": "Na Secretaria de Educação e na maior parte das escolas",
+          "valor": 1.3
+        },
+        {
+          "texto": "Na Secretaria de Educação e na menor parte das escolas",
+          "valor": 0.6
+        },
+        {
+          "texto": "Apenas na Secretaria de Educação",
+          "valor": 0
+        },
+        {
+          "texto": "Não é divulgado",
+          "valor": 0
+        }
+      ]
+    },
+    "259": {
+      "numero": "11",
+      "codigo_questao": "M01Q11600",
+      "enunciado": "O município cumpre o cardápio pré-estabelecido pela nutricionista?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Em todas as escolas",
+          "valor": 2.5
+        },
+        {
+          "texto": "Na maior parte das escolas",
+          "valor": 1.8
+        },
+        {
+          "texto": "Na menor parte das escolas",
+          "valor": 0.5
+        },
+        {
+          "texto": "Não cumpre o cardápio",
+          "valor": 0
+        }
+      ]
+    },
+    "260": {
+      "numero": "12",
+      "codigo_questao": "M01Q11700",
+      "enunciado": "Existe controle formal pelo(a) nutricionista que permita atestar condições dos alimentos servidos?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "261": {
+      "numero": "12.1",
+      "codigo_questao": "M01Q11710",
+      "enunciado": "Assinale as condições atestadas pelo(a) nutricionista:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Condições físicas e estruturais da cozinha",
+          "valor": 0.25
+        },
+        {
+          "texto": "Recebimento dos alimentos para controle de procedência",
+          "valor": 0.25
+        },
+        {
+          "texto": "Higienização dos alimentos",
+          "valor": 0.25
+        },
+        {
+          "texto": "Higienização dos equipamentos",
+          "valor": 0.25
+        },
+        {
+          "texto": "Acondicionamento dos alimentos",
+          "valor": 0.25
+        },
+        {
+          "texto": "Acompanhamento da preparação dos alimentos",
+          "valor": 0.25
+        },
+        {
+          "texto": "Acompanhamento e orientação sobre a manipulação dos alimentos",
+          "valor": 0.25
+        },
+        {
+          "texto": "Aceitação do cardápio proposto",
+          "valor": 0.25
+        },
+        {
+          "texto": "Outras",
+          "valor": 0
+        }
+      ]
+    },
+    "262": {
+      "numero": "13",
+      "codigo_questao": "M01Q11800",
+      "enunciado": "Existe um controle de acondicionamento dos alimentos?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "263": {
+      "numero": "13.1",
+      "codigo_questao": "M01Q11810",
+      "enunciado": "Assinale os tipos de controles:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Controle de Estoque com sistema PVPS",
+          "valor": 0.38
+        },
+        {
+          "texto": "Telas nas janelas e frestas",
+          "valor": 0.35
+        },
+        {
+          "texto": "Possui sistema de ventilação",
+          "valor": 0.35
+        },
+        {
+          "texto": "As luminárias são protegidas",
+          "valor": 0.35
+        },
+        {
+          "texto": "Possui ralos sifonados",
+          "valor": 0.35
+        },
+        {
+          "texto": "O estoque não possui sinais de goteiras, umidade...",
+          "valor": 0.35
+        },
+        {
+          "texto": "Há adequada distância no armazenamento de produtos",
+          "valor": 0.35
+        },
+        {
+          "texto": "As geladeiras/câmaras frias são higienizadas periodicamente",
+          "valor": 0.35
+        },
+        {
+          "texto": "Ventilação do estoque",
+          "valor": 0.35
+        },
+        {
+          "texto": "Temperatura",
+          "valor": 0.35
+        },
+        {
+          "texto": "Umidade do ar",
+          "valor": 0.35
+        },
+        {
+          "texto": "Prazo de validade",
+          "valor": 0.35
+        },
+        {
+          "texto": "Tipo de alimento",
+          "valor": 0.35
+        },
+        {
+          "texto": "Os alimentos abertos são etiquetados com data",
+          "valor": 0.35
+        },
+        {
+          "texto": "Desinsetização a cada 6 meses",
+          "valor": 0.35
+        },
+        {
+          "texto": "Desratização a cada 6 meses",
+          "valor": 0.35
+        },
+        {
+          "texto": "Limpeza da caixa dágua a cada 6 meses",
+          "valor": 0.38
+        },
+        {
+          "texto": "Outro",
+          "valor": 0
+        }
+      ]
+    },
+    "264": {
+      "numero": "14",
+      "codigo_questao": "M01Q08100",
+      "enunciado": "O município oferece transporte escolar?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "265": {
+      "numero": "14.1",
+      "codigo_questao": "M01Q08111",
+      "enunciado": "O transporte escolar é realizado por meio de frota própria ou frota alugada / terceirizada?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "266": {
+      "numero": "14.1.1",
+      "codigo_questao": "M01Q08130",
+      "enunciado": "Existe um estudo anual do traçado e tempo de viagem das rotas do transporte escolar?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "267": {
+      "numero": "14.1.2",
+      "codigo_questao": "M01Q08140",
+      "enunciado": "Possui veículos da frota escolar com mais de 10 anos de fabricação?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": -5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "268": {
+      "numero": "14.1.3",
+      "codigo_questao": "M01Q13300",
+      "enunciado": "Os veículos da frota escolar estão em boas condições de uso?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, todos os veículos",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, a maior parte dos veículos",
+          "valor": -2
+        },
+        {
+          "texto": "Sim, a menor parte dos veículos",
+          "valor": -3
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "269": {
+      "numero": "14.1.4",
+      "codigo_questao": "M01Q14500",
+      "enunciado": "Os condutores possuem aprovação em curso de especialização sobre transporte escolar?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, todos os condutores",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, a maior parte dos condutores",
+          "valor": -2
+        },
+        {
+          "texto": "Sim, a menor parte dos condutores",
+          "valor": -3
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "270": {
+      "numero": "14.1.5",
+      "codigo_questao": "M01Q14600",
+      "enunciado": "Há condutores que cometeram alguma infração grave ou gravíssima, ou que são reincidentes em infrações médias nos últimos 12 meses?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": -3
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "271": {
+      "numero": "14.1.6",
+      "codigo_questao": "M01Q14700",
+      "enunciado": "Os condutores apresentaram certidão negativa do registro de distribuição criminal, relativa aos crimes de homicídio, roubo, estupro e corrupção de menores dentro do prazo de validade (5 anos)?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, todos os condutores",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, a maior parte dos condutores",
+          "valor": -1
+        },
+        {
+          "texto": "Sim, a menor parte dos condutores",
+          "valor": -2
+        },
+        {
+          "texto": "Não",
+          "valor": -3
+        }
+      ]
+    },
+    "272": {
+      "numero": "15",
+      "codigo_questao": "M01Q00800",
+      "enunciado": "O município possui o Plano Municipal de Educação?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -50
+        }
+      ]
+    },
+    "273": {
+      "numero": "15.1",
+      "codigo_questao": "M01Q00811R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) do instrumento normativo do Plano Municipal de Educação:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "274": {
+      "numero": "15.2",
+      "codigo_questao": "M01Q00830",
+      "enunciado": "O Plano possui cronograma para execução das metas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 20
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "275": {
+      "numero": "15.2.1",
+      "codigo_questao": "M01Q00831",
+      "enunciado": "As metas estão sendo atingidas no prazo?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Todas as metas foram atingidas dentro do prazo",
+          "valor": 30
+        },
+        {
+          "texto": "A maior parte das metas foram atingidas dentro do prazo",
+          "valor": 17
+        },
+        {
+          "texto": "A menor parte das metas foram atingidas dentro do prazo",
+          "valor": 5
+        },
+        {
+          "texto": "Nenhuma meta foi atingida no prazo",
+          "valor": 0
+        }
+      ]
+    },
+    "276": {
+      "numero": "16",
+      "codigo_questao": "M01Q12000",
+      "enunciado": "O município possui o Plano Municipal pela Primeira Infância?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "277": {
+      "numero": "16.1",
+      "codigo_questao": "M01Q12011R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) do instrumento normativo do Plano Municipal pela Primeira Infância:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "278": {
+      "numero": "16.2",
+      "codigo_questao": "M01Q12020",
+      "enunciado": "Foram estipuladas metas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "279": {
+      "numero": "16.2.1",
+      "codigo_questao": "M01Q12021",
+      "enunciado": "Há monitoramento das metas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -10
+        }
+      ]
+    },
+    "280": {
+      "numero": "16.2.2",
+      "codigo_questao": "M01Q12022",
+      "enunciado": "Houve divulgação dos resultados do Plano?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -5
+        }
+      ]
+    },
+    "281": {
+      "numero": "16.3",
+      "codigo_questao": "M01Q12030",
+      "enunciado": "Foram realizadas palestras/orientações sobre:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Maternidade responsável",
+          "valor": 0
+        },
+        {
+          "texto": "Aleitamento",
+          "valor": 0
+        },
+        {
+          "texto": "Alimentação complementar saudável",
+          "valor": 0
+        },
+        {
+          "texto": "Crescimento infantil",
+          "valor": 0
+        },
+        {
+          "texto": "Prevenção de acidentes",
+          "valor": 0
+        },
+        {
+          "texto": "Não uso do castigo físico",
+          "valor": 0
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "282": {
+      "numero": "16.3.1",
+      "codigo_questao": "M01Q12031R00100",
+      "enunciado": "Especifique outras palestras/orientações:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "283": {
+      "numero": "17",
+      "codigo_questao": "M01Q12100",
+      "enunciado": "O município possui Conselho Municipal de Educação?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "284": {
+      "numero": "17.1",
+      "codigo_questao": "M01Q12110",
+      "enunciado": "Assinale os recursos fornecidos pela Prefeitura Municipal para o funcionamento do Conselho Municipal de Educação:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Recursos Humanos",
+          "valor": 0.5
+        },
+        {
+          "texto": "Recursos Tecnológicos",
+          "valor": 0.5
+        },
+        {
+          "texto": "Estrutura Física",
+          "valor": 0.5
+        },
+        {
+          "texto": "Recursos Orçamentários",
+          "valor": 0.5
+        },
+        {
+          "texto": "Recursos Materiais",
+          "valor": 0.5
+        },
+        {
+          "texto": "Outros",
+          "valor": 0.5
+        }
+      ]
+    },
+    "285": {
+      "numero": "17.2",
+      "codigo_questao": "M01Q14800",
+      "enunciado": "Assinale as principais funções do Conselho Municipal de Educação:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Consultiva",
+          "valor": 0.5
+        },
+        {
+          "texto": "Normativa",
+          "valor": 0.5
+        },
+        {
+          "texto": "Deliberativa",
+          "valor": 0.5
+        },
+        {
+          "texto": "Fiscalizadora",
+          "valor": 0.5
+        },
+        {
+          "texto": "Mobilizadora",
+          "valor": 0.5
+        },
+        {
+          "texto": "Propositiva",
+          "valor": 0.5
+        }
+      ]
+    },
+    "286": {
+      "numero": "17.3",
+      "codigo_questao": "M01Q14900",
+      "enunciado": "Assinale as atividades que o Conselho Municipal de Educação realizou no ano:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Consultas à sociedade sobre as necessidades e prioridades locais de educação",
+          "valor": 0.6
+        },
+        {
+          "texto": "Participação na discussão e definição das políticas e do planejamento educacional",
+          "valor": 0.6
+        },
+        {
+          "texto": "Acompanhamento e controle dos atos praticados pelos gestores da educação",
+          "valor": 0.6
+        },
+        {
+          "texto": "Elaboração de propostas para melhoria do fluxo escolar",
+          "valor": 0.6
+        },
+        {
+          "texto": "Elaboração de propostas para melhoria do rendimento escolar",
+          "valor": 0.6
+        },
+        {
+          "texto": "Sugestões de medidas para atualização e capacitação dos professores por meio da educação continuada",
+          "valor": 0.6
+        },
+        {
+          "texto": "Acompanhamento e avaliação do cumprimento do Plano Municipal de Educação",
+          "valor": 0.6
+        },
+        {
+          "texto": "Fiscalização da implementação do BNCC (Base Nacional Comum Curricular)",
+          "valor": 0.6
+        },
+        {
+          "texto": "Emissão de pareceres, resoluções, instruções e recomendações sobre a educação",
+          "valor": 0.6
+        },
+        {
+          "texto": "Aprovação dos regimentos escolares e suas alterações",
+          "valor": 0.6
+        },
+        {
+          "texto": "Apuração da existência de irregularidades na gerência dos recursos educacionais",
+          "valor": 0
+        },
+        {
+          "texto": "Outros",
+          "valor": 0
+        }
+      ]
+    },
+    "287": {
+      "numero": "17.4",
+      "codigo_questao": "M01Q03400",
+      "enunciado": "O Conselho Municipal de Educação aprovou as contas da Secretaria Municipal de Educação referente ao exercício de 2024?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": -50
+        },
+        {
+          "texto": "Não compete ao Conselho aprovar as contas da Secretaria",
+          "valor": 0
+        }
+      ]
+    },
+    "288": {
+      "numero": "17.5",
+      "codigo_questao": "M01Q05600R00100",
+      "enunciado": "Quantas reuniões foram realizadas pelo Conselho Municipal de Educação no último exercício? Reuniões realizadas:",
+      "peso": 3,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "289": {
+      "numero": "18",
+      "codigo_questao": "M01Q12200",
+      "enunciado": "O município possui Conselho de Acompanhamento e Controle Social do FUNDEB?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "290": {
+      "numero": "18.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre a estrutura do Conselho de Acompanhamento e Controle Social do FUNDEB:",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, com estrutura independente do Conselho Municipal de Educação",
+          "valor": 0
+        },
+        {
+          "texto": "Sim, integrado ao Conselho Municipal de Educação",
+          "valor": 0
+        }
+      ]
+    },
+    "291": {
+      "numero": "18.2",
+      "codigo_questao": "M01Q15100R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) do instrumento normativo que instituiu o Conselho de Acompanhamento e Controle Social do FUNDEB:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "292": {
+      "numero": "18.3",
+      "codigo_questao": "M01Q15200",
+      "enunciado": "A Prefeitura Municipal disponibilizou, em sítio na internet, informações atualizadas sobre a composição e o funcionamento do CACS FUNDEB?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "293": {
+      "numero": "18.3.1",
+      "codigo_questao": "M01Q15210",
+      "enunciado": "Assinale quais informações foram disponibilizadas em sítio na internet:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Nomes dos conselheiros e das entidades ou segmentos que representam;",
+          "valor": 0.4
+        },
+        {
+          "texto": "Correio eletrônico ou outro canal de contato direto com o conselho",
+          "valor": 0.4
+        },
+        {
+          "texto": "Atas de reuniões",
+          "valor": 0.4
+        },
+        {
+          "texto": "Relatórios e pareceres",
+          "valor": 0.4
+        },
+        {
+          "texto": "Outros documentos produzidos pelo conselho",
+          "valor": 0.4
+        }
+      ]
+    },
+    "294": {
+      "numero": "18.3.2",
+      "codigo_questao": "M01Q15220R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) sobre a composição e funcionamento dos conselhos:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "295": {
+      "numero": "18.4",
+      "codigo_questao": "M01Q12210",
+      "enunciado": "Assinale os recursos fornecidos pela Prefeitura Municipal ao CACS FUNDEB a fim de garantir infraestrutura e condições materiais adequadas à execução plena de suas competências:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Recursos Humanos",
+          "valor": 0.5
+        },
+        {
+          "texto": "Recursos Tecnológicos",
+          "valor": 0.5
+        },
+        {
+          "texto": "Estrutura Física",
+          "valor": 0.5
+        },
+        {
+          "texto": "Recursos Orçamentários",
+          "valor": 0.5
+        },
+        {
+          "texto": "Recursos Materiais",
+          "valor": 0.5
+        },
+        {
+          "texto": "Outros",
+          "valor": 0.5
+        }
+      ]
+    },
+    "296": {
+      "numero": "18.5",
+      "codigo_questao": "M01Q15300",
+      "enunciado": "Assinale as atividades que o CACS Fundeb realizou no ano:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Elaboração do parecer das prestações de contas do FUNDEB",
+          "valor": 1.5
+        },
+        {
+          "texto": "Supervisão da elaboração da proposta orçamentária anual",
+          "valor": 0.5
+        },
+        {
+          "texto": "Apresentação de manifestação formal acerca dos registros contábeis e demonstrativos gerenciais do Fundo aos órgãos competentes",
+          "valor": 0.5
+        },
+        {
+          "texto": "Convocação dos responsáveis para prestação de esclarecimentos acerca do fluxo de recursos e da execução das despesas do Fundo",
+          "valor": 0.5
+        },
+        {
+          "texto": "Requisição ao Poder Executivo de cópia de documentos",
+          "valor": 0.5
+        },
+        {
+          "texto": "Visitas para verificações in loco",
+          "valor": 1
+        },
+        {
+          "texto": "Supervisão do censo escolar anual",
+          "valor": 1
+        },
+        {
+          "texto": "Acompanhar a aplicação dos recursos federais transferidos à conta do PNATE e do PEJA e analisar suas prestações de contas",
+          "valor": 0.5
+        }
+      ]
+    },
+    "297": {
+      "numero": "18.6",
+      "codigo_questao": "M01Q12220",
+      "enunciado": "Qual foi o parecer da prestação de contas emitido pelo CACS FUNDEB referente ao exercício de 2024?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Aprovado sem ressalva",
+          "valor": 0
+        },
+        {
+          "texto": "Aprovado com ressalva",
+          "valor": 0
+        },
+        {
+          "texto": "Não aprovado",
+          "valor": -50
+        },
+        {
+          "texto": "Não apreciado",
+          "valor": -20
+        }
+      ]
+    },
+    "298": {
+      "numero": "18.7",
+      "codigo_questao": "M01Q12230R00100",
+      "enunciado": "Quantas reuniões foram realizadas pelo Conselho do FUNDEB no último exercício? Reuniões realizadas pelo Conselho do FUNDEB:",
+      "peso": 3,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "299": {
+      "numero": "19",
+      "codigo_questao": "M01Q12300",
+      "enunciado": "O município constituiu o CAE(Conselho de Alimentação Escolar)?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "300": {
+      "numero": "19.1",
+      "codigo_questao": "M01Q12310",
+      "enunciado": "Assinale os recursos fornecidos pela Prefeitura Municipal para o funcionamento do Conselho de Alimentação Escolar:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Recursos Humanos",
+          "valor": 0.5
+        },
+        {
+          "texto": "Recursos Tecnológicos",
+          "valor": 0.5
+        },
+        {
+          "texto": "Estrutura Física",
+          "valor": 0.5
+        },
+        {
+          "texto": "Recursos Orçamentários",
+          "valor": 0.5
+        },
+        {
+          "texto": "Recursos Materiais",
+          "valor": 0.5
+        },
+        {
+          "texto": "Outros",
+          "valor": 0.5
+        }
+      ]
+    },
+    "301": {
+      "numero": "19.2",
+      "codigo_questao": "M01Q12320",
+      "enunciado": "A Prefeitura ofereceu formação aos conselheiros sobre a execução do PNAE e temas que possuam interfaces com este Programa?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 6
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "302": {
+      "numero": "19.3",
+      "codigo_questao": "M01Q12330",
+      "enunciado": "A Prefeitura divulgou as atividades do CAE por meio de comunicação oficial?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "303": {
+      "numero": "19.3.1",
+      "codigo_questao": "M01Q15400",
+      "enunciado": "Assinale as atividades realizadas pelo CAE no ano:",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Acompanhamento e fiscalização do cumprimento das diretrizes estabelecidas sobre alimentação escolar",
+          "valor": 0.5
+        },
+        {
+          "texto": "Acompanhamento e fiscalização da aplicação dos recursos destinados à alimentação escolar",
+          "valor": 1
+        },
+        {
+          "texto": "Aferição da qualidade dos alimentos, em especial quanto às condições higiênicas, bem como a aceitabilidade dos cardápios oferecidos",
+          "valor": 1
+        },
+        {
+          "texto": "Aferição das condições físicas e estruturais da cozinha",
+          "valor": 1
+        },
+        {
+          "texto": "Sobre o relatório anual de gestão do PNAE, emitiu parecer conclusivo a respeito, aprovando ou reprovando a execução do Programa",
+          "valor": 1
+        },
+        {
+          "texto": "Comunicou aos órgãos de controle as irregularidades observadas",
+          "valor": 0
+        },
+        {
+          "texto": "Forneceu informações e apresentou relatórios de acompanhamento da execução do PNAE sempre que solicitado",
+          "valor": 0
+        },
+        {
+          "texto": "Realizou visitas periódicas às escolas",
+          "valor": 1
+        },
+        {
+          "texto": "Realizou reuniões periódicas",
+          "valor": 0.5
+        }
+      ]
+    },
+    "304": {
+      "numero": "20",
+      "codigo_questao": "M01Q13700",
+      "enunciado": "A Prefeitura Municipal (re)elaborou o currículo da rede municipal de ensino adequando-se às proposições da Base Nacional Comum Curricular (BNCC)?",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        },
+        {
+          "texto": "Houve adesão ao Currículo elaborado pela Secretaria da Educação do Estado?",
+          "valor": 0
+        }
+      ]
+    },
+    "305": {
+      "numero": "20.1",
+      "codigo_questao": "M01Q13710",
+      "enunciado": "Assinale as etapas de ensino que estão com o currículo atualizado conforme a BNCC:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        {
+          "texto": "Creche",
+          "valor": 0
+        },
+        {
+          "texto": "Pré-escola",
+          "valor": 0
+        },
+        {
+          "texto": "Anos Iniciais do Ensino Fundamental",
+          "valor": 0
+        },
+        {
+          "texto": "Anos Finais do Ensino Fundamental",
+          "valor": 0
+        }
+      ]
+    },
+    "306": {
+      "numero": "20.2",
+      "codigo_questao": "M01Q13720R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) do currículo da rede municipal de ensino:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "307": {
+      "numero": "20.3",
+      "codigo_questao": "M01Q13730",
+      "enunciado": "As escolas incorporaram em seus Projetos Político-Pedagógicos o atual currículo da rede municipal de ensino?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        {
+          "texto": "Sim, em todas as escolas",
+          "valor": 2
+        },
+        {
+          "texto": "Sim, na maior parte das escolas",
+          "valor": 1
+        },
+        {
+          "texto": "Sim, na menor parte das escolas",
+          "valor": 0.5
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "308": {
+      "numero": "21",
+      "codigo_questao": "M01Q06000R00100",
+      "enunciado": "FUNDEB - Percentual:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "309": {
+      "numero": "22",
+      "codigo_questao": "M01Q06100R00100",
+      "enunciado": "FUNDEB Profissionais da Educação - Percentual:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "310": {
+      "numero": "23",
+      "codigo_questao": "M01Q06200R00100",
+      "enunciado": "Aplicação do mínimo constitucional em educação - Despesa aplicada em Ensino com recursos próprios:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "311": {
+      "numero": "24",
+      "codigo_questao": "M01Q06200R00200",
+      "enunciado": "Aplicação do mínimo constitucional em educação - Receita de Impostos (próprios ou decorrentes de Transf.):",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "312": {
+      "numero": "25",
+      "codigo_questao": "M01Q06300",
+      "enunciado": "Gostaria de registrar suas impressões, comentários e sugestões a respeito do presente questionário?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        {
+          "texto": "Sim",
+          "valor": 0
+        },
+        {
+          "texto": "Não",
+          "valor": 0
+        }
+      ]
+    },
+    "313": {
+      "numero": "25.1",
+      "codigo_questao": "M01Q06310R00100",
+      "enunciado": "Utilize o espaço abaixo para registrar suas impressões, comentários e sugestões a respeito do presente questionário.",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "314": {
+      "numero": "26",
+      "codigo_questao": null,
+      "enunciado": "Nome Completo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "315": {
+      "numero": "27",
+      "codigo_questao": null,
+      "enunciado": "Cargo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "316": {
+      "numero": "28",
+      "codigo_questao": null,
+      "enunciado": "E-mail",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "317": {
+      "numero": "29",
+      "codigo_questao": null,
+      "enunciado": "CPF",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    }
+  }
+}

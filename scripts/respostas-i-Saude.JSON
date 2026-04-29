@@ -1,0 +1,703 @@
+{
+  "submissao": {
+    "indicador": "i-Saude Nacional - 2025",
+    "numero_indicador": 82,
+    "id_submissao": "76870",
+    "municipio_ibge": "3106705",
+    "municipio_nome": "BETIM",
+    "data_inicio": "2025-06-17T09:23:02",
+    "data_termino": "2025-07-02T17:20:23",
+    "status": "Aguardando Validação",
+    "respondente": {
+      "nome": "Jaqueline Flaviana de Santana",
+      "cargo": "Secretária Municipal de Saúde",
+      "email": "sms.gabinete@betim.mg.gov.br",
+      "cpf": "075.437.036-45"
+    }
+  },
+  "respostas": [
+    {
+      "numero": "1",
+      "resposta": "Sim, com propostas para construção das diretrizes e metas da saúde municipal"
+    },
+    {
+      "numero": "2",
+      "resposta": "Aprovado após a aprovação do PPA 2022-2025 pela Câmara Municipal"
+    },
+    {
+      "numero": "3",
+      "resposta": "Aprovado após a aprovação da LDO 2024 pela Câmara Municipal"
+    },
+    {
+      "numero": "4",
+      "resposta": "Aprovado"
+    },
+    {
+      "numero": "4.1",
+      "resposta": "Sim, a maior parte das ações foram executadas"
+    },
+    {
+      "numero": "4.2",
+      "resposta": "Sim, a maior parte das metas foram atingidas"
+    },
+    {
+      "numero": "5",
+      "resposta": [
+        "Para outras secretarias / entidades municipais",
+        "Para escolas",
+        "Para membros do Conselho Municipal de Saúde",
+        "Para munícipes ou empresas"
+      ]
+    },
+    {
+      "numero": "6",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "6.1",
+      "resposta": "Brasil e Caixa Econômica Federal."
+    },
+    {
+      "numero": "6.2",
+      "resposta": "0750-1 е 0892, respectivamente."
+    },
+    {
+      "numero": "6.3",
+      "resposta": "81.501-2 e 71.017-2, respectivamente."
+    },
+    {
+      "numero": "7",
+      "resposta": "Sim, com responsabilidade específica do setor de saúde e com recursos movimentados exclusivamente pelo Fundo"
+    },
+    {
+      "numero": "8",
+      "resposta": "Não apresentou nenhum relatório quadrimestral em audiência pública na Câmara Municipal"
+    },
+    {
+      "numero": "9",
+      "resposta": "Sim, meio eletrônico"
+    },
+    {
+      "numero": "10",
+      "resposta": "Foi apreciado"
+    },
+    {
+      "numero": "10.1",
+      "resposta": "https://www.betim.mg.gov.br/- (secretarias, secretaria municipal de saúde) e https://digisusgmp.saude.gov.br/v1.5/transparencia"
+    },
+    {
+      "numero": "11",
+      "resposta": "Aprovado sem ressalvas"
+    },
+    {
+      "numero": "12",
+      "resposta": "2"
+    },
+    {
+      "numero": "13",
+      "resposta": "81"
+    },
+    {
+      "numero": "14",
+      "resposta": "1"
+    },
+    {
+      "numero": "15",
+      "resposta": "80"
+    },
+    {
+      "numero": "16",
+      "resposta": "81"
+    },
+    {
+      "numero": "17",
+      "resposta": "0"
+    },
+    {
+      "numero": "18",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "18.1",
+      "resposta": "https://servicos.betim.mg.gov.br/transparencia/#/gestao-pessoas"
+    },
+    {
+      "numero": "19",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "19.1",
+      "resposta": "21"
+    },
+    {
+      "numero": "19.2",
+      "resposta": "92"
+    },
+    {
+      "numero": "19.3",
+      "resposta": "0"
+    },
+    {
+      "numero": "19.4",
+      "resposta": "417153"
+    },
+    {
+      "numero": "20",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "20.1",
+      "resposta": "Sim, para a maior parte dos profissionais da saúde"
+    },
+    {
+      "numero": "20.2",
+      "resposta": "Sim, todos cumprem integralmente a jornada de trabalho"
+    },
+    {
+      "numero": "21",
+      "resposta": "Agendamento de 2 ou mais pacientes no mesmo horário."
+    },
+    {
+      "numero": "22",
+      "resposta": "Não"
+    },
+    {
+      "numero": "23",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "23.1",
+      "resposta": "Sim, para a maior parte das consultas"
+    },
+    {
+      "numero": "23.2",
+      "resposta": "5,0000"
+    },
+    {
+      "numero": "23.3",
+      "resposta": "0,0000"
+    },
+    {
+      "numero": "23.4",
+      "resposta": "8,5000"
+    },
+    {
+      "numero": "23.5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "24",
+      "resposta": "Não"
+    },
+    {
+      "numero": "25",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "25.1",
+      "resposta": "Sim, para todos os procedimentos da saúde"
+    },
+    {
+      "numero": "25.2",
+      "resposta": [
+        "Atendimento pela ESF",
+        "Consultas médicas em Atenção Primária",
+        "Exames laboratoriais",
+        "Terapias / tratamentos",
+        "Medicamentos",
+        "Outros"
+      ]
+    },
+    {
+      "numero": "26",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "26.1",
+      "resposta": "Sim, sob gestão municipal"
+    },
+    {
+      "numero": "26.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "26.2.1",
+      "resposta": "Sim, para todos os profissionais da saúde"
+    },
+    {
+      "numero": "26.2.2",
+      "resposta": "Sim, a maior parte cumpre integralmente a jornada de trabalho"
+    },
+    {
+      "numero": "26.2.3",
+      "resposta": "Não possui médicos plantonistas"
+    },
+    {
+      "numero": "26.3",
+      "resposta": "Agendamento de 2 ou mais pacientes no mesmo horário"
+    },
+    {
+      "numero": "26.4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "26.4.1",
+      "resposta": "Sim, para todas as consultas médicas"
+    },
+    {
+      "numero": "26.4.2",
+      "resposta": "16,0000"
+    },
+    {
+      "numero": "26.4.3",
+      "resposta": "16,0000"
+    },
+    {
+      "numero": "26.4.4",
+      "resposta": "22,0000"
+    },
+    {
+      "numero": "26.4.5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "26.5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "26.5.1",
+      "resposta": "Sim, para a maior parte dos exames"
+    },
+    {
+      "numero": "26.5.2",
+      "resposta": "37,0000"
+    },
+    {
+      "numero": "26.5.3",
+      "resposta": "20,0000"
+    },
+    {
+      "numero": "26.5.4",
+      "resposta": "41,0000"
+    },
+    {
+      "numero": "26.5.5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "26.6",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "26.6.1",
+      "resposta": "Sim, todos os serviços"
+    },
+    {
+      "numero": "26.6.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "26.6.2.1",
+      "resposta": "Sim, a menor parte dos serviços"
+    },
+    {
+      "numero": "26.6.2.2",
+      "resposta": [
+        "Consultas por especialidade",
+        "Exames",
+        "Terapias / tratamentos",
+        "Cirurgias eletivas",
+        "OPM"
+      ]
+    },
+    {
+      "numero": "26.7",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "26.7.1",
+      "resposta": "Sim, para todos os procedimentos da saúde"
+    },
+    {
+      "numero": "26.7.2",
+      "resposta": [
+        "Consultas médicas por especialidade"
+      ]
+    },
+    {
+      "numero": "26.8",
+      "resposta": "Não"
+    },
+    {
+      "numero": "26.9",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "26.9.1",
+      "resposta": "12719"
+    },
+    {
+      "numero": "26.9.2",
+      "resposta": "10326"
+    },
+    {
+      "numero": "26.9.3",
+      "resposta": "13145"
+    },
+    {
+      "numero": "26.9.4",
+      "resposta": "6"
+    },
+    {
+      "numero": "26.9.5",
+      "resposta": "4"
+    },
+    {
+      "numero": "26.9.6",
+      "resposta": "4"
+    },
+    {
+      "numero": "26.10",
+      "resposta": "Não"
+    },
+    {
+      "numero": "27",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "27.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "27.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "27.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "27.4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "27.4.1",
+      "resposta": "Não"
+    },
+    {
+      "numero": "27.4.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "28",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "28.1",
+      "resposta": "Não"
+    },
+    {
+      "numero": "28.2",
+      "resposta": "3"
+    },
+    {
+      "numero": "28.3",
+      "resposta": "0"
+    },
+    {
+      "numero": "28.4",
+      "resposta": "0"
+    },
+    {
+      "numero": "28.5",
+      "resposta": "Não"
+    },
+    {
+      "numero": "28.6",
+      "resposta": "Não"
+    },
+    {
+      "numero": "28.7",
+      "resposta": "0"
+    },
+    {
+      "numero": "28.8",
+      "resposta": "0"
+    },
+    {
+      "numero": "28.9",
+      "resposta": "14"
+    },
+    {
+      "numero": "28.10",
+      "resposta": "14"
+    },
+    {
+      "numero": "29",
+      "resposta": [
+        "Imunobiológicos (soros, vacinas e imunoglobulinas)",
+        "Meios de diagnóstico laboratorial para as doenças sob monitoramento epidemiológico (coleta de sangue, fluidos orgânicos como: saliva, secreção, suor, urina, fezes)",
+        "Controle de vetores (inseticidas, larvicidas)"
+      ]
+    },
+    {
+      "numero": "29.1",
+      "resposta": "Não"
+    },
+    {
+      "numero": "29.2",
+      "resposta": "Sim, para todas as amostras"
+    },
+    {
+      "numero": "29.3",
+      "resposta": "Sim, para todos os profissionais"
+    },
+    {
+      "numero": "30",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "31",
+      "resposta": "Sim, investiga todos os casos"
+    },
+    {
+      "numero": "32",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "32.1",
+      "resposta": [
+        "Incluir a vigilância sanitária municipal e como suporte às ações de vigilância e controle vetorial, que exigem o cumprimento da legislação sanitária",
+        "Integrar as equipes de saúde da família nas atividades de controle vetorial, unificando os territórios de atuação de ACS e ACE",
+        "Realizar o levantamento de indicadores entomológicos",
+        "Executar as ações de controle mecânico, químico e biológico do mosquito",
+        "Enviar os dados entomológicos ao nível estadual, dentro dos prazos estabelecidos",
+        "Gerenciar os estoques municipais de inseticidas e biolarvicidas",
+        "Adquirir as vestimentas e equipamentos necessários à rotina de controle vetorial",
+        "Adquirir os equipamentos de EPI recomendados para a aplicação de inseticidas e biolarvicidas nas ações de rotina",
+        "Coletar e enviar ao laboratório de referência amostras de sangue aos trabalhadores do controle vetorial que manuseiam inseticidas e/ou larvicidas, para dosagem de colinesterase, na frequência recomendada",
+        "Possuir Comitê Gestor Intersetorial, sob coordenação da secretaria municipal de saúde, com representantes das áreas do município que tenham interface com o problema dengue (defesa civil, limpeza urbana, infraestrutura, segurança, turismo, planejamento, saneamento etc.), definindo responsabilidades, metas e indicadores de acompanhamento de cada área de atuação",
+        "Outros"
+      ]
+    },
+    {
+      "numero": "33",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "33.1",
+      "resposta": [
+        "Planejamento familiar concepção e contracepção (Prevenção à Gravidez)",
+        "Pré-Natal",
+        "Assistência ao parto, ao puerpério e ao neonato, incluindo aleitamento materno e doação de leite materno",
+        "Prevenção às IST - Infecção Sexualmente Transmissível",
+        "Prevenção dos cânceres do colo do útero, de mama e da saúde do homem",
+        "Vacinação",
+        "Diabetes",
+        "Hanseníase",
+        "Hepatite",
+        "Tuberculose",
+        "Doença de Chagas",
+        "Tabaco",
+        "Doação de Sangue",
+        "Doação de Órgãos",
+        "Prevenção à Depressão e ao Suicídio",
+        "Outros"
+      ]
+    },
+    {
+      "numero": "34",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "35",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "36",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "37",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "37.1",
+      "resposta": "Sim, com a relação nominal de pacientes e tempo de espera para todos os serviços de média e alta complexidade com fila de espera"
+    },
+    {
+      "numero": "37.2",
+      "resposta": "Em sistema informatizado"
+    },
+    {
+      "numero": "38",
+      "resposta": "SIM, os cadastros de estabelecimentos e de profissionais estão atualizados"
+    },
+    {
+      "numero": "39",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "39.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "39.1.1",
+      "resposta": [
+        "Central de Urgência",
+        "Central de Internações",
+        "Central de Consultas e Serviços de Apoio Diagnóstico e terapêutico"
+      ]
+    },
+    {
+      "numero": "40",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "40.1",
+      "resposta": "1"
+    },
+    {
+      "numero": "40.2",
+      "resposta": "16"
+    },
+    {
+      "numero": "40.3",
+      "resposta": "92"
+    },
+    {
+      "numero": "40.4",
+      "resposta": "1"
+    },
+    {
+      "numero": "40.5",
+      "resposta": "17"
+    },
+    {
+      "numero": "40.6",
+      "resposta": "108"
+    },
+    {
+      "numero": "40.7",
+      "resposta": "1"
+    },
+    {
+      "numero": "40.8",
+      "resposta": "17"
+    },
+    {
+      "numero": "40.9",
+      "resposta": "107"
+    },
+    {
+      "numero": "40.10",
+      "resposta": "Todas as equipes tinham composição mínima"
+    },
+    {
+      "numero": "40.11",
+      "resposta": "Todas as equipes tinham composição mínima"
+    },
+    {
+      "numero": "41",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "41.1",
+      "resposta": [
+        "Fornece a posição de estoque, movimentação de entrada e saída, lote e validade",
+        "Gerenciar o processo de compras dos insumos/materiais de saúde, desde o planejamento até a entrega e o recebimento da nota fiscal",
+        "Gerenciar a reposição dos insumos/materiais de saúde por estabelecimento de saúde"
+      ]
+    },
+    {
+      "numero": "42",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "42.1",
+      "resposta": [
+        "Instituída por ato formal no organograma da secretaria de saúde ou equivalente",
+        "Possui estrutura física",
+        "Possui equipe ou profissional designado"
+      ]
+    },
+    {
+      "numero": "43",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "44",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "44.1",
+      "resposta": [
+        "Instituído por ato formal no organograma da secretaria de saúde ou equivalente",
+        "Possui estrutura física",
+        "Possui equipe com ao menos um médico e um enfermeiro"
+      ]
+    },
+    {
+      "numero": "44.2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "45",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "45.1",
+      "resposta": "Sim, utiliza Sistema Próprio"
+    },
+    {
+      "numero": "45.2",
+      "resposta": [
+        "Fornecer a posição de estoque, movimentação de entrada e saída, lote e validade",
+        "Permitir a rastreabilidade dos medicamentos dispensados aos pacientes",
+        "Gerenciar o processo de compras de itens de medicamentos, desde o planejamento até a entrega e o recebimento da nota fiscal",
+        "Gerenciar a reposição de itens de medicamentos por estabelecimento de saúde",
+        "Integrado à Base Nacional de Dados de Ações e Serviços da Assistência Farmacêutica (BNAFAR)"
+      ]
+    },
+    {
+      "numero": "46",
+      "resposta": "1"
+    },
+    {
+      "numero": "47",
+      "resposta": "298"
+    },
+    {
+      "numero": "48",
+      "resposta": "405 441 436,9200"
+    },
+    {
+      "numero": "49",
+      "resposta": "503 463 556,1200"
+    },
+    {
+      "numero": "50",
+      "resposta": "260 340,2200"
+    },
+    {
+      "numero": "51",
+      "resposta": "Não"
+    },
+    {
+      "numero": "52",
+      "resposta": "Jaqueline Flaviana de Santana"
+    },
+    {
+      "numero": "53",
+      "resposta": "Secretária Municipal de Saúde"
+    },
+    {
+      "numero": "54",
+      "resposta": "sms.gabinete@betim.mg.gov.br"
+    },
+    {
+      "numero": "55",
+      "resposta": "075.437.036-45"
+    }
+  ]
+}

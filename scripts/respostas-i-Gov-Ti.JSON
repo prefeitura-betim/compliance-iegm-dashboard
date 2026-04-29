@@ -1,0 +1,346 @@
+{
+  "submissao": {
+    "indicador": "i-Gov Nacional - 2025",
+    "numero_indicador": 76,
+    "id_submissao": "76865",
+    "municipio_ibge": "3106705",
+    "municipio_nome": "BETIM",
+    "data_inicio": "2025-06-17T09:16:12",
+    "data_termino": "2025-07-07T14:06:33",
+    "status": "Aguardando Validação",
+    "respondente": {
+      "nome": "MARCIO ANTONIO DE SOUZA",
+      "cargo": "DIRETOR EXECUTIVO",
+      "email": "TECNOLOGIA@BETIM.MG.GOV.BR",
+      "cpf": "052.128.786-90"
+    }
+  },
+  "respostas": [
+    {
+      "numero": "1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1.1",
+      "resposta": 41
+    },
+    {
+      "numero": "1.1.2",
+      "resposta": 4
+    },
+    {
+      "numero": "1.1.3",
+      "resposta": 21
+    },
+    {
+      "numero": "1.1.4",
+      "resposta": 1
+    },
+    {
+      "numero": "1.1.5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1.6",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1.6.1",
+      "resposta": [
+        "Infraestrutura e Redes",
+        "Desenvolvimento e Software",
+        "Análise de Dados",
+        "Gestão e Segurança"
+      ]
+    },
+    {
+      "numero": "1.1.7",
+      "resposta": "Há participação do pessoal de TI no processo de compra (especificação técnica, comissão de julgamento, recebimento do objeto)"
+    },
+    {
+      "numero": "1.1.7.1",
+      "resposta": [
+        "Elaboração do edital / especificação técnica",
+        "Comissão de julgamento",
+        "Recebimento do objeto"
+      ]
+    },
+    {
+      "numero": "1.1.7.2",
+      "resposta": "Sim, para a maior parte dos softwares"
+    },
+    {
+      "numero": "2",
+      "resposta": "SIM"
+    },
+    {
+      "numero": "2.1",
+      "resposta": "SIM, com metas acima de 02 anos"
+    },
+    {
+      "numero": "2.2",
+      "resposta": "https://www.betim.mg.gov.br/portal/diario-oficial/ver/3074"
+    },
+    {
+      "numero": "2.3",
+      "resposta": [
+        "Alocação de recursos orçamentários",
+        "Alocação de recursos humanos",
+        "Alocação de recursos materiais",
+        "Estratégia de execução indireta (terceirização)"
+      ]
+    },
+    {
+      "numero": "2.4",
+      "resposta": "18/06/2024"
+    },
+    {
+      "numero": "3",
+      "resposta": "Não"
+    },
+    {
+      "numero": "3.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.1.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.1.1.1",
+      "resposta": "Assinatura eletrônica onerosa"
+    },
+    {
+      "numero": "3.2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "3.3",
+      "resposta": "Não"
+    },
+    {
+      "numero": "3.4",
+      "resposta": "Não"
+    },
+    {
+      "numero": "3.5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.6",
+      "resposta": "Não"
+    },
+    {
+      "numero": "4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.1",
+      "resposta": "https://www.betim.mg.gov.br/arquivos/atos_21_20170529_284.pdf"
+    },
+    {
+      "numero": "5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "5.1",
+      "resposta": "https://www.betim.mg.gov.br/"
+    },
+    {
+      "numero": "5.2",
+      "resposta": "Sim, para todo o conteúdo do site"
+    },
+    {
+      "numero": "5.3",
+      "resposta": "Possibilita para a maior parte dos relatórios"
+    },
+    {
+      "numero": "5.4",
+      "resposta": "Não"
+    },
+    {
+      "numero": "5.5",
+      "resposta": "Sim, para todo o conteúdo do site"
+    },
+    {
+      "numero": "6",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "6.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "6.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "6.3",
+      "resposta": "Não"
+    },
+    {
+      "numero": "7",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.1",
+      "resposta": [
+        "Contabilidade",
+        "Gestão de tributos (arrecadação)",
+        "Dívida Ativa",
+        "Precatórios",
+        "Gestão patrimonial (bens e equipamentos)",
+        "Gestão de negócios (Business Intelligence)",
+        "Planejamento",
+        "Recursos humanos / Departamento pessoal",
+        "Almoxarifado",
+        "Controle de frotas",
+        "Controle Interno",
+        "Saúde",
+        "Ensino (educação)",
+        "Compras, licitações e contratos",
+        "Certidões e alvarás",
+        "Saneamento",
+        "Cemitérios"
+      ]
+    },
+    {
+      "numero": "7.2",
+      "resposta": [
+        "Gestão de tributos (arrecadação)",
+        "Dívida Ativa",
+        "Precatórios",
+        "Gestão patrimonial (bens e equipamentos)",
+        "Planejamento",
+        "Recursos humanos / Departamento pessoal",
+        "Almoxarifado",
+        "Controle de frotas",
+        "Controle Interno",
+        "Ensino (educação)",
+        "Compras, licitações e contratos",
+        "Certidões e alvarás",
+        "Saneamento",
+        "Cemitérios"
+      ]
+    },
+    {
+      "numero": "7.2.1",
+      "resposta": "Totalmente integrado (Inscrição / Atualização e Baixa)"
+    },
+    {
+      "numero": "7.2.2",
+      "resposta": "Totalmente integrado (Provisão e Baixa)"
+    },
+    {
+      "numero": "7.3",
+      "resposta": [
+        "Contabilidade",
+        "Gestão de tributos (arrecadação)",
+        "Dívida Ativa",
+        "Precatórios",
+        "Gestão patrimonial (bens e equipamentos)",
+        "Planejamento",
+        "Recursos humanos / Departamento pessoal",
+        "Almoxarifado",
+        "Controle de frotas",
+        "Controle Interno",
+        "Saúde",
+        "Ensino (educação)",
+        "Compras, licitações e contratos",
+        "Certidões e alvarás",
+        "Saneamento",
+        "Cemitérios"
+      ]
+    },
+    {
+      "numero": "7.4",
+      "resposta": [
+        "Contabilidade",
+        "Gestão de tributos (arrecadação)",
+        "Dívida Ativa",
+        "Precatórios",
+        "Gestão patrimonial (bens e equipamentos)",
+        "Planejamento",
+        "Recursos humanos / Departamento pessoal",
+        "Almoxarifado",
+        "Controle de frotas",
+        "Controle Interno",
+        "Saúde",
+        "Ensino (educação)",
+        "Compras, licitações e contratos",
+        "Certidões e alvarás",
+        "Saneamento",
+        "Cemitérios"
+      ]
+    },
+    {
+      "numero": "8",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "8.1",
+      "resposta": [
+        "Alvarás/licenças de funcionamento",
+        "Certidões",
+        "Licenças / autorizações",
+        "Ouvidoria",
+        "Consulta de débitos municipais",
+        "Emissão de guias/boletos dos débitos municipais",
+        "Inscrições em oficinas, cursos, eventos e vagas",
+        "Nota fiscal eletrônica",
+        "Canal de denúncias",
+        "Pesquisa de satisfação em relação aos serviços prestados pela Prefeitura",
+        "Consulta a status de protocolos de todos os atendimentos dos serviços assinalados acima"
+      ]
+    },
+    {
+      "numero": "8.2",
+      "resposta": [
+        "Telefone",
+        "Site da Prefeitura",
+        "Redes sociais",
+        "Correio eletrônico (e-mail)"
+      ]
+    },
+    {
+      "numero": "9",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "9.1",
+      "resposta": "Apenas regulamentou os Contratos terceirizados"
+    },
+    {
+      "numero": "9.2",
+      "resposta": "A maior parte dos contratos vigentes"
+    },
+    {
+      "numero": "10",
+      "resposta": "Não"
+    },
+    {
+      "numero": "11",
+      "resposta": "Não"
+    },
+    {
+      "numero": "12",
+      "resposta": "MARCIO ANTONIO DE SOUZA"
+    },
+    {
+      "numero": "13",
+      "resposta": "DIRETOR EXECUTIVO"
+    },
+    {
+      "numero": "14",
+      "resposta": "TECNOLOGIA@BETIM.MG.GOV.BR"
+    },
+    {
+      "numero": "15",
+      "resposta": "052.128.786-90"
+    }
+  ]
+}

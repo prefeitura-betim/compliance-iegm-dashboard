@@ -1,0 +1,290 @@
+{
+  "submissao": {
+    "indicador": "i-Cidade Nacional - 2025",
+    "numero_indicador": 78,
+    "id_submissao": "76863",
+    "municipio_ibge": "3106705",
+    "municipio_nome": "BETIM",
+    "data_inicio": "2025-06-17T09:13:46",
+    "data_termino": "2025-07-08T09:48:22",
+    "status": "Aguardando Validação",
+    "respondente": {
+      "nome": "Vitor Augusto Meireles de Souza / Patrícia Campos Araújo Ramalho",
+      "cargo": "Assessor IX - Defesa Civil / Assessora Técnica Especial Mobilidade Urbana",
+      "email": "vitor.meireles@betim.mg.gov.br/patricia.ramalho@betim.mg.gov.br",
+      "cpf": "119.558.106-80"
+    }
+  },
+  "respostas": [
+    {
+      "numero": "1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "1.1",
+      "resposta": "https://legislativo.camarabetim.mg.gov.br/NormaJuridica/ShowNormaJuridica/29820"
+    },
+    {
+      "numero": "1.2",
+      "resposta": "Secretaria Municipal de Segurança Pública"
+    },
+    {
+      "numero": "1.3",
+      "resposta": "Sim, inclusive com a participação de entidades privadas e da comunidade"
+    },
+    {
+      "numero": "2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "2.1",
+      "resposta": "16/09/2024"
+    },
+    {
+      "numero": "2.2",
+      "resposta": [
+        "Para escolas",
+        "Para munícipes ou empresas",
+        "Para outras secretarias / entidades municipais"
+      ]
+    },
+    {
+      "numero": "3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "3.1",
+      "resposta": [
+        "Workshop/Palestra",
+        "Reunião",
+        "Discussão na Câmara Municipal",
+        "Treinamentos"
+      ]
+    },
+    {
+      "numero": "3.1.1",
+      "resposta": "14/10/2024"
+    },
+    {
+      "numero": "4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "4.1",
+      "resposta": [
+        "Riscos Geológicos",
+        "Riscos Hidrológicos"
+      ]
+    },
+    {
+      "numero": "4.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "5",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "5.1",
+      "resposta": [
+        "Incêndios (urbanos e florestais)",
+        "Outros"
+      ]
+    },
+    {
+      "numero": "5.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "5.2.1",
+      "resposta": "Sim, integralmente"
+    },
+    {
+      "numero": "5.2.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "5.2.2.1",
+      "resposta": [
+        "Demolição das ocupações",
+        "Interdição do local e remoção das famílias"
+      ]
+    },
+    {
+      "numero": "5.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "6",
+      "resposta": "Sim, de acordo com a demanda"
+    },
+    {
+      "numero": "7",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.1",
+      "resposta": "Existe apenas um PLANCON que abrange todas as ameaças"
+    },
+    {
+      "numero": "7.2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "7.3",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.3.1",
+      "resposta": [
+        "Anúncio por rádio/Televisão",
+        "Aviso à comunidade por telefone / Aplicativo de mensagens",
+        "Aviso aos membros do Nupdec"
+      ]
+    },
+    {
+      "numero": "7.4",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "7.4.1",
+      "resposta": [
+        "Carros de emergência equipados de sirenes",
+        "Aviso aos membros do Nupdec",
+        "Aviso à comunidade por telefone / Aplicativo de mensagens",
+        "Uso da imprensa (TV, rádio, internet)"
+      ]
+    },
+    {
+      "numero": "7.5",
+      "resposta": "Sim, atualizado"
+    },
+    {
+      "numero": "7.6",
+      "resposta": "Sim, atualizado"
+    },
+    {
+      "numero": "8",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "8.1",
+      "resposta": [
+        "Telefone",
+        "Site da Prefeitura",
+        "Redes sociais",
+        "Outros"
+      ]
+    },
+    {
+      "numero": "8.1.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "8.1.1.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "8.2",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "9",
+      "resposta": "Sim, na maior parte das escolas e centros de saúde"
+    },
+    {
+      "numero": "10",
+      "resposta": "Não"
+    },
+    {
+      "numero": "11",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "11.1",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "11.1.1",
+      "resposta": "Todas as metas foram atingidas"
+    },
+    {
+      "numero": "11.2",
+      "resposta": "Não"
+    },
+    {
+      "numero": "12",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "12.1",
+      "resposta": "Não"
+    },
+    {
+      "numero": "12.2",
+      "resposta": "xyz"
+    },
+    {
+      "numero": "12.3",
+      "resposta": "Não"
+    },
+    {
+      "numero": "13",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "13.1",
+      "resposta": [
+        "Instalação/manutenção de ciclovias ou ciclofaixas"
+      ]
+    },
+    {
+      "numero": "13.1.1",
+      "resposta": "Não"
+    },
+    {
+      "numero": "14",
+      "resposta": "Sim"
+    },
+    {
+      "numero": "14.1",
+      "resposta": "Sim - Na maior parte dos calçamentos públicos"
+    },
+    {
+      "numero": "14.2",
+      "resposta": [
+        "Sinalização tátil em pisos",
+        "Rampas de acesso",
+        "Escadas com corrimão"
+      ]
+    },
+    {
+      "numero": "15",
+      "resposta": "Sim, parcialmente - Em parte das vias municipais"
+    },
+    {
+      "numero": "16",
+      "resposta": "Sim, parcialmente - Em parte das vias municipais"
+    },
+    {
+      "numero": "17",
+      "resposta": "Não"
+    },
+    {
+      "numero": "18",
+      "resposta": "Vitor Augusto Meireles de Souza / Patrícia Campos Araújo Ramalho"
+    },
+    {
+      "numero": "19",
+      "resposta": "Assessor IX - Defesa Civil / Assessora Técnica Especial Mobilidade Urbana"
+    },
+    {
+      "numero": "20",
+      "resposta": "vitor.meireles@betim.mg.gov.br/patricia.ramalho@betim.mg.gov.br"
+    },
+    {
+      "numero": "21",
+      "resposta": "119.558.106-80"
+    }
+  ]
+}

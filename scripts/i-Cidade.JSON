@@ -1,0 +1,747 @@
+{
+  "indicador": "i-Cidade",
+  "questoes": {
+    "0": {
+      "numero": "1",
+      "codigo_questao": "M06Q00100",
+      "enunciado": "Foi criada a Coordenadoria Municipal de Proteção e Defesa Civil-COMPDEC ou órgão similar responsável pela execução, coordenação e mobilização de todas as ações de defesa civil no município?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 40 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "1": {
+      "numero": "1.1",
+      "codigo_questao": "M06Q00111R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) do instrumento normativo que criou a COMPDEC ou órgão similar:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "2": {
+      "numero": "1.2",
+      "codigo_questao": "M06Q00142",
+      "enunciado": "A COMPDEC ou órgão similar está associada ou subordinada a qual secretaria/diretoria?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Controladoria", "valor": 0 },
+        { "texto": "Secretaria Municipal de Segurança Pública", "valor": 0 },
+        { "texto": "Gabinete do Prefeito", "valor": 5 },
+        { "texto": "Outra", "valor": 0 }
+      ]
+    },
+    "3": {
+      "numero": "1.3",
+      "codigo_questao": "M06Q25300",
+      "enunciado": "Os órgãos e entidades da administração pública municipal atuam de forma sistêmica, articulados com a COMPDEC, nas ações de prevenção, mitigação, preparação, resposta e recuperação de acordo com a Política Nacional de Proteção e Defesa Civil - PNPDEC?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, inclusive com a participação de entidades privadas e da comunidade", "valor": 50 },
+        { "texto": "Sim, com participação de entidades privadas", "valor": 20 },
+        { "texto": "Sim, com participação da comunidade", "valor": 20 },
+        { "texto": "Sim, apenas com participação dos representantes da administração municipal", "valor": 10 },
+        { "texto": "Não atuam de forma sistêmica", "valor": 0 }
+      ]
+    },
+    "4": {
+      "numero": "2",
+      "codigo_questao": "M06Q00800",
+      "enunciado": "Sobre treinamento e capacitação sobre Proteção e Defesa Civil, a Prefeitura capacita seus agentes para ações municipais de Defesa Civil?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 20 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "5": {
+      "numero": "2.1",
+      "codigo_questao": "M06Q00820R00100",
+      "enunciado": "Qual a data da última capacitação dos agentes municipais para ações de Defesa Civil?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "6": {
+      "numero": "2.2",
+      "codigo_questao": "M06Q00821",
+      "enunciado": "A Prefeitura Municipal ofereceu cursos/treinamento sobre Proteção e Defesa Civil para qual público?",
+      "peso": 1,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Não ofereceu nenhum curso/treinamento no ano", "valor": 0 },
+        { "texto": "Para escolas", "valor": 5 },
+        { "texto": "Para munícipes ou empresas", "valor": 3 },
+        { "texto": "Para outras secretarias / entidades municipais", "valor": 2 }
+      ]
+    },
+    "7": {
+      "numero": "3",
+      "codigo_questao": "M06Q01900",
+      "enunciado": "O Município realiza ações para estimular a participação de entidades privadas, associações de voluntários, clubes de serviços, organizações não governamentais e associações de classe e comunitárias?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 10 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "8": {
+      "numero": "3.1",
+      "codigo_questao": "M06Q01910",
+      "enunciado": "Assinale quais ações foram realizadas:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Workshop/Palestra", "valor": 0 },
+        { "texto": "Reunião", "valor": 0 },
+        { "texto": "Conferência", "valor": 0 },
+        { "texto": "Congresso", "valor": 0 },
+        { "texto": "Discussão na Câmara Municipal", "valor": 0 },
+        { "texto": "Treinamentos", "valor": 0 },
+        { "texto": "Outros", "valor": 0 }
+      ]
+    },
+    "9": {
+      "numero": "3.1.1",
+      "codigo_questao": "M06Q01912R00100",
+      "enunciado": "Qual a data do último treinamento de associações de voluntários?",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "10": {
+      "numero": "4",
+      "codigo_questao": "M06Q25400",
+      "enunciado": "O Município recebeu a Carta Geotécnica de Suscetibilidade, Aptidão à Urbanização e Risco?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "11": {
+      "numero": "4.1",
+      "codigo_questao": "M06Q01521",
+      "enunciado": "Assinale quais os tipos de ameaças potenciais identificadas na Carta Geotécnica:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Riscos Climatológicos", "valor": 0 },
+        { "texto": "Riscos Tecnológicos", "valor": 0 },
+        { "texto": "Riscos Geológicos", "valor": 0 },
+        { "texto": "Riscos Hidrológicos", "valor": 0 },
+        { "texto": "Riscos Meteorológicos", "valor": 0 },
+        { "texto": "Riscos Biológicos", "valor": 0 }
+      ]
+    },
+    "12": {
+      "numero": "4.2",
+      "codigo_questao": "M06Q25500",
+      "enunciado": "A Carta Geotécnica de Suscetibilidade, Aptidão à Urbanização e Risco consta no Plano Diretor?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -50 },
+        { "texto": "Não se aplica o Plano Diretor para o município", "valor": 0 }
+      ]
+    },
+    "13": {
+      "numero": "5",
+      "codigo_questao": "M06Q01500",
+      "enunciado": "O Município realizou, por conta própria, o mapeamento e identificação das principais ameaças existentes em seu território?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 200 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "14": {
+      "numero": "5.1",
+      "codigo_questao": "M06Q01553",
+      "enunciado": "Assinale as principais ameaças identificadas:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Incêndios (urbanos e florestais)", "valor": 0 },
+        { "texto": "Infestações e Pragas", "valor": 0 },
+        { "texto": "Ameaças radioativas", "valor": 0 },
+        { "texto": "Outros", "valor": 0 },
+        { "texto": "Ondas de calor ou ondas de frio", "valor": 0 },
+        { "texto": "Estiagem", "valor": 0 },
+        { "texto": "Epidemias", "valor": 0 }
+      ]
+    },
+    "15": {
+      "numero": "5.2",
+      "codigo_questao": null,
+      "enunciado": "Durante o mapeamento e identificação das ameaças, foram apontados Deslizamentos e/ou Inundações?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "16": {
+      "numero": "5.2.1",
+      "codigo_questao": "M06Q01530",
+      "enunciado": "As secretarias setoriais realizaram a fiscalização das áreas de risco?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Não houve fiscalização", "valor": -100 },
+        { "texto": "Sim, parcialmente", "valor": 0 },
+        { "texto": "Sim, integralmente", "valor": 0 }
+      ]
+    },
+    "17": {
+      "numero": "5.2.2",
+      "codigo_questao": "M06Q01540",
+      "enunciado": "O município possui áreas de risco com possibilidade de ocupação/invasão?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "18": {
+      "numero": "5.2.2.1",
+      "codigo_questao": "M06Q01542",
+      "enunciado": "Assinale os mecanismos para vedar novas ocupações nas áreas de riscos:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Demolição das ocupações", "valor": 0 },
+        { "texto": "Interdição do local e remoção das famílias", "valor": 0 },
+        { "texto": "Notificação dos infratores", "valor": 0 },
+        { "texto": "Monitoramento (fiscalização)", "valor": 0 },
+        { "texto": "Outros", "valor": 0 },
+        { "texto": "Aplicação de sanções monetárias (multas)", "valor": 0 }
+      ]
+    },
+    "19": {
+      "numero": "5.3",
+      "codigo_questao": "M06Q01550",
+      "enunciado": "A população foi informada sobre todas as ameaças identificadas pelo município?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -50 },
+        { "texto": "Parcialmente", "valor": 0 }
+      ]
+    },
+    "20": {
+      "numero": "6",
+      "codigo_questao": "M06Q00500",
+      "enunciado": "A Secretaria responsável realizou vistorias em edificações vulneráveis com o objetivo de identificar a necessidade de intervenção preventiva nos imóveis?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, de acordo com a demanda", "valor": 0 },
+        { "texto": "Sim, de acordo com um cronograma preestabelecido", "valor": 0 },
+        { "texto": "Não foram vistoriadas", "valor": -50 },
+        { "texto": "Não houve casos de edificações vulneráveis no Município", "valor": 0 }
+      ]
+    },
+    "21": {
+      "numero": "7",
+      "codigo_questao": "M06Q00600",
+      "enunciado": "O Município possui Plano de Contingência Municipal - PLANCON de Defesa Civil?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 50 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "22": {
+      "numero": "7.1",
+      "codigo_questao": "M06Q00661",
+      "enunciado": "Foi elaborado um PLANCON específico para cada ameaça identificada?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, cada ameaça mapeada possui um PLANCON diferente", "valor": 5 },
+        { "texto": "Existe apenas um PLANCON que abrange todas as ameaças", "valor": 0 },
+        { "texto": "Sim, parte das ameaças possuem PLANCON diferentes", "valor": 3 }
+      ]
+    },
+    "23": {
+      "numero": "7.2",
+      "codigo_questao": "M06Q00620",
+      "enunciado": "São realizados regularmente exercícios simulados para as contingências previstas no PLANCON?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 80 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "24": {
+      "numero": "7.3",
+      "codigo_questao": "M06Q01600",
+      "enunciado": "O Município utiliza sistema de alerta para desastres?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 50 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "25": {
+      "numero": "7.3.1",
+      "codigo_questao": "M06Q01620",
+      "enunciado": "Assinale os tipos de sistemas de alerta utilizados pelo Município:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Alerta via SMS", "valor": 0 },
+        { "texto": "Anúncio por rádio/Televisão", "valor": 0 },
+        { "texto": "Placas de identificação de área de risco", "valor": 0 },
+        { "texto": "Aviso à comunidade por telefone / Aplicativo de mensagens", "valor": 0 },
+        { "texto": "Aviso à comunidade por e-mail", "valor": 0 },
+        { "texto": "Aviso aos membros do Nupdec", "valor": 0 },
+        { "texto": "Outros", "valor": 0 }
+      ]
+    },
+    "26": {
+      "numero": "7.4",
+      "codigo_questao": "M06Q00630",
+      "enunciado": "O Município dispõe de sinal, dispositivo ou sistema de alarme para desastres?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 50 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "27": {
+      "numero": "7.4.1",
+      "codigo_questao": "M06Q00631",
+      "enunciado": "Assinale os tipos de sinal, dispositivo ou sistema de alarme utilizado pelo Município:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Sinal sonoro (sirene)", "valor": 0 },
+        { "texto": "Sinal luminoso", "valor": 0 },
+        { "texto": "Carros de emergência equipados de sirenes", "valor": 0 },
+        { "texto": "Carros de emergência com alto-falantes", "valor": 0 },
+        { "texto": "Aviso aos membros do Nupdec", "valor": 0 },
+        { "texto": "Aviso à comunidade por telefone / Aplicativo de mensagens", "valor": 0 },
+        { "texto": "Uso da imprensa (TV, rádio, internet)", "valor": 0 },
+        { "texto": "Outros", "valor": 0 }
+      ]
+    },
+    "28": {
+      "numero": "7.5",
+      "codigo_questao": "M06Q00640",
+      "enunciado": "Possui cadastro dos locais para abrigo à população em situação de desastre junto à Coordenadoria Estadual de Proteção e Defesa Civil ou orgão similar?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, atualizado", "valor": 10 },
+        { "texto": "Sim, mas não está atualizado", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "29": {
+      "numero": "7.6",
+      "codigo_questao": "M06Q00650",
+      "enunciado": "O Município possui cadastro da lista de fornecedores para coleta e distribuição de suprimentos de ajuda humanitária para o caso de desastre?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, atualizado", "valor": 10 },
+        { "texto": "Sim, mas não está atualizado", "valor": 3 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "30": {
+      "numero": "8",
+      "codigo_questao": "M06Q02000",
+      "enunciado": "O Município possui um canal de atendimento de emergência à população para registro de ocorrências de desastres?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 50 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "31": {
+      "numero": "8.1",
+      "codigo_questao": "M06Q02010",
+      "enunciado": "Assinale os canais que possui:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Telefone", "valor": 0 },
+        { "texto": "Aplicativo de mensagens", "valor": 0 },
+        { "texto": "Correio eletrônico (e-mail)", "valor": 0 },
+        { "texto": "Aplicativo da Prefeitura", "valor": 0 },
+        { "texto": "Site da Prefeitura", "valor": 0 },
+        { "texto": "Redes sociais", "valor": 0 },
+        { "texto": "Outros", "valor": 0 }
+      ]
+    },
+    "32": {
+      "numero": "8.1.1",
+      "codigo_questao": "M06Q02011",
+      "enunciado": "Sobre o número de telefone de emergência, utiliza o número 199 da Defesa Civil?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "33": {
+      "numero": "8.1.1.1",
+      "codigo_questao": "M06Q02013",
+      "enunciado": "O telefone 199 tem atendimento 24 horas por dia?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 20 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "34": {
+      "numero": "8.2",
+      "codigo_questao": "M06Q00400",
+      "enunciado": "O Município registra as ocorrências de Defesa Civil de forma eletrônica?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 50 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "35": {
+      "numero": "9",
+      "codigo_questao": "M06Q01000",
+      "enunciado": "O Município realizou um estudo de avaliação da estrutura de todas as escolas e unidades de saúde para garantir que, em caso de desastre, esses locais estejam preparados para abrigar e atender a população afetada?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, em todas as escolas e centros de saúde", "valor": 100 },
+        { "texto": "Sim, na maior parte das escolas e centros de saúde", "valor": 50 },
+        { "texto": "Sim, na menor parte das escolas e centros de saúde", "valor": 20 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "36": {
+      "numero": "10",
+      "codigo_questao": "M06Q00900",
+      "enunciado": "O Município elaborou seu Plano de Mobilidade Urbana?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -100 },
+        { "texto": "Não se aplica", "valor": 0 }
+      ]
+    },
+    "37": {
+      "numero": "11",
+      "codigo_questao": "M06Q02100",
+      "enunciado": "No Município existe transporte público coletivo?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "38": {
+      "numero": "11.1",
+      "codigo_questao": "M06Q02110",
+      "enunciado": "Foram estabelecidas metas de qualidade e desempenho para o transporte público coletivo municipal?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -20 }
+      ]
+    },
+    "39": {
+      "numero": "11.1.1",
+      "codigo_questao": "M06Q02111",
+      "enunciado": "As metas de qualidade e desempenho do transporte público coletivo estão sendo atingidas?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Todas as metas foram atingidas", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "40": {
+      "numero": "11.1.1.1",
+      "codigo_questao": null,
+      "enunciado": "Detalhe sobre as metas não atingidas:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "A maior parte das metas foram atingidas", "valor": -5 },
+        { "texto": "A menor parte das metas foram atingidas", "valor": -10 },
+        { "texto": "As metas não foram atingidas", "valor": -20 }
+      ]
+    },
+    "41": {
+      "numero": "11.1.1.2",
+      "codigo_questao": "M06Q02112",
+      "enunciado": "Foi aplicada penalidade pela meta não cumprida?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -50 }
+      ]
+    },
+    "42": {
+      "numero": "11.2",
+      "codigo_questao": "M06Q02120",
+      "enunciado": "Foi realizada pesquisa de satisfação dos usuários do transporte público coletivo em 2024?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -20 }
+      ]
+    },
+    "43": {
+      "numero": "11.2.1",
+      "codigo_questao": "M06Q02121",
+      "enunciado": "Foram realizadas ações com base nesta pesquisa?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -20 }
+      ]
+    },
+    "44": {
+      "numero": "12",
+      "codigo_questao": "M06Q25600",
+      "enunciado": "O Município possui transporte remunerado privado individual de passageiros (táxi por aplicativos)?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "45": {
+      "numero": "12.1",
+      "codigo_questao": "M06Q02200",
+      "enunciado": "O Município regulamentou o transporte remunerado privado individual de passageiros (táxi por aplicativos)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -50 }
+      ]
+    },
+    "46": {
+      "numero": "12.2",
+      "codigo_questao": "M06Q02211R00100",
+      "enunciado": "Informe a página eletrônica (link na internet) do instrumento normativo de transporte remunerado privado individual de passageiros:",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "47": {
+      "numero": "12.3",
+      "codigo_questao": "M06Q02220",
+      "enunciado": "O Município fiscaliza regularmente o transporte remunerado privado individual de passageiros (táxi por aplicativo)?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -50 }
+      ]
+    },
+    "48": {
+      "numero": "12.3.1",
+      "codigo_questao": "M06Q02221",
+      "enunciado": "Informe a periodicidade:",
+      "peso": 0,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Diariamente", "valor": 0 },
+        { "texto": "Semanalmente", "valor": 0 },
+        { "texto": "Mensalmente", "valor": 0 },
+        { "texto": "Anualmente", "valor": 0 }
+      ]
+    },
+    "49": {
+      "numero": "13",
+      "codigo_questao": "M06Q02500",
+      "enunciado": "Foram realizadas ações para estimular a adoção/uso dos meios de transporte não motorizados em 2024?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "50": {
+      "numero": "13.1",
+      "codigo_questao": "M06Q02510",
+      "enunciado": "Assinale as ações realizadas para estimular a adoção/uso dos meios de transporte não motorizados em 2024:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Instalação/manutenção de ciclovias ou ciclofaixas", "valor": 0 },
+        { "texto": "Instalação/manutenção de pontos de locação de bicicletas", "valor": 0 },
+        { "texto": "Instalação/manutenção de pontos de locação de patinetes", "valor": 0 },
+        { "texto": "Outras", "valor": 0 }
+      ]
+    },
+    "51": {
+      "numero": "13.1.1",
+      "codigo_questao": "M06Q02310",
+      "enunciado": "Possui um cronograma de manutenção da infraestrutura das ciclovias ou ciclofaixas?",
+      "peso": 1,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": -20 }
+      ]
+    },
+    "52": {
+      "numero": "13.1.1.1",
+      "codigo_questao": "M06Q02311",
+      "enunciado": "As manutenções preventivas da infraestrutura das ciclovias ou ciclofaixas foram realizadas dentro do prazo?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, para todos os trechos", "valor": 0 },
+        { "texto": "Sim, para a maior parte dos trechos", "valor": -5 },
+        { "texto": "Sim, para a menor parte dos trechos", "valor": -10 },
+        { "texto": "Não foram realizadas dentro do prazo", "valor": -15 },
+        { "texto": "Não foram realizadas manutenções preventivas no exercício", "valor": -20 }
+      ]
+    },
+    "53": {
+      "numero": "14",
+      "codigo_questao": "M06Q02400",
+      "enunciado": "O Município adequou os calçamentos públicos para acessibilidade das pessoas com deficiência e restrição de mobilidade?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não possui acessibilidade em calçamentos públicos", "valor": -50 }
+      ]
+    },
+    "54": {
+      "numero": "14.1",
+      "codigo_questao": "M06Q02400_SIM",
+      "enunciado": "Como o Município possui acessibilidade para pessoas com deficiência e restrição de mobilidade, indique em relação as calçadas:",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim - Em todos os calçamentos públicos", "valor": 0 },
+        { "texto": "Sim - Na maior parte dos calçamentos públicos", "valor": 0 },
+        { "texto": "Sim - Na menor parte dos calçamentos públicos", "valor": -10 }
+      ]
+    },
+    "55": {
+      "numero": "14.2",
+      "codigo_questao": "M06Q02410",
+      "enunciado": "Informe os recursos de acessibilidade oferecidos pela Prefeitura:",
+      "peso": 0,
+      "tipo_resposta": "checkbox",
+      "opcoes": [
+        { "texto": "Calçadas com dimensões mínimas para a circulação", "valor": 0 },
+        { "texto": "Sinalização tátil em pisos", "valor": 0 },
+        { "texto": "Rampas de acesso", "valor": 0 },
+        { "texto": "Escadas com corrimão", "valor": 0 }
+      ]
+    },
+    "56": {
+      "numero": "15",
+      "codigo_questao": "M06Q01100",
+      "enunciado": "As vias públicas pavimentadas estão devidamente sinalizadas (vertical e horizontalmente) de forma a garantir as condições adequadas de segurança na circulação?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Não estão sinalizadas", "valor": 0 },
+        { "texto": "Sim, integralmente - Todas as vias públicas municipais", "valor": 50 },
+        { "texto": "Sim, parcialmente - Em parte das vias municipais", "valor": 10 }
+      ]
+    },
+    "57": {
+      "numero": "16",
+      "codigo_questao": "M06Q01200",
+      "enunciado": "Há manutenção adequada das vias públicas no Município?",
+      "peso": 1,
+      "tipo_resposta": "radio",
+      "opcoes": [
+        { "texto": "Sim, integralmente - Todas as vias públicas municipais", "valor": 50 },
+        { "texto": "Não estão adequadas", "valor": 0 },
+        { "texto": "Sim, parcialmente Em parte das vias municipais", "valor": 10 }
+      ]
+    },
+    "58": {
+      "numero": "17",
+      "codigo_questao": "M06Q01700",
+      "enunciado": "Gostaria de registrar suas impressões, comentários e sugestões a respeito do presente questionário?",
+      "peso": 0,
+      "tipo_resposta": "boolean",
+      "opcoes": [
+        { "texto": "Sim", "valor": 0 },
+        { "texto": "Não", "valor": 0 }
+      ]
+    },
+    "59": {
+      "numero": "17.1",
+      "codigo_questao": "M06Q01710R00100",
+      "enunciado": "Utilize o espaço abaixo para registrar suas impressões, comentários e sugestões a respeito do presente questionário.",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "60": {
+      "numero": "18",
+      "codigo_questao": null,
+      "enunciado": "Nome Completo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "61": {
+      "numero": "19",
+      "codigo_questao": null,
+      "enunciado": "Cargo",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "62": {
+      "numero": "20",
+      "codigo_questao": null,
+      "enunciado": "E-mail",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    },
+    "63": {
+      "numero": "21",
+      "codigo_questao": null,
+      "enunciado": "CPF",
+      "peso": 0,
+      "tipo_resposta": "text",
+      "opcoes": null
+    }
+  }
+}

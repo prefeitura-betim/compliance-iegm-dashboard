@@ -1,0 +1,241 @@
+-- Migration 0007: i-Cidade — tipos, opções com valores e respostas de referência (Betim 2025)
+-- Fonte: scripts/i-Cidade.JSON + scripts/respostas-i-Cidade.JSON
+
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":40},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q00100';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q00100';
+
+UPDATE questoes SET resposta_ref = 'https://legislativo.camarabetim.mg.gov.br/NormaJuridica/ShowNormaJuridica/29820' WHERE chave_questao = 'M06Q00111R00100';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Controladoria","valor":0},{"texto":"Secretaria Municipal de Segurança Pública","valor":0},{"texto":"Gabinete do Prefeito","valor":5},{"texto":"Outra","valor":0}]' WHERE chave_questao = 'M06Q00142';
+
+UPDATE questoes SET resposta_ref = 'Secretaria Municipal de Segurança Pública' WHERE chave_questao = 'M06Q00142';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim, inclusive com a participação de entidades privadas e da comunidade","valor":50},{"texto":"Sim, com participação de entidades privadas","valor":20},{"texto":"Sim, com participação da comunidade","valor":20},{"texto":"Sim, apenas com participação dos representantes da administração municipal","valor":10},{"texto":"Não atuam de forma sistêmica","valor":0}]' WHERE chave_questao = 'M06Q25300';
+
+UPDATE questoes SET resposta_ref = 'Sim, inclusive com a participação de entidades privadas e da comunidade' WHERE chave_questao = 'M06Q25300';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":20},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q00800';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q00800';
+
+UPDATE questoes SET resposta_ref = '16/09/2024' WHERE chave_questao = 'M06Q00820R00100';
+
+UPDATE questoes SET tipo = 'multipla_escolha', opcoes = '[{"texto":"Não ofereceu nenhum curso/treinamento no ano","valor":0},{"texto":"Para escolas","valor":5},{"texto":"Para munícipes ou empresas","valor":3},{"texto":"Para outras secretarias / entidades municipais","valor":2}]' WHERE chave_questao = 'M06Q00821';
+
+UPDATE questoes SET resposta_ref = '["Para escolas","Para munícipes ou empresas","Para outras secretarias / entidades municipais"]' WHERE chave_questao = 'M06Q00821';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":10},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q01900';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q01900';
+
+UPDATE questoes SET tipo = 'multipla_escolha', opcoes = '[{"texto":"Workshop/Palestra","valor":0},{"texto":"Reunião","valor":0},{"texto":"Conferência","valor":0},{"texto":"Congresso","valor":0},{"texto":"Discussão na Câmara Municipal","valor":0},{"texto":"Treinamentos","valor":0},{"texto":"Outros","valor":0}]' WHERE chave_questao = 'M06Q01910';
+
+UPDATE questoes SET resposta_ref = '["Workshop/Palestra","Reunião","Discussão na Câmara Municipal","Treinamentos"]' WHERE chave_questao = 'M06Q01910';
+
+UPDATE questoes SET resposta_ref = '14/10/2024' WHERE chave_questao = 'M06Q01912R00100';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q25400';
+
+UPDATE questoes SET tipo = 'multipla_escolha', opcoes = '[{"texto":"Riscos Climatológicos","valor":0},{"texto":"Riscos Tecnológicos","valor":0},{"texto":"Riscos Geológicos","valor":0},{"texto":"Riscos Hidrológicos","valor":0},{"texto":"Riscos Meteorológicos","valor":0},{"texto":"Riscos Biológicos","valor":0}]' WHERE chave_questao = 'M06Q01521';
+
+UPDATE questoes SET resposta_ref = '["Riscos Geológicos","Riscos Hidrológicos"]' WHERE chave_questao = 'M06Q01521';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não","valor":-50},{"texto":"Não se aplica o Plano Diretor para o município","valor":0}]' WHERE chave_questao = 'M06Q25500';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q25500';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":200},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q01500';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q01500';
+
+UPDATE questoes SET tipo = 'multipla_escolha', opcoes = '[{"texto":"Incêndios (urbanos e florestais)","valor":0},{"texto":"Infestações e Pragas","valor":0},{"texto":"Ameaças radioativas","valor":0},{"texto":"Outros","valor":0},{"texto":"Ondas de calor ou ondas de frio","valor":0},{"texto":"Estiagem","valor":0},{"texto":"Epidemias","valor":0}]' WHERE chave_questao = 'M06Q01553';
+
+UPDATE questoes SET resposta_ref = '["Incêndios (urbanos e florestais)","Outros"]' WHERE chave_questao = 'M06Q01553';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE texto LIKE 'Durante o mapeamento e identificação das ameaças, foram apon%';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Não houve fiscalização","valor":-100},{"texto":"Sim, parcialmente","valor":0},{"texto":"Sim, integralmente","valor":0}]' WHERE chave_questao = 'M06Q01530';
+
+UPDATE questoes SET resposta_ref = 'Sim, integralmente' WHERE chave_questao = 'M06Q01530';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q01540';
+
+UPDATE questoes SET tipo = 'multipla_escolha', opcoes = '[{"texto":"Demolição das ocupações","valor":0},{"texto":"Interdição do local e remoção das famílias","valor":0},{"texto":"Notificação dos infratores","valor":0},{"texto":"Monitoramento (fiscalização)","valor":0},{"texto":"Outros","valor":0},{"texto":"Aplicação de sanções monetárias (multas)","valor":0}]' WHERE chave_questao = 'M06Q01542';
+
+UPDATE questoes SET resposta_ref = '["Demolição das ocupações","Interdição do local e remoção das famílias"]' WHERE chave_questao = 'M06Q01542';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não","valor":-50},{"texto":"Parcialmente","valor":0}]' WHERE chave_questao = 'M06Q01550';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q01550';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim, de acordo com a demanda","valor":0},{"texto":"Sim, de acordo com um cronograma preestabelecido","valor":0},{"texto":"Não foram vistoriadas","valor":-50},{"texto":"Não houve casos de edificações vulneráveis no Município","valor":0}]' WHERE chave_questao = 'M06Q00500';
+
+UPDATE questoes SET resposta_ref = 'Sim, de acordo com a demanda' WHERE chave_questao = 'M06Q00500';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":50},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q00600';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q00600';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim, cada ameaça mapeada possui um PLANCON diferente","valor":5},{"texto":"Existe apenas um PLANCON que abrange todas as ameaças","valor":0},{"texto":"Sim, parte das ameaças possuem PLANCON diferentes","valor":3}]' WHERE chave_questao = 'M06Q00661';
+
+UPDATE questoes SET resposta_ref = 'Existe apenas um PLANCON que abrange todas as ameaças' WHERE chave_questao = 'M06Q00661';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":80},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q00620';
+
+UPDATE questoes SET resposta_ref = 'Não' WHERE chave_questao = 'M06Q00620';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":50},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q01600';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q01600';
+
+UPDATE questoes SET tipo = 'multipla_escolha', opcoes = '[{"texto":"Alerta via SMS","valor":0},{"texto":"Anúncio por rádio/Televisão","valor":0},{"texto":"Placas de identificação de área de risco","valor":0},{"texto":"Aviso à comunidade por telefone / Aplicativo de mensagens","valor":0},{"texto":"Aviso à comunidade por e-mail","valor":0},{"texto":"Aviso aos membros do Nupdec","valor":0},{"texto":"Outros","valor":0}]' WHERE chave_questao = 'M06Q01620';
+
+UPDATE questoes SET resposta_ref = '["Anúncio por rádio/Televisão","Aviso à comunidade por telefone / Aplicativo de mensagens","Aviso aos membros do Nupdec"]' WHERE chave_questao = 'M06Q01620';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":50},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q00630';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q00630';
+
+UPDATE questoes SET tipo = 'multipla_escolha', opcoes = '[{"texto":"Sinal sonoro (sirene)","valor":0},{"texto":"Sinal luminoso","valor":0},{"texto":"Carros de emergência equipados de sirenes","valor":0},{"texto":"Carros de emergência com alto-falantes","valor":0},{"texto":"Aviso aos membros do Nupdec","valor":0},{"texto":"Aviso à comunidade por telefone / Aplicativo de mensagens","valor":0},{"texto":"Uso da imprensa (TV, rádio, internet)","valor":0},{"texto":"Outros","valor":0}]' WHERE chave_questao = 'M06Q00631';
+
+UPDATE questoes SET resposta_ref = '["Carros de emergência equipados de sirenes","Aviso aos membros do Nupdec","Aviso à comunidade por telefone / Aplicativo de mensagens","Uso da imprensa (TV, rádio, internet)"]' WHERE chave_questao = 'M06Q00631';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim, atualizado","valor":10},{"texto":"Sim, mas não está atualizado","valor":3},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q00640';
+
+UPDATE questoes SET resposta_ref = 'Sim, atualizado' WHERE chave_questao = 'M06Q00640';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim, atualizado","valor":10},{"texto":"Sim, mas não está atualizado","valor":3},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q00650';
+
+UPDATE questoes SET resposta_ref = 'Sim, atualizado' WHERE chave_questao = 'M06Q00650';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":50},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q02000';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q02000';
+
+UPDATE questoes SET tipo = 'multipla_escolha', opcoes = '[{"texto":"Telefone","valor":0},{"texto":"Aplicativo de mensagens","valor":0},{"texto":"Correio eletrônico (e-mail)","valor":0},{"texto":"Aplicativo da Prefeitura","valor":0},{"texto":"Site da Prefeitura","valor":0},{"texto":"Redes sociais","valor":0},{"texto":"Outros","valor":0}]' WHERE chave_questao = 'M06Q02010';
+
+UPDATE questoes SET resposta_ref = '["Telefone","Site da Prefeitura","Redes sociais","Outros"]' WHERE chave_questao = 'M06Q02010';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q02011';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":20},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q02013';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q02013';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":50},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q00400';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q00400';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim, em todas as escolas e centros de saúde","valor":100},{"texto":"Sim, na maior parte das escolas e centros de saúde","valor":50},{"texto":"Sim, na menor parte das escolas e centros de saúde","valor":20},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q01000';
+
+UPDATE questoes SET resposta_ref = 'Sim, na maior parte das escolas e centros de saúde' WHERE chave_questao = 'M06Q01000';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não","valor":-100},{"texto":"Não se aplica","valor":0}]' WHERE chave_questao = 'M06Q00900';
+
+UPDATE questoes SET resposta_ref = 'Não' WHERE chave_questao = 'M06Q00900';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q02100';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não","valor":-20}]' WHERE chave_questao = 'M06Q02110';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q02110';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Todas as metas foram atingidas","valor":0},{"texto":"Não","valor":0}]' WHERE chave_questao = 'M06Q02111';
+
+UPDATE questoes SET resposta_ref = 'Todas as metas foram atingidas' WHERE chave_questao = 'M06Q02111';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"A maior parte das metas foram atingidas","valor":-5},{"texto":"A menor parte das metas foram atingidas","valor":-10},{"texto":"As metas não foram atingidas","valor":-20}]' WHERE texto LIKE 'Detalhe sobre as metas não atingidas:%';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não","valor":-50}]' WHERE chave_questao = 'M06Q02112';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não","valor":-20}]' WHERE chave_questao = 'M06Q02120';
+
+UPDATE questoes SET resposta_ref = 'Não' WHERE chave_questao = 'M06Q02120';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não","valor":-20}]' WHERE chave_questao = 'M06Q02121';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q25600';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não","valor":-50}]' WHERE chave_questao = 'M06Q02200';
+
+UPDATE questoes SET resposta_ref = 'Não' WHERE chave_questao = 'M06Q02200';
+
+UPDATE questoes SET resposta_ref = 'xyz' WHERE chave_questao = 'M06Q02211R00100';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não","valor":-50}]' WHERE chave_questao = 'M06Q02220';
+
+UPDATE questoes SET resposta_ref = 'Não' WHERE chave_questao = 'M06Q02220';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Diariamente","valor":0},{"texto":"Semanalmente","valor":0},{"texto":"Mensalmente","valor":0},{"texto":"Anualmente","valor":0}]' WHERE chave_questao = 'M06Q02221';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q02500';
+
+UPDATE questoes SET tipo = 'multipla_escolha', opcoes = '[{"texto":"Instalação/manutenção de ciclovias ou ciclofaixas","valor":0},{"texto":"Instalação/manutenção de pontos de locação de bicicletas","valor":0},{"texto":"Instalação/manutenção de pontos de locação de patinetes","valor":0},{"texto":"Outras","valor":0}]' WHERE chave_questao = 'M06Q02510';
+
+UPDATE questoes SET resposta_ref = '["Instalação/manutenção de ciclovias ou ciclofaixas"]' WHERE chave_questao = 'M06Q02510';
+
+UPDATE questoes SET tipo = 'boolean', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não","valor":-20}]' WHERE chave_questao = 'M06Q02310';
+
+UPDATE questoes SET resposta_ref = 'Não' WHERE chave_questao = 'M06Q02310';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim, para todos os trechos","valor":0},{"texto":"Sim, para a maior parte dos trechos","valor":-5},{"texto":"Sim, para a menor parte dos trechos","valor":-10},{"texto":"Não foram realizadas dentro do prazo","valor":-15},{"texto":"Não foram realizadas manutenções preventivas no exercício","valor":-20}]' WHERE chave_questao = 'M06Q02311';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim","valor":0},{"texto":"Não possui acessibilidade em calçamentos públicos","valor":-50}]' WHERE chave_questao = 'M06Q02400';
+
+UPDATE questoes SET resposta_ref = 'Sim' WHERE chave_questao = 'M06Q02400';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim - Em todos os calçamentos públicos","valor":0},{"texto":"Sim - Na maior parte dos calçamentos públicos","valor":0},{"texto":"Sim - Na menor parte dos calçamentos públicos","valor":-10}]' WHERE chave_questao = 'M06Q02400_SIM';
+
+UPDATE questoes SET resposta_ref = 'Sim - Na maior parte dos calçamentos públicos' WHERE chave_questao = 'M06Q02400_SIM';
+
+UPDATE questoes SET tipo = 'multipla_escolha', opcoes = '[{"texto":"Calçadas com dimensões mínimas para a circulação","valor":0},{"texto":"Sinalização tátil em pisos","valor":0},{"texto":"Rampas de acesso","valor":0},{"texto":"Escadas com corrimão","valor":0}]' WHERE chave_questao = 'M06Q02410';
+
+UPDATE questoes SET resposta_ref = '["Sinalização tátil em pisos","Rampas de acesso","Escadas com corrimão"]' WHERE chave_questao = 'M06Q02410';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Não estão sinalizadas","valor":0},{"texto":"Sim, integralmente - Todas as vias públicas municipais","valor":50},{"texto":"Sim, parcialmente - Em parte das vias municipais","valor":10}]' WHERE chave_questao = 'M06Q01100';
+
+UPDATE questoes SET resposta_ref = 'Sim, parcialmente - Em parte das vias municipais' WHERE chave_questao = 'M06Q01100';
+
+UPDATE questoes SET tipo = 'radio', opcoes = '[{"texto":"Sim, integralmente - Todas as vias públicas municipais","valor":50},{"texto":"Não estão adequadas","valor":0},{"texto":"Sim, parcialmente Em parte das vias municipais","valor":10}]' WHERE chave_questao = 'M06Q01200';
+
+UPDATE questoes SET resposta_ref = 'Sim, parcialmente - Em parte das vias municipais' WHERE chave_questao = 'M06Q01200';
+
+UPDATE questoes SET resposta_ref = 'Não' WHERE chave_questao = 'M06Q01700';
+
+UPDATE questoes SET resposta_ref = 'Vitor Augusto Meireles de Souza / Patrícia Campos Araújo Ramalho' WHERE texto LIKE 'Nome Completo%';
+
+UPDATE questoes SET resposta_ref = 'Assessor IX - Defesa Civil / Assessora Técnica Especial Mobilidade Urbana' WHERE texto LIKE 'Cargo%';
+
+UPDATE questoes SET resposta_ref = 'vitor.meireles@betim.mg.gov.br/patricia.ramalho@betim.mg.gov.br' WHERE texto LIKE 'E-mail%';
+
+UPDATE questoes SET resposta_ref = '119.558.106-80' WHERE texto LIKE 'CPF%';
+
+-- Corrige nota_ref de M06Q00620 (Sim=80, Betim respondeu Não → nota_ref era 0)
+UPDATE questoes SET nota_ref = 80 WHERE chave_questao = 'M06Q00620';
+
+-- ============================================================
+-- CORREÇÕES DE CONSISTÊNCIA (seguindo padrão i-Amb)
+-- ============================================================
+
+-- 1. Boolean: opcoes = NULL (como i-Amb — score via nota_ref, não opcoes)
+UPDATE `questoes` SET `opcoes` = NULL
+WHERE `tipo` = 'boolean'
+  AND `questionario_id` IN (
+    SELECT q.id FROM `questionarios` q
+    JOIN `indicadores` i ON q.indicador_id = i.id
+    WHERE UPPER(i.codigo) = 'I-CIDADE' AND q.ano_ref = 2024
+  );
+
+-- 2. Questão 2.2 (checkbox sem chave_questao no DB) — cursos/treinamento Defesa Civil
+UPDATE `questoes`
+SET `tipo` = 'multipla_escolha',
+    `chave_questao` = 'M06Q00821',
+    `opcoes` = '[{"texto":"Não ofereceu nenhum curso/treinamento no ano","valor":0},{"texto":"Para escolas","valor":5},{"texto":"Para munícipes ou empresas","valor":3},{"texto":"Para outras secretarias / entidades municipais","valor":2}]'
+WHERE `id` = 10255;
+
+-- 3. Corrigir nota_ref negativo em boolean com Sim=0 (Betim respondeu Não e levou penalidade)
+UPDATE `questoes` SET `nota_ref` = 0
+WHERE `chave_questao` IN ('M06Q02120', 'M06Q02220', 'M06Q02310', 'M06Q02200')
+  AND `tipo` = 'boolean';
